@@ -1,4 +1,4 @@
-package es.deusto.spq.gui;
+package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
 

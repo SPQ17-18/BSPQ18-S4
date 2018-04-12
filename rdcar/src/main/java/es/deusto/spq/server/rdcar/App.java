@@ -1,4 +1,4 @@
-package es.deusto.spq.rdcar;
+package es.deusto.spq.server.rdcar;
 
 /**
  * Hello world!

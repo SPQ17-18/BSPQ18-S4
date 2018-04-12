@@ -1,4 +1,4 @@
-package es.deusto.spq.jdo;
+package es.deusto.spq.server.jdo;
 
 public class User {
 

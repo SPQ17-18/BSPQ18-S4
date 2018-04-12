@@ -1,4 +1,4 @@
-package es.deusto.spq.logic;
+package es.deusto.spq.server.logic;
 
 public class Main {
 
