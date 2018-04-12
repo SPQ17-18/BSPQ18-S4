@@ -2,27 +2,27 @@ package es.deusto.spq.jdo;
 
 public class User {
 
-	private String Name;
-	private String Password;
+	private String user;
+	private String pass;
 	
 	public User(String name, String password) {
 		super();
-		Name = name;
-		Password = password;
+		user = name;
+		pass = password;
 	}
 	
 	
 	protected String getName() {
-		return Name;
+		return user;
 	}
 	protected void setName(String name) {
-		Name = name;
+		user = name;
 	}
 	protected String getPassword() {
-		return Password;
+		return pass;
 	}
 	protected void setPassword(String password) {
-		Password = password;
+		pass = password;
 	}
 	
 	

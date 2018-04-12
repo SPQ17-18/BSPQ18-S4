@@ -11,13 +11,13 @@ public class Empleado {
 	@PrimaryKey
 	int Num_Empleado;
 	
-	String Usuario;
+	String user;
 	String Password;
 	
 	public Empleado(int num_Empleado, String usuario, String password) {
 		super();
 		Num_Empleado = num_Empleado;
-		Usuario = usuario;
+		user = usuario;
 		Password = password;
 	}
 
@@ -30,11 +30,11 @@ public class Empleado {
 	}
 
 	public String getUsuario() {
-		return Usuario;
+		return user;
 	}
 
 	public void setUsuario(String usuario) {
-		Usuario = usuario;
+		user = usuario;
 	}
 
 	public String getPassword() {
