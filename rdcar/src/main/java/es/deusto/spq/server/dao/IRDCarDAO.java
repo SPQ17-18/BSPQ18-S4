@@ -1,5 +1,5 @@
 package es.deusto.spq.server.dao;
 
-public class IRDCarDAO {
+public interface IRDCarDAO {
 
 }
