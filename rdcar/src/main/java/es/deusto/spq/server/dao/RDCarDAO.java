@@ -155,6 +155,6 @@ public class RDCarDAO implements IRDCarDAO{
 		
 	}
 
-	//No he metido ningun metodo relacionado con clientes (getCliente(), actualizar, etc)
+	//No he metido ningun metodo relacionado con clientes (getCliente(), actualizar, etc) aa
 	
 }
