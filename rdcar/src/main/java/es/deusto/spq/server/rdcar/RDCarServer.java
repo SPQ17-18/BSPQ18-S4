@@ -11,7 +11,8 @@ public class RDCarServer {
 		
 		//MIRAR TEMA ARGS
 
-		if (args.length != 2) {
+		if (args.length != 3) {
+			System.out.println("How to invoke: java [policy] [codebase] Server.Server [host] [port] [server]");
 			System.exit(0);
 		}
 

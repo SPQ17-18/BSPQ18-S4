@@ -21,14 +21,16 @@ public class RDCarRMIServiceLocator {
 	}
 
 	public void setService(String[] args) {
+		if (args.length != 3) {
+			System.out.println("Use: java [policy] [codebase] Client.Client [host] [port] [server]");
+			System.exit(0);
+		}
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
 		}
-
-		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-
 		try {
-			//this.rdcarServer= (IRDCarFacade) java.rmi.Naming.lookup(name);
+			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
+			this.rdcarServer= (IRDCarRemoteFacade) java.rmi.Naming.lookup(name); //error
 			System.out.println(" - RDCar Client: Server '" + name + "' active and waiting...");
 		} catch (Exception e) {
 			System.err.println(" - RDCar Client: Exception running the server: " + e.getMessage());

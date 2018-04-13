@@ -5,14 +5,24 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import es.deusto.spq.client.controller.RDCarController;
+
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
-public class MainWindow {
+public class MainWindow extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7368246162716824829L;
 	private JFrame frame;
+	private static MainWindow instance;
+	private RDCarController controller = null;
+	private String user;
 
 	/**
 	 * Launch the application.
@@ -29,11 +39,24 @@ public class MainWindow {
 			}
 		});
 	}
+	
+	public static MainWindow getInstance() {
+		return instance;
+	}
+	
+	public void dispose() {
+		instance.setVisible(false);
+	}
 
 	/**
 	 * Create the application.
 	 */
 	public MainWindow() {
+		initialize();
+	}
+	public MainWindow(RDCarController controller, String user) {
+		this.controller = controller;
+		this.user = user;
 		initialize();
 	}
 
@@ -46,6 +69,7 @@ public class MainWindow {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Ventana Principal");
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(343, 11, 81, 23);
