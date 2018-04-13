@@ -1,2 +1,2 @@
-# BSPQ18-S4
-Repository for Team BSPQ18-S4
+# RDCar
+Esto es RDCar, la tienda online para alquilar tu vehículo.
