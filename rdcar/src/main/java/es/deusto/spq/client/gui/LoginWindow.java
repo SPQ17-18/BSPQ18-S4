@@ -90,17 +90,17 @@ public class LoginWindow extends JFrame{
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 
-//				boolean exists = true;
-//				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
-//
-//				if (exists) {
-//					searchWindow view = new searchWindow(controller, textField.getText());
+				boolean exists = true;
+				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+
+				if (exists) {
+//					MainWindow view = new searchWindow(controller, textField.getText());
 //					view.setVisible(true);
-//
-//				} else {
-//					JOptionPane.showMessageDialog(new Frame(), "Error");
-//
-//				}
+
+				} else {
+					JOptionPane.showMessageDialog(new Frame(), "Error");
+
+				}
 			}
 		});
 		BotonAceptar.setBounds(186, 201, 117, 29);

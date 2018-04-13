@@ -15,34 +15,18 @@ public class RDCarController {
 		new LoginWindow(this);
 	}
 
-//	public boolean logIn(String email, String password) {
-//		try {
-//
-//			return rsl.getService().logIn(email, password);
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return false;
-//	}
-//
-//	public List<FlightDTO> searchFlight(String departureCity, String arrivalCity, String departureDate) {
-//		try {
-//			return rsl.getService().searchFlight(departureCity, arrivalCity, departureDate);
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return null;
-//	}
-//
-//	public void bookFlight(FlightDTO f, String email, int seats) {
-//		try {
-//			rsl.getService().bookFlight(f, email, seats);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public boolean logIn(String email, String password) {
+		try {
+
+			return rsl.getService().logIn(email, password);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+
 
 	public void exit() {
 		System.exit(0);

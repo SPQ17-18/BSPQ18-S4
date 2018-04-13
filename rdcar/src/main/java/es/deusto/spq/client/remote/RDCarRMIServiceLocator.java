@@ -1,8 +1,10 @@
 package es.deusto.spq.client.remote;
 
+import es.deusto.spq.server.remote.IRDCarRemoteFacade;
+
 public class RDCarRMIServiceLocator {
 
-	//private IRDCarFacade rdcarServer;
+	private IRDCarRemoteFacade rdcarServer;
 
 	public static RDCarRMIServiceLocator instance = null;
 
@@ -14,9 +16,9 @@ public class RDCarRMIServiceLocator {
 		return instance;
 	}
 
-//	public IRDCarFacade getService() {
-//		return rdcarServer;
-//	}
+	public IRDCarRemoteFacade getService() {
+		return rdcarServer;
+	}
 
 	public void setService(String[] args) {
 		if (System.getSecurityManager() == null) {
