@@ -48,7 +48,7 @@ public class MainWindow {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(367, 11, 57, 23);
+		btnLogin.setBounds(343, 11, 81, 23);
 		frame.getContentPane().add(btnLogin);
 		
 		JButton btnAlquilarVehculo = new JButton("Vehículos");

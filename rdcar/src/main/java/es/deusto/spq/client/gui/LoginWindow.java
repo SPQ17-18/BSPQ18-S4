@@ -16,6 +16,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class LoginWindow extends JFrame{
 
@@ -66,6 +69,7 @@ public class LoginWindow extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\RD-Logo.png"));
 		frame.setBounds(100, 100, 350, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -113,12 +117,19 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().add(textUsuario);
 
 		JLabel LabelPassword = new JLabel("Password");
+		LabelPassword.setForeground(Color.WHITE);
 		LabelPassword.setBounds(136, 111, 61, 16);
 		frame.getContentPane().add(LabelPassword);
 
 		JLabel LabelUsuario = new JLabel("Usuario");
+		LabelUsuario.setForeground(Color.WHITE);
 		LabelUsuario.setBounds(136, 45, 61, 16);
 		frame.getContentPane().add(LabelUsuario);
+		
+		JLabel label = new JLabel("New label");
+		label.setIcon(new ImageIcon("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\loginicon.jpg"));
+		label.setBounds(0, 0, 334, 241);
+		frame.getContentPane().add(label);
 	}
 
 	public RDCarController getController() {
