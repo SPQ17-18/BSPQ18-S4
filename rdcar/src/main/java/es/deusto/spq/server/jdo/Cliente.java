@@ -11,6 +11,8 @@ public class Cliente {
 	 long id;
 
 	    String name = null;
+	    
+	    
 
 	    //@Persistent(mappedBy="Cliente")
 	    Set<Alquiler> AAlquileres = new HashSet();
