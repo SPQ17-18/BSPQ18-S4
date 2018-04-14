@@ -36,9 +36,9 @@ public class LoginWindow extends JFrame{
 		return instance;
 	}
 	
-//	public void dispose() {
-//		instance.setVisible(false);
-//	}
+	public void dispose() {
+		instance.setVisible(false);
+	}
 
 	/**
 	 * Launch the application.
@@ -69,7 +69,11 @@ public class LoginWindow extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
+
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\RD-Logo.png"));
+
 		frame.setBounds(100, 100, 350, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -90,17 +94,17 @@ public class LoginWindow extends JFrame{
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 
-//				boolean exists = true;
-//				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
-//
-//				if (exists) {
-//					searchWindow view = new searchWindow(controller, textField.getText());
-//					view.setVisible(true);
-//
-//				} else {
-//					JOptionPane.showMessageDialog(new Frame(), "Error");
-//
-//				}
+				boolean exists = true;
+				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+
+				if (exists) {
+					MainWindow view = new MainWindow(controller, textUsuario.getText());
+					view.setVisible(true);
+
+				} else {
+					JOptionPane.showMessageDialog(new Frame(), "Error");
+
+				}
 			}
 		});
 		BotonAceptar.setBounds(186, 201, 117, 29);

@@ -6,6 +6,9 @@ import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import es.deusto.spq.client.controller.RDCarController;
+
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,11 +17,21 @@ import java.awt.Toolkit;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-public class MainWindow {
+public class MainWindow extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7368246162716824829L;
 	private JFrame frame;
+
 	
 	Coches abrirCoches = new Coches();
+
+
+	private static MainWindow instance;
+	private RDCarController controller = null;
+	private String user;
 
 
 	/**
@@ -36,11 +49,24 @@ public class MainWindow {
 			}
 		});
 	}
+	
+	public static MainWindow getInstance() {
+		return instance;
+	}
+	
+	public void dispose() {
+		instance.setVisible(false);
+	}
 
 	/**
 	 * Create the application.
 	 */
 	public MainWindow() {
+		initialize();
+	}
+	public MainWindow(RDCarController controller, String user) {
+		this.controller = controller;
+		this.user = user;
 		initialize();
 	}
 
@@ -53,6 +79,7 @@ public class MainWindow {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Ventana Principal");
 		
 		//abrir ventana vehiculo
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
