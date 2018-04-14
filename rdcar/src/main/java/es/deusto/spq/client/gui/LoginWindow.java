@@ -69,7 +69,7 @@ public class LoginWindow extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\RD-Logo.png"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 350, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -105,6 +105,16 @@ public class LoginWindow extends JFrame{
 		});
 		BotonAceptar.setBounds(186, 201, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
+				
+						JLabel LabelPassword = new JLabel("Password");
+						LabelPassword.setForeground(Color.WHITE);
+						LabelPassword.setBounds(10, 147, 61, 16);
+						frame.getContentPane().add(LabelPassword);
+		
+				JLabel LabelUsuario = new JLabel("Usuario");
+				LabelUsuario.setForeground(Color.WHITE);
+				LabelUsuario.setBounds(10, 77, 61, 16);
+				frame.getContentPane().add(LabelUsuario);
 
 		textPassword = new JTextField();
 		textPassword.setBounds(63, 142, 202, 26);
@@ -113,21 +123,11 @@ public class LoginWindow extends JFrame{
 
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
-		textUsuario.setBounds(63, 73, 202, 26);
+		textUsuario.setBounds(63, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
-
-		JLabel LabelPassword = new JLabel("Password");
-		LabelPassword.setForeground(Color.WHITE);
-		LabelPassword.setBounds(136, 111, 61, 16);
-		frame.getContentPane().add(LabelPassword);
-
-		JLabel LabelUsuario = new JLabel("Usuario");
-		LabelUsuario.setForeground(Color.WHITE);
-		LabelUsuario.setBounds(136, 45, 61, 16);
-		frame.getContentPane().add(LabelUsuario);
 		
 		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\loginicon.jpg"));
+		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		label.setBounds(0, 0, 334, 241);
 		frame.getContentPane().add(label);
 	}

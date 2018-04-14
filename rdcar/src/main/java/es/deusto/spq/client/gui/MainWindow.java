@@ -1,18 +1,25 @@
 package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class MainWindow {
 
 	private JFrame frame;
+	
+	Coches abrirCoches = new Coches();
+
 
 	/**
 	 * Launch the application.
@@ -47,14 +54,12 @@ public class MainWindow {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(343, 11, 81, 23);
-		frame.getContentPane().add(btnLogin);
-		
+		//abrir ventana vehiculo
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
+			public void actionPerformed(ActionEvent e) {
+				abrirCoches.setVisible(true);
+				}
 		});
 		btnAlquilarVehculo.setBounds(158, 61, 137, 23);
 		frame.getContentPane().add(btnAlquilarVehculo);
@@ -67,9 +72,11 @@ public class MainWindow {
 		btnEmpleados.setBounds(298, 161, 89, 23);
 		frame.getContentPane().add(btnEmpleados);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\box_faqs.jpg"));
-		lblNewLabel.setBounds(0, 0, 434, 261);
-		frame.getContentPane().add(lblNewLabel);
+	
+		
+
 	}
-}
+
+	
+	}
+
