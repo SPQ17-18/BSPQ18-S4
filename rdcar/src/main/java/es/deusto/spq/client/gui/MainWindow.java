@@ -45,7 +45,7 @@ public class MainWindow {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the csontents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();

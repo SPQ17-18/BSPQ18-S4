@@ -65,7 +65,7 @@ public class LoginWindow extends JFrame{
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the scontents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();

@@ -27,7 +27,7 @@ public class Coches {
 	}
 
 	/**
-	 * Create the application.
+	 * Create sthe application.
 	 */
 	public Coches() {
 		initialize();
