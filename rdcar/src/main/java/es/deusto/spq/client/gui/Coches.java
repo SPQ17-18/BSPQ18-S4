@@ -1,10 +1,13 @@
 package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class Coches {
 
@@ -38,14 +41,18 @@ public class Coches {
 	 */
 	private void initialize() {
 		coches = new JFrame();
+		coches.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		coches.setBounds(100, 100, 450, 300);
 		coches.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		coches.getContentPane().setLayout(null);
 		
+		
+		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/compracoche.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 434, 261);
 		coches.getContentPane().add(lblNewLabel);
+
 	}
 
 	public void setVisible(boolean b) {

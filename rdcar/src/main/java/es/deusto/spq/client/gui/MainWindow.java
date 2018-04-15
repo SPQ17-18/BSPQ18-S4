@@ -27,6 +27,8 @@ public class MainWindow extends JFrame {
 
 	
 	Coches abrirCoches = new Coches();
+	Clientes abrirClientes = new Clientes();
+	Empleados abrirEmpleados = new Empleados();
 
 
 	private static MainWindow instance;
@@ -75,7 +77,7 @@ public class MainWindow extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\SoftLabs\\RDCar\\BSPQ18-S4\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\RD-Logo.png"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -92,12 +94,27 @@ public class MainWindow extends JFrame {
 		frame.getContentPane().add(btnAlquilarVehculo);
 		
 		JButton btnClientes = new JButton("Clientes");
+		btnClientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				abrirClientes.setVisible(true);
+			}
+		});
 		btnClientes.setBounds(37, 161, 89, 23);
 		frame.getContentPane().add(btnClientes);
 		
 		JButton btnEmpleados = new JButton("Empleados");
+		btnEmpleados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				abrirEmpleados.setVisible(true);
+			}
+		});
 		btnEmpleados.setBounds(298, 161, 89, 23);
 		frame.getContentPane().add(btnEmpleados);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
+		lblNewLabel.setBounds(0, -3, 434, 264);
+		frame.getContentPane().add(lblNewLabel);
 		
 	
 		

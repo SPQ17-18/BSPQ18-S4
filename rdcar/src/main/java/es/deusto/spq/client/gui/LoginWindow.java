@@ -69,10 +69,9 @@ public class LoginWindow extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("\\rdcar\\src\\main\\java\\es\\deusto\\spq\\client\\imagen\\RD-Logo.png"));
+		
 
 		frame.setBounds(100, 100, 350, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
