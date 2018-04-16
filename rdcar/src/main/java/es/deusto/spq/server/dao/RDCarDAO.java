@@ -15,7 +15,6 @@ public class RDCarDAO implements IRDCarDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-	@Override
 	public void storeUser(Empleado e) {
 		
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -37,7 +36,6 @@ public class RDCarDAO implements IRDCarDAO {
 		}
 
 
-	@Override
 	public Empleado retrieveUser(String user) {
 		Empleado emp = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -63,7 +61,6 @@ public class RDCarDAO implements IRDCarDAO {
 		return emp;
 	}
 
-	@Override
 	public void updateUser(Empleado e) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();

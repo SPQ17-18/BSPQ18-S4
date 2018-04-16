@@ -45,7 +45,6 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	/*
 	 * METODOS FUNCIONALIDAD DE LA ITNERFAZ
 	 */
-	@Override
 	public String toString(String s) {
 		System.out.println("-------El mensaje de prueba es el sigueinte:-----");		
 		return this.toString(s);
