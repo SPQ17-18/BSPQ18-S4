@@ -30,7 +30,7 @@ public class RDCarRMIServiceLocator {
 		}
 		try {
 			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-			this.rdcarServer= (IRDCarRemoteFacade) java.rmi.Naming.lookup(name); //error
+			this.rdcarServer=(IRDCarRemoteFacade) java.rmi.Naming.lookup(name); //error
 			System.out.println(" - RDCar Client: Server '" + name + "' active and waiting...");
 		} catch (Exception e) {
 			System.err.println(" - RDCar Client: Exception running the server: " + e.getMessage());

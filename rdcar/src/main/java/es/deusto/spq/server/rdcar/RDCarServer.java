@@ -18,15 +18,20 @@ public class RDCarServer {
 
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
+
 		}
 
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			Naming.rebind(name, RDCarRemoteFacade.getInstance());
 			RDCarRemoteFacade.getInstance().setRDCarService(new RDCarAppService());
+
+			Naming.rebind(name, RDCarRemoteFacade.getInstance());
 			
 			System.out.println(" - '" + name + "' active and waiting...");
+			java.io.InputStreamReader inputStreamReader = new java.io.InputStreamReader ( System.in );
+			java.io.BufferedReader stdin = new java.io.BufferedReader ( inputStreamReader );
+			String line  = stdin.readLine();
 
 		} catch (Exception e) {
 			System.err.println(" - EasyBooking Server exception: " + e.getMessage());

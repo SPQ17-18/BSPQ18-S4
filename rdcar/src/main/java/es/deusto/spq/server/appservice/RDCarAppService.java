@@ -1,18 +1,18 @@
 package es.deusto.spq.server.appservice;
 
 
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import es.deusto.spq.server.dao.RDCarDAO;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class RDCarAppService {
 	
-	//DECLARAR OBJETO DAO
+	RDCarDAO rdcardao;
 	
-	public RDCarAppService() throws RemoteException{
+	public RDCarAppService() {
 		
 	}
 	
