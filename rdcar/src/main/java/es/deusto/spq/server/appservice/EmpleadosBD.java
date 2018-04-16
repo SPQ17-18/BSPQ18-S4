@@ -12,10 +12,10 @@ public class EmpleadosBD {
 	public EmpleadosBD(){
 		
 		empleados = new HashMap<String, Empleado>();
-		Empleado e1 = new Empleado(0, "ron", "123");
-		Empleado e2 = new Empleado(0, "surelyo", "123");
-		Empleado e3 = new Empleado(0, "dminguez", "123");
-		Empleado e4 = new Empleado(0, "gon", "123");
+		Empleado e1 = new Empleado(1, "ron", "123");
+		Empleado e2 = new Empleado(2, "surelyo", "123");
+		Empleado e3 = new Empleado(3, "dminguez", "123");
+		Empleado e4 = new Empleado(4, "gon", "123");
 		empleados.put("ron", e1);
 		empleados.put("surelyo", e2);
 		empleados.put("dminguez", e3);
