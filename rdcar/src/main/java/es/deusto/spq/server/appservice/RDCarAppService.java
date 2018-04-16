@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import es.deusto.spq.server.dao.RDCarDAO;
+import es.deusto.spq.server.dao.RDCarDAOViejo;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class RDCarAppService {
 	
-	RDCarDAO rdcardao;
+	RDCarDAOViejo rdcardao;
 	
 	public RDCarAppService() {
 		
