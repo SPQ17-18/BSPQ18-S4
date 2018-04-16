@@ -273,8 +273,8 @@ public void storeVehiculo(Vehiculo vehiculo) {
 		dao.storeEmpleado(Gonzalo);
 		
 		
-		Cliente koldo = new Cliente("00000001A", "Koldo", "Pellicer", 1895, "Noja");
-		Cliente ariane = new Cliente("00000002B", "Ariane", "Fernandez", 1997, "Kuzcurrita");
+		Cliente koldo = new Cliente("00000001A", "xd", "lol", 1895, "Noja");
+		Cliente ariane = new Cliente("00000002B", "wtf", "omg", 1997, "Kuzcurrita");
 		Cliente camacho = new Cliente("12345678Z", "Jose Antonio", "Camacho", 1955, "MadriZ");
 		
 		dao.storeCliente(koldo);

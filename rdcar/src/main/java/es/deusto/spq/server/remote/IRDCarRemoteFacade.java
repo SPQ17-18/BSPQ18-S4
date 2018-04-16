@@ -1,12 +1,12 @@
 package es.deusto.spq.server.remote;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface IRDCarRemoteFacade {
+public interface IRDCarRemoteFacade extends Remote {
 	/*
 	 * METODOS FUNCIONALIDAD
 	 */
-	public String toString(String s);
 	public boolean logIn(String user, String password) throws RemoteException;
 
 }

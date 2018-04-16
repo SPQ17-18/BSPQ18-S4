@@ -45,10 +45,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	/*
 	 * METODOS FUNCIONALIDAD DE LA ITNERFAZ
 	 */
-	public String toString(String s) {
-		System.out.println("-------El mensaje de prueba es el sigueinte:-----");		
-		return this.toString(s);
-	}
+	
 	
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");

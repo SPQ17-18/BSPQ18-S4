@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import es.deusto.spq.client.controller.RDCarController;
+import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
@@ -32,7 +33,7 @@ public class MainWindow extends JFrame {
 
 
 	private static MainWindow instance;
-	private RDCarController controller = null;
+	private RDCarRMIServiceLocator controller = null;
 	private String user;
 
 
@@ -66,7 +67,7 @@ public class MainWindow extends JFrame {
 	public MainWindow() {
 		initialize();
 	}
-	public MainWindow(RDCarController controller, String user) {
+	public MainWindow(RDCarRMIServiceLocator controller, String user) {
 		this.controller = controller;
 		this.user = user;
 		initialize();
