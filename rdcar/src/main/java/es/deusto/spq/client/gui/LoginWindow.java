@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import es.deusto.spq.client.controller.RDCarController;
-import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -30,8 +29,8 @@ public class LoginWindow extends JFrame{
 	private JFrame frame;
 	private JTextField textPassword;
 	private JTextField textUsuario;
-	private RDCarRMIServiceLocator controller =null;
-	private static LoginWindow instance; //algo de rmi
+	private RDCarController controller =null;
+	private static LoginWindow instance;
 
 	public static LoginWindow getInstance() {
 		return instance;
@@ -48,7 +47,7 @@ public class LoginWindow extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginWindow window = new LoginWindow(null);
+					LoginWindow window = new LoginWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -60,8 +59,8 @@ public class LoginWindow extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public LoginWindow(RDCarRMIServiceLocator controller) {
-		this.controller=controller;
+	public LoginWindow() {
+		
 		initialize();
 	}
 
@@ -136,10 +135,10 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().add(label);
 	}
 
-	public RDCarRMIServiceLocator getController() {
+	public RDCarController getController() {
 		return controller;
 	}
-	public void setController(RDCarRMIServiceLocator controller) {
+	public void setController(RDCarController controller) {
 		this.controller = controller;
 	}
 }

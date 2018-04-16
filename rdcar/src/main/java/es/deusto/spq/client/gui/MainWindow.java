@@ -33,7 +33,7 @@ public class MainWindow extends JFrame {
 
 
 	private static MainWindow instance;
-	private RDCarRMIServiceLocator controller = null;
+	private RDCarController controller = null;
 	private String user;
 
 
@@ -67,8 +67,8 @@ public class MainWindow extends JFrame {
 	public MainWindow() {
 		initialize();
 	}
-	public MainWindow(RDCarRMIServiceLocator controller, String user) {
-		this.controller = controller;
+	public MainWindow(RDCarController controller2, String user) {
+		this.controller = controller2;
 		this.user = user;
 		initialize();
 	}
