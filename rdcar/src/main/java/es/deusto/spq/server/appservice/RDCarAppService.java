@@ -1,6 +1,7 @@
 package es.deusto.spq.server.appservice;
 
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +12,7 @@ public class RDCarAppService {
 	
 	//DECLARAR OBJETO DAO
 	
-	public RDCarAppService() {
+	public RDCarAppService() throws RemoteException{
 		
 	}
 	

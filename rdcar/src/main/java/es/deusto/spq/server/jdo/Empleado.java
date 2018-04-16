@@ -1,10 +1,17 @@
 package es.deusto.spq.server.jdo;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class Empleado {
+public class Empleado implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@PrimaryKey
 	int Num_Empleado;

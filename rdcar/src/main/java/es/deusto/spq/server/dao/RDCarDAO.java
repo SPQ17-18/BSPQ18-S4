@@ -1,4 +1,101 @@
-//package es.deusto.spq.server.dao;
+package es.deusto.spq.server.dao;
+
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
+
+import es.deusto.spq.server.jdo.Empleado;
+
+public class RDCarDAO implements IRDCarDAO {
+	
+	private PersistenceManagerFactory pmf;
+	
+	public RDCarDAO(){
+		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+	}
+
+	@Override
+	public void storeUser(Empleado e) {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+	    try {
+	       tx.begin();
+	       System.out.println("   * Storing a user: " + e.getUsuario());
+		       pm.makePersistent(e);
+		       tx.commit();
+		    } catch (Exception ex) {
+		    	System.out.println("   $ Error storing an object: " + ex.getMessage());
+		    } finally {
+		    	if (tx != null && tx.isActive()) {
+		    		tx.rollback();
+		    	}
+					
+	    		pm.close();
+		    }
+		}
+
+
+	@Override
+	public Empleado retrieveUser(String user) {
+		Empleado emp = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(2);
+		Transaction tx = pm.currentTransaction();
+		try {
+			tx.begin();
+			emp = pm.getObjectById(Empleado.class, user);
+			tx.commit();
+		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
+		{
+			System.out.println("User does not exist: " + jonfe.getMessage());
+		}
+		
+		finally {
+	    	if (tx != null && tx.isActive()) {
+	    		tx.rollback();
+	    	}
+				
+    		pm.close();
+	    }
+
+		return emp;
+	}
+
+	@Override
+	public void updateUser(Empleado e) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+	    Transaction tx = pm.currentTransaction();
+	    
+	    try {
+	    	tx.begin();
+	    	pm.makePersistent(e);
+	    	tx.commit();
+	     } catch (Exception ex) {
+		   	System.out.println("Error updating a user: " + ex.getMessage());
+	     } finally {
+		   	if (tx != null && tx.isActive()) {
+		   		tx.rollback();
+		   	}
+				
+	   		pm.close();
+	     }
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 //
 //import sd3.server.dao.PersistenceManager;
 //import sd3.server.dao.Transaction;
