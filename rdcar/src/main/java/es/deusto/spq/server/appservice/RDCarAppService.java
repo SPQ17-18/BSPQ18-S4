@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import es.deusto.spq.server.dao.RDCarDAOViejo;
+import es.deusto.spq.server.dao.RDCarDAO;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class RDCarAppService {
 	
-	RDCarDAOViejo rdcardao;
+	RDCarDAO rdcardao;
 	
 	public RDCarAppService() {
 		
@@ -37,11 +37,7 @@ public class RDCarAppService {
 	 * METODOS FUNCIONALIDAD DE LA ITNERFAZ
 	 */
 		
-	public String toString(String s) {
-		// TODO Auto-generated method stub
-		s= "ESTE ES UN MENSAJE DE PRUEBA";
-		return s;
-	}
+	
 
 	public boolean logIn(String user, String password) {
 		HashMap<String, Empleado> empleados;
