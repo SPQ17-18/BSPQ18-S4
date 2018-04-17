@@ -31,6 +31,13 @@ public class LoginWindow extends JFrame{
 	private JTextField textUsuario;
 	private RDCarController controller =null;
 	private static LoginWindow instance; //algo de rmi
+	
+	
+	public LoginWindow(RDCarController controller) {
+		this.controller=controller;
+		LoginWindow window = new LoginWindow();
+		window.frame.setVisible(true);
+	}
 
 	public static LoginWindow getInstance() {
 		return instance;
@@ -47,7 +54,7 @@ public class LoginWindow extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginWindow window = new LoginWindow(null);
+					LoginWindow window = new LoginWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,18 +63,13 @@ public class LoginWindow extends JFrame{
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
-	public LoginWindow(RDCarController controller) {
-		this.controller=controller;
-		initialize();
-	}
+	
+	
 
 	/**
 	 * Initialize the scontents of the frame.
 	 */
-	private void initialize() {
+	public LoginWindow() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
