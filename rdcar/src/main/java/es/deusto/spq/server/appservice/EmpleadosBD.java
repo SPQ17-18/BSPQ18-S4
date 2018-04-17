@@ -8,9 +8,9 @@ public class EmpleadosBD {
 
 	private HashMap<String, Empleado> empleados;
 	public static EmpleadosBD instance = new EmpleadosBD();
-	
+
 	public EmpleadosBD(){
-		
+
 		empleados = new HashMap<String, Empleado>();
 		Empleado e1 = new Empleado(1, "ron", "123");
 		Empleado e2 = new Empleado(2, "surelyo", "123");
@@ -21,7 +21,7 @@ public class EmpleadosBD {
 		empleados.put("dminguez", e3);
 		empleados.put("gon", e4);
 	}
-	
+
 	public HashMap<String, Empleado> getUsers() {
 		return empleados;
 	}
@@ -35,5 +35,5 @@ public class EmpleadosBD {
 		return instance;
 	}
 
-	
+
 }

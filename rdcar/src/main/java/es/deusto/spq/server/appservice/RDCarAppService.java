@@ -9,41 +9,18 @@ import es.deusto.spq.server.dao.RDCarDAO;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class RDCarAppService {
-	
+
 	RDCarDAO rdcardao;
-	
+
 	public RDCarAppService() {
-		
+
 	}
-	
-//	public List<Empleado> addEmpleado() {
-//
-//		Empleado e1 = new Empleado(0, "ron", "123");
-//		Empleado e2 = new Empleado(0, "surelyo", "123");
-//		Empleado e3 = new Empleado(0, "dminguez", "123");
-//		Empleado e4 = new Empleado(0, "gon", "123");
-//
-//		List<Empleado> e = new ArrayList<>();
-//
-//		e.add(e1);
-//		e.add(e2);
-//		e.add(e3);
-//		e.add(e4);
-//
-//		return e;
-//	}
-	
-	/*
-	 * METODOS FUNCIONALIDAD DE LA ITNERFAZ
-	 */
-		
-	
 
 	public boolean logIn(String user, String password) {
 		HashMap<String, Empleado> empleados;
-		empleados = EmpleadosBD.getInstance().getUsers(); //gets all users from the db (hashmap)
+		empleados = EmpleadosBD.getInstance().getUsers();
 		empleados.get(user); 
-		if (user == null) { //if the email written doesn't exist, false
+		if (user == null) { 
 			return false;
 		} else {
 			return true;

@@ -45,9 +45,9 @@ public class Coches {
 		coches.setBounds(100, 100, 450, 300);
 		coches.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		coches.getContentPane().setLayout(null);
-		
-		
-		
+
+
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 434, 261);

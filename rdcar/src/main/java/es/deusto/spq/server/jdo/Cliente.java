@@ -5,16 +5,16 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Cliente {
-	
+
 	@PrimaryKey
 	String Dni;
-	
+
 	String Nombre;
 	String Apellido;
 	int Anyo_Nacimiento;
 	String Lugar;
-	
-	
+
+
 	public Cliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		super();
 		Dni = dni;
@@ -73,8 +73,5 @@ public class Cliente {
 	public void setLugar(String lugar) {
 		Lugar = lugar;
 	}
-	
-	
-	
 
 }

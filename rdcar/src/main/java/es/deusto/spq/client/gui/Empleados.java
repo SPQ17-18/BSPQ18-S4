@@ -44,13 +44,13 @@ public class Empleados {
 		empleados.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		empleados.setTitle("Empleados");
 		empleados.getContentPane().setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Empleados.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 434, 261);
 		empleados.getContentPane().add(lblNewLabel);
 	}
-	
+
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		Empleados window = new Empleados();

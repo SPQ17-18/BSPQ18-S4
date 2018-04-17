@@ -8,7 +8,7 @@ import es.deusto.spq.server.remote.RDCarRemoteFacade;
 public class RDCarServer {
 
 	public static void main(String[] args) {
-		
+
 		//MIRAR TEMA ARGS
 
 		if (args.length != 3) {
@@ -27,7 +27,7 @@ public class RDCarServer {
 			RDCarRemoteFacade.getInstance().setRDCarService(new RDCarAppService());
 
 			Naming.rebind(name, RDCarRemoteFacade.getInstance());
-			
+
 			System.out.println(" - '" + name + "' active and waiting...");
 			java.io.InputStreamReader inputStreamReader = new java.io.InputStreamReader ( System.in );
 			java.io.BufferedReader stdin = new java.io.BufferedReader ( inputStreamReader );
@@ -38,5 +38,5 @@ public class RDCarServer {
 			e.printStackTrace();
 		}
 	}
-	
+
 }

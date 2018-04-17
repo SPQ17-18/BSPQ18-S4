@@ -35,7 +35,7 @@ public class LoginWindow extends JFrame{
 	public static LoginWindow getInstance() {
 		return instance;
 	}
-	
+
 	public void dispose() {
 		instance.setVisible(false);
 	}
@@ -71,7 +71,7 @@ public class LoginWindow extends JFrame{
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
-		
+
 
 		frame.setBounds(100, 100, 350, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -108,16 +108,16 @@ public class LoginWindow extends JFrame{
 		});
 		BotonAceptar.setBounds(186, 201, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
-				
-						JLabel LabelPassword = new JLabel("Password");
-						LabelPassword.setForeground(Color.WHITE);
-						LabelPassword.setBounds(10, 147, 61, 16);
-						frame.getContentPane().add(LabelPassword);
-		
-				JLabel LabelUsuario = new JLabel("Usuario");
-				LabelUsuario.setForeground(Color.WHITE);
-				LabelUsuario.setBounds(10, 77, 61, 16);
-				frame.getContentPane().add(LabelUsuario);
+
+		JLabel LabelPassword = new JLabel("Password");
+		LabelPassword.setForeground(Color.WHITE);
+		LabelPassword.setBounds(10, 147, 61, 16);
+		frame.getContentPane().add(LabelPassword);
+
+		JLabel LabelUsuario = new JLabel("Usuario");
+		LabelUsuario.setForeground(Color.WHITE);
+		LabelUsuario.setBounds(10, 77, 61, 16);
+		frame.getContentPane().add(LabelUsuario);
 
 		textPassword = new JTextField();
 		textPassword.setBounds(63, 142, 202, 26);
@@ -128,7 +128,7 @@ public class LoginWindow extends JFrame{
 		textUsuario.setColumns(10);
 		textUsuario.setBounds(63, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
-		
+
 		JLabel label = new JLabel("New label");
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		label.setBounds(0, 0, 334, 241);

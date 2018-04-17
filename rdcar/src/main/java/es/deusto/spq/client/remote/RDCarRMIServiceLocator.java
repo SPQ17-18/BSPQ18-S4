@@ -37,5 +37,5 @@ public class RDCarRMIServiceLocator {
 			e.printStackTrace();
 		}
 	}
-	
+
 }

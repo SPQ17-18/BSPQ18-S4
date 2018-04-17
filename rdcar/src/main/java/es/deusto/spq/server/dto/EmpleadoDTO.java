@@ -6,12 +6,12 @@ import java.io.Serializable;
 public class EmpleadoDTO implements Serializable{
 
 	private static final long serialVersionUID = 199654L;
-	
-	
+
+
 	String user;
 	String Password;
-	
-	
+
+
 	public EmpleadoDTO(String user, String password) {
 		super();
 		this.user = user;
@@ -37,9 +37,9 @@ public class EmpleadoDTO implements Serializable{
 	public void setPassword(String password) {
 		Password = password;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }
