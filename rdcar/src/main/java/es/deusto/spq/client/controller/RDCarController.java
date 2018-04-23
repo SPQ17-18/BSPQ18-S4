@@ -11,7 +11,7 @@ public class RDCarController {
 
 	public RDCarController(String[] args) throws RemoteException {
 		rsl = new RDCarRMIServiceLocator();
-		rsl.setService(args); //error
+		rsl.setService(args); 
 		new LoginWindow(this);
 	}
 
@@ -32,7 +32,7 @@ public class RDCarController {
 
 	public static void main(String[] args) throws RemoteException {
 
-		new RDCarController(args); //error
+		new RDCarController(args); 
 	}
 
 }

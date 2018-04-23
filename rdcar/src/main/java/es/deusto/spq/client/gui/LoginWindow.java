@@ -30,7 +30,7 @@ public class LoginWindow extends JFrame{
 	private JTextField textPassword;
 	private JTextField textUsuario;
 	private RDCarController controller =null;
-	private static LoginWindow instance; //algo de rmi
+	private static LoginWindow instance;
 	
 	
 	public LoginWindow(RDCarController controller) {
@@ -91,6 +91,8 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().add(BotonCancelar);
 
 		JButton BotonAceptar = new JButton("Aceptar");
+		BotonAceptar.setBounds(186, 201, 117, 29);
+		frame.getContentPane().add(BotonAceptar);
 		BotonAceptar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
@@ -108,8 +110,6 @@ public class LoginWindow extends JFrame{
 				}
 			}
 		});
-		BotonAceptar.setBounds(186, 201, 117, 29);
-		frame.getContentPane().add(BotonAceptar);
 
 		JLabel LabelPassword = new JLabel("Password");
 		LabelPassword.setForeground(Color.WHITE);

@@ -34,6 +34,17 @@ public class MainWindow extends JFrame {
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
+	
+	public static MainWindow getInstance() {
+		return instance;
+	}
+	
+	public MainWindow(RDCarController controller, String user) {
+		this.controller=controller;
+		this.user = user;
+		MainWindow window = new MainWindow();
+		this.setVisible(true);
+	}
 
 
 	/**
@@ -52,23 +63,11 @@ public class MainWindow extends JFrame {
 		});
 	}
 
-	public static MainWindow getInstance() {
-		return instance;
-	}
-
-	public void dispose() {
-		instance.setVisible(false);
-	}
-
+	
 	/**
 	 * Create the application.
 	 */
 	public MainWindow() {
-		initialize();
-	}
-	public MainWindow(RDCarController controller, String user) {
-		this.controller = controller;
-		this.user = user;
 		initialize();
 	}
 
