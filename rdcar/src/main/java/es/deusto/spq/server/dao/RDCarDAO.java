@@ -1,5 +1,7 @@
 package es.deusto.spq.server.dao;
 
+import java.util.List;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;

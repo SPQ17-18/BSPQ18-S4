@@ -43,7 +43,7 @@ public class Coches {
 		coches = new JFrame();
 		coches.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		coches.setBounds(100, 100, 450, 300);
-		coches.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		coches.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		coches.getContentPane().setLayout(null);
 
 
