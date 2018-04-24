@@ -3,6 +3,7 @@ package es.deusto.spq.server.dao;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Cliente;
@@ -90,6 +91,35 @@ public class RDCarDAO implements IRDCarDAO{
 
 	}
 
+	public boolean LoginEmpleado(String user, String password) {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try {
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM EMPLEADO WHERE User = '" + user + "'");
+			List<?> ListaEmpleados = (List<?>) query.execute(); 
+			
+			
+		} catch (Exception ex) {
+			
+			System.out.print("Error Selecting: " + ex.getMessage());
+			
+		} finally {
+			
+			
+			
+			
+		}
+		
+		
+		return false;
+	}
+	
+	
+	
 	//--------------------------------------------------------------------------------------------------------
 
 	public void storeCliente(Cliente cliente) {
