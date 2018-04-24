@@ -6,12 +6,12 @@ import es.deusto.spq.client.gui.LoginWindow;
 import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 
 public class RDCarController {
-	
+
 	private RDCarRMIServiceLocator rsl;
 
 	public RDCarController(String[] args) throws RemoteException {
 		rsl = new RDCarRMIServiceLocator();
-		rsl.setService(args); //error
+		rsl.setService(args); 
 		new LoginWindow(this);
 	}
 
@@ -26,15 +26,13 @@ public class RDCarController {
 		return false;
 	}
 
-
-
 	public void exit() {
 		System.exit(0);
 	}
 
 	public static void main(String[] args) throws RemoteException {
 
-		new RDCarController(args); //error
+		new RDCarController(args); 
 	}
 
 }

@@ -11,18 +11,11 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Alquiler {
 
-
 	String Matricula;
 
 	String Dni_Cliente;
-	
+
 	Date Fecha_Inicio;
 	Date Fecha_Final;
-	
-	
-	
-	
-	
-	
 	
 }

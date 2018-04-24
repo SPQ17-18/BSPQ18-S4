@@ -25,7 +25,7 @@ public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 7368246162716824829L;
 	private JFrame frame;
 
-	
+
 	Coches abrirCoches = new Coches();
 	Clientes abrirClientes = new Clientes();
 	Empleados abrirEmpleados = new Empleados();
@@ -34,6 +34,17 @@ public class MainWindow extends JFrame {
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
+	
+	public static MainWindow getInstance() {
+		return instance;
+	}
+	
+	public MainWindow(RDCarController controller, String user) {
+		this.controller=controller;
+		this.user = user;
+		MainWindow window = new MainWindow();
+		this.setVisible(true);
+	}
 
 
 	/**
@@ -51,24 +62,12 @@ public class MainWindow extends JFrame {
 			}
 		});
 	}
-	
-	public static MainWindow getInstance() {
-		return instance;
-	}
-	
-	public void dispose() {
-		instance.setVisible(false);
-	}
 
+	
 	/**
 	 * Create the application.
 	 */
 	public MainWindow() {
-		initialize();
-	}
-	public MainWindow(RDCarController controller, String user) {
-		this.controller = controller;
-		this.user = user;
 		initialize();
 	}
 
@@ -82,17 +81,17 @@ public class MainWindow extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Ventana Principal");
-		
+
 		//abrir ventana vehiculo
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirCoches.setVisible(true);
-				}
+			}
 		});
 		btnAlquilarVehculo.setBounds(158, 61, 137, 23);
 		frame.getContentPane().add(btnAlquilarVehculo);
-		
+
 		JButton btnClientes = new JButton("Clientes");
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,7 +100,7 @@ public class MainWindow extends JFrame {
 		});
 		btnClientes.setBounds(37, 161, 89, 23);
 		frame.getContentPane().add(btnClientes);
-		
+
 		JButton btnEmpleados = new JButton("Empleados");
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,17 +109,17 @@ public class MainWindow extends JFrame {
 		});
 		btnEmpleados.setBounds(298, 161, 89, 23);
 		frame.getContentPane().add(btnEmpleados);
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		lblNewLabel.setBounds(0, -3, 434, 264);
 		frame.getContentPane().add(lblNewLabel);
-		
-	
-		
+
+
+
 
 	}
 
-	
-	}
+
+}
 
