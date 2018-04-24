@@ -1,7 +1,9 @@
 package es.deusto.spq.server.dto;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class Assembler {
@@ -33,6 +35,20 @@ public class Assembler {
 		EmpleadoDTO empleadodto = new EmpleadoDTO(empleado.getUsuario(), empleado.getPassword());
 		
 		return empleadodto;
+	}
+	
+	
+	public List<ClienteDTO> assemble(List<Cliente> clientes){
+		List<ClienteDTO> clientesDTO = new ArrayList<>();
+		
+		if (clientes != null){
+			for(Cliente c: clientes){
+				clientesDTO.add(new ClienteDTO(c.getDni(), c.getNombre(), c.getApellido(), c.getAnyo_Nacimiento(), c.getLugar()));
+			}
+		}
+		System.out.println(" - Assembling Flights...");
+		
+		return clientesDTO;
 	}
 	
 }

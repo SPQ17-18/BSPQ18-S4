@@ -1,9 +1,11 @@
 package es.deusto.spq.client.controller;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 import es.deusto.spq.client.gui.LoginWindow;
 import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
+import es.deusto.spq.server.dto.ClienteDTO;
 
 public class RDCarController {
 
@@ -25,6 +27,21 @@ public class RDCarController {
 		}
 		return false;
 	}
+	
+	public  List<ClienteDTO> buscarCliente(String dni){
+		try {
+			
+			return rsl.getService().buscarCliente(dni);
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	
+	
 
 	public void exit() {
 		System.exit(0);

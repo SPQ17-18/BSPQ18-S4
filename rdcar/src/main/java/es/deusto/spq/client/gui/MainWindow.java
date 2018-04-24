@@ -24,13 +24,6 @@ public class MainWindow extends JFrame {
 	 */
 	private static final long serialVersionUID = 7368246162716824829L;
 	private JFrame frame;
-
-
-	Coches abrirCoches = new Coches();
-	Clientes abrirClientes = new Clientes();
-	Empleados abrirEmpleados = new Empleados();
-
-
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
@@ -79,6 +72,7 @@ public class MainWindow extends JFrame {
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Coches abrirCoches = new Coches();
 				abrirCoches.setVisible(true);
 			}
 		});
@@ -88,6 +82,7 @@ public class MainWindow extends JFrame {
 		JButton btnClientes = new JButton("Clientes");
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Clientes abrirClientes = new Clientes(controller);
 				abrirClientes.setVisible(true);
 			}
 		});
@@ -97,6 +92,7 @@ public class MainWindow extends JFrame {
 		JButton btnEmpleados = new JButton("Empleados");
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Empleados abrirEmpleados = new Empleados();
 				abrirEmpleados.setVisible(true);
 			}
 		});
