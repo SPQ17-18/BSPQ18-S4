@@ -2,8 +2,10 @@ package es.deusto.spq.server.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 import es.deusto.spq.server.appservice.RDCarAppService;
+import es.deusto.spq.server.dto.ClienteDTO;
 
 public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemoteFacade {
 
@@ -44,8 +46,10 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");
-		return this.rdcarAppService.logIn(user, password);
-			
+		return this.rdcarAppService.logIn(user, password);		
 	}
 
+	public  List<ClienteDTO> buscarCliente(String dni) throws RemoteException{	
+		return this.rdcarAppService.buscarCliente(dni);
+	} 
 }
