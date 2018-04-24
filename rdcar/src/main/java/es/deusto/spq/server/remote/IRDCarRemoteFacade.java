@@ -5,9 +5,11 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import es.deusto.spq.server.dto.ClienteDTO;
+import es.deusto.spq.server.dto.VehiculoDTO;
 
 public interface IRDCarRemoteFacade extends Remote{
 	
 	public boolean logIn(String user, String password) throws RemoteException;
-	public  List<ClienteDTO> buscarCliente(String dni) throws RemoteException;
+	public List<ClienteDTO> buscarCliente(String dni) throws RemoteException;
+	public List<VehiculoDTO> buscarVehiculo(String matricula) throws RemoteException;
 }

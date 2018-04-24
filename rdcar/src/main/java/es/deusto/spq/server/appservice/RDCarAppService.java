@@ -7,8 +7,10 @@ import java.util.List;
 
 import es.deusto.spq.server.dto.Assembler;
 import es.deusto.spq.server.dto.ClienteDTO;
+import es.deusto.spq.server.dto.VehiculoDTO;
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 public class RDCarAppService {
 
@@ -40,14 +42,26 @@ public class RDCarAppService {
 	
 	public synchronized List<ClienteDTO> buscarCliente(String dni){
 		System.out.println("Buscando cliente con DNI: " + dni);
-		List<ClienteDTO> clientesdto = new ArrayList<>(); //list of FlightDTOs
-		List<Cliente> clientes = new ArrayList<>(); //list of Flights
-		clientes = ClientesBD.getInstance().getClientes(dni); //get flights from db
+		List<ClienteDTO> clientesDTO = new ArrayList<>(); 
+		List<Cliente> clientes = new ArrayList<>(); 
+		clientes = ClientesBD.getInstance().getClientes(dni); 
 		Assembler assembler = new Assembler(); 
-		clientesdto = assembler.assemble(clientes); // Assemble flight into DTOs
+		clientesDTO = assembler.assembleCliente(clientes); 
 	
-		System.out.println(clientesdto);
-		return clientesdto;
+		System.out.println(clientesDTO);
+		return clientesDTO;
+	}
+	
+	public synchronized List<VehiculoDTO> buscarVehiculo(String matricula){
+		System.out.println("Buscando vehiculo con matrícula: " + matricula);
+		List<VehiculoDTO> vehiculosDTO = new ArrayList<>(); 
+		List<Vehiculo> vehiculos = new ArrayList<>(); 
+		vehiculos = VehiculosBD.getInstance().getVehiculos(matricula);
+		Assembler assembler = new Assembler(); 
+		vehiculosDTO = assembler.assembleVehiculo(vehiculos); 
+	
+		System.out.println(vehiculosDTO);
+		return vehiculosDTO;
 	}
 		
 }

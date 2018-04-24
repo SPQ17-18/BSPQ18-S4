@@ -6,6 +6,7 @@ import java.util.List;
 
 import es.deusto.spq.server.appservice.RDCarAppService;
 import es.deusto.spq.server.dto.ClienteDTO;
+import es.deusto.spq.server.dto.VehiculoDTO;
 
 public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemoteFacade {
 
@@ -51,5 +52,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	public  List<ClienteDTO> buscarCliente(String dni) throws RemoteException{	
 		return this.rdcarAppService.buscarCliente(dni);
+	}
+	
+	public  List<VehiculoDTO> buscarVehiculo(String matricula) throws RemoteException{	
+		return this.rdcarAppService.buscarVehiculo(matricula);
 	} 
 }
