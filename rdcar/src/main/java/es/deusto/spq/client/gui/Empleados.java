@@ -41,7 +41,7 @@ public class Empleados {
 		empleados = new JFrame();
 		empleados.setIconImage(Toolkit.getDefaultToolkit().getImage(Empleados.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		empleados.setBounds(100, 100, 450, 300);
-		empleados.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		empleados.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		empleados.setTitle("Empleados");
 		empleados.getContentPane().setLayout(null);
 

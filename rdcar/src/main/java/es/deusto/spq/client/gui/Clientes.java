@@ -41,7 +41,7 @@ public class Clientes {
 		clientes = new JFrame();
 		clientes.setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		clientes.setBounds(100, 100, 450, 300);
-		clientes.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		clientes.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		clientes.setTitle("Clientes");
 		clientes.getContentPane().setLayout(null);
 
