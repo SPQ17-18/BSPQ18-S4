@@ -23,7 +23,7 @@ import java.awt.Color;
 public class LoginWindow extends JFrame{
 
 	/**
-	 * 
+	 * fdjdj
 	 */
 	private static final long serialVersionUID = 1L;
 	private JFrame frame;
