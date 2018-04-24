@@ -11,7 +11,7 @@ public class Assembler {
 		
 	}
 	
-	public ArrayList<EmpleadoDTO>assembleEmpleado( ArrayList<Empleado> ArrayEmpleados){
+	public ArrayList<EmpleadoDTO> assembleArrayEmpleados( ArrayList<Empleado> ArrayEmpleados){
 		
 		ArrayList<EmpleadoDTO> ArrayDTO = new ArrayList<EmpleadoDTO>();
 		
@@ -24,6 +24,13 @@ public class Assembler {
 		
 		
 		return ArrayDTO;
+	}
+	
+	public EmpleadoDTO assembleEmpleado( Empleado empleado) {
+		
+		EmpleadoDTO empleadodto = new EmpleadoDTO(empleado.getUsuario(), empleado.getPassword());
+		
+		return empleadodto;
 	}
 	
 }

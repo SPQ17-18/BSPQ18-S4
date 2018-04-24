@@ -49,5 +49,15 @@ public class RDCarAppService {
 			return true;
 		}
 	}
+	
+	public boolean login(String user, String password) {
+		
+		
+		
+		return false;
+	}
+	
+	
+	
 
 }
