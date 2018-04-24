@@ -42,34 +42,27 @@ public class MainWindow extends JFrame {
 	public MainWindow(RDCarController controller, String user) {
 		this.controller=controller;
 		this.user = user;
-		MainWindow window = new MainWindow();
-		this.setVisible(true);
+		initialize();
+		frame.setVisible(true);
 	}
 
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainWindow window = new MainWindow();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					MainWindow window = new MainWindow();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
-	
-	/**
-	 * Create the application.
-	 */
-	public MainWindow() {
-		initialize();
-	}
 
 	/**
 	 * Initialize the csontents of the frame.

@@ -35,8 +35,8 @@ public class LoginWindow extends JFrame{
 	
 	public LoginWindow(RDCarController controller) {
 		this.controller=controller;
-		LoginWindow window = new LoginWindow();
-		window.frame.setVisible(true);
+		initialize();
+		frame.setVisible(true);
 	}
 
 	public static LoginWindow getInstance() {
@@ -50,18 +50,19 @@ public class LoginWindow extends JFrame{
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginWindow window = new LoginWindow();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					LoginWindow window = new LoginWindow(controller);
+//					window.initialize();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	
 	
@@ -69,7 +70,7 @@ public class LoginWindow extends JFrame{
 	/**
 	 * Initialize the scontents of the frame.
 	 */
-	public LoginWindow() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
@@ -80,6 +81,27 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Log In");
 
+		
+		JLabel LabelPassword = new JLabel("Password");
+		LabelPassword.setForeground(Color.WHITE);
+		LabelPassword.setBounds(10, 147, 61, 16);
+		frame.getContentPane().add(LabelPassword);
+
+		JLabel LabelUsuario = new JLabel("Usuario");
+		LabelUsuario.setForeground(Color.WHITE);
+		LabelUsuario.setBounds(10, 77, 61, 16);
+		frame.getContentPane().add(LabelUsuario);
+
+		textPassword = new JTextField();
+		textPassword.setBounds(63, 142, 202, 26);
+		frame.getContentPane().add(textPassword);
+		textPassword.setColumns(10);
+
+		textUsuario = new JTextField();
+		textUsuario.setColumns(10);
+		textUsuario.setBounds(63, 72, 202, 26);
+		frame.getContentPane().add(textUsuario);
+		
 		JButton BotonCancelar = new JButton("Cancelar");
 		BotonCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -111,25 +133,6 @@ public class LoginWindow extends JFrame{
 			}
 		});
 
-		JLabel LabelPassword = new JLabel("Password");
-		LabelPassword.setForeground(Color.WHITE);
-		LabelPassword.setBounds(10, 147, 61, 16);
-		frame.getContentPane().add(LabelPassword);
-
-		JLabel LabelUsuario = new JLabel("Usuario");
-		LabelUsuario.setForeground(Color.WHITE);
-		LabelUsuario.setBounds(10, 77, 61, 16);
-		frame.getContentPane().add(LabelUsuario);
-
-		textPassword = new JTextField();
-		textPassword.setBounds(63, 142, 202, 26);
-		frame.getContentPane().add(textPassword);
-		textPassword.setColumns(10);
-
-		textUsuario = new JTextField();
-		textUsuario.setColumns(10);
-		textUsuario.setBounds(63, 72, 202, 26);
-		frame.getContentPane().add(textUsuario);
 
 		JLabel label = new JLabel("New label");
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));

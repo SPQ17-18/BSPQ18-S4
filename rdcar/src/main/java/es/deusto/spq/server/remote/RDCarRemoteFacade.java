@@ -14,6 +14,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	private static final long serialVersionUID = 6391398296630384889L;
 	private RDCarAppService rdcarAppService;
 	private static RDCarRemoteFacade instance;
+	
 
 	protected RDCarRemoteFacade() throws RemoteException {
 		super();
@@ -44,7 +45,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");
 		return this.rdcarAppService.logIn(user, password);
-
+			
 	}
 
 }
