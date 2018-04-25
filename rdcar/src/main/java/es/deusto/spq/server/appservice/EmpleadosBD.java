@@ -26,7 +26,7 @@ public class EmpleadosBD {
 	}
 	
 	public List<Empleado> getEmpleados(String user) {
-		List<Empleado> list = new ArrayList<>();
+		List<Empleado> list = new ArrayList<Empleado>();
 		for (int i = 0; i < empleados.size(); i++) {
 			if (empleados.get(i).getUsuario().equals(user)) {
 				list.add(empleados.get(i));

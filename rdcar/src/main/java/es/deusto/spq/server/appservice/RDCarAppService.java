@@ -43,8 +43,8 @@ public class RDCarAppService {
 	
 	public synchronized List<ClienteDTO> buscarCliente(String dni){
 		System.out.println("Buscando cliente con DNI: " + dni);
-		List<ClienteDTO> clientesDTO = new ArrayList<>(); 
-		List<Cliente> clientes = new ArrayList<>(); 
+		List<ClienteDTO> clientesDTO = new ArrayList<ClienteDTO>(); 
+		List<Cliente> clientes = new ArrayList<Cliente>(); 
 		clientes = ClientesBD.getInstance().getClientes(dni); 
 		Assembler assembler = new Assembler(); 
 		clientesDTO = assembler.assembleCliente(clientes); 
@@ -54,8 +54,8 @@ public class RDCarAppService {
 	}
 	
 	public synchronized List<ClienteDTO> verClientes(){
-		List<ClienteDTO> clientesDTO = new ArrayList<>(); 
-		List<Cliente> clientes = new ArrayList<>(); 
+		List<ClienteDTO> clientesDTO = new ArrayList<ClienteDTO>(); 
+		List<Cliente> clientes = new ArrayList<Cliente>(); 
 		clientes = ClientesBD.getInstance().getAllClientes();
 		Assembler assembler = new Assembler(); 
 		clientesDTO = assembler.assembleCliente(clientes); 
@@ -64,8 +64,8 @@ public class RDCarAppService {
 	
 	public synchronized List<EmpleadoDTO> buscarEmpleado(String user){
 		System.out.println("Buscando empleado con nombre de usuario: " + user);
-		List<EmpleadoDTO> empleadosDTO = new ArrayList<>(); 
-		List<Empleado> empleados = new ArrayList<>(); 
+		List<EmpleadoDTO> empleadosDTO = new ArrayList<EmpleadoDTO>(); 
+		List<Empleado> empleados = new ArrayList<Empleado>(); 
 		empleados = EmpleadosBD.getInstance().getEmpleados(user);
 		Assembler assembler = new Assembler(); 
 		empleadosDTO = assembler.assembleEmpleado(empleados); 
@@ -76,8 +76,8 @@ public class RDCarAppService {
 	
 	public synchronized List<VehiculoDTO> buscarVehiculo(String matricula){
 		System.out.println("Buscando vehiculo con matrícula: " + matricula);
-		List<VehiculoDTO> vehiculosDTO = new ArrayList<>(); 
-		List<Vehiculo> vehiculos = new ArrayList<>(); 
+		List<VehiculoDTO> vehiculosDTO = new ArrayList<VehiculoDTO>(); 
+		List<Vehiculo> vehiculos = new ArrayList<Vehiculo>(); 
 		vehiculos = VehiculosBD.getInstance().getVehiculos(matricula);
 		Assembler assembler = new Assembler(); 
 		vehiculosDTO = assembler.assembleVehiculo(vehiculos); 

@@ -9,7 +9,7 @@ import es.deusto.spq.server.jdo.Cliente;
 
 public class ClientesBD {
 
-	private List<Cliente> clientes = new ArrayList<>();
+	private List<Cliente> clientes = new ArrayList<Cliente>();
 	public static ClientesBD instance = new ClientesBD();
 
 	public ClientesBD(){
@@ -26,7 +26,7 @@ public class ClientesBD {
 	
 
 	public List<Cliente> getClientes(String dni, int anyonacim, String lugar) {
-		List<Cliente> list = new ArrayList<>();
+		List<Cliente> list = new ArrayList<Cliente>();
 		for (int i = 0; i < clientes.size(); i++) {
 			if (clientes.get(i).getDni().equals(dni)) {
 				if (anyonacim==clientes.get(i).getAnyo_Nacimiento()) {
@@ -41,7 +41,7 @@ public class ClientesBD {
 
 
 	public List<Cliente> getClientes(String dni) {
-		List<Cliente> list = new ArrayList<>();
+		List<Cliente> list = new ArrayList<Cliente>();
 		for (int i = 0; i < clientes.size(); i++) {
 			if (clientes.get(i).getDni().equals(dni)) {
 				list.add(clientes.get(i));

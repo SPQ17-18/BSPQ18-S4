@@ -94,7 +94,7 @@ public class Empleados extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<EmpleadoDTO> empleados = new ArrayList<>();
+				List<EmpleadoDTO> empleados = new ArrayList<EmpleadoDTO>();
 				empleados = (List<EmpleadoDTO>) controller.buscarEmpleado(textField.getText());
 				if (empleados.size() !=0) {
 					for (int i = 0; i < empleados.size(); i++) {

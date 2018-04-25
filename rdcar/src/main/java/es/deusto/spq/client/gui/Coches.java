@@ -93,7 +93,7 @@ public class Coches extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<VehiculoDTO> vehiculos = new ArrayList<>();
+				List<VehiculoDTO> vehiculos = new ArrayList<VehiculoDTO>();
 				vehiculos = (List<VehiculoDTO>) controller.buscarVehiculo(textField.getText());
 				if (vehiculos.size() !=0) {
 					for (int i = 0; i < vehiculos.size(); i++) {

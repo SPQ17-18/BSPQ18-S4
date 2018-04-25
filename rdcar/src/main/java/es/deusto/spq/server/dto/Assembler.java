@@ -16,7 +16,7 @@ public class Assembler {
 
 	
 	public List<ClienteDTO> assembleCliente(List<Cliente> clientes){
-		List<ClienteDTO> clientesDTO = new ArrayList<>();
+		List<ClienteDTO> clientesDTO = new ArrayList<ClienteDTO>();
 		
 		if (clientes != null){
 			for(Cliente c: clientes){
@@ -29,7 +29,7 @@ public class Assembler {
 	}
 	
 	public List<VehiculoDTO> assembleVehiculo(List<Vehiculo> vehiculos){
-		List<VehiculoDTO> vehiculosDTO = new ArrayList<>();
+		List<VehiculoDTO> vehiculosDTO = new ArrayList<VehiculoDTO>();
 		
 		if (vehiculos != null){
 			for(Vehiculo v: vehiculos){
@@ -42,7 +42,7 @@ public class Assembler {
 	}
 	
 	public List<EmpleadoDTO> assembleEmpleado(List<Empleado> empleados){
-		List<EmpleadoDTO> empleadosDTO = new ArrayList<>();
+		List<EmpleadoDTO> empleadosDTO = new ArrayList<EmpleadoDTO>();
 		
 		if (empleados != null){
 			for(Empleado e: empleados){

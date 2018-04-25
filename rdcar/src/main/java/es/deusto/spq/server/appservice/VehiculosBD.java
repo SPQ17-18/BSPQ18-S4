@@ -8,7 +8,7 @@ import es.deusto.spq.server.jdo.Vehiculo;
 
 public class VehiculosBD {
 
-	private List<Vehiculo> vehiculos = new ArrayList<>();
+	private List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 	public static VehiculosBD instance = new VehiculosBD();
 
 	public VehiculosBD(){
@@ -21,7 +21,7 @@ public class VehiculosBD {
 
 
 	public List<Vehiculo> getVehiculos(String matricula) {
-		List<Vehiculo> list = new ArrayList<>();
+		List<Vehiculo> list = new ArrayList<Vehiculo>();
 		for (int i = 0; i < vehiculos.size(); i++) {
 			if (vehiculos.get(i).getMatricula().equals(matricula)) {
 				list.add(vehiculos.get(i));

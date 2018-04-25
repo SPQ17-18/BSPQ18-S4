@@ -91,7 +91,7 @@ public class Clientes extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<ClienteDTO> clientes = new ArrayList<>();
+				List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
 				clientes = (List<ClienteDTO>) controller.buscarCliente(textField.getText());
 				if (clientes.size() !=0) {
 					for (int i = 0; i < clientes.size(); i++) {
