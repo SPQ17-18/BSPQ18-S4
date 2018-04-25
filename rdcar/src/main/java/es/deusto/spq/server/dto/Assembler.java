@@ -15,30 +15,6 @@ public class Assembler {
 	}
 
 	
-	public ArrayList<EmpleadoDTO> assembleArrayEmpleados( ArrayList<Empleado> ArrayEmpleados){
-
-		ArrayList<EmpleadoDTO> ArrayDTO = new ArrayList<EmpleadoDTO>();
-
-		for(Empleado empleado : ArrayEmpleados) {
-
-			EmpleadoDTO empleadoDTO= new EmpleadoDTO(empleado.getUsuario(), empleado.getPassword());
-
-			ArrayDTO.add(empleadoDTO);
-		}
-
-
-		return ArrayDTO;
-	}
-
-	
-	public EmpleadoDTO assembleEmpleado( Empleado empleado) {
-		
-		EmpleadoDTO empleadodto = new EmpleadoDTO(empleado.getUsuario(), empleado.getPassword());
-		
-		return empleadodto;
-	}
-	
-	
 	public List<ClienteDTO> assembleCliente(List<Cliente> clientes){
 		List<ClienteDTO> clientesDTO = new ArrayList<>();
 		
@@ -63,6 +39,19 @@ public class Assembler {
 		System.out.println(" - Ensamblando vehiculos...");
 		
 		return vehiculosDTO;
+	}
+	
+	public List<EmpleadoDTO> assembleEmpleado(List<Empleado> empleados){
+		List<EmpleadoDTO> empleadosDTO = new ArrayList<>();
+		
+		if (empleados != null){
+			for(Empleado e: empleados){
+				empleadosDTO.add(new EmpleadoDTO(e.getNum_Empleado(), e.getUsuario(), e.getPassword()));
+			}
+		}
+		System.out.println(" - Ensamblando empleados...");
+		
+		return empleadosDTO;
 	}
 	
 }

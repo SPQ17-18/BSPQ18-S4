@@ -6,6 +6,7 @@ import java.util.List;
 import es.deusto.spq.client.gui.LoginWindow;
 import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 import es.deusto.spq.server.dto.ClienteDTO;
+import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
 
 public class RDCarController {
@@ -40,6 +41,17 @@ public class RDCarController {
 		return null;
 	}
 	
+	public  List<ClienteDTO> verClientes(){
+		try {
+			
+			return rsl.getService().verClientes();
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public  List<VehiculoDTO> buscarVehiculo(String matricula){
 		try {
 			
@@ -51,7 +63,16 @@ public class RDCarController {
 		return null;
 	}
 	
-	
+	public  List<EmpleadoDTO> buscarEmpleado(String user){
+		try {
+			
+			return rsl.getService().buscarEmpleado(user);
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 

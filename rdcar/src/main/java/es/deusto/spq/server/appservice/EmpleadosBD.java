@@ -1,7 +1,10 @@
 package es.deusto.spq.server.appservice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class EmpleadosBD {
@@ -21,8 +24,18 @@ public class EmpleadosBD {
 		empleados.put("dminguez", e3);
 		empleados.put("gon", e4);
 	}
+	
+	public List<Empleado> getEmpleados(String user) {
+		List<Empleado> list = new ArrayList<>();
+		for (int i = 0; i < empleados.size(); i++) {
+			if (empleados.get(i).getUsuario().equals(user)) {
+				list.add(empleados.get(i));
+			}
+		}
+		return list;
+	}
 
-	public HashMap<String, Empleado> getUsers() {
+	public HashMap<String, Empleado> getAllEmpleados() {
 		return empleados;
 	}
 

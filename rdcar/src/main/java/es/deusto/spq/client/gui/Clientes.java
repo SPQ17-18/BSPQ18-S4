@@ -1,6 +1,5 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.EventQueue;
 import java.awt.Frame;
 
 import javax.swing.JFrame;
@@ -110,6 +109,7 @@ public class Clientes extends JFrame{
 		table = new JTable();
 		table.setBounds(39, 78, 357, 145);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
+		cargarTablaPorDefecto(textField.getText());
 		frame.getContentPane().add(table);
 		
 		
@@ -124,6 +124,20 @@ public class Clientes extends JFrame{
 		modelo = (DefaultTableModel) table.getModel();
 		Object[] fila = {cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getAnyo_Nacimiento(), cliente.getLugar()};
 		modelo.addRow(fila);
+	}
+	
+	private void cargarTablaPorDefecto(String texto) {
+		if (texto == null) {
+			borrarTabla();
+			List<ClienteDTO> clientes = new ArrayList<>();
+			clientes = (List<ClienteDTO>) controller.verClientes();
+			if (clientes.size() !=0) {
+				for (int i = 0; i < clientes.size(); i++) {
+					cargarTabla(clientes.get(i));
+				}
+			}
+		}
+		
 	}
 	
 	private void borrarTabla() {

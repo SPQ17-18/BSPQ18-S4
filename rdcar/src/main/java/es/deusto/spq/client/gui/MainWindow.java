@@ -92,7 +92,7 @@ public class MainWindow extends JFrame {
 		JButton btnEmpleados = new JButton("Empleados");
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Empleados abrirEmpleados = new Empleados();
+				Empleados abrirEmpleados = new Empleados(controller);
 				abrirEmpleados.setVisible(true);
 			}
 		});

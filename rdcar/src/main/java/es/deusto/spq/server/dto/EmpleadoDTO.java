@@ -7,15 +7,26 @@ public class EmpleadoDTO implements Serializable{
 
 	private static final long serialVersionUID = 199654L;
 
-
+	int num_Empleado;
 	String user;
 	String Password;
 
 
-	public EmpleadoDTO(String user, String password) {
+	public EmpleadoDTO(int num_Empleado, String user, String password) {
 		super();
+		this.num_Empleado = num_Empleado;
 		this.user = user;
 		Password = password;
+	}
+
+
+	public int getNum_Empleado() {
+		return num_Empleado;
+	}
+
+
+	public void setNum_Empleado(int num_Empleado) {
+		this.num_Empleado = num_Empleado;
 	}
 
 
