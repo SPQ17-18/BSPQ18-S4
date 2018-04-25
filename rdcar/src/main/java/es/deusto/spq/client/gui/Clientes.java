@@ -109,7 +109,7 @@ public class Clientes extends JFrame{
 		table = new JTable();
 		table.setBounds(39, 78, 357, 145);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
-		cargarTablaPorDefecto(textField.getText());
+		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
 		
@@ -126,8 +126,8 @@ public class Clientes extends JFrame{
 		modelo.addRow(fila);
 	}
 	
-	private void cargarTablaPorDefecto(String texto) {
-		if (texto == null) {
+	private void cargarTablaPorDefecto() {
+		
 			borrarTabla();
 			List<ClienteDTO> clientes = new ArrayList<>();
 			clientes = (List<ClienteDTO>) controller.verClientes();
@@ -136,7 +136,7 @@ public class Clientes extends JFrame{
 					cargarTabla(clientes.get(i));
 				}
 			}
-		}
+		
 		
 	}
 	
