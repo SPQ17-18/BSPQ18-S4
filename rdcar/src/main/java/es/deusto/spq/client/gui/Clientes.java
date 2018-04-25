@@ -129,7 +129,7 @@ public class Clientes extends JFrame{
 	private void cargarTablaPorDefecto() {
 		
 			borrarTabla();
-			List<ClienteDTO> clientes = new ArrayList<>();
+			List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
 			clientes = (List<ClienteDTO>) controller.verClientes();
 			if (clientes.size() !=0) {
 				for (int i = 0; i < clientes.size(); i++) {
