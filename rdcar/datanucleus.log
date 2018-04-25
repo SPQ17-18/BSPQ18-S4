@@ -2259,3 +2259,875 @@
 14:44:04,431 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.spq.server.jdo.Vehiculo
 14:44:04,432 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Vehiculo" completed
 14:44:04,435 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=192 ms, enhance=31 ms, total=223 ms. Consult the log for full details
+18:30:18,147 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+18:30:18,191 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+18:30:18,231 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:30:18,233 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:30:18,245 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+18:30:18,254 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+18:30:18,271 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+18:30:18,273 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+18:30:18,284 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+18:30:18,288 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+18:30:18,292 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+18:30:18,301 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+18:30:18,309 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+18:30:18,425 (main) DEBUG [DataNucleus.Persistence] - Java types support initialising ...
+18:30:18,691 (main) DEBUG [DataNucleus.Persistence] - Java types support loaded : supported java types=[B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+18:30:18,710 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery), JDO-listener=false
+18:30:18,710 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 5.1.8) for API "JDO"
+18:30:18,710 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+18:30:18,710 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-maven-plugin/5.0.2/datanucleus-maven-plugin-5.0.2.jar
+18:30:18,710 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar
+18:30:18,710 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/apache/maven/maven-artifact/3.0.4/maven-artifact-3.0.4.jar
+18:30:18,710 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/apache/maven/maven-plugin-api/3.0.4/maven-plugin-api-3.0.4.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/apache/maven/maven-model/3.0.4/maven-model-3.0.4.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.jar
+18:30:18,711 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/com/google/collections/google-collections/1.0/google-collections-1.0.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar
+18:30:18,712 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/Documents/Programas/SPQ_Proyecto/Proyecto_Workspace/BSPQ18-S4/rdcar/target/classes
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/datanucleus/javax.jdo/3.2.0-m8/javax.jdo-3.2.0-m8.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/javax/transaction/transaction-api/1.1/transaction-api-1.1.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar
+18:30:18,713 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/mockito/mockito-core/2.18.0/mockito-core-2.18.0.jar
+18:30:18,714 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/net/bytebuddy/byte-buddy/1.8.3/byte-buddy-1.8.3.jar
+18:30:18,714 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/net/bytebuddy/byte-buddy-agent/1.8.3/byte-buddy-agent-1.8.3.jar
+18:30:18,714 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar
+18:30:18,714 (main) DEBUG [DataNucleus.Enhancer] - >>  /Users/gonzalo/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar
+18:30:18,717 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+18:30:18,758 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Loading Metadata for classes "[es.deusto.spq.client.controller.RDCarController, es.deusto.spq.client.gui.Clientes$1, es.deusto.spq.client.gui.Clientes, es.deusto.spq.client.gui.Coches$1, es.deusto.spq.client.gui.Coches, es.deusto.spq.client.gui.Empleados$1, es.deusto.spq.client.gui.Empleados, es.deusto.spq.client.gui.LoginWindow$1, es.deusto.spq.client.gui.LoginWindow$2, es.deusto.spq.client.gui.LoginWindow, es.deusto.spq.client.gui.MainWindow$1, es.deusto.spq.client.gui.MainWindow$2, es.deusto.spq.client.gui.MainWindow$3, es.deusto.spq.client.gui.MainWindow, es.deusto.spq.client.remote.RDCarRMIServiceLocator, es.deusto.spq.server.appservice.ClientesBD, es.deusto.spq.server.appservice.EmpleadosBD, es.deusto.spq.server.appservice.RDCarAppService, es.deusto.spq.server.appservice.VehiculosBD, es.deusto.spq.server.dao.IRDCarDAO, es.deusto.spq.server.dao.RDCarDAO, es.deusto.spq.server.dto.Assembler, es.deusto.spq.server.dto.ClienteDTO, es.deusto.spq.server.dto.EmpleadoDTO, es.deusto.spq.server.dto.VehiculoDTO, es.deusto.spq.server.jdo.Alquiler, es.deusto.spq.server.jdo.Cliente, es.deusto.spq.server.jdo.Empleado, es.deusto.spq.server.jdo.Vehiculo, es.deusto.spq.server.rdcar.RDCarServer, es.deusto.spq.server.remote.IRDCarRemoteFacade, es.deusto.spq.server.remote.RDCarRemoteFacade]" ...
+18:30:18,772 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /META-INF/package.jdo
+18:30:18,773 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /WEB-INF/package.jdo
+18:30:18,773 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /package.jdo
+18:30:18,773 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/package.jdo
+18:30:18,773 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/deusto/package.jdo
+18:30:18,774 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/deusto/spq/package.jdo
+18:30:18,774 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,774 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/deusto/spq/client/controller/package.jdo
+18:30:18,775 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" NOT found at /es/deusto/spq/client/controller/RDCarController.jdo
+18:30:18,775 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.controller.RDCarController" not found
+18:30:18,775 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.controller.RDCarController" as not having MetaData.
+18:30:18,775 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.controller.RDCarController" has no MetaData or annotations.
+18:30:18,776 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /META-INF/package.jdo
+18:30:18,777 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /WEB-INF/package.jdo
+18:30:18,777 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /package.jdo
+18:30:18,777 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/package.jdo
+18:30:18,778 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/deusto/package.jdo
+18:30:18,778 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/deusto/spq/package.jdo
+18:30:18,778 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,778 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,779 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" NOT found at /es/deusto/spq/client/gui/Clientes$1.jdo
+18:30:18,779 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes$1" not found
+18:30:18,779 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Clientes$1" as not having MetaData.
+18:30:18,779 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Clientes$1" has no MetaData or annotations.
+18:30:18,782 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /META-INF/package.jdo
+18:30:18,782 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /WEB-INF/package.jdo
+18:30:18,782 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /package.jdo
+18:30:18,783 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/package.jdo
+18:30:18,783 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/deusto/package.jdo
+18:30:18,783 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/deusto/spq/package.jdo
+18:30:18,783 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,784 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,784 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" NOT found at /es/deusto/spq/client/gui/Clientes.jdo
+18:30:18,784 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Clientes" not found
+18:30:18,784 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Clientes" as not having MetaData.
+18:30:18,784 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Clientes" has no MetaData or annotations.
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /META-INF/package.jdo
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /WEB-INF/package.jdo
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /package.jdo
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/package.jdo
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/deusto/package.jdo
+18:30:18,785 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/deusto/spq/package.jdo
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" NOT found at /es/deusto/spq/client/gui/Coches$1.jdo
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches$1" not found
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Coches$1" as not having MetaData.
+18:30:18,786 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Coches$1" has no MetaData or annotations.
+18:30:18,787 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /META-INF/package.jdo
+18:30:18,787 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /WEB-INF/package.jdo
+18:30:18,788 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /package.jdo
+18:30:18,788 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/package.jdo
+18:30:18,788 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/deusto/package.jdo
+18:30:18,788 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/deusto/spq/package.jdo
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" NOT found at /es/deusto/spq/client/gui/Coches.jdo
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Coches" not found
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Coches" as not having MetaData.
+18:30:18,789 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Coches" has no MetaData or annotations.
+18:30:18,790 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /META-INF/package.jdo
+18:30:18,791 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /WEB-INF/package.jdo
+18:30:18,791 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /package.jdo
+18:30:18,791 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/package.jdo
+18:30:18,791 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/deusto/package.jdo
+18:30:18,792 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/deusto/spq/package.jdo
+18:30:18,792 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,792 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,793 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" NOT found at /es/deusto/spq/client/gui/Empleados$1.jdo
+18:30:18,793 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados$1" not found
+18:30:18,793 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Empleados$1" as not having MetaData.
+18:30:18,793 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Empleados$1" has no MetaData or annotations.
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /META-INF/package.jdo
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /WEB-INF/package.jdo
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /package.jdo
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/package.jdo
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/deusto/package.jdo
+18:30:18,794 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/deusto/spq/package.jdo
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" NOT found at /es/deusto/spq/client/gui/Empleados.jdo
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.Empleados" not found
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.Empleados" as not having MetaData.
+18:30:18,795 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.Empleados" has no MetaData or annotations.
+18:30:18,796 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /META-INF/package.jdo
+18:30:18,797 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /WEB-INF/package.jdo
+18:30:18,797 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /package.jdo
+18:30:18,797 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/package.jdo
+18:30:18,798 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/deusto/package.jdo
+18:30:18,798 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/deusto/spq/package.jdo
+18:30:18,798 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,798 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,799 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" NOT found at /es/deusto/spq/client/gui/LoginWindow$1.jdo
+18:30:18,799 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$1" not found
+18:30:18,799 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.LoginWindow$1" as not having MetaData.
+18:30:18,799 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.LoginWindow$1" has no MetaData or annotations.
+18:30:18,800 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /META-INF/package.jdo
+18:30:18,800 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /WEB-INF/package.jdo
+18:30:18,801 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /package.jdo
+18:30:18,801 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/package.jdo
+18:30:18,801 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/deusto/package.jdo
+18:30:18,801 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/deusto/spq/package.jdo
+18:30:18,801 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,802 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,802 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" NOT found at /es/deusto/spq/client/gui/LoginWindow$2.jdo
+18:30:18,802 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow$2" not found
+18:30:18,802 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.LoginWindow$2" as not having MetaData.
+18:30:18,802 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.LoginWindow$2" has no MetaData or annotations.
+18:30:18,803 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /META-INF/package.jdo
+18:30:18,803 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /WEB-INF/package.jdo
+18:30:18,803 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /package.jdo
+18:30:18,804 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/package.jdo
+18:30:18,804 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/deusto/package.jdo
+18:30:18,804 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/deusto/spq/package.jdo
+18:30:18,804 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,804 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,805 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" NOT found at /es/deusto/spq/client/gui/LoginWindow.jdo
+18:30:18,805 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.LoginWindow" not found
+18:30:18,805 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.LoginWindow" as not having MetaData.
+18:30:18,805 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.LoginWindow" has no MetaData or annotations.
+18:30:18,805 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /META-INF/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /WEB-INF/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/deusto/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/deusto/spq/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,806 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,807 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" NOT found at /es/deusto/spq/client/gui/MainWindow$1.jdo
+18:30:18,807 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$1" not found
+18:30:18,807 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.MainWindow$1" as not having MetaData.
+18:30:18,807 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.MainWindow$1" has no MetaData or annotations.
+18:30:18,807 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /META-INF/package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /WEB-INF/package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/deusto/package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/deusto/spq/package.jdo
+18:30:18,808 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,809 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,809 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" NOT found at /es/deusto/spq/client/gui/MainWindow$2.jdo
+18:30:18,809 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$2" not found
+18:30:18,809 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.MainWindow$2" as not having MetaData.
+18:30:18,809 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.MainWindow$2" has no MetaData or annotations.
+18:30:18,810 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /META-INF/package.jdo
+18:30:18,810 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /WEB-INF/package.jdo
+18:30:18,810 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /package.jdo
+18:30:18,810 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/package.jdo
+18:30:18,811 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/deusto/package.jdo
+18:30:18,812 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/deusto/spq/package.jdo
+18:30:18,813 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,813 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,813 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" NOT found at /es/deusto/spq/client/gui/MainWindow$3.jdo
+18:30:18,813 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow$3" not found
+18:30:18,814 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.MainWindow$3" as not having MetaData.
+18:30:18,814 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.MainWindow$3" has no MetaData or annotations.
+18:30:18,814 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /META-INF/package.jdo
+18:30:18,815 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /WEB-INF/package.jdo
+18:30:18,815 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /package.jdo
+18:30:18,815 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/package.jdo
+18:30:18,815 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/deusto/package.jdo
+18:30:18,815 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/deusto/spq/package.jdo
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/deusto/spq/client/gui/package.jdo
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" NOT found at /es/deusto/spq/client/gui/MainWindow.jdo
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.gui.MainWindow" not found
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.gui.MainWindow" as not having MetaData.
+18:30:18,816 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.gui.MainWindow" has no MetaData or annotations.
+18:30:18,817 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /META-INF/package.jdo
+18:30:18,817 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /WEB-INF/package.jdo
+18:30:18,817 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/deusto/package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/deusto/spq/package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/deusto/spq/client/package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/deusto/spq/client/remote/package.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" NOT found at /es/deusto/spq/client/remote/RDCarRMIServiceLocator.jdo
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" not found
+18:30:18,818 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" as not having MetaData.
+18:30:18,819 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.client.remote.RDCarRMIServiceLocator" has no MetaData or annotations.
+18:30:18,819 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /META-INF/package.jdo
+18:30:18,819 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /WEB-INF/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/deusto/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/deusto/spq/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/deusto/spq/server/appservice/package.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" NOT found at /es/deusto/spq/server/appservice/ClientesBD.jdo
+18:30:18,820 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.ClientesBD" not found
+18:30:18,821 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.appservice.ClientesBD" as not having MetaData.
+18:30:18,821 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.appservice.ClientesBD" has no MetaData or annotations.
+18:30:18,821 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /META-INF/package.jdo
+18:30:18,821 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /WEB-INF/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/deusto/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/deusto/spq/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/deusto/spq/server/appservice/package.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" NOT found at /es/deusto/spq/server/appservice/EmpleadosBD.jdo
+18:30:18,822 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.EmpleadosBD" not found
+18:30:18,823 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.appservice.EmpleadosBD" as not having MetaData.
+18:30:18,823 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.appservice.EmpleadosBD" has no MetaData or annotations.
+18:30:18,823 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /META-INF/package.jdo
+18:30:18,823 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /WEB-INF/package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/deusto/package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/deusto/spq/package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,824 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/deusto/spq/server/appservice/package.jdo
+18:30:18,825 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" NOT found at /es/deusto/spq/server/appservice/RDCarAppService.jdo
+18:30:18,825 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.RDCarAppService" not found
+18:30:18,825 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.appservice.RDCarAppService" as not having MetaData.
+18:30:18,825 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.appservice.RDCarAppService" has no MetaData or annotations.
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /META-INF/package.jdo
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /WEB-INF/package.jdo
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /package.jdo
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/package.jdo
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/deusto/package.jdo
+18:30:18,826 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/deusto/spq/package.jdo
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/deusto/spq/server/appservice/package.jdo
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" NOT found at /es/deusto/spq/server/appservice/VehiculosBD.jdo
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.appservice.VehiculosBD" not found
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.appservice.VehiculosBD" as not having MetaData.
+18:30:18,827 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.appservice.VehiculosBD" has no MetaData or annotations.
+18:30:18,828 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /META-INF/package.jdo
+18:30:18,828 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /WEB-INF/package.jdo
+18:30:18,828 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/deusto/package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/deusto/spq/package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/deusto/spq/server/dao/package.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" NOT found at /es/deusto/spq/server/dao/IRDCarDAO.jdo
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.IRDCarDAO" not found
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dao.IRDCarDAO" as not having MetaData.
+18:30:18,829 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dao.IRDCarDAO" has no MetaData or annotations.
+18:30:18,830 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /META-INF/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /WEB-INF/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/deusto/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/deusto/spq/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,831 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/deusto/spq/server/dao/package.jdo
+18:30:18,832 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" NOT found at /es/deusto/spq/server/dao/RDCarDAO.jdo
+18:30:18,832 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dao.RDCarDAO" not found
+18:30:18,832 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dao.RDCarDAO" as not having MetaData.
+18:30:18,832 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dao.RDCarDAO" has no MetaData or annotations.
+18:30:18,832 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /META-INF/package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /WEB-INF/package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/deusto/package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/deusto/spq/package.jdo
+18:30:18,833 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,834 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/deusto/spq/server/dto/package.jdo
+18:30:18,834 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" NOT found at /es/deusto/spq/server/dto/Assembler.jdo
+18:30:18,834 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.Assembler" not found
+18:30:18,834 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dto.Assembler" as not having MetaData.
+18:30:18,834 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dto.Assembler" has no MetaData or annotations.
+18:30:18,835 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /META-INF/package.jdo
+18:30:18,835 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /WEB-INF/package.jdo
+18:30:18,835 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /package.jdo
+18:30:18,835 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/package.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/deusto/package.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/deusto/spq/package.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/deusto/spq/server/dto/package.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" NOT found at /es/deusto/spq/server/dto/ClienteDTO.jdo
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.ClienteDTO" not found
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dto.ClienteDTO" as not having MetaData.
+18:30:18,836 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dto.ClienteDTO" has no MetaData or annotations.
+18:30:18,837 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /META-INF/package.jdo
+18:30:18,837 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /WEB-INF/package.jdo
+18:30:18,837 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /package.jdo
+18:30:18,837 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/package.jdo
+18:30:18,838 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/deusto/package.jdo
+18:30:18,838 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/deusto/spq/package.jdo
+18:30:18,838 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,838 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/deusto/spq/server/dto/package.jdo
+18:30:18,839 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" NOT found at /es/deusto/spq/server/dto/EmpleadoDTO.jdo
+18:30:18,839 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.EmpleadoDTO" not found
+18:30:18,839 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dto.EmpleadoDTO" as not having MetaData.
+18:30:18,839 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dto.EmpleadoDTO" has no MetaData or annotations.
+18:30:18,840 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /META-INF/package.jdo
+18:30:18,840 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /WEB-INF/package.jdo
+18:30:18,840 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /package.jdo
+18:30:18,841 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/package.jdo
+18:30:18,841 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/deusto/package.jdo
+18:30:18,841 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/deusto/spq/package.jdo
+18:30:18,841 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,841 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/deusto/spq/server/dto/package.jdo
+18:30:18,842 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" NOT found at /es/deusto/spq/server/dto/VehiculoDTO.jdo
+18:30:18,842 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.dto.VehiculoDTO" not found
+18:30:18,842 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.dto.VehiculoDTO" as not having MetaData.
+18:30:18,842 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.dto.VehiculoDTO" has no MetaData or annotations.
+18:30:18,936 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" has been specified with JDO annotations so using those.
+18:30:18,938 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" has been specified with JDO annotations so using those.
+18:30:18,950 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Empleado" has been specified with JDO annotations so using those.
+18:30:18,952 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" has been specified with JDO annotations so using those.
+18:30:18,954 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /META-INF/package.jdo
+18:30:18,954 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /WEB-INF/package.jdo
+18:30:18,954 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /package.jdo
+18:30:18,955 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/package.jdo
+18:30:18,955 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/deusto/package.jdo
+18:30:18,955 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/deusto/spq/package.jdo
+18:30:18,956 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,956 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/deusto/spq/server/rdcar/package.jdo
+18:30:18,957 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" NOT found at /es/deusto/spq/server/rdcar/RDCarServer.jdo
+18:30:18,957 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.rdcar.RDCarServer" not found
+18:30:18,957 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.rdcar.RDCarServer" as not having MetaData.
+18:30:18,957 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.rdcar.RDCarServer" has no MetaData or annotations.
+18:30:18,958 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /META-INF/package.jdo
+18:30:18,958 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /WEB-INF/package.jdo
+18:30:18,959 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /package.jdo
+18:30:18,959 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/package.jdo
+18:30:18,959 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/deusto/package.jdo
+18:30:18,959 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/deusto/spq/package.jdo
+18:30:18,959 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,960 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/deusto/spq/server/remote/package.jdo
+18:30:18,960 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" NOT found at /es/deusto/spq/server/remote/IRDCarRemoteFacade.jdo
+18:30:18,960 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.IRDCarRemoteFacade" not found
+18:30:18,960 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.remote.IRDCarRemoteFacade" as not having MetaData.
+18:30:18,960 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.remote.IRDCarRemoteFacade" has no MetaData or annotations.
+18:30:18,961 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /META-INF/package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /WEB-INF/package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/deusto/package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/deusto/spq/package.jdo
+18:30:18,962 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/deusto/spq/server/package.jdo
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/deusto/spq/server/remote/package.jdo
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" NOT found at /es/deusto/spq/server/remote/RDCarRemoteFacade.jdo
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - MetaData of type "jdo" for class "es.deusto.spq.server.remote.RDCarRemoteFacade" not found
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - Registering class "es.deusto.spq.server.remote.RDCarRemoteFacade" as not having MetaData.
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.remote.RDCarRemoteFacade" has no MetaData or annotations.
+18:30:18,963 (main) DEBUG [DataNucleus.MetaData] - Populating all MetaData ...
+18:30:18,964 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" : Populating Meta-Data
+18:30:18,965 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" field "Matricula" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,965 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" field "Dni_Cliente" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,965 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" field "Fecha_Inicio" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,965 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" field "Fecha_Final" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" : Populating Meta-Data
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" field "Nombre" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" field "Apellido" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" field "Anyo_Nacimiento" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" field "Lugar" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Empleado" : Populating Meta-Data
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Empleado" field "user" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,968 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Empleado" field "Password" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" : Populating Meta-Data
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" field "Marca" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" field "Modelo" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" field "Combustible" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" field "Precio_dia" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+18:30:18,969 (main) DEBUG [DataNucleus.MetaData] - Initialising all MetaData ...
+18:30:18,970 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Alquiler" : Initialising Meta-Data
+18:30:18,971 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Cliente" : Initialising Meta-Data
+18:30:18,972 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Empleado" : Initialising Meta-Data
+18:30:18,972 (main) DEBUG [DataNucleus.MetaData] - Class "es.deusto.spq.server.jdo.Vehiculo" : Initialising Meta-Data
+18:30:18,972 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Load of Metadata complete
+18:30:18,977 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Alquiler" starting ...
+18:30:19,059 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt implement the interface "org.datanucleus.enhancement.Persistable" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnStateManager" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnInheritedFieldCount" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnFlags" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnFieldTypes" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnFieldNames" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnFieldFlags" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have field "dnPersistableSuperclass" but is required
+18:30:19,060 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnReplaceField" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetStateManager" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsTransactional" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnNewInstance" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnNewInstance" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnSuperClone" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnProvideFields" but is required
+18:30:19,063 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "___dn$loadClass" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetManagedFieldCount" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsDirty" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnReplaceStateManager" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnReplaceFlags" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsDetached" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnMakeDirty" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "__dnPersistableSuperclassInit" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsDeleted" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "__dnFieldFlagsInit" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "__dnFieldTypesInit" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnProvideField" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnPreSerialize" but is required
+18:30:19,064 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetVersion" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetTransactionalObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsNew" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyField" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnGetExecutionContext" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnCopyFields" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "__dnGetInheritedFieldCount" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,065 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnIsPersistent" but is required
+18:30:19,066 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "dnReplaceFields" but is required
+18:30:19,066 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Alquiler" doesnt have method "__dnFieldNamesInit" but is required
+18:30:19,083 (main) DEBUG [DataNucleus.Enhancer] - Adding interface: org.datanucleus.enhancement.Persistable
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "org.datanucleus.enhancement.StateManager dnStateManager"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "byte dnFlags"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[B dnFieldFlags"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "java.lang.Class dnPersistableSuperclass"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.Class; dnFieldTypes"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.String; dnFieldNames"
+18:30:19,088 (main) DEBUG [DataNucleus.Enhancer] - Adding field "int dnInheritedFieldCount"
+18:30:19,089 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void <clinit>()"
+18:30:19,090 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+18:30:19,090 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+18:30:19,090 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+18:30:19,090 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+18:30:19,091 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetObjectId()"
+18:30:19,091 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetVersion()"
+18:30:19,091 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnPreSerialize()"
+18:30:19,091 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+18:30:19,091 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+18:30:19,092 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetTransactionalObjectId()"
+18:30:19,092 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDeleted()"
+18:30:19,092 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDirty()"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsNew()"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsPersistent()"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsTransactional()"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnMakeDirty(java.lang.String fieldName)"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance()"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+18:30:19,093 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideFields([I indices)"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFields([I indices)"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFlags()"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDetached()"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,094 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+18:30:19,095 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceField(int index)"
+18:30:19,095 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideField(int index)"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyField(es.deusto.spq.server.jdo.Alquiler obj, int index)"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyFields(java.lang.Object obj, [I indices)"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.String; __dnFieldNamesInit()"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.Class; __dnFieldTypesInit()"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[B __dnFieldFlagsInit()"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int __dnGetInheritedFieldCount()"
+18:30:19,096 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetManagedFieldCount()"
+18:30:19,097 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class __dnPersistableSuperclassInit()"
+18:30:19,097 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class ___dn$loadClass(java.lang.String className)"
+18:30:19,097 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnSuperClone()"
+18:30:19,098 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetDni_Cliente(es.deusto.spq.server.jdo.Alquiler objPC)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetDni_Cliente(es.deusto.spq.server.jdo.Alquiler objPC, java.lang.String val)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.sql.Date dnGetFecha_Final(es.deusto.spq.server.jdo.Alquiler objPC)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetFecha_Final(es.deusto.spq.server.jdo.Alquiler objPC, java.sql.Date val)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.sql.Date dnGetFecha_Inicio(es.deusto.spq.server.jdo.Alquiler objPC)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetFecha_Inicio(es.deusto.spq.server.jdo.Alquiler objPC, java.sql.Date val)"
+18:30:19,099 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetMatricula(es.deusto.spq.server.jdo.Alquiler objPC)"
+18:30:19,100 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetMatricula(es.deusto.spq.server.jdo.Alquiler objPC, java.lang.String val)"
+18:30:19,100 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/gonzalo/Documents/Programas/SPQ_Proyecto/Proyecto_Workspace/BSPQ18-S4/rdcar/target/classes/es/deusto/spq/server/jdo/Alquiler.class" with enhanced definition
+18:30:19,100 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.spq.server.jdo.Alquiler
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Alquiler" completed
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Cliente" starting ...
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt implement the interface "org.datanucleus.enhancement.Persistable" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnStateManager" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnInheritedFieldCount" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnFlags" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnFieldTypes" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnFieldNames" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnFieldFlags" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have field "dnPersistableSuperclass" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnReplaceField" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetStateManager" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsTransactional" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnNewInstance" but is required
+18:30:19,101 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnNewInstance" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnSuperClone" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnProvideFields" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "___dn$loadClass" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetManagedFieldCount" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsDirty" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnReplaceStateManager" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnReplaceFlags" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsDetached" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnMakeDirty" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "__dnPersistableSuperclassInit" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsDeleted" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "__dnFieldFlagsInit" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "__dnFieldTypesInit" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnProvideField" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnPreSerialize" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetVersion" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetTransactionalObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsNew" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyField" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnGetExecutionContext" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnCopyFields" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "__dnGetInheritedFieldCount" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnIsPersistent" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "dnReplaceFields" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Cliente" doesnt have method "__dnFieldNamesInit" but is required
+18:30:19,102 (main) DEBUG [DataNucleus.Enhancer] - Adding interface: org.datanucleus.enhancement.Persistable
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Cliente.Dni"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Cliente.Nombre"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Cliente.Apellido"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Cliente.Anyo_Nacimiento"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Cliente.Lugar"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.getDni changing field "es.deusto.spq.server.jdo.Cliente.Dni" for call to "dnGetDni()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.setDni changing field "es.deusto.spq.server.jdo.Cliente.Dni" for call to "dnSetDni()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.getNombre changing field "es.deusto.spq.server.jdo.Cliente.Nombre" for call to "dnGetNombre()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.setNombre changing field "es.deusto.spq.server.jdo.Cliente.Nombre" for call to "dnSetNombre()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.getApellido changing field "es.deusto.spq.server.jdo.Cliente.Apellido" for call to "dnGetApellido()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.setApellido changing field "es.deusto.spq.server.jdo.Cliente.Apellido" for call to "dnSetApellido()"
+18:30:19,103 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.getAnyo_Nacimiento changing field "es.deusto.spq.server.jdo.Cliente.Anyo_Nacimiento" for call to "dnGetAnyo_Nacimiento()"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.setAnyo_Nacimiento changing field "es.deusto.spq.server.jdo.Cliente.Anyo_Nacimiento" for call to "dnSetAnyo_Nacimiento()"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.getLugar changing field "es.deusto.spq.server.jdo.Cliente.Lugar" for call to "dnGetLugar()"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Cliente.setLugar changing field "es.deusto.spq.server.jdo.Cliente.Lugar" for call to "dnSetLugar()"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "org.datanucleus.enhancement.StateManager dnStateManager"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "byte dnFlags"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[B dnFieldFlags"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "java.lang.Class dnPersistableSuperclass"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.Class; dnFieldTypes"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.String; dnFieldNames"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding field "int dnInheritedFieldCount"
+18:30:19,104 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void <clinit>()"
+18:30:19,105 (main) DEBUG [DataNucleus.Enhancer] - Adding constructor "es.deusto.spq.server.jdo.Cliente()"
+18:30:19,105 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+18:30:19,105 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+18:30:19,105 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+18:30:19,105 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetObjectId()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetVersion()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnPreSerialize()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetTransactionalObjectId()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDeleted()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDirty()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsNew()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsPersistent()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsTransactional()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnMakeDirty(java.lang.String fieldName)"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance()"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+18:30:19,106 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideFields([I indices)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFields([I indices)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFlags()"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDetached()"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceField(int index)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideField(int index)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyField(es.deusto.spq.server.jdo.Cliente obj, int index)"
+18:30:19,107 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyFields(java.lang.Object obj, [I indices)"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.String; __dnFieldNamesInit()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.Class; __dnFieldTypesInit()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[B __dnFieldFlagsInit()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int __dnGetInheritedFieldCount()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetManagedFieldCount()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class __dnPersistableSuperclassInit()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class ___dn$loadClass(java.lang.String className)"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnSuperClone()"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetAnyo_Nacimiento(es.deusto.spq.server.jdo.Cliente objPC)"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetAnyo_Nacimiento(es.deusto.spq.server.jdo.Cliente objPC, int val)"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetApellido(es.deusto.spq.server.jdo.Cliente objPC)"
+18:30:19,108 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetApellido(es.deusto.spq.server.jdo.Cliente objPC, java.lang.String val)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetDni(es.deusto.spq.server.jdo.Cliente objPC)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetDni(es.deusto.spq.server.jdo.Cliente objPC, java.lang.String val)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetLugar(es.deusto.spq.server.jdo.Cliente objPC)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetLugar(es.deusto.spq.server.jdo.Cliente objPC, java.lang.String val)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetNombre(es.deusto.spq.server.jdo.Cliente objPC)"
+18:30:19,109 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetNombre(es.deusto.spq.server.jdo.Cliente objPC, java.lang.String val)"
+18:30:19,110 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/gonzalo/Documents/Programas/SPQ_Proyecto/Proyecto_Workspace/BSPQ18-S4/rdcar/target/classes/es/deusto/spq/server/jdo/Cliente.class" with enhanced definition
+18:30:19,110 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.spq.server.jdo.Cliente
+18:30:19,110 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Cliente" completed
+18:30:19,110 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Empleado" starting ...
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt implement the interface "org.datanucleus.enhancement.Persistable" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnStateManager" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnInheritedFieldCount" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnFlags" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnFieldTypes" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnFieldNames" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnFieldFlags" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have field "dnPersistableSuperclass" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnReplaceField" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetStateManager" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsTransactional" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnNewInstance" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnNewInstance" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnSuperClone" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnProvideFields" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "___dn$loadClass" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetManagedFieldCount" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsDirty" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnReplaceStateManager" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnReplaceFlags" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsDetached" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnMakeDirty" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "__dnPersistableSuperclassInit" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsDeleted" but is required
+18:30:19,111 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "__dnFieldFlagsInit" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "__dnFieldTypesInit" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnProvideField" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnPreSerialize" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetVersion" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetTransactionalObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsNew" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyField" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnGetExecutionContext" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnCopyFields" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "__dnGetInheritedFieldCount" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnIsPersistent" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "dnReplaceFields" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Empleado" doesnt have method "__dnFieldNamesInit" but is required
+18:30:19,112 (main) DEBUG [DataNucleus.Enhancer] - Adding interface: org.datanucleus.enhancement.Persistable
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Empleado.Num_Empleado"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Empleado.user"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Empleado.Password"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.getNum_Empleado changing field "es.deusto.spq.server.jdo.Empleado.Num_Empleado" for call to "dnGetNum_Empleado()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.setNum_Empleado changing field "es.deusto.spq.server.jdo.Empleado.Num_Empleado" for call to "dnSetNum_Empleado()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.getUsuario changing field "es.deusto.spq.server.jdo.Empleado.user" for call to "dnGetuser()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.setUsuario changing field "es.deusto.spq.server.jdo.Empleado.user" for call to "dnSetuser()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.getPassword changing field "es.deusto.spq.server.jdo.Empleado.Password" for call to "dnGetPassword()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Empleado.setPassword changing field "es.deusto.spq.server.jdo.Empleado.Password" for call to "dnSetPassword()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "org.datanucleus.enhancement.StateManager dnStateManager"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "byte dnFlags"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[B dnFieldFlags"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "java.lang.Class dnPersistableSuperclass"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.Class; dnFieldTypes"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.String; dnFieldNames"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding field "int dnInheritedFieldCount"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void <clinit>()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding constructor "es.deusto.spq.server.jdo.Empleado()"
+18:30:19,113 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetObjectId()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetVersion()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnPreSerialize()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetTransactionalObjectId()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDeleted()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDirty()"
+18:30:19,114 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsNew()"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsPersistent()"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsTransactional()"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnMakeDirty(java.lang.String fieldName)"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance()"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideFields([I indices)"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFields([I indices)"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFlags()"
+18:30:19,115 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDetached()"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceField(int index)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideField(int index)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyField(es.deusto.spq.server.jdo.Empleado obj, int index)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyFields(java.lang.Object obj, [I indices)"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.String; __dnFieldNamesInit()"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.Class; __dnFieldTypesInit()"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[B __dnFieldFlagsInit()"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int __dnGetInheritedFieldCount()"
+18:30:19,116 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetManagedFieldCount()"
+18:30:19,117 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class __dnPersistableSuperclassInit()"
+18:30:19,117 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class ___dn$loadClass(java.lang.String className)"
+18:30:19,117 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnSuperClone()"
+18:30:19,118 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void writeObject(java.io.ObjectOutputStream out)"
+18:30:19,118 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetNum_Empleado(es.deusto.spq.server.jdo.Empleado objPC)"
+18:30:19,118 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetNum_Empleado(es.deusto.spq.server.jdo.Empleado objPC, int val)"
+18:30:19,118 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetPassword(es.deusto.spq.server.jdo.Empleado objPC)"
+18:30:19,118 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetPassword(es.deusto.spq.server.jdo.Empleado objPC, java.lang.String val)"
+18:30:19,119 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetuser(es.deusto.spq.server.jdo.Empleado objPC)"
+18:30:19,119 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetuser(es.deusto.spq.server.jdo.Empleado objPC, java.lang.String val)"
+18:30:19,119 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/gonzalo/Documents/Programas/SPQ_Proyecto/Proyecto_Workspace/BSPQ18-S4/rdcar/target/classes/es/deusto/spq/server/jdo/Empleado.class" with enhanced definition
+18:30:19,119 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.spq.server.jdo.Empleado
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Empleado" completed
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Vehiculo" starting ...
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt implement the interface "org.datanucleus.enhancement.Persistable" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnStateManager" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnInheritedFieldCount" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnFlags" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnFieldTypes" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnFieldNames" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnFieldFlags" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have field "dnPersistableSuperclass" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnReplaceField" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetStateManager" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsTransactional" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnNewInstance" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnNewInstance" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnSuperClone" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnProvideFields" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "___dn$loadClass" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetManagedFieldCount" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsDirty" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnReplaceStateManager" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnReplaceFlags" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsDetached" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnMakeDirty" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "__dnPersistableSuperclassInit" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsDeleted" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "__dnFieldFlagsInit" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "__dnFieldTypesInit" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnProvideField" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnPreSerialize" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetObjectId" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetVersion" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetTransactionalObjectId" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsNew" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,120 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyKeyFieldsToObjectId" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyField" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyKeyFieldsFromObjectId" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnGetExecutionContext" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnCopyFields" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "__dnGetInheritedFieldCount" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnNewObjectIdInstance" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnIsPersistent" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "dnReplaceFields" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Class "es.deusto.spq.server.jdo.Vehiculo" doesnt have method "__dnFieldNamesInit" but is required
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Adding interface: org.datanucleus.enhancement.Persistable
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Vehiculo.Matricula"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Vehiculo.Marca"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Vehiculo.Modelo"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Vehiculo.Combustible"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.<init> : omitting enhance of set of field "es.deusto.spq.server.jdo.Vehiculo.Precio_dia"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.getMatricula changing field "es.deusto.spq.server.jdo.Vehiculo.Matricula" for call to "dnGetMatricula()"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.setMatricula changing field "es.deusto.spq.server.jdo.Vehiculo.Matricula" for call to "dnSetMatricula()"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.getMarca changing field "es.deusto.spq.server.jdo.Vehiculo.Marca" for call to "dnGetMarca()"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.setMarca changing field "es.deusto.spq.server.jdo.Vehiculo.Marca" for call to "dnSetMarca()"
+18:30:19,121 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.getModelo changing field "es.deusto.spq.server.jdo.Vehiculo.Modelo" for call to "dnGetModelo()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.setModelo changing field "es.deusto.spq.server.jdo.Vehiculo.Modelo" for call to "dnSetModelo()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.getCombustible changing field "es.deusto.spq.server.jdo.Vehiculo.Combustible" for call to "dnGetCombustible()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.setCombustible changing field "es.deusto.spq.server.jdo.Vehiculo.Combustible" for call to "dnSetCombustible()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.getPrecio_dia changing field "es.deusto.spq.server.jdo.Vehiculo.Precio_dia" for call to "dnGetPrecio_dia()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Enhancing original method es.deusto.spq.server.jdo.Vehiculo.setPrecio_dia changing field "es.deusto.spq.server.jdo.Vehiculo.Precio_dia" for call to "dnSetPrecio_dia()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "org.datanucleus.enhancement.StateManager dnStateManager"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "byte dnFlags"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[B dnFieldFlags"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "java.lang.Class dnPersistableSuperclass"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.Class; dnFieldTypes"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "[Ljava.lang.String; dnFieldNames"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding field "int dnInheritedFieldCount"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void <clinit>()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding constructor "es.deusto.spq.server.jdo.Vehiculo()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetObjectId()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetVersion()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnPreSerialize()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+18:30:19,122 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnGetTransactionalObjectId()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDeleted()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDirty()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsNew()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsPersistent()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsTransactional()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnMakeDirty(java.lang.String fieldName)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideFields([I indices)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFields([I indices)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceFlags()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "boolean dnIsDetached()"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+18:30:19,123 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnReplaceField(int index)"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnProvideField(int index)"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyField(es.deusto.spq.server.jdo.Vehiculo obj, int index)"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnCopyFields(java.lang.Object obj, [I indices)"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.String; __dnFieldNamesInit()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[Ljava.lang.Class; __dnFieldTypesInit()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "[B __dnFieldFlagsInit()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int __dnGetInheritedFieldCount()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "int dnGetManagedFieldCount()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class __dnPersistableSuperclassInit()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Class ___dn$loadClass(java.lang.String className)"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.Object dnSuperClone()"
+18:30:19,124 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetCombustible(es.deusto.spq.server.jdo.Vehiculo objPC)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetCombustible(es.deusto.spq.server.jdo.Vehiculo objPC, java.lang.String val)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetMarca(es.deusto.spq.server.jdo.Vehiculo objPC)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetMarca(es.deusto.spq.server.jdo.Vehiculo objPC, java.lang.String val)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetMatricula(es.deusto.spq.server.jdo.Vehiculo objPC)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetMatricula(es.deusto.spq.server.jdo.Vehiculo objPC, java.lang.String val)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "java.lang.String dnGetModelo(es.deusto.spq.server.jdo.Vehiculo objPC)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetModelo(es.deusto.spq.server.jdo.Vehiculo objPC, java.lang.String val)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "double dnGetPrecio_dia(es.deusto.spq.server.jdo.Vehiculo objPC)"
+18:30:19,125 (main) DEBUG [DataNucleus.Enhancer] - Adding method "void dnSetPrecio_dia(es.deusto.spq.server.jdo.Vehiculo objPC, double val)"
+18:30:19,126 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/gonzalo/Documents/Programas/SPQ_Proyecto/Proyecto_Workspace/BSPQ18-S4/rdcar/target/classes/es/deusto/spq/server/jdo/Vehiculo.class" with enhanced definition
+18:30:19,126 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.spq.server.jdo.Vehiculo
+18:30:19,126 (main) DEBUG [DataNucleus.Enhancer] - Enhance of class "es.deusto.spq.server.jdo.Vehiculo" completed
+18:30:19,127 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=255 ms, enhance=154 ms, total=409 ms. Consult the log for full details
