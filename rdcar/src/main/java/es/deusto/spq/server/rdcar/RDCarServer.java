@@ -2,7 +2,7 @@ package es.deusto.spq.server.rdcar;
 
 import java.rmi.Naming;
 
-import es.deusto.spq.server.appservice.RDCarAppService;
+import BASURA.RDCarAppService;
 import es.deusto.spq.server.remote.RDCarRemoteFacade;
 
 public class RDCarServer {
