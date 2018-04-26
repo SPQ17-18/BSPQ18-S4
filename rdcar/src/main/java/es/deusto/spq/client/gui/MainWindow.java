@@ -1,6 +1,7 @@
 package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -37,6 +39,7 @@ public class MainWindow extends JFrame {
 		this.user = user;
 		initialize();
 		frame.setVisible(true);
+	
 	}
 
 
@@ -67,6 +70,10 @@ public class MainWindow extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Ventana Principal");
+		frame.setResizable(false);
+		frame.setSize(600, 400);
+
+		
 
 		//abrir ventana vehiculo
 		JButton btnAlquilarVehculo = new JButton("Vehículos");

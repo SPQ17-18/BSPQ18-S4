@@ -71,22 +71,23 @@ public class Coches extends JFrame{
 	private void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 538, 381);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setTitle("Coches");
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 
 		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
-		lblMatricula.setBounds(23, 31, 97, 16);
+		lblMatricula.setBounds(23, 31, 133, 16);
 		frame.getContentPane().add(lblMatricula);
 		
 		textField = new JTextField();
-		textField.setBounds(120, 28, 116, 22);
+		textField.setBounds(144, 28, 213, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(272, 27, 97, 25);
+		btnBuscar.setBounds(400, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
@@ -109,15 +110,23 @@ public class Coches extends JFrame{
 		
 		
 		table = new JTable();
-		table.setBounds(39, 78, 357, 145);
+		table.setBounds(39, 78, 357, 231);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
 		frame.getContentPane().add(table);
+		
+		JButton btnAadir = new JButton("Añadir");
+		btnAadir.setBounds(408, 143, 89, 23);
+		frame.getContentPane().add(btnAadir);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(406, 198, 89, 23);
+		frame.getContentPane().add(btnEliminar);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
-		lblNewLabel.setBounds(0, 0, 434, 261);
+		lblNewLabel.setBounds(0, 0, 522, 342);
 		frame.getContentPane().add(lblNewLabel);
 	}
 	

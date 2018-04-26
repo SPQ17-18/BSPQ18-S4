@@ -16,7 +16,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.awt.Toolkit;
+
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
@@ -37,6 +40,7 @@ public class LoginWindow extends JFrame{
 		this.controller=controller;
 		initialize();
 		frame.setVisible(true);
+		
 	}
 
 	public static LoginWindow getInstance() {
@@ -73,7 +77,8 @@ public class LoginWindow extends JFrame{
 	public void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
-
+		
+		
 
 
 		frame.setBounds(100, 100, 350, 280);
@@ -109,7 +114,7 @@ public class LoginWindow extends JFrame{
 				frame.dispose();
 			}
 		});
-		BotonCancelar.setBounds(23, 201, 117, 29);
+		BotonCancelar.setBounds(23, 201, 117, 29);//x,y //group layout
 		frame.getContentPane().add(BotonCancelar);
 
 		JButton BotonAceptar = new JButton("Aceptar");
@@ -136,8 +141,9 @@ public class LoginWindow extends JFrame{
 
 		JLabel label = new JLabel("New label");
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
-		label.setBounds(0, 0, 334, 241);
+		label.setBounds(0, 0, 334, 241); //altura y anchura
 		frame.getContentPane().add(label);
+		
 	}
 
 	public RDCarController getController() {
