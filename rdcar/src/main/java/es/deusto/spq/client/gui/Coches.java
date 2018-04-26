@@ -114,13 +114,26 @@ public class Coches extends JFrame{
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
 		frame.getContentPane().add(table);
 		
-		JButton btnAadir = new JButton("Añadir");
-		btnAadir.setBounds(408, 143, 89, 23);
-		frame.getContentPane().add(btnAadir);
+		
+		
+		
+		
+
 		
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(406, 198, 89, 23);
 		frame.getContentPane().add(btnEliminar);
+		
+		JButton btnAnadir = new JButton("Anadir");
+		btnAnadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AnadirCoche acoche = new AnadirCoche(controller);
+				acoche.setVisible(true);
+			}
+			
+		});
+		btnAnadir.setBounds(408, 103, 89, 23);
+		frame.getContentPane().add(btnAnadir);
 		
 		
 

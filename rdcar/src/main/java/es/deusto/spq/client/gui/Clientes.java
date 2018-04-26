@@ -63,6 +63,7 @@ public class Clientes extends JFrame{
 		frame.setVisible(true);
 	}
 
+
 	/**
 	 * Initialize tshe contents of the frame.
 	 */
@@ -114,6 +115,12 @@ public class Clientes extends JFrame{
 		frame.getContentPane().add(table);
 		
 		JButton btnAadir = new JButton("Añadir");
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AnadirCliente acliente = new AnadirCliente(controller);
+				acliente.setVisible(true);
+			}
+		});
 		btnAadir.setBounds(425, 95, 89, 23);
 		frame.getContentPane().add(btnAadir);
 		
