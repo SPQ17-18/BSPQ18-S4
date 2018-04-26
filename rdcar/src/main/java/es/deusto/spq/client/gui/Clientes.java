@@ -64,7 +64,7 @@ public class Clientes extends JFrame{
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize tshe contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
