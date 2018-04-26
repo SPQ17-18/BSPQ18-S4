@@ -2,13 +2,17 @@ package es.deusto.spq.server.appservice;
 
 import BASURA.IRDCarDAO;
 import BASURA.RDCarDAO;
+import es.deusto.spq.server.dao.ClienteDAO;
+import es.deusto.spq.server.jdo.Cliente;
 
-public class ASCliente extends Father_AppService{
+public class ASCliente {
 
-public static ASCliente instance = null;
+	public static ASCliente instance = null;
+	
+	private ClienteDAO dao;
 	
 	public ASCliente() {
-		Dao = new RDCarDAO();
+		dao = new ClienteDAO();
 	}
 	
 	public static ASCliente getInstance() {
@@ -16,6 +20,35 @@ public static ASCliente instance = null;
 			instance = new ASCliente();
 		}
 		return instance;
+	}
+	
+	
+	public synchronized void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+		
+		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+		
+		dao.storeCliente(cliente);
+		
+	}
+	
+	public synchronized void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+		
+		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+		
+		dao.storeCliente(cliente);
+	}
+	
+	public synchronized void BorrarCliente(String dni) {
+		
+		
+		
+	}
+	
+	public synchronized Cliente obtenerCliente(String dni) {
+		
+		Cliente cliente = dao.retrieveCliente(dni);
+		
+		return cliente;
 	}
 	
 }

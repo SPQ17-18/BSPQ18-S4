@@ -46,7 +46,7 @@ public class Assembler {
 		
 		if (empleados != null){
 			for(Empleado e: empleados){
-				empleadosDTO.add(new EmpleadoDTO(e.getNum_Empleado(), e.getUsuario(), e.getPassword()));
+				empleadosDTO.add(new EmpleadoDTO(e.getUsuario(), e.getPassword()));
 			}
 		}
 		System.out.println(" - Ensamblando empleados...");

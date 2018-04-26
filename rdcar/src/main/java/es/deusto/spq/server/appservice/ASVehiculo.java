@@ -1,13 +1,18 @@
 package es.deusto.spq.server.appservice;
 
 import BASURA.RDCarDAO;
+import es.deusto.spq.server.dao.VehiculoDAO;
+import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 
-public class ASVehiculo extends Father_AppService{
+public class ASVehiculo {
 
-public static ASVehiculo instance = null;
+	public static ASVehiculo instance = null;
+	
+	private VehiculoDAO dao;
 	
 	public ASVehiculo() {
-		Dao = new RDCarDAO();
+		dao = new VehiculoDAO();
 	}
 	
 	public static ASVehiculo getInstance() {
@@ -16,5 +21,36 @@ public static ASVehiculo instance = null;
 		}
 		return instance;
 	}
+	
+	public synchronized void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+		
+		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
+		
+		dao.storeVehiculo(vehiculo);
+		
+	}
+	
+	public synchronized void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+		
+		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
+		
+		dao.updateVehiculo(vehiculo);
+
+	}
+	
+	public synchronized void BorrarVehiculo(String matricula) {
+		
+		
+		
+	}
+	
+	public synchronized Vehiculo obtenerVehiculo(String matricula) {
+		
+		Vehiculo vehiculo = dao.retrieveVehiculo(matricula);
+		
+		return vehiculo;
+	}
+	
+
 	
 }

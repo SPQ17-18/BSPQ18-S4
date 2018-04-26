@@ -29,7 +29,7 @@ public class EmpleadoDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Storing an Empleado: " + e.getNum_Empleado());
+			System.out.println("   * Storing an Empleado: " + e.getUsuario());
 			pm.makePersistent(e);
 			tx.commit();
 
@@ -48,7 +48,7 @@ public class EmpleadoDAO {
 	}
 	
 	
-	public Empleado retrieveEmpleado(String Num_Empleado) {
+	public Empleado retrieveEmpleado(String user) {
 
 		Empleado empleado = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -57,7 +57,7 @@ public class EmpleadoDAO {
 
 		try {
 			tx.begin();
-			empleado = pm.getObjectById(Empleado.class, Num_Empleado);
+			empleado = pm.getObjectById(Empleado.class, user);
 			tx.commit();
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{

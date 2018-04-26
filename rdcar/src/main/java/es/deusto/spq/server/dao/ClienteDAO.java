@@ -7,7 +7,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Cliente;
 
-public class ClienteDAO {
+public class ClienteDAO implements IClienteDAO{
 
 
 	private PersistenceManagerFactory pmf;

@@ -124,7 +124,7 @@ public class Empleados extends JFrame{
 	
 	private void cargarTabla(EmpleadoDTO empleado) {
 		modelo = (DefaultTableModel) table.getModel();
-		Object[] fila = {empleado.getNum_Empleado(), empleado.getUser()};
+		Object[] fila = {empleado.getUser()};
 		modelo.addRow(fila);
 	}
 	

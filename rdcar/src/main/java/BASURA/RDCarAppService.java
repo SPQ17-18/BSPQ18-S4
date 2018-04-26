@@ -84,7 +84,7 @@ public class RDCarAppService {
 		List<EmpleadoDTO> empleadosDTO = new ArrayList<EmpleadoDTO>(); 
 		
 		
-		Empleado empleado = new Empleado(999, user, "123");
+		//Empleado empleado = new Empleado(999, user, "123");
 		
 		Dao.storeEmpleado(empleado);
 		
