@@ -126,8 +126,38 @@ public class EmpleadoDAO {
 	
 	
 	
-	
-	
+	public List<Empleado> getAllEmpleados() { //Pruebas
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+		
+		List<Empleado> ListEmpleados = null;
+
+		try {
+
+			tx.begin();
+			Query<?> query = pm.newQuery("SELECT * FROM " + Empleado.class.getName());
+			query.setUnique(true);
+			
+			ListEmpleados = (List<Empleado>) query.execute();
+			
+			
+			tx.commit();
+			
+		} catch (Exception ex) {
+			System.out.println("   $ Error: " + ex.getMessage());
+		} finally {
+			
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return ListEmpleados;
+	}
 	
 	
 	

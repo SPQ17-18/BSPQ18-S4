@@ -14,8 +14,12 @@ import es.deusto.spq.server.jdo.Vehiculo;
 public interface IRDCarRemoteFacade extends Remote{
 	
 	public boolean logIn(String user, String password) throws RemoteException;
+	
 	public Cliente buscarCliente(String dni) throws RemoteException;
-	//public List<ClienteDTO> verClientes() throws RemoteException;
 	public Vehiculo buscarVehiculo(String matricula) throws RemoteException;
 	public Empleado buscarEmpleado(String user) throws RemoteException;
+	
+	public List<Cliente> verClientes() throws RemoteException;
+	public List<Empleado> verEmpleados() throws RemoteException;
+	public List<Vehiculo> verVehiculos() throws RemoteException;
 }

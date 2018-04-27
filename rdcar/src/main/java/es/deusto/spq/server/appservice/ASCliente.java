@@ -1,6 +1,8 @@
 package es.deusto.spq.server.appservice;
 
 
+import java.util.List;
+
 import es.deusto.spq.server.dao.ClienteDAO;
 import es.deusto.spq.server.jdo.Cliente;
 
@@ -50,4 +52,7 @@ public class ASCliente {
 		return cliente;
 	}
 	
+	public synchronized List<Cliente> verClientes(){
+		return dao.getAllClientes();
+	}
 }

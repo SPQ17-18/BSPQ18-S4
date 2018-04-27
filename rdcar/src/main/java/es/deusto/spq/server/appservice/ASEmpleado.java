@@ -1,7 +1,10 @@
 package es.deusto.spq.server.appservice;
 
 
+import java.util.List;
+
 import es.deusto.spq.server.dao.EmpleadoDAO;
+import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 
 public class ASEmpleado {
@@ -63,6 +66,8 @@ public class ASEmpleado {
 		return false;
 	}
 	
-	
+	public synchronized List<Empleado> verEmpleados(){
+		return dao.getAllEmpleados();
+	}
 	
 }

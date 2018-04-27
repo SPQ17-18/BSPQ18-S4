@@ -78,10 +78,20 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASEmpleado.obtenerEmpleado(user);
 	}
 
-	/*
+	
 	@Override
-	public List<ClienteDTO> verClientes() throws RemoteException {
-		return this.rdcarAppService.verClientes();
+	public List<Cliente> verClientes() throws RemoteException {
+		return this.ASCliente.verClientes();
 	} 
-	*/
+	
+	@Override
+	public List<Empleado> verEmpleados() throws RemoteException {
+		return this.ASEmpleado.verEmpleados();
+	} 
+	
+	@Override
+	public List<Vehiculo> verVehiculos() throws RemoteException {
+		return this.ASVehiculo.verVehiculos();
+	} 
+	
 }
