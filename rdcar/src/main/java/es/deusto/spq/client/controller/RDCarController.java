@@ -44,8 +44,8 @@ public class RDCarController {
 		return null;
 	}
 	
-	/*
-	public  List<ClienteDTO> verClientes(){
+	
+	public  List<Cliente> verClientes(){
 		try {
 			
 			return rsl.getService().verClientes();
@@ -55,12 +55,23 @@ public class RDCarController {
 		}
 		return null;
 	}
-	*/
+	
 	
 	public  Vehiculo buscarVehiculo(String matricula){
 		try {
 			
 			return rsl.getService().buscarVehiculo(matricula);
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public  List<Vehiculo> verVehiculos(){
+		try {
+			
+			return rsl.getService().verVehiculos();
 			
 		} catch (RemoteException e) {
 			e.printStackTrace();
@@ -79,10 +90,19 @@ public class RDCarController {
 		return null;
 	}
 	
-	
+	public  List<Empleado> verEmpleados(){
+		try {
+			
+			return rsl.getService().verEmpleados();
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	public void exit() {
-		System.exit(0);
+		System.exit(0); //Esto creo que es una mala practica hay otra forma
 	}
 
 	public static void main(String[] args) throws RemoteException {
