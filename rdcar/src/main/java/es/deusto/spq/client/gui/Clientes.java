@@ -63,28 +63,30 @@ public class Clientes extends JFrame{
 		frame.setVisible(true);
 	}
 
+
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize tshe contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 540, 358);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setTitle("Clientes");
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 
 		JLabel lblDniDelCliente = new JLabel("DNI del cliente:");
 		lblDniDelCliente.setBounds(23, 31, 97, 16);
 		frame.getContentPane().add(lblDniDelCliente);
 		
 		textField = new JTextField();
-		textField.setBounds(120, 28, 116, 22);
+		textField.setBounds(120, 28, 203, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(272, 27, 97, 25);
+		btnBuscar.setBounds(358, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
@@ -107,16 +109,30 @@ public class Clientes extends JFrame{
 		
 		
 		table = new JTable();
-		table.setBounds(39, 78, 357, 145);
+		table.setBounds(39, 78, 357, 179);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
+		
+		JButton btnAadir = new JButton("Añadir");
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AnadirCliente acliente = new AnadirCliente(controller);
+				acliente.setVisible(true);
+			}
+		});
+		btnAadir.setBounds(425, 95, 89, 23);
+		frame.getContentPane().add(btnAadir);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(425, 194, 89, 23);
+		frame.getContentPane().add(btnEliminar);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Clientes.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
-		lblNewLabel.setBounds(0, 0, 434, 261);
+		lblNewLabel.setBounds(0, 0, 524, 319);
 		frame.getContentPane().add(lblNewLabel);
 	}
 	
