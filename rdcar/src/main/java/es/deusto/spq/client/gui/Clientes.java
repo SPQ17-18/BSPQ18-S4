@@ -146,7 +146,7 @@ public class Clientes extends JFrame{
 		
 			borrarTabla();
 			List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
-			clientes = (List<ClienteDTO>) controller.verClientes();
+			//clientes = (List<ClienteDTO>) controller.verClientes(); 			EN CONSTRUCCIÓN
 			if (clientes.size() !=0) {
 				for (int i = 0; i < clientes.size(); i++) {
 					cargarTabla(clientes.get(i));

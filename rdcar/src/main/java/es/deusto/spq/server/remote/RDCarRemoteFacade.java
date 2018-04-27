@@ -4,10 +4,15 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import BASURA.RDCarAppService;
+import es.deusto.spq.server.appservice.ASEmpleado;
+import es.deusto.spq.server.appservice.ASCliente;
+import es.deusto.spq.server.appservice.ASVehiculo;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemoteFacade {
 
@@ -16,16 +21,21 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 * 
 	 */
 	private static final long serialVersionUID = 6391398296630384889L;
-	private RDCarAppService rdcarAppService;
 	private static RDCarRemoteFacade instance;
 	
+	private ASCliente ASCliente;
+	private ASEmpleado ASEmpleado;
+	private ASVehiculo ASVehiculo;
 
 	protected RDCarRemoteFacade() throws RemoteException {
 		super();
 	}
 
-	public RDCarRemoteFacade(RDCarAppService server) throws RemoteException {
-		this.rdcarAppService = server;
+	public RDCarRemoteFacade(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
+		
+		this.ASCliente = ascliente;
+		this.ASEmpleado = asempleado;
+		this.ASVehiculo = asvehiculo;
 
 	}
 
@@ -40,31 +50,38 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		}
 		return instance;
 	}
-
-	public void setRDCarService(RDCarAppService service) {
-		this.rdcarAppService = service;
+	public void setAllAS(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
+		
+		this.ASCliente = ascliente;
+		this.ASEmpleado = asempleado;
+		this.ASVehiculo = asvehiculo;
 
 	}
 
+	
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");
-		return this.rdcarAppService.logIn(user, password);		
-	}
-
-	public  List<ClienteDTO> buscarCliente(String dni) throws RemoteException{	
-		return this.rdcarAppService.buscarCliente(dni);
+		return this.ASEmpleado.LoginEmpleado(user, password);	
 	}
 	
-	public  List<VehiculoDTO> buscarVehiculo(String matricula) throws RemoteException{	
-		return this.rdcarAppService.buscarVehiculo(matricula);
+	
+	
+	public Cliente buscarCliente(String dni) throws RemoteException{
+		return this.ASCliente.obtenerCliente(dni);
+	}
+	
+	public  Vehiculo buscarVehiculo(String matricula) throws RemoteException{	
+		return this.ASVehiculo.obtenerVehiculo(matricula);
 	}
 
-	public List<EmpleadoDTO> buscarEmpleado(String user) throws RemoteException {
-		return this.rdcarAppService.buscarEmpleado(user);
+	public Empleado buscarEmpleado(String user) throws RemoteException {
+		return this.ASEmpleado.obtenerEmpleado(user);
 	}
 
+	/*
 	@Override
 	public List<ClienteDTO> verClientes() throws RemoteException {
 		return this.rdcarAppService.verClientes();
 	} 
+	*/
 }

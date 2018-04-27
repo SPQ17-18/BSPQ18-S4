@@ -8,6 +8,9 @@ import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 public class RDCarController {
 
@@ -30,7 +33,7 @@ public class RDCarController {
 		return false;
 	}
 	
-	public  List<ClienteDTO> buscarCliente(String dni){
+	public  Cliente buscarCliente(String dni){
 		try {
 			
 			return rsl.getService().buscarCliente(dni);
@@ -41,6 +44,7 @@ public class RDCarController {
 		return null;
 	}
 	
+	/*
 	public  List<ClienteDTO> verClientes(){
 		try {
 			
@@ -51,8 +55,9 @@ public class RDCarController {
 		}
 		return null;
 	}
+	*/
 	
-	public  List<VehiculoDTO> buscarVehiculo(String matricula){
+	public  Vehiculo buscarVehiculo(String matricula){
 		try {
 			
 			return rsl.getService().buscarVehiculo(matricula);
@@ -63,7 +68,7 @@ public class RDCarController {
 		return null;
 	}
 	
-	public  List<EmpleadoDTO> buscarEmpleado(String user){
+	public  Empleado buscarEmpleado(String user){
 		try {
 			
 			return rsl.getService().buscarEmpleado(user);
