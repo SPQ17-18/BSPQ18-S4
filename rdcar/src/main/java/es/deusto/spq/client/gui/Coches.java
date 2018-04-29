@@ -76,7 +76,6 @@ public class Coches extends JFrame{
 		frame.setSize(600, 400);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
-		frame.setSize(600, 400);
 		frame.setTitle("Coches");
 
 		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");

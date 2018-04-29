@@ -73,6 +73,7 @@ public class Clientes extends JFrame{
 		frame.setBounds(100, 100, 540, 358);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setTitle("Clientes");
+		frame.setSize(600, 400);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 
@@ -81,12 +82,12 @@ public class Clientes extends JFrame{
 		frame.getContentPane().add(lblDniDelCliente);
 		
 		textField = new JTextField();
-		textField.setBounds(120, 28, 203, 22);
+		textField.setBounds(120, 28, 276, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(358, 27, 97, 25);
+		btnBuscar.setBounds(455, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
@@ -109,7 +110,7 @@ public class Clientes extends JFrame{
 		
 		
 		table = new JTable();
-		table.setBounds(39, 78, 357, 179);
+		table.setBounds(39, 78, 357, 267);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
@@ -121,18 +122,18 @@ public class Clientes extends JFrame{
 				acliente.setVisible(true);
 			}
 		});
-		btnAadir.setBounds(425, 95, 89, 23);
+		btnAadir.setBounds(455, 103, 89, 37);
 		frame.getContentPane().add(btnAadir);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(425, 194, 89, 23);
+		btnEliminar.setBounds(455, 275, 89, 35);
 		frame.getContentPane().add(btnEliminar);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Clientes.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
-		lblNewLabel.setBounds(0, 0, 524, 319);
+		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}
 	
