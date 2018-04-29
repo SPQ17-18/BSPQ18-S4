@@ -78,33 +78,33 @@ public class LoginWindow extends JFrame{
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		
-		
+		frame.setResizable(false);
 
 
-		frame.setBounds(100, 100, 350, 280);
+		frame.setBounds(100, 100, 450, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Log In");
 
 		
-		JLabel LabelPassword = new JLabel("Password");
-		LabelPassword.setForeground(Color.WHITE);
-		LabelPassword.setBounds(10, 147, 61, 16);
+		JLabel LabelPassword = new JLabel("Contraseña");
+		LabelPassword.setForeground(Color.BLACK);
+		LabelPassword.setBounds(63, 145, 71, 21);
 		frame.getContentPane().add(LabelPassword);
 
 		JLabel LabelUsuario = new JLabel("Usuario");
-		LabelUsuario.setForeground(Color.WHITE);
-		LabelUsuario.setBounds(10, 77, 61, 16);
+		LabelUsuario.setForeground(Color.BLACK);
+		LabelUsuario.setBounds(63, 75, 71, 21);
 		frame.getContentPane().add(LabelUsuario);
 
 		textPassword = new JTextField();
-		textPassword.setBounds(63, 142, 202, 26);
+		textPassword.setBounds(173, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
 
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
-		textUsuario.setBounds(63, 72, 202, 26);
+		textUsuario.setBounds(173, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
 		
 		JButton BotonCancelar = new JButton("Cancelar");
@@ -114,11 +114,11 @@ public class LoginWindow extends JFrame{
 				frame.dispose();
 			}
 		});
-		BotonCancelar.setBounds(23, 201, 117, 29);//x,y //group layout
+		BotonCancelar.setBounds(81, 226, 117, 29);//x,y //group layout
 		frame.getContentPane().add(BotonCancelar);
 
 		JButton BotonAceptar = new JButton("Aceptar");
-		BotonAceptar.setBounds(186, 201, 117, 29);
+		BotonAceptar.setBounds(285, 226, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
 		BotonAceptar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -141,7 +141,7 @@ public class LoginWindow extends JFrame{
 
 		JLabel label = new JLabel("New label");
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
-		label.setBounds(0, 0, 334, 241); //altura y anchura
+		label.setBounds(0, 0, 434, 311); //altura y anchura
 		frame.getContentPane().add(label);
 		
 	}

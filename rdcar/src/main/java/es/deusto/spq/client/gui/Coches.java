@@ -73,9 +73,11 @@ public class Coches extends JFrame{
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 538, 381);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		frame.setTitle("Coches");
+		frame.setSize(600, 400);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		frame.setSize(600, 400);
+		frame.setTitle("Coches");
 
 		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
 		lblMatricula.setBounds(23, 31, 133, 16);
@@ -110,7 +112,7 @@ public class Coches extends JFrame{
 		
 		
 		table = new JTable();
-		table.setBounds(39, 78, 357, 231);
+		table.setBounds(39, 78, 357, 260);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
 		frame.getContentPane().add(table);
 		
@@ -121,7 +123,7 @@ public class Coches extends JFrame{
 
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(406, 198, 89, 23);
+		btnEliminar.setBounds(449, 265, 89, 31);
 		frame.getContentPane().add(btnEliminar);
 		
 		JButton btnAnadir = new JButton("Anadir");
@@ -132,14 +134,14 @@ public class Coches extends JFrame{
 			}
 			
 		});
-		btnAnadir.setBounds(408, 103, 89, 23);
+		btnAnadir.setBounds(449, 144, 89, 31);
 		frame.getContentPane().add(btnAnadir);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
-		lblNewLabel.setBounds(0, 0, 522, 342);
+		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}
 	

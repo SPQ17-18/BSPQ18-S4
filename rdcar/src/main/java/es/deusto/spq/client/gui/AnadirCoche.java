@@ -1,6 +1,7 @@
 package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
@@ -8,6 +9,7 @@ import es.deusto.spq.client.controller.RDCarController;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class AnadirCoche {
 
@@ -50,58 +52,67 @@ public class AnadirCoche {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Añadir Coches");
+		frame.setResizable(false);
+		frame.setSize(600, 400);
 		
 		textField = new JTextField();
-		textField.setBounds(146, 25, 86, 20);
+		textField.setBounds(198, 59, 168, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(146, 59, 86, 20);
+		textField_1.setBounds(198, 105, 168, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(146, 90, 86, 20);
+		textField_2.setBounds(198, 155, 168, 20);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(146, 121, 86, 20);
+		textField_3.setBounds(198, 205, 168, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(146, 152, 86, 20);
+		textField_4.setBounds(198, 257, 168, 20);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
 		
 		JLabel lblMatrcula = new JLabel("Matrícula:");
-		lblMatrcula.setBounds(30, 28, 65, 14);
+		lblMatrcula.setBounds(64, 62, 65, 14);
 		frame.getContentPane().add(lblMatrcula);
 		
 		JLabel lblMarca = new JLabel("Marca:");
-		lblMarca.setBounds(30, 62, 46, 14);
+		lblMarca.setBounds(64, 111, 46, 14);
 		frame.getContentPane().add(lblMarca);
 		
 		JLabel lblModelo = new JLabel("Modelo:");
-		lblModelo.setBounds(30, 93, 46, 14);
+		lblModelo.setBounds(64, 158, 46, 14);
 		frame.getContentPane().add(lblModelo);
 		
 		JLabel lblCombustible = new JLabel("Combustible:");
-		lblCombustible.setBounds(30, 124, 80, 14);
+		lblCombustible.setBounds(64, 208, 80, 14);
 		frame.getContentPane().add(lblCombustible);
 		
 		JLabel lblPrecioda = new JLabel("Precio/día");
-		lblPrecioda.setBounds(30, 155, 65, 14);
+		lblPrecioda.setBounds(64, 260, 65, 14);
 		frame.getContentPane().add(lblPrecioda);
 		
 		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(318, 199, 89, 23);
+		btnAceptar.setBounds(461, 279, 108, 67);
 		frame.getContentPane().add(btnAceptar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(AnadirCoche.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
+		lblNewLabel.setBounds(-330, 0, 924, 371);
+		frame.getContentPane().add(lblNewLabel);
 	}
 
 	public void setVisible(boolean b) {

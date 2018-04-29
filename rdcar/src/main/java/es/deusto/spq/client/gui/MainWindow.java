@@ -83,7 +83,7 @@ public class MainWindow extends JFrame {
 				abrirCoches.setVisible(true);
 			}
 		});
-		btnAlquilarVehculo.setBounds(158, 61, 137, 23);
+		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
 		frame.getContentPane().add(btnAlquilarVehculo);
 
 		JButton btnClientes = new JButton("Clientes");
@@ -93,7 +93,7 @@ public class MainWindow extends JFrame {
 				abrirClientes.setVisible(true);
 			}
 		});
-		btnClientes.setBounds(37, 161, 89, 23);
+		btnClientes.setBounds(95, 233, 116, 45);
 		frame.getContentPane().add(btnClientes);
 
 		JButton btnEmpleados = new JButton("Empleados");
@@ -103,12 +103,12 @@ public class MainWindow extends JFrame {
 				abrirEmpleados.setVisible(true);
 			}
 		});
-		btnEmpleados.setBounds(298, 161, 89, 23);
+		btnEmpleados.setBounds(416, 233, 116, 45);
 		frame.getContentPane().add(btnEmpleados);
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
-		lblNewLabel.setBounds(0, -3, 434, 264);
+		lblNewLabel.setBounds(0, -3, 594, 374);
 		frame.getContentPane().add(lblNewLabel);
 
 
