@@ -18,13 +18,13 @@ public class TestEmpleadoDAO {
 
 	
 	@Mock
-	IEmpleadoDAO dao;
+	EmpleadoDAO dao;
 	
 	
 	@Before
 	public void setUp() throws Exception {
 		
-		dao = (IEmpleadoDAO) new EmpleadoDAO();
+		dao =  new EmpleadoDAO();
 		
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
 		dao.storeEmpleado(Caparros);
@@ -32,10 +32,10 @@ public class TestEmpleadoDAO {
 	
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		Empleado empleado;
+		empleado = dao.retrieveEmpleado("Caparros");
+		assertEquals(empleado.getUsuario(), "Caparros");
 	}
 
-	@After
- 	public void tearDown() throws Exception {
-	}
+	
 }

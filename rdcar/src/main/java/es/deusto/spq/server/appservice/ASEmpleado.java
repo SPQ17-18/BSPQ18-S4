@@ -55,11 +55,20 @@ public class ASEmpleado {
 	
 	public synchronized boolean LoginEmpleado(String user, String password) {
 		
-		Empleado empleado = obtenerEmpleado(user);
+		Empleado empleado = null;
+		empleado = obtenerEmpleado(user);
 		
-		if( empleado.getPassword().equals(password) ) {
+		try {
 			
-			return true;
+			if( empleado.getPassword().equals(password) ) {
+				
+				return true;
+				
+			}
+		
+		}catch(NullPointerException e) {
+			
+			return false;
 			
 		}
 		

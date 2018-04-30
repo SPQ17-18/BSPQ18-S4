@@ -55,6 +55,7 @@ public class ClienteDAO implements IClienteDAO{
 
 		try {
 			tx.begin();
+			
 			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE DNI == '" + Dni + "'");
 			query.setUnique(true);
 			cliente = (Cliente) query.execute();
