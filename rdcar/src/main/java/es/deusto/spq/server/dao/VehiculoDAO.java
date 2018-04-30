@@ -57,7 +57,7 @@ public class VehiculoDAO {
 		try {
 			tx.begin();
 			
-			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName() + " WHERE matricula == '" + Matricula + "'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName() + " WHERE Matricula == '" + Matricula + "'");
 			query.setUnique(true);
 			vehiculo = (Vehiculo) query.execute();
 
