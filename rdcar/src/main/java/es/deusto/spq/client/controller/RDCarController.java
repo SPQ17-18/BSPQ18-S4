@@ -20,7 +20,8 @@ public class RDCarController {
 	public RDCarController(String[] args) throws RemoteException {
 		rsl = new RDCarRMIServiceLocator();
 		rsl.setService(args); 
-		new MainWindow(this, "ron"); //volver a cambiar
+		//new MainWindow(this, "ron"); //volver a cambiar
+		new LoginWindow(this);
 	}
 	
 	/*

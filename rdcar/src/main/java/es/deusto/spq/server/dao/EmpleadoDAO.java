@@ -49,18 +49,23 @@ public class EmpleadoDAO {
 		}
 	}
 	
-	
 	public Empleado retrieveEmpleado(String user) {
 
 		Empleado empleado = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(2);
 		Transaction tx = pm.currentTransaction();
-
+		
+		
 		try {
 			tx.begin();
-			empleado = pm.getObjectById(Empleado.class, user);
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName() + " WHERE user == '" + user + "'");
+			query.setUnique(true);
+			empleado = (Empleado) query.execute();
+
 			tx.commit();
+			
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Empleado does not exist: " + jonfe.getMessage());
@@ -75,7 +80,7 @@ public class EmpleadoDAO {
 		}
 
 		return empleado;
-	}
+	} 
 	
 
 	public void updateEmpleado(Empleado empleado) {

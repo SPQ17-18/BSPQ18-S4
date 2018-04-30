@@ -9,6 +9,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
 
 public class VehiculoDAO {
@@ -55,8 +56,13 @@ public class VehiculoDAO {
 
 		try {
 			tx.begin();
-			vehiculo = pm.getObjectById(Vehiculo.class, Matricula);
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName() + " WHERE matricula == '" + Matricula + "'");
+			query.setUnique(true);
+			vehiculo = (Vehiculo) query.execute();
+
 			tx.commit();
+			
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Vehiculo does not exist: " + jonfe.getMessage());

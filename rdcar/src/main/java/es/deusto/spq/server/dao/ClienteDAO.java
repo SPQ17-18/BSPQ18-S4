@@ -55,8 +55,13 @@ public class ClienteDAO implements IClienteDAO{
 
 		try {
 			tx.begin();
-			cliente = pm.getObjectById(Cliente.class, Dni);
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE dni == '" + Dni + "'");
+			query.setUnique(true);
+			cliente = (Cliente) query.execute();
+
 			tx.commit();
+			
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Cliente does not exist: " + jonfe.getMessage());
