@@ -1,15 +1,17 @@
 package es.deusto.spq.server.jdo;
 
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class Vehiculo {
+public class Vehiculo implements Serializable{
 
-	
+	private static final long serialVersionUID = 3L;
 	
 	@PrimaryKey
 	String Matricula;
