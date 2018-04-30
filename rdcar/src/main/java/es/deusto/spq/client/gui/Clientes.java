@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.dto.ClienteDTO;
+import es.deusto.spq.server.jdo.Cliente;
 
 import javax.swing.JTable;
 
@@ -94,15 +95,16 @@ public class Clientes extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
-				clientes = (List<ClienteDTO>) controller.buscarCliente(textField.getText());
-				if (clientes.size() !=0) {
-					for (int i = 0; i < clientes.size(); i++) {
-						cargarTabla(clientes.get(i));
-					}
-				}else {
-					JOptionPane.showMessageDialog(new Frame(),"No existen clientes con DNI " +textField.getText());
-				}
+				Cliente c=null;
+				c = controller.buscarCliente(textField.getText());
+				System.out.println(c.getDni() + c.getNombre() + c.getApellido() + c.getAnyo_Nacimiento() + c.getLugar());
+//				if (clientes.size() !=0) {
+//					for (int i = 0; i < clientes.size(); i++) {
+						cargarTabla(c);
+//					}
+//				}else {
+//					JOptionPane.showMessageDialog(new Frame(),"No existen clientes con DNI " +textField.getText());
+//				}
 				
 			}
 		});
@@ -112,7 +114,7 @@ public class Clientes extends JFrame{
 		table = new JTable();
 		table.setBounds(39, 78, 357, 267);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
-		cargarTablaPorDefecto();
+		//cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
 		JButton btnAadir = new JButton("Añadir");
@@ -137,25 +139,25 @@ public class Clientes extends JFrame{
 		frame.getContentPane().add(lblNewLabel);
 	}
 	
-	private void cargarTabla(ClienteDTO cliente) {
+	private void cargarTabla(Cliente cliente) {
 		modelo = (DefaultTableModel) table.getModel();
 		Object[] fila = {cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getAnyo_Nacimiento(), cliente.getLugar()};
 		modelo.addRow(fila);
 	}
 	
-	private void cargarTablaPorDefecto() {
-		
-			borrarTabla();
-			List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
-			//clientes = (List<ClienteDTO>) controller.verClientes(); 			EN CONSTRUCCIÓN
-			if (clientes.size() !=0) {
-				for (int i = 0; i < clientes.size(); i++) {
-					cargarTabla(clientes.get(i));
-				}
-			}
-		
-		
-	}
+//	private void cargarTablaPorDefecto() {
+//		
+//			borrarTabla();
+//			List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
+//			//clientes = (List<ClienteDTO>) controller.verClientes(); 			EN CONSTRUCCIÓN
+//			if (clientes.size() !=0) {
+//				for (int i = 0; i < clientes.size(); i++) {
+//					cargarTabla(clientes.get(i));
+//				}
+//			}
+//		
+//		
+//	}
 	
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {
