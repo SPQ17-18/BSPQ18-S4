@@ -58,45 +58,65 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	}
 
-	
+	/*
+	 * EMPLEADOS
+	 */
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");
 		return this.ASEmpleado.LoginEmpleado(user, password);	
 	}
-	
-	
-	
-	public Cliente buscarCliente(String dni) throws RemoteException{
-		return this.ASCliente.obtenerCliente(dni);
-	}
-	
-	public  Vehiculo buscarVehiculo(String matricula) throws RemoteException{	
-		return this.ASVehiculo.obtenerVehiculo(matricula);
-	}
-
 	public Empleado buscarEmpleado(String user) throws RemoteException {
 		return this.ASEmpleado.obtenerEmpleado(user);
 	}
-
-	
-	@Override
-	public List<Cliente> verClientes() throws RemoteException {
-		return this.ASCliente.verClientes();
-	} 
-	
 	@Override
 	public List<Empleado> verEmpleados() throws RemoteException {
 		return this.ASEmpleado.verEmpleados();
 	} 
 	
 	@Override
+	public void crearEmpleado(String user, String password) throws RemoteException {
+		this.ASEmpleado.CrearEmpleado(user, password);
+	}
+
+	/*
+	 * CLIENTES
+	 */
+
+	public Cliente buscarCliente(String dni) throws RemoteException{
+		return this.ASCliente.obtenerCliente(dni);
+	}
+	@Override
+	public void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
+			throws RemoteException {
+			this.ASCliente.CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
+	}
+
+	@Override
+	public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
+			throws RemoteException {
+		this.ASCliente.ModificarCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+		
+	} 
+	@Override
+	public List<Cliente> verClientes() throws RemoteException {
+		return this.ASCliente.verClientes();
+	} 
+	
+	
+	/*
+	 * VEHICULOS
+	 */
+	
+	public  Vehiculo buscarVehiculo(String matricula) throws RemoteException{	
+		return this.ASVehiculo.obtenerVehiculo(matricula);
+	}
+
+
+	@Override
 	public List<Vehiculo> verVehiculos() throws RemoteException {
 		return this.ASVehiculo.verVehiculos();
 	}
 
-	@Override
-	public void crearEmpleado(String user, String password) throws RemoteException {
-		this.ASEmpleado.CrearEmpleado(user, password);
-	} 
+	
 	
 }

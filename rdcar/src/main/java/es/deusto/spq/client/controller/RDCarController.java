@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 import es.deusto.spq.client.gui.LoginWindow;
+import es.deusto.spq.client.gui.MainWindow;
 import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
@@ -19,8 +20,12 @@ public class RDCarController {
 	public RDCarController(String[] args) throws RemoteException {
 		rsl = new RDCarRMIServiceLocator();
 		rsl.setService(args); 
-		new LoginWindow(this);
+		new MainWindow(this, "ron"); //volver a cambiar
 	}
+	
+	/*
+	 * EMPLEADO
+	 */
 
 	public boolean logIn(String email, String password) {
 		try {
@@ -33,50 +38,13 @@ public class RDCarController {
 		return false;
 	}
 	
-	public  Cliente buscarCliente(String dni){
+	public void crearEmpleado(String user, String password) {
 		try {
-			
-			return rsl.getService().buscarCliente(dni);
-			
+			rsl.getService().crearEmpleado(user, password);
 		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
-	}
-	
-	
-	public  List<Cliente> verClientes(){
-		try {
-			
-			return rsl.getService().verClientes();
-			
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	
-	public  Vehiculo buscarVehiculo(String matricula){
-		try {
-			
-			return rsl.getService().buscarVehiculo(matricula);
-			
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	public  List<Vehiculo> verVehiculos(){
-		try {
-			
-			return rsl.getService().verVehiculos();
-			
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 	public  Empleado buscarEmpleado(String user){
@@ -101,15 +69,71 @@ public class RDCarController {
 		return null;
 	}
 	
-	public void crearEmpleado(String user, String password) {
+	/*
+	 * CLIENTE
+	 */
+	
+	public  Cliente buscarCliente(String dni){
 		try {
-			rsl.getService().crearEmpleado(user, password);
+			
+			return rsl.getService().buscarCliente(dni);
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	public  List<Cliente> verClientes(){
+		try {
+			
+			return rsl.getService().verClientes();
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public void crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+		try {
+			rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
+	/*
+	 * VEHICULOS
+	 */
+	
+	public  Vehiculo buscarVehiculo(String matricula){
+		try {
+			
+			return rsl.getService().buscarVehiculo(matricula);
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public  List<Vehiculo> verVehiculos(){
+		try {
+			
+			return rsl.getService().verVehiculos();
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	
+	
 	public void exit() {
 		System.exit(0); //Esto creo que es una mala practica hay otra forma
 	}
