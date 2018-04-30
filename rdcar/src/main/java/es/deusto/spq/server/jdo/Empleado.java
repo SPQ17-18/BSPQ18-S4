@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import es.deusto.spq.server.dao.EmpleadoDAO;
+
 @PersistenceCapable
 public class Empleado implements Serializable {
 
@@ -40,6 +42,5 @@ public class Empleado implements Serializable {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	
 	
 }

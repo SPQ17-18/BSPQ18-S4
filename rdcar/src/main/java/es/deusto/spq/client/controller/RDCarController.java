@@ -100,6 +100,15 @@ public class RDCarController {
 		}
 		return null;
 	}
+	
+	public void crearEmpleado(String user, String password) {
+		try {
+			rsl.getService().crearEmpleado(user, password);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void exit() {
 		System.exit(0); //Esto creo que es una mala practica hay otra forma

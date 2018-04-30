@@ -89,22 +89,22 @@ public class LoginWindow extends JFrame{
 		
 		JLabel LabelPassword = new JLabel("Contraseña");
 		LabelPassword.setForeground(Color.BLACK);
-		LabelPassword.setBounds(63, 145, 71, 21);
+		LabelPassword.setBounds(32, 145, 102, 21);
 		frame.getContentPane().add(LabelPassword);
 
 		JLabel LabelUsuario = new JLabel("Usuario");
 		LabelUsuario.setForeground(Color.BLACK);
-		LabelUsuario.setBounds(63, 75, 71, 21);
+		LabelUsuario.setBounds(32, 75, 102, 21);
 		frame.getContentPane().add(LabelUsuario);
 
 		textPassword = new JTextField();
-		textPassword.setBounds(173, 142, 202, 26);
+		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
 
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
-		textUsuario.setBounds(173, 72, 202, 26);
+		textUsuario.setBounds(140, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
 		
 		JButton BotonCancelar = new JButton("Cancelar");
@@ -114,11 +114,11 @@ public class LoginWindow extends JFrame{
 				frame.dispose();
 			}
 		});
-		BotonCancelar.setBounds(81, 226, 117, 29);//x,y //group layout
+		BotonCancelar.setBounds(44, 200, 117, 29);//x,y //group layout
 		frame.getContentPane().add(BotonCancelar);
 
 		JButton BotonAceptar = new JButton("Aceptar");
-		BotonAceptar.setBounds(285, 226, 117, 29);
+		BotonAceptar.setBounds(285, 200, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
 		BotonAceptar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -137,7 +137,18 @@ public class LoginWindow extends JFrame{
 				}
 			}
 		});
+		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBounds(165, 252, 115, 29);
+		frame.getContentPane().add(btnRegistrar);
+		btnRegistrar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent arg0) {
 
+				controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
+				JOptionPane.showMessageDialog(new Frame(), "Registrado");
+			}
+		});
 
 		JLabel label = new JLabel("New label");
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));

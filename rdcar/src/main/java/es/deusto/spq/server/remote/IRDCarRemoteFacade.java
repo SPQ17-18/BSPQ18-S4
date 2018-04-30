@@ -22,4 +22,6 @@ public interface IRDCarRemoteFacade extends Remote{
 	public List<Cliente> verClientes() throws RemoteException;
 	public List<Empleado> verEmpleados() throws RemoteException;
 	public List<Vehiculo> verVehiculos() throws RemoteException;
+	
+	public void crearEmpleado(String user, String password) throws RemoteException;
 }

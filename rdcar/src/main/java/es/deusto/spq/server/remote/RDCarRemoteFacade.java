@@ -92,6 +92,11 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	@Override
 	public List<Vehiculo> verVehiculos() throws RemoteException {
 		return this.ASVehiculo.verVehiculos();
+	}
+
+	@Override
+	public void crearEmpleado(String user, String password) throws RemoteException {
+		this.ASEmpleado.CrearEmpleado(user, password);
 	} 
 	
 }

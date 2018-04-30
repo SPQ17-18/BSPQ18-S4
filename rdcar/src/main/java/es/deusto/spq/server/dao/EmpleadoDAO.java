@@ -14,7 +14,7 @@ public class EmpleadoDAO {
 
 	
 
-	private PersistenceManagerFactory pmf;
+	private static PersistenceManagerFactory pmf;
 
 	public EmpleadoDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -24,6 +24,8 @@ public class EmpleadoDAO {
 	
 	
 	public void storeEmpleado(Empleado e) {
+		
+		
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -158,8 +160,6 @@ public class EmpleadoDAO {
 
 		return ListEmpleados;
 	}
-	
-	
 	
 	
 }
