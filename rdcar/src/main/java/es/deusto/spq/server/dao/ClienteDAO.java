@@ -110,7 +110,7 @@ public class ClienteDAO implements IClienteDAO{
 		try {
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT C FROM " + Cliente.class.getName() +  " C");
+			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() +  " C");
 			query.setUnique(true);
 			
 			ListClientes = (List<Cliente>) query.execute();

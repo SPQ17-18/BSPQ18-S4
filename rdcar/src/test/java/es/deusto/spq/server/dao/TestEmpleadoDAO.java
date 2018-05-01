@@ -26,14 +26,15 @@ public class TestEmpleadoDAO {
 		
 		dao =  new EmpleadoDAO();
 		
-		Empleado Caparros = new Empleado("Caparros", "sevilla");
-		dao.storeEmpleado(Caparros);
+		//Empleado Caparros = new Empleado("Caparros", "sevilla");
+		//dao.storeEmpleado(Caparros);
 	}
 	
 	@Test
 	public void test() {
 		Empleado empleado;
 		empleado = dao.retrieveEmpleado("Caparros");
+		assertArrayEquals(expecteds, actuals);
 		assertEquals(empleado.getUsuario(), "Caparros");
 	}
 
