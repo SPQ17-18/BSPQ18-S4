@@ -83,6 +83,41 @@ public class EmpleadoDAO {
 	} 
 	
 
+	public Empleado deleteEmpleado(String user) {
+
+		Empleado empleado = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(2);
+		Transaction tx = pm.currentTransaction();
+		
+		
+		try {
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName() + " WHERE user == '" + user + "'");
+			query.setUnique(true);
+			empleado = (Empleado) query.execute();
+
+			pm.deletePersistent(empleado);
+			
+			tx.commit();
+			
+		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
+		{
+			System.out.println("Empleado does not exist: " + jonfe.getMessage());
+		}
+
+		finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return empleado;
+	} 
+	
 	public void updateEmpleado(Empleado empleado) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
