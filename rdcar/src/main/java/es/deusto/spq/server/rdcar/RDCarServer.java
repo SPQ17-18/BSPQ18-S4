@@ -36,7 +36,7 @@ public class RDCarServer {
 			String line  = stdin.readLine();
 
 		} catch (Exception e) {
-			System.err.println(" - EasyBooking Server exception: " + e.getMessage());
+			System.err.println(" - RDCar Server exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}

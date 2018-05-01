@@ -114,7 +114,7 @@ public class Clientes extends JFrame{
 		table = new JTable();
 		table.setBounds(39, 78, 357, 267);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
-		//cargarTablaPorDefecto();
+		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
 		JButton btnAadir = new JButton("Añadir");
@@ -145,19 +145,19 @@ public class Clientes extends JFrame{
 		modelo.addRow(fila);
 	}
 	
-//	private void cargarTablaPorDefecto() {
-//		
-//			borrarTabla();
-//			List<ClienteDTO> clientes = new ArrayList<ClienteDTO>();
-//			//clientes = (List<ClienteDTO>) controller.verClientes(); 			EN CONSTRUCCIÓN
-//			if (clientes.size() !=0) {
-//				for (int i = 0; i < clientes.size(); i++) {
-//					cargarTabla(clientes.get(i));
-//				}
-//			}
-//		
-//		
-//	}
+	private void cargarTablaPorDefecto() {
+		
+			borrarTabla();
+			List<Cliente> clientes = new ArrayList<>();
+			clientes = (List<Cliente>)controller.verClientes();	
+			if (clientes.size() !=0) {
+				for (int i = 0; i < clientes.size(); i++) {
+					cargarTabla(clientes.get(i));
+				}
+			}
+		
+		
+	}
 	
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {

@@ -134,7 +134,7 @@ public class VehiculoDAO {
 		try {
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName());
+			Query<?> query = pm.newQuery("SELECT * FROM " + Vehiculo.class.getName());
 			query.setUnique(true);
 			
 			ListVehiculos = (List<Vehiculo>) query.execute();
