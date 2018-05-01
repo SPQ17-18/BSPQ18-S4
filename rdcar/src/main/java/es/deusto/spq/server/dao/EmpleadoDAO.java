@@ -10,7 +10,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Empleado;
 
-public class EmpleadoDAO {
+public class EmpleadoDAO implements IEmpleadoDAO {
 
 	
 
@@ -144,8 +144,8 @@ public class EmpleadoDAO {
 		try {
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT * FROM " + Empleado.class.getName());
-			query.setUnique(true);
+			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName());
+			query.setUnique(false);
 			
 			ListEmpleados = (List<Empleado>) query.execute();
 			

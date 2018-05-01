@@ -1,11 +1,7 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.EventQueue;
-import java.awt.Frame;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -18,8 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import es.deusto.spq.client.controller.RDCarController;
-import es.deusto.spq.server.dto.ClienteDTO;
-import es.deusto.spq.server.dto.EmpleadoDTO;
+import es.deusto.spq.server.jdo.Empleado;
 
 import javax.swing.JTable;
 
@@ -31,7 +26,7 @@ public class Empleados extends JFrame{
 	 */
 	private static final long serialVersionUID = -5444928577864431444L;
 	private JFrame frame;
-	private JTextField textField;
+	private JTextField textUsuario;
 	private JTable table;
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
@@ -77,33 +72,27 @@ public class Empleados extends JFrame{
 		frame.setTitle("Empleados");
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblDniDelCliente = new JLabel("DNI del cliente:");
-		lblDniDelCliente.setBounds(23, 31, 97, 16);
+		JLabel lblDniDelCliente = new JLabel("Nombre de usuario:");
+		lblDniDelCliente.setBounds(15, 31, 142, 16);
 		frame.getContentPane().add(lblDniDelCliente);
 		
-		textField = new JTextField();
-		textField.setBounds(120, 28, 116, 22);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		textUsuario = new JTextField();
+		textUsuario.setBounds(166, 28, 135, 22);
+		frame.getContentPane().add(textUsuario);
+		textUsuario.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(272, 27, 97, 25);
+		btnBuscar.setBounds(316, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<EmpleadoDTO> empleados = new ArrayList<EmpleadoDTO>();
-				empleados = (List<EmpleadoDTO>) controller.buscarEmpleado(textField.getText());
-				if (empleados.size() !=0) {
-					for (int i = 0; i < empleados.size(); i++) {
-						cargarTabla(empleados.get(i));
-					}
-				}else {
-					JOptionPane.showMessageDialog(new Frame(),"No existen empleados con DNI " +textField.getText());
-				}
-				
+				Empleado emp = null;
+				emp = controller.buscarEmpleado(textUsuario.getText());
+				System.out.println(emp.getUsuario());
+				cargarTabla(emp);	
 			}
 		});
 			
@@ -111,21 +100,34 @@ public class Empleados extends JFrame{
 		
 		table = new JTable();
 		table.setBounds(39, 78, 357, 145);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Número de empleado", "Usuario"}));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Usuario"}));
+		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Empleados.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
-		lblNewLabel.setBounds(0, 0, 434, 261);
+		lblNewLabel.setBounds(15, 0, 434, 261);
 		frame.getContentPane().add(lblNewLabel);
 	}
 	
-	private void cargarTabla(EmpleadoDTO empleado) {
+	private void cargarTabla(Empleado e) {
 		modelo = (DefaultTableModel) table.getModel();
-		Object[] fila = {empleado.getUser()};
+		Object[] fila = {e.getUsuario()};
 		modelo.addRow(fila);
+	}
+	
+	private void cargarTablaPorDefecto() {
+		
+		borrarTabla();
+		List<Empleado> empleados = new ArrayList<>();
+		empleados = (List<Empleado>)controller.verEmpleados();	
+		if (empleados.size() !=0) {
+			for (int i = 0; i < empleados.size(); i++) {
+				cargarTabla(empleados.get(i));
+			}
+		}	
 	}
 	
 	private void borrarTabla() {
