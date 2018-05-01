@@ -23,13 +23,17 @@ public class ASEmpleado {
 		}
 		return instance;
 	}
+
+	public synchronized void Refresh() {
+		dao = new EmpleadoDAO();
+	}
 	
 	public synchronized void CrearEmpleado(String user, String password) {
 		
 		Empleado empleado = new Empleado(user,password);
 		
 		dao.storeEmpleado(empleado);
-		
+		Refresh();
 	}
 	
 	public synchronized void ModificarEmpleado(String user, String password) {
@@ -37,7 +41,7 @@ public class ASEmpleado {
 		Empleado empleado = new Empleado(user,password);
 		
 		dao.updateEmpleado(empleado);
-
+		Refresh();
 	}
 	
 	public synchronized void BorrarEmpleado(String user) {
@@ -49,7 +53,7 @@ public class ASEmpleado {
 	public synchronized Empleado obtenerEmpleado(String user) {
 		
 		Empleado empleado = dao.retrieveEmpleado(user);
-		
+		Refresh();
 		return empleado;
 	}
 	
@@ -61,21 +65,22 @@ public class ASEmpleado {
 		try {
 			
 			if( empleado.getPassword().equals(password) ) {
-				
+				Refresh();
 				return true;
 				
 			}
 		
 		}catch(NullPointerException e) {
-			
+			Refresh();
 			return false;
 			
 		}
-		
+		Refresh();
 		return false;
 	}
 	
 	public synchronized List<Empleado> verEmpleados(){
+		Refresh();
 		return dao.getAllEmpleados();
 	}
 	

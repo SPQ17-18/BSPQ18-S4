@@ -23,12 +23,16 @@ public class ASCliente {
 		return instance;
 	}
 	
+	public synchronized void Refresh() {
+		dao = new ClienteDAO();
+	}
 	
 	public synchronized void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		
 		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
 		
 		dao.storeCliente(cliente);
+		Refresh();
 		
 	}
 	
@@ -37,6 +41,7 @@ public class ASCliente {
 		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
 		
 		dao.storeCliente(cliente);
+		Refresh();
 	}
 	
 	public synchronized void BorrarCliente(String dni) {
@@ -48,11 +53,12 @@ public class ASCliente {
 	public synchronized Cliente obtenerCliente(String dni) {
 		
 		Cliente cliente = dao.retrieveCliente(dni);
-		
+		Refresh();
 		return cliente;
 	}
 	
 	public synchronized List<Cliente> verClientes(){
+		Refresh();
 		return dao.getAllClientes();
 	}
 }
