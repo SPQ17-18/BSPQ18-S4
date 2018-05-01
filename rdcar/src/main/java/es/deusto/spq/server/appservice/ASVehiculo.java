@@ -46,8 +46,8 @@ public class ASVehiculo {
 	}
 	
 	public synchronized void BorrarVehiculo(String matricula) {
-		
-		
+		Refresh();
+		dao.borrarVehiculo(matricula);
 		
 	}
 	

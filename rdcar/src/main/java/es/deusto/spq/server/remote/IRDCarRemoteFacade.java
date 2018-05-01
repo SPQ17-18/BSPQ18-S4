@@ -19,11 +19,13 @@ public interface IRDCarRemoteFacade extends Remote{
 	public Cliente buscarCliente(String dni) throws RemoteException;
 	public List<Cliente> verClientes() throws RemoteException;
 	public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
+	public void borrarCliente(String dni) throws RemoteException;
 	
 	public Vehiculo buscarVehiculo(String matricula) throws RemoteException;
 	public List<Vehiculo> verVehiculos() throws RemoteException;
 	public void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
 	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
+	public void borrarVehiculo(String matricula) throws RemoteException;
 	
 	public void crearEmpleado(String user, String password) throws RemoteException;
 	public Empleado buscarEmpleado(String user) throws RemoteException;

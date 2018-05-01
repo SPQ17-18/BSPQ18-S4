@@ -79,7 +79,7 @@ public class MainWindow extends JFrame {
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Coches abrirCoches = new Coches(controller);
+				Vehiculos abrirCoches = new Vehiculos(controller);
 				abrirCoches.setVisible(true);
 			}
 		});

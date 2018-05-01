@@ -102,6 +102,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASCliente.verClientes();
 	} 
 	
+	public void borrarCliente(String dni) throws RemoteException{
+		this.ASCliente.BorrarCliente(dni);
+	}
 	
 	/*
 	 * VEHICULOS
@@ -121,6 +124,10 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		
 		this.ASVehiculo.ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
 
+	}
+	
+	public void borrarVehiculo(String matricula) throws RemoteException{
+		this.ASVehiculo.BorrarVehiculo(matricula);
 	}
 
 	@Override

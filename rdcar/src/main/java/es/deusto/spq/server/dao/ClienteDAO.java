@@ -10,6 +10,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 public class ClienteDAO implements IClienteDAO{
 
@@ -98,6 +99,35 @@ public class ClienteDAO implements IClienteDAO{
 		}
 
 	}
+	
+	public void borrarCliente(String dni) {
+		
+		Cliente cliente = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(2);
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE Dni == '" + dni + "'");
+			query.setUnique(true);
+			cliente = (Cliente) query.execute();
+			pm.deletePersistent(cliente);
+			System.out.println("   ***Cliente con DNI "+dni+" eliminado***");
+
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("Error deleting a Cliente: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+	}
+	
 	
 	public List<Cliente> getAllClientes() { //Pruebas
 		

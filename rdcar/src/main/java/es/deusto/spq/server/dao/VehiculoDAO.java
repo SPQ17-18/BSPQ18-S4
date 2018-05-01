@@ -101,17 +101,24 @@ public class VehiculoDAO {
 
 	}
 
-	public void borrarVehiculo(Vehiculo vehiculo) {
-
+	public void borrarVehiculo(String matricula) {
+		
+		Vehiculo vehiculo = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(2);
 		Transaction tx = pm.currentTransaction();
 
 		try {
 			tx.begin();
-			//pm.makePersistent(vehiculo);
+			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName() + " WHERE Matricula == '" + matricula + "'");
+			query.setUnique(true);
+			vehiculo = (Vehiculo) query.execute();
+			pm.deletePersistent(vehiculo);
+			System.out.println("   ***Vehiculo con matricula "+matricula+" eliminado***");
+
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("Error updating a Vehiculo: " + ex.getMessage());
+			System.out.println("Error deleting a Vehiculo: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

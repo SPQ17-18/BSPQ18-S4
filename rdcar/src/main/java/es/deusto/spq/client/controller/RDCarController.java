@@ -106,6 +106,15 @@ public class RDCarController {
 		}
 	}
 	
+	public void borrarCliente(String c) {
+		try {
+			rsl.getService().borrarCliente(c);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	/*
 	 * VEHICULOS
 	 */
@@ -141,7 +150,14 @@ public class RDCarController {
 		}
 	}
 	
-	
+	public void borrarVehiculo(String m) {
+		try {
+			rsl.getService().borrarVehiculo(m);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 	public void exit() {
@@ -152,5 +168,6 @@ public class RDCarController {
 
 		new RDCarController(args); 
 	}
+
 
 }

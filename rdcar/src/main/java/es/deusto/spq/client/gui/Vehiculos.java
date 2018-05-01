@@ -24,7 +24,7 @@ import es.deusto.spq.server.jdo.Vehiculo;
 
 import javax.swing.JTable;
 
-public class Coches extends JFrame{
+public class Vehiculos extends JFrame{
 
 	
 	/**
@@ -36,7 +36,7 @@ public class Coches extends JFrame{
 	private JTable table;
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
-	private static Coches instance;
+	private static Vehiculos instance;
 
 	/**
 	 * Launch the application.
@@ -54,14 +54,14 @@ public class Coches extends JFrame{
 //		});
 //	}
 
-	public static Coches getInstance() {
+	public static Vehiculos getInstance() {
 		return instance;
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public Coches(RDCarController controller) {
+	public Vehiculos(RDCarController controller) {
 		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
@@ -72,7 +72,7 @@ public class Coches extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 538, 381);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setSize(600, 400);
@@ -81,16 +81,16 @@ public class Coches extends JFrame{
 		frame.setTitle("Coches");
 
 		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
-		lblMatricula.setBounds(23, 31, 133, 16);
+		lblMatricula.setBounds(15, 31, 171, 19);
 		frame.getContentPane().add(lblMatricula);
 		
 		textField = new JTextField();
-		textField.setBounds(144, 28, 213, 22);
+		textField.setBounds(183, 29, 213, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(400, 27, 97, 25);
+		btnBuscar.setBounds(449, 27, 115, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
@@ -112,8 +112,22 @@ public class Coches extends JFrame{
 		frame.getContentPane().add(table);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(449, 265, 89, 31);
+		btnEliminar.setBounds(449, 265, 115, 31);
 		frame.getContentPane().add(btnEliminar);
+		btnEliminar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String m = (String) table.getValueAt(table.getSelectedRow(), 0);
+				int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres eliminar este vehiculo?", "", JOptionPane.YES_NO_OPTION);
+				if(opcion ==JOptionPane.YES_OPTION) {
+					controller.borrarVehiculo(m);
+					JOptionPane.showMessageDialog(new Frame(), "Vehiculo eliminado");
+				}
+				
+			}
+		});
 		
 		JButton btnAnadir = new JButton("Anadir");
 		btnAnadir.addActionListener(new ActionListener() {
@@ -123,13 +137,13 @@ public class Coches extends JFrame{
 			}
 			
 		});
-		btnAnadir.setBounds(449, 144, 89, 31);
+		btnAnadir.setBounds(449, 144, 115, 31);
 		frame.getContentPane().add(btnAnadir);
 		
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Coches.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}

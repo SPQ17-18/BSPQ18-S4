@@ -69,7 +69,7 @@ public class AnadirCliente {
 		frame.setTitle("Anadir Cliente");
 		
 		
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Coches.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		textDNI = new JTextField();
 		textDNI.setBounds(135, 53, 220, 20);
 		frame.getContentPane().add(textDNI);

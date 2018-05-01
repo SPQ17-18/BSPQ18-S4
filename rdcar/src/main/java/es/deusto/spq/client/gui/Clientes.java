@@ -123,7 +123,20 @@ public class Clientes extends JFrame{
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(455, 275, 89, 35);
 		frame.getContentPane().add(btnEliminar);
-		
+		btnEliminar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String c = (String) table.getValueAt(table.getSelectedRow(), 0);
+				int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres eliminar este cliente?", "", JOptionPane.YES_NO_OPTION);
+				if(opcion ==JOptionPane.YES_OPTION) {
+					controller.borrarCliente(c);
+					JOptionPane.showMessageDialog(new Frame(), "Cliente eliminado");
+				}
+				
+			}
+		});
 		
 
 		JLabel lblNewLabel = new JLabel("New label");

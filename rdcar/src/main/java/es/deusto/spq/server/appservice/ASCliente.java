@@ -45,9 +45,8 @@ public class ASCliente {
 	}
 	
 	public synchronized void BorrarCliente(String dni) {
-		
-		
-		
+		Refresh();
+		dao.borrarCliente(dni);
 	}
 	
 	public synchronized Cliente obtenerCliente(String dni) {
