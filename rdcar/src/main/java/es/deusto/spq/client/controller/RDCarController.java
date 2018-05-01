@@ -132,6 +132,15 @@ public class RDCarController {
 		return null;
 	}
 	
+	public void crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+		try {
+			rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	
 	

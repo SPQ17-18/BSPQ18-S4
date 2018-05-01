@@ -1,13 +1,17 @@
 package es.deusto.spq.client.gui;
 
 import java.awt.EventQueue;
+import java.awt.Frame;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
 import es.deusto.spq.client.controller.RDCarController;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
@@ -15,11 +19,11 @@ public class AnadirCoche {
 
 	private JFrame frame;
 	private RDCarController controller = null;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField textMatricula;
+	private JTextField textMarca;
+	private JTextField textModelo;
+	private JTextField textCombus;
+	private JTextField textPrecioDia;
 
 	/**
 	 * Launch the application.
@@ -60,54 +64,63 @@ public class AnadirCoche {
 		frame.setResizable(false);
 		frame.setSize(600, 400);
 		
-		textField = new JTextField();
-		textField.setBounds(198, 59, 168, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		textMatricula = new JTextField();
+		textMatricula.setBounds(198, 59, 168, 20);
+		frame.getContentPane().add(textMatricula);
+		textMatricula.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(198, 105, 168, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		textMarca = new JTextField();
+		textMarca.setBounds(198, 105, 168, 20);
+		frame.getContentPane().add(textMarca);
+		textMarca.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(198, 155, 168, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		textModelo = new JTextField();
+		textModelo.setBounds(198, 155, 168, 20);
+		frame.getContentPane().add(textModelo);
+		textModelo.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(198, 205, 168, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		textCombus = new JTextField();
+		textCombus.setBounds(198, 205, 168, 20);
+		frame.getContentPane().add(textCombus);
+		textCombus.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(198, 257, 168, 20);
-		frame.getContentPane().add(textField_4);
-		textField_4.setColumns(10);
+		textPrecioDia = new JTextField();
+		textPrecioDia.setBounds(198, 257, 168, 20);
+		frame.getContentPane().add(textPrecioDia);
+		textPrecioDia.setColumns(10);
 		
 		JLabel lblMatrcula = new JLabel("Matrícula:");
-		lblMatrcula.setBounds(64, 62, 65, 14);
+		lblMatrcula.setBounds(28, 62, 101, 14);
 		frame.getContentPane().add(lblMatrcula);
 		
 		JLabel lblMarca = new JLabel("Marca:");
-		lblMarca.setBounds(64, 111, 46, 14);
+		lblMarca.setBounds(30, 111, 80, 14);
 		frame.getContentPane().add(lblMarca);
 		
 		JLabel lblModelo = new JLabel("Modelo:");
-		lblModelo.setBounds(64, 158, 46, 14);
+		lblModelo.setBounds(28, 158, 82, 14);
 		frame.getContentPane().add(lblModelo);
 		
 		JLabel lblCombustible = new JLabel("Combustible:");
-		lblCombustible.setBounds(64, 208, 80, 14);
+		lblCombustible.setBounds(28, 208, 116, 14);
 		frame.getContentPane().add(lblCombustible);
 		
 		JLabel lblPrecioda = new JLabel("Precio/día");
-		lblPrecioda.setBounds(64, 260, 65, 14);
+		lblPrecioda.setBounds(28, 260, 101, 14);
 		frame.getContentPane().add(lblPrecioda);
 		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(461, 279, 108, 67);
 		frame.getContentPane().add(btnAceptar);
+		btnAceptar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getText(), Integer.parseInt(textPrecioDia.getText()));
+				JOptionPane.showMessageDialog(new Frame(), "Creado");
+			}
+		});
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(AnadirCoche.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));

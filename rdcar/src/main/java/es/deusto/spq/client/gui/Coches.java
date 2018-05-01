@@ -19,6 +19,8 @@ import javax.swing.table.DefaultTableModel;
 
 import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 import javax.swing.JTable;
 
@@ -95,16 +97,9 @@ public class Coches extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				List<VehiculoDTO> vehiculos = new ArrayList<VehiculoDTO>();
-				vehiculos = (List<VehiculoDTO>) controller.buscarVehiculo(textField.getText());
-				if (vehiculos.size() !=0) {
-					for (int i = 0; i < vehiculos.size(); i++) {
-						cargarTabla(vehiculos.get(i));
-					}
-				}else {
-					JOptionPane.showMessageDialog(new Frame(),"No existen vehículos con matrícula " +textField.getText());
-				}
-				
+				Vehiculo v = null;
+				v = controller.buscarVehiculo(textField.getText());
+				cargarTabla(v);
 			}
 		});
 			
@@ -113,13 +108,8 @@ public class Coches extends JFrame{
 		table = new JTable();
 		table.setBounds(39, 78, 357, 260);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
+		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
-		
-		
-		
-		
-		
-
 		
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(449, 265, 89, 31);
@@ -144,11 +134,25 @@ public class Coches extends JFrame{
 		frame.getContentPane().add(lblNewLabel);
 	}
 	
-	private void cargarTabla(VehiculoDTO v) {
+	private void cargarTabla(Vehiculo v) {
 		modelo = (DefaultTableModel) table.getModel();
 		Object[] fila = {v.getMatricula(), v.getMarca(), v.getModelo(), v.getCombustible(), v.getPrecio_dia()};
 		modelo.addRow(fila);
 	}
+	
+	private void cargarTablaPorDefecto() {
+		
+		borrarTabla();
+		List<Vehiculo> vehiculos = new ArrayList<>();
+		vehiculos = (List<Vehiculo>)controller.verVehiculos();	
+		if (vehiculos.size() !=0) {
+			for (int i = 0; i < vehiculos.size(); i++) {
+				cargarTabla(vehiculos.get(i));
+			}
+		}
+	
+	
+}
 	
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {

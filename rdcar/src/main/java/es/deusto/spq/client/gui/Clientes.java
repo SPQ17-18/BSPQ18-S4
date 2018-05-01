@@ -95,17 +95,10 @@ public class Clientes extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
-				Cliente c=null;
+				Cliente c = null;
 				c = controller.buscarCliente(textField.getText());
 				System.out.println(c.getDni() + c.getNombre() + c.getApellido() + c.getAnyo_Nacimiento() + c.getLugar());
-//				if (clientes.size() !=0) {
-//					for (int i = 0; i < clientes.size(); i++) {
-						cargarTabla(c);
-//					}
-//				}else {
-//					JOptionPane.showMessageDialog(new Frame(),"No existen clientes con DNI " +textField.getText());
-//				}
-				
+				cargarTabla(c);	
 			}
 		});
 			
