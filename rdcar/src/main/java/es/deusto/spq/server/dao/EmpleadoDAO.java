@@ -144,7 +144,7 @@ public class EmpleadoDAO {
 		try {
 
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT * FROM " + Empleado.class.getName());
+			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName());
 			query.setUnique(true);
 			
 			ListEmpleados = (List<Empleado>) query.execute();
