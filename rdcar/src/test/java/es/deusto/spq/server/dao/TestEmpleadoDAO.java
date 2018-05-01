@@ -34,7 +34,7 @@ public class TestEmpleadoDAO {
 	public void test() {
 		Empleado empleado;
 		empleado = dao.retrieveEmpleado("Caparros");
-		assertArrayEquals(expecteds, actuals);
+		
 		assertEquals(empleado.getUsuario(), "Caparros");
 	}
 

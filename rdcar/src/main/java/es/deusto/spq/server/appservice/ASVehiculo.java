@@ -30,19 +30,19 @@ public class ASVehiculo {
 	}
 	
 	public synchronized void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
-		
+		Refresh();
 		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
 		
 		dao.storeVehiculo(vehiculo);
-		Refresh();
+		
 	}
 	
 	public synchronized void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
-		
+		Refresh();
 		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
 		
 		dao.updateVehiculo(vehiculo);
-		Refresh();
+		
 	}
 	
 	public synchronized void BorrarVehiculo(String matricula) {
@@ -52,9 +52,9 @@ public class ASVehiculo {
 	}
 	
 	public synchronized Vehiculo obtenerVehiculo(String matricula) {
-		
-		Vehiculo vehiculo = dao.retrieveVehiculo(matricula);
 		Refresh();
+		Vehiculo vehiculo = dao.retrieveVehiculo(matricula);
+		
 		return vehiculo;
 	}
 	
