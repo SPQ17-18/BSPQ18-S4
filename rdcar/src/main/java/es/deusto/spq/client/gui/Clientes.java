@@ -117,7 +117,7 @@ public class Clientes extends JFrame{
 				acliente.setVisible(true);
 			}
 		});
-		btnAadir.setBounds(455, 103, 89, 37);
+		btnAadir.setBounds(455, 83, 89, 37);
 		frame.getContentPane().add(btnAadir);
 		
 		JButton btnEliminar = new JButton("Eliminar");
@@ -135,6 +135,18 @@ public class Clientes extends JFrame{
 					JOptionPane.showMessageDialog(new Frame(), "Cliente eliminado");
 				}
 				
+			}
+		});
+		
+		JButton btnActu = new JButton("Actualizar");
+			
+		btnActu.setBounds(449, 134, 115, 31);
+		frame.getContentPane().add(btnActu);
+		btnActu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				Clientes cli = new Clientes(controller);
+				cli.setVisible(true);
 			}
 		});
 		

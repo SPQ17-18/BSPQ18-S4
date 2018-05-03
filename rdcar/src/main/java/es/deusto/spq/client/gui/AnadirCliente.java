@@ -5,6 +5,7 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -89,7 +90,7 @@ public class AnadirCliente {
 		textAñoNacim.setBounds(135, 191, 220, 20);
 		frame.getContentPane().add(textAñoNacim);
 		textAñoNacim.setColumns(10);
-		
+			
 		textLugarNacim = new JTextField();
 		textLugarNacim.setBounds(135, 241, 220, 20);
 		frame.getContentPane().add(textLugarNacim);
@@ -121,10 +122,37 @@ public class AnadirCliente {
 		btnAceptar.addActionListener(new ActionListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) { //Comprobacion de errores de introduccion de texto
 				// TODO Auto-generated method stub
-				controller.crearCliente(textDNI.getText(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAñoNacim.getText()), textLugarNacim.getText());
-				JOptionPane.showMessageDialog(new Frame(), "Creado");
+				boolean palante=true;
+				if(textDNI.getText().toUpperCase().length() == 9 && Character.isLetter(textDNI.getText().toUpperCase().charAt(8))) {
+					if(textNombre.getText().length() != 0 && textApellidos.getText().length() != 0) {
+						for(int i=0;i<textAñoNacim.getText().length();i++) {
+							if(!(Character.isDigit(textAñoNacim.getText().charAt(i)))) {
+								JOptionPane.showMessageDialog(new Frame(), "Error en el año de nacimiento");
+								textAñoNacim.requestFocus();
+								palante=false;
+							}
+						}
+						for(int i=0;i<textLugarNacim.getText().length();i++) {
+							if(!(Character.isLetter(textLugarNacim.getText().charAt(i)))) {
+								JOptionPane.showMessageDialog(new Frame(), "Error en el lugar de nacimiento (solo letras)");
+								textLugarNacim.requestFocus();
+								palante=false;
+							}
+						}
+						if(palante) {
+							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAñoNacim.getText()), textLugarNacim.getText());
+							JOptionPane.showMessageDialog(new Frame(), "Creado");
+							frame.dispose();
+						}
+					}else {
+						JOptionPane.showMessageDialog(new Frame(), "Error en las credenciales");
+					}
+				}else {
+					JOptionPane.showMessageDialog(new Frame(), "Error en el DNI");
+					textDNI.requestFocus();
+				}
 			}
 		});
 		
