@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.ImageIcon;
 
 public class AnadirCoche {
@@ -22,8 +23,9 @@ public class AnadirCoche {
 	private JTextField textMatricula;
 	private JTextField textMarca;
 	private JTextField textModelo;
-	private JTextField textCombus;
+	private JComboBox textCombus;
 	private JTextField textPrecioDia;
+	private String[] Combustibles = {"Diesel", "Gasolina", "Electrico", "Hibrido"};
 
 	/**
 	 * Launch the application.
@@ -79,10 +81,10 @@ public class AnadirCoche {
 		frame.getContentPane().add(textModelo);
 		textModelo.setColumns(10);
 		
-		textCombus = new JTextField();
+		textCombus = new JComboBox(Combustibles);
 		textCombus.setBounds(198, 205, 168, 20);
 		frame.getContentPane().add(textCombus);
-		textCombus.setColumns(10);
+		//textCombus.setColumns(10);
 		
 		textPrecioDia = new JTextField();
 		textPrecioDia.setBounds(198, 257, 168, 20);
@@ -117,7 +119,7 @@ public class AnadirCoche {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getText(), Integer.parseInt(textPrecioDia.getText()));
+				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getName(), Integer.parseInt(textPrecioDia.getText()));
 				JOptionPane.showMessageDialog(new Frame(), "Creado");
 			}
 		});

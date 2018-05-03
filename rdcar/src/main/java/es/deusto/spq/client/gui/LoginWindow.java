@@ -101,6 +101,7 @@ public class LoginWindow extends JFrame{
 		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
+		textPassword.getText().replace("/w", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui
 
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
@@ -144,9 +145,17 @@ public class LoginWindow extends JFrame{
 		btnRegistrar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
-
-				controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
-				JOptionPane.showMessageDialog(new Frame(), "Registrado");
+				if(textUsuario.getText().length() !=0) {//Comprueba que no sea cadena vacía
+					if(textUsuario.getText() == controller.buscarEmpleado(textUsuario.getText()).getUsuario()){//Comprueba que el user de empleado no sea igual que uno ya creado (no funciona)
+						JOptionPane.showMessageDialog(new Frame(), "Empleado previamente registrado");
+					}else {
+						controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
+						JOptionPane.showMessageDialog(new Frame(), "Registrado");
+					}
+				}
+				else {
+					JOptionPane.showMessageDialog(new Frame(), "Introduzca un usuario");
+				}
 			}
 		});
 
