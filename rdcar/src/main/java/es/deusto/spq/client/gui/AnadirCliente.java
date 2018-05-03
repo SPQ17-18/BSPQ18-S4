@@ -122,7 +122,7 @@ public class AnadirCliente {
 		btnAceptar.addActionListener(new ActionListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) { //Comprobacion de errores de introduccion de texto/
+			public void actionPerformed(ActionEvent e) { //Comprobacion de errores de introduccion de texto
 				// TODO Auto-generated method stub
 				boolean palante=true;
 				if(textDNI.getText().toUpperCase().length() == 9 && Character.isLetter(textDNI.getText().toUpperCase().charAt(8))) {
