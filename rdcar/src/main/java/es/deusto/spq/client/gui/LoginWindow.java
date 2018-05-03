@@ -11,6 +11,7 @@ import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,10 @@ import java.awt.Toolkit;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+
+import java.awt.event.KeyEvent;
+import javax.swing.InputMap;
+import javax.swing.KeyStroke;
 
 public class LoginWindow extends JFrame{
 
@@ -97,12 +102,19 @@ public class LoginWindow extends JFrame{
 		LabelUsuario.setBounds(32, 75, 102, 21);
 		frame.getContentPane().add(LabelUsuario);
 
-		textPassword = new JTextField();
+		/*textPassword = new JTextField();
 		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
-		textPassword.getText().replace("/w", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
-
+		//textPassword.getText().replace("/w/", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
+		*/
+		
+		final JPasswordField textPassword = new JPasswordField();
+		textPassword.setBounds(140, 142, 202, 26);
+		frame.getContentPane().add(textPassword);
+		textPassword.setColumns(10);
+		
+		
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
 		textUsuario.setBounds(140, 72, 202, 26);
@@ -115,7 +127,7 @@ public class LoginWindow extends JFrame{
 				frame.dispose();
 			}
 		});
-		BotonCancelar.setBounds(44, 200, 117, 29);//x,y //group layout
+		BotonCancelar.setBounds(44, 200, 117, 29);
 		frame.getContentPane().add(BotonCancelar);
 
 		JButton BotonAceptar = new JButton("Aceptar");
@@ -172,4 +184,8 @@ public class LoginWindow extends JFrame{
 	public void setController(RDCarController controller) {
 		this.controller = controller;
 	}
+	
+	//aceptar al enter
+
+	
 }
