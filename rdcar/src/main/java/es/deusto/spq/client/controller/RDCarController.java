@@ -119,7 +119,7 @@ public class RDCarController {
 	 * VEHICULOS
 	 */
 	
-	public  Vehiculo buscarVehiculo(String matricula){
+	public  Vehiculo buscarVehiculo(String matricula){ //busca matrícula exacta
 		try {
 			
 			return rsl.getService().buscarVehiculo(matricula);

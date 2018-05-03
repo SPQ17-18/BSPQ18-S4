@@ -74,7 +74,7 @@ public class Vehiculos extends JFrame{
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 538, 381);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(600, 400);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
@@ -140,6 +140,7 @@ public class Vehiculos extends JFrame{
 		JButton btnActu = new JButton("Actualizar");
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
 				Vehiculos vehi = new Vehiculos(controller); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
 				vehi.setVisible(true);
 			}

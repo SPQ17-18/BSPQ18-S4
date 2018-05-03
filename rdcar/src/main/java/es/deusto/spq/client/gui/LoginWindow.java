@@ -25,6 +25,8 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.InputMap;
 import javax.swing.KeyStroke;
 
@@ -45,6 +47,7 @@ public class LoginWindow extends JFrame{
 		this.controller=controller;
 		initialize();
 		frame.setVisible(true);
+		setFocusable(true);
 		
 	}
 
@@ -133,7 +136,7 @@ public class LoginWindow extends JFrame{
 		JButton BotonAceptar = new JButton("Aceptar");
 		BotonAceptar.setBounds(285, 200, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
-		BotonAceptar.addActionListener(new ActionListener() {
+		BotonAceptar.addActionListener(new ActionListener() { //Aqui esta el actionlistener
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -148,6 +151,34 @@ public class LoginWindow extends JFrame{
 					JOptionPane.showMessageDialog(new Frame(), "Error");
 
 				}
+			}
+		});
+		
+		frame.addKeyListener(new KeyListener() { //Aqui esta el keylistener, el cual no se por que no funciona
+			
+			@Override
+			public void keyReleased(KeyEvent arg0) {}
+			
+			@Override
+			public void keyTyped(KeyEvent arg0) {}
+			
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				int id = arg0.getKeyCode();
+				if(id == KeyEvent.VK_ENTER) {
+					boolean exists = true;
+					exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+
+					if (exists) {
+						MainWindow view = new MainWindow(controller, textUsuario.getText());
+						view.setVisible(true);
+
+					} else {
+						JOptionPane.showMessageDialog(new Frame(), "Error");
+
+					}
+				}
+				
 			}
 		});
 		
