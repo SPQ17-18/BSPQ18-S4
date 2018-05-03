@@ -25,17 +25,6 @@ public class AssemblerTest {
 		atest = new Assembler();
 	}
 
-
-/*
-	@Test
-	public void testCliente() {
-		List<ClienteDTO>  clientedto = new ArrayList<ClienteDTO>();
-		ClienteDTO e = new ClienteDTO("aaaa", "bbbb", "ccccc", 123,"sss");
-		clientedto.add(e);
-		ClienteDTO c = atest.assembleCliente(e);
-		//fail("Not yet implemented");
-	}
-	*/
 	@Test
 	public void testCliente() {
 		
@@ -45,10 +34,8 @@ public class AssemblerTest {
 	
 		//Test equals
 		assertEquals(cliente.size(), 2);
-		//assertEquals(clientedto.get(1),e);
 		atest.assembleCliente(cliente);
-		
-		//fail("Not yet implemented");
+	
 	}
 	
 	@Test
@@ -60,10 +47,8 @@ public class AssemblerTest {
 	
 		//Test equals
 		assertEquals(cliente.size(), 2);
-		//assertEquals(clientedto.get(1),e);
 		atest.assembleVehiculo(cliente);
-		
-		//fail("Not yet implemented");
+
 	}
 	
 	@Test
@@ -75,12 +60,8 @@ public class AssemblerTest {
 	
 		//Test equals
 		assertEquals(empleado.size(), 2);
-		//assertEquals(clientedto.get(1),e);
 		atest.assembleEmpleado(empleado);
 		
-		//fail("Not yet implemented");
 	}
 	
-	
-
 }
