@@ -138,7 +138,7 @@ public class Clientes extends JFrame{
 			}
 		});
 		
-		JButton btnActu = new JButton("Actualizar");
+		JButton btnActu = new JButton("Actualizar");//
 			
 		btnActu.setBounds(449, 134, 115, 31);
 		frame.getContentPane().add(btnActu);
