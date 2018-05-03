@@ -103,7 +103,7 @@ public class AnadirCoche {
 		lblModelo.setBounds(28, 158, 82, 14);
 		frame.getContentPane().add(lblModelo);
 		
-		JLabel lblCombustible = new JLabel("Combustible:");//
+		JLabel lblCombustible = new JLabel("Combustible:");
 		lblCombustible.setBounds(28, 208, 116, 14);
 		frame.getContentPane().add(lblCombustible);
 		
