@@ -31,7 +31,6 @@ public class TestEmpleadoDAO {
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
 		Empleado CecilioG = new Empleado("CecilioG", "1234");
 		
-		dao.
 		dao.storeEmpleado(Caparros);
 	}
 	
