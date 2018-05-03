@@ -68,7 +68,7 @@ public class Vehiculos extends JFrame{
 	}
 
 	/**
-	 * Initialize the scontents of the frame.
+	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
@@ -135,11 +135,21 @@ public class Vehiculos extends JFrame{
 				AnadirCoche acoche = new AnadirCoche(controller);
 				acoche.setVisible(true);
 			}
-			
 		});
-		btnAnadir.setBounds(449, 144, 115, 31);
+			
+		JButton btnActu = new JButton("Actualizar");
+		btnActu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Vehiculos vehi = new Vehiculos(controller); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
+				vehi.setVisible(true);
+			}
+		});
+			
+		btnAnadir.setBounds(449, 64, 115, 31);
 		frame.getContentPane().add(btnAnadir);
 		
+		btnActu.setBounds(449, 104, 115, 31);
+		frame.getContentPane().add(btnActu);
 		
 
 		JLabel lblNewLabel = new JLabel("New label");
