@@ -29,9 +29,8 @@ public class TestEmpleadoDAO {
 		dao =  new EmpleadoDAO();
 		
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
-		Empleado CecilioG = new Empleado("CecilioG", "1234");
 		
-		dao.
+		
 		dao.storeEmpleado(Caparros);
 	}
 	
@@ -49,7 +48,15 @@ public class TestEmpleadoDAO {
 		assertEquals(empleado.getPassword(), "sevilla");
 	}
 
+	@Test
 	public void testModificar() {
+		Empleado CecilioG = new Empleado("CecilioG", "1234");
+		dao.storeEmpleado(CecilioG);
+		
+		CecilioG.setPassword("333");
+		dao.updateEmpleado(CecilioG);
+		
+		CecilioG = dao.retrieveEmpleado("CecilioG");
 		
 		
 	}
