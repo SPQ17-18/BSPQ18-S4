@@ -7,7 +7,6 @@ import junit.framework.JUnit4TestAdapter;
 import org.junit.BeforeClass;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import es.deusto.spq.server.jdo.Cliente;
 
@@ -17,7 +16,6 @@ import org.junit.After;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
-import java.util.List;
 import java.net.MalformedURLException;
 
 import javax.jdo.JDOHelper;
@@ -25,8 +23,6 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Transaction;
-
-import static org.mockito.Mockito.*;
 
 
 
@@ -37,6 +33,7 @@ import static org.mockito.Mockito.*;
 //@Ignore
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
+	
 	private static String cwd = RMITest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
@@ -91,11 +88,11 @@ public class RMITest {
 					IRDCarRemoteFacade rdcar = new RDCarRemoteFacade();
 					Naming.rebind(name, rdcar);
 				} catch (RemoteException re) {
-					System.err.println(" # RDCar RemoteException: " + re.getMessage());
+					System.err.println(" # Messenger RemoteException: " + re.getMessage());
 					re.printStackTrace();
 					System.exit(-1);
 				} catch (MalformedURLException murle) {
-					System.err.println(" # RDCar MalformedURLException: " + murle.getMessage());
+					System.err.println(" # Messenger MalformedURLException: " + murle.getMessage());
 					murle.printStackTrace();
 					System.exit(-1);
 				}
@@ -125,7 +122,7 @@ public class RMITest {
 		rdcarfacade = (IRDCarRemoteFacade) java.rmi.Naming.lookup(name);
 		}
 		catch (Exception re) {
-			System.err.println(" # RDCar RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
 	//		re.printStackTrace();
 			System.exit(-1);
 		} 
@@ -138,7 +135,7 @@ public class RMITest {
 			rdcarfacade.CrearCliente("1111111", "JosuKa", "Diaz", 1725, "Su casa");
 		}
 		catch (Exception re) {
-			System.err.println(" # RDCar RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
 		} 
 		/*
 		 * Very simple test, inserting a valid new user
@@ -155,7 +152,7 @@ public class RMITest {
 			
 		}
 		catch (Exception re) {
-			System.err.println(" # RDCar RemoteException: " + re.getMessage());
+			System.err.println(" # Messenger RemoteException: " + re.getMessage());
 		} 
 		/*
 		 * Very simple test 

@@ -121,6 +121,7 @@ public class AnadirCoche {
 				// TODO Auto-generated method stub
 				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getName(), Integer.parseInt(textPrecioDia.getText()));
 				JOptionPane.showMessageDialog(new Frame(), "Creado");
+				frame.dispose();
 			}
 		});
 		

@@ -138,7 +138,36 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 		}
 
 	}
-
+	
+	public boolean LoginEmpleado(String user, String password) {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try {
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM EMPLEADO WHERE User = '" + user + "'");
+			List<?> ListaEmpleados = (List<?>) query.execute(); 
+			
+			
+		} catch (Exception ex) {
+			
+			System.out.print("Error Selecting: " + ex.getMessage());
+			
+		} finally {
+			
+			
+			
+			
+		}
+		
+		
+		return false;
+	}
+	
+	
+	
 	public List<Empleado> getAllEmpleados() { //Pruebas
 		
 		PersistenceManager pm = pmf.getPersistenceManager();
