@@ -29,11 +29,7 @@ public class TestEmpleadoDAO {
 		dao =  new EmpleadoDAO();
 		
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
-		
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'master' of https://github.com/SPQ17-18/BSPQ18-S4.git
+
 		dao.storeEmpleado(Caparros);
 	}
 	
