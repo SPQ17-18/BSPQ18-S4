@@ -101,7 +101,7 @@ public class LoginWindow extends JFrame{
 		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
-		textPassword.getText().replace("/w", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui /
+		textPassword.getText().replace("/w", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
 
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
