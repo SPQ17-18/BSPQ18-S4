@@ -88,7 +88,7 @@ public class Clientes extends JFrame{
 		textField.setColumns(10);
 				
 		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setBounds(455, 27, 97, 25);
+		btnBuscar.setBounds(455, 27, 100, 37);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 			
@@ -117,11 +117,11 @@ public class Clientes extends JFrame{
 				acliente.setVisible(true);
 			}
 		});
-		btnAadir.setBounds(455, 83, 89, 37);
+		btnAadir.setBounds(455, 83, 100, 37);
 		frame.getContentPane().add(btnAadir);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(455, 275, 89, 35);
+		btnEliminar.setBounds(455, 240, 100, 37);
 		frame.getContentPane().add(btnEliminar);
 		btnEliminar.addActionListener(new ActionListener() {
 			
@@ -140,13 +140,23 @@ public class Clientes extends JFrame{
 		
 		JButton btnActu = new JButton("Actualizar");
 			
-		btnActu.setBounds(449, 134, 115, 31);
+		btnActu.setBounds(455, 134, 100, 37);
 		frame.getContentPane().add(btnActu);
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
 				Clientes cli = new Clientes(controller);
 				cli.setVisible(true);
+			}
+		});
+		
+		JButton btnAtras = new JButton("Atras");
+		
+		btnAtras.setBounds(455, 300, 100, 37);
+		frame.getContentPane().add(btnAtras);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
 			}
 		});
 		
