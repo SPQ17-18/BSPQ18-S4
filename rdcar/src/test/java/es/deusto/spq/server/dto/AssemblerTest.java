@@ -27,41 +27,41 @@ public class AssemblerTest {
 
 	@Test
 	public void testCliente() {
-		
+
 		List<Cliente>  cliente = Arrays.asList(new Cliente ("111", "Juan", "Ruiz", 1992, "Vitoria"), 
-			new Cliente ("222", "pedro", "avel", 1952, "Bilbao")) ;
-		
-	
+				new Cliente ("222", "pedro", "avel", 1952, "Bilbao")) ;
+
+
 		//Test equals
 		assertEquals(cliente.size(), 2);
 		atest.assembleCliente(cliente);
-	
+
 	}
-	
+
 	@Test
 	public void testVehiculo() {
-		
+
 		List<Vehiculo>  cliente = Arrays.asList(new Vehiculo ("1111AAA", "Ford", "Fiesta", "Gasoil", 45), 
-			new Vehiculo ("2222BBB", "Peugeot", "207", "Gasolina", 25)) ;
-		
-	
+				new Vehiculo ("2222BBB", "Peugeot", "207", "Gasolina", 25)) ;
+
+
 		//Test equals
 		assertEquals(cliente.size(), 2);
 		atest.assembleVehiculo(cliente);
 
 	}
-	
+
 	@Test
 	public void testEmpleado() {
-		
+
 		List<Empleado>  empleado = Arrays.asList(new Empleado ("juan123", "contraseña"), 
-			new Empleado ("pedro2", "123456")) ;
-		
-	
+				new Empleado ("pedro2", "123456")) ;
+
+
 		//Test equals
 		assertEquals(empleado.size(), 2);
 		atest.assembleEmpleado(empleado);
-		
+
 	}
-	
+
 }

@@ -1,6 +1,5 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.EventQueue;
 import java.awt.Frame;
 
 import javax.swing.JFrame;
@@ -15,20 +14,13 @@ import javax.swing.JPasswordField;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 import java.awt.Toolkit;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import javax.swing.InputMap;
-import javax.swing.KeyStroke;
 
 public class LoginWindow extends JFrame{
 
@@ -41,14 +33,14 @@ public class LoginWindow extends JFrame{
 	private JTextField textUsuario;
 	private RDCarController controller =null;
 	private static LoginWindow instance;
-	
-	
+
+
 	public LoginWindow(RDCarController controller) {
 		this.controller=controller;
 		initialize();
 		frame.setVisible(true);
 		setFocusable(true);
-		
+
 	}
 
 	public static LoginWindow getInstance() {
@@ -62,22 +54,22 @@ public class LoginWindow extends JFrame{
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//	78	EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					LoginWindow window = new LoginWindow(controller);
-//					window.initialize();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	//	public static void main(String[] args) {
+	//	78	EventQueue.invokeLater(new Runnable() {
+	//			public void run() {
+	//				try {
+	//					LoginWindow window = new LoginWindow(controller);
+	//					window.initialize();
+	//					window.frame.setVisible(true);
+	//				} catch (Exception e) {
+	//					e.printStackTrace();
+	//				}
+	//			}
+	//		});
+	//	}
 
-	
-	
+
+
 
 	/**
 	 * Initialize the scontents of the frame.
@@ -85,7 +77,7 @@ public class LoginWindow extends JFrame{
 	public void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
-		
+
 		frame.setResizable(false);
 
 
@@ -94,7 +86,7 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Log In");
 
-		
+
 		JLabel LabelPassword = new JLabel("Contraseña");
 		LabelPassword.setForeground(Color.BLACK);
 		LabelPassword.setBounds(32, 145, 102, 21);
@@ -110,19 +102,19 @@ public class LoginWindow extends JFrame{
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
 		//textPassword.getText().replace("/w/", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
-		*/
-		
+		 */
+
 		final JPasswordField textPassword = new JPasswordField();
 		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
 		textPassword.setColumns(10);
-		
-		
+
+
 		textUsuario = new JTextField();
 		textUsuario.setColumns(10);
 		textUsuario.setBounds(140, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
-		
+
 		JButton BotonCancelar = new JButton("Cancelar");
 		BotonCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -153,15 +145,15 @@ public class LoginWindow extends JFrame{
 				}
 			}
 		});
-		
+
 		frame.addKeyListener(new KeyListener() { //Aqui esta el keylistener, el cual no se por que no funciona
-			
+
 			@Override
 			public void keyReleased(KeyEvent arg0) {}
-			
+
 			@Override
 			public void keyTyped(KeyEvent arg0) {}
-			
+
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				int id = arg0.getKeyCode();
@@ -178,10 +170,10 @@ public class LoginWindow extends JFrame{
 
 					}
 				}
-				
+
 			}
 		});
-		
+
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBounds(165, 252, 115, 29);
 		frame.getContentPane().add(btnRegistrar);
@@ -206,7 +198,7 @@ public class LoginWindow extends JFrame{
 		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		label.setBounds(0, 0, 434, 311); //altura y anchura
 		frame.getContentPane().add(label);
-		
+
 	}
 
 	public RDCarController getController() {
@@ -215,8 +207,8 @@ public class LoginWindow extends JFrame{
 	public void setController(RDCarController controller) {
 		this.controller = controller;
 	}
-	
+
 	//aceptar al enter
 
-	
+
 }

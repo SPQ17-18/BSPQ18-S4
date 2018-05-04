@@ -19,10 +19,10 @@ public class ClienteDAO implements IClienteDAO{
 
 	public ClienteDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		
+
 	}
-	
-	
+
+
 	public void storeCliente(Cliente cliente) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -46,7 +46,7 @@ public class ClienteDAO implements IClienteDAO{
 			pm.close();
 		}
 	}
-	
+
 	public Cliente retrieveCliente(String Dni) {
 
 		Cliente cliente = null;
@@ -56,13 +56,13 @@ public class ClienteDAO implements IClienteDAO{
 
 		try {
 			tx.begin();
-			
+
 			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE Dni == '" + Dni + "'");
 			query.setUnique(true);
 			cliente = (Cliente) query.execute();
 
 			tx.commit();
-			
+
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Cliente does not exist: " + jonfe.getMessage());
@@ -99,9 +99,9 @@ public class ClienteDAO implements IClienteDAO{
 		}
 
 	}
-	
+
 	public void borrarCliente(String dni) {
-		
+
 		Cliente cliente = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(2);
@@ -127,14 +127,14 @@ public class ClienteDAO implements IClienteDAO{
 		}
 
 	}
-	
-	
-	public List<Cliente> getAllClientes() { //Pruebas
-		
+
+
+	public List<Cliente> getAllClientes() {
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 
 		Transaction tx = pm.currentTransaction();
-		
+
 		List<Cliente> ListClientes = null;
 
 		try {
@@ -144,15 +144,15 @@ public class ClienteDAO implements IClienteDAO{
 			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName());
 			query.setUnique(false);
 
-			
+
 			ListClientes = (List<Cliente>) query.execute();
-			
+
 			tx.commit();
-			
+
 		} catch (Exception ex) {
 			System.out.println("   $ Error: " + ex.getMessage());
 		} finally {
-			
+
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
@@ -162,5 +162,5 @@ public class ClienteDAO implements IClienteDAO{
 
 		return ListClientes;
 	}
-	
+
 }

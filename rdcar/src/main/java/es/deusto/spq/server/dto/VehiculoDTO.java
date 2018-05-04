@@ -11,13 +11,13 @@ public class VehiculoDTO implements Serializable {
 	private static final long serialVersionUID = 1391669860875131135L;
 
 	String Matricula;
-	
+
 	String Marca;
 	String Modelo;
 	String Combustible;
 	double Precio_dia;
-	
-	
+
+
 	public VehiculoDTO(String matricula, String marca, String modelo, String combustible, double precio_dia) {
 		super();
 		Matricula = matricula;
@@ -76,7 +76,7 @@ public class VehiculoDTO implements Serializable {
 	public void setPrecio_dia(double precio_dia) {
 		Precio_dia = precio_dia;
 	}
-	
-	
+
+
 
 }

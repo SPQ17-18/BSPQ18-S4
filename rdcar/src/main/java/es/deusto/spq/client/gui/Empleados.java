@@ -20,7 +20,7 @@ import javax.swing.JTable;
 
 public class Empleados extends JFrame{
 
-	
+
 	/**
 	 * 
 	 */
@@ -35,18 +35,18 @@ public class Empleados extends JFrame{
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Empleados window = new Empleados();
-//					window.clientes.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	//	public static void main(String[] args) {
+	//		EventQueue.invokeLater(new Runnable() {
+	//			public void run() {
+	//				try {
+	//					Empleados window = new Empleados();
+	//					window.clientes.setVisible(true);
+	//				} catch (Exception e) {
+	//					e.printStackTrace();
+	//				}
+	//			}
+	//		});
+	//	}
 
 	public static Empleados getInstance() {
 		return instance;
@@ -75,17 +75,17 @@ public class Empleados extends JFrame{
 		JLabel lblDniDelCliente = new JLabel("Nombre de usuario:");
 		lblDniDelCliente.setBounds(15, 31, 142, 16);
 		frame.getContentPane().add(lblDniDelCliente);
-		
+
 		textUsuario = new JTextField();
 		textUsuario.setBounds(166, 28, 135, 22);
 		frame.getContentPane().add(textUsuario);
 		textUsuario.setColumns(10);
-				
+
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.setBounds(316, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
@@ -95,31 +95,31 @@ public class Empleados extends JFrame{
 				cargarTabla(emp);	
 			}
 		});
-			
-		
-		
+
+
+
 		table = new JTable();
 		table.setBounds(39, 78, 357, 145);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Usuario"}));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
-		
-		
+
+
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Empleados.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(15, 0, 434, 261);
 		frame.getContentPane().add(lblNewLabel);
 	}
-	
+
 	private void cargarTabla(Empleado e) {
 		modelo = (DefaultTableModel) table.getModel();
 		Object[] fila = {e.getUsuario()};
 		modelo.addRow(fila);
 	}
-	
+
 	private void cargarTablaPorDefecto() {
-		
+
 		borrarTabla();
 		List<Empleado> empleados = new ArrayList<>();
 		empleados = (List<Empleado>)controller.verEmpleados();	
@@ -129,7 +129,7 @@ public class Empleados extends JFrame{
 			}
 		}	
 	}
-	
+
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {
 			modelo.removeRow(i);

@@ -12,20 +12,20 @@ import es.deusto.spq.server.jdo.Empleado;
 
 public class EmpleadoDAO implements IEmpleadoDAO {
 
-	
+
 
 	private static PersistenceManagerFactory pmf;
 
 	public EmpleadoDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		
+
 	}
-	
-	
-	
+
+
+
 	public void storeEmpleado(Empleado e) {
-		
-		
+
+
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -48,24 +48,24 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 			pm.close();
 		}
 	}
-	
+
 	public Empleado retrieveEmpleado(String user) {
 
 		Empleado empleado = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(2);
 		Transaction tx = pm.currentTransaction();
-		
-		
+
+
 		try {
 			tx.begin();
-			
+
 			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName() + " WHERE user == '" + user + "'");
 			query.setUnique(true);
 			empleado = (Empleado) query.execute();
 
 			tx.commit();
-			
+
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Empleado does not exist: " + jonfe.getMessage());
@@ -81,7 +81,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 		return empleado;
 	} 
-	
+
 
 	public Empleado deleteEmpleado(String user) {
 
@@ -89,19 +89,19 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(2);
 		Transaction tx = pm.currentTransaction();
-		
-		
+
+
 		try {
 			tx.begin();
-			
+
 			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName() + " WHERE user == '" + user + "'");
 			query.setUnique(true);
 			empleado = (Empleado) query.execute();
 
 			pm.deletePersistent(empleado);
-			
+
 			tx.commit();
-			
+
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
 			System.out.println("Empleado does not exist: " + jonfe.getMessage());
@@ -117,7 +117,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 		return empleado;
 	} 
-	
+
 	public void updateEmpleado(Empleado empleado) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -138,42 +138,42 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 		}
 
 	}
-	
+
 	public boolean LoginEmpleado(String user, String password) {
-		
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
+
 		try {
 			tx.begin();
-			
+
 			Query<?> query = pm.newQuery("SELECT FROM EMPLEADO WHERE User = '" + user + "'");
 			List<?> ListaEmpleados = (List<?>) query.execute(); 
-			
-			
+
+
 		} catch (Exception ex) {
-			
+
 			System.out.print("Error Selecting: " + ex.getMessage());
-			
+
 		} finally {
-			
-			
-			
-			
+
+
+
+
 		}
-		
-		
+
+
 		return false;
 	}
-	
-	
-	
-	public List<Empleado> getAllEmpleados() { //Pruebas
-		
+
+
+
+	public List<Empleado> getAllEmpleados() { 
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 
 		Transaction tx = pm.currentTransaction();
-		
+
 		List<Empleado> ListEmpleados = null;
 
 		try {
@@ -181,16 +181,16 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 			tx.begin();
 			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName());
 			query.setUnique(false);
-			
+
 			ListEmpleados = (List<Empleado>) query.execute();
-			
-			
+
+
 			tx.commit();
-			
+
 		} catch (Exception ex) {
 			System.out.println("   $ Error: " + ex.getMessage());
 		} finally {
-			
+
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
@@ -200,6 +200,6 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 		return ListEmpleados;
 	}
-	
-	
+
+
 }

@@ -17,29 +17,29 @@ import es.deusto.spq.server.jdo.Empleado;
 @RunWith(MockitoJUnitRunner.class)
 public class TestEmpleadoDAO {
 
-	
+
 	@Mock
 	EmpleadoDAO dao;
-	
+
 	Empleado empleado;
-	
+
 	@Before
 	public void setUp() throws Exception {
-		
+
 		dao =  new EmpleadoDAO();
-		
+
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
 
 		dao.storeEmpleado(Caparros);
 	}
-	
+
 	@Test
 	public void testStore() {
 		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
 		dao.storeEmpleado(Mourinho);
-		
+
 	}
-	
+
 	@Test
 	public void testRetrieve() {
 		empleado = dao.retrieveEmpleado("Caparros");
@@ -51,26 +51,26 @@ public class TestEmpleadoDAO {
 	public void testModificar() {
 		Empleado CecilioG = new Empleado("CecilioG", "1234");
 		dao.storeEmpleado(CecilioG);
-		
+
 		CecilioG.setPassword("333");
 		dao.updateEmpleado(CecilioG);
-		
+
 		CecilioG = dao.retrieveEmpleado("CecilioG");
-		
-		
+
+
 	}
-	
-	
-	
+
+
+
 	@Test(expected = NullPointerException.class)
 	public void testDelete() throws Exception {
-		
+
 		dao.deleteEmpleado("Mourinho");
 		empleado = dao.retrieveEmpleado("Mourinho");
 		assertEquals(empleado.getUsuario(), "Mourinho");
 	}
-	
-	
+
+
 	@Ignore
 	public void tearDown() throws Exception {
 		dao.deleteEmpleado("Caparros");

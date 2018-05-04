@@ -1,6 +1,5 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.EventQueue;
 import java.awt.Frame;
 
 import javax.swing.JFrame;
@@ -18,15 +17,13 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import es.deusto.spq.client.controller.RDCarController;
-import es.deusto.spq.server.dto.VehiculoDTO;
-import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Vehiculo;
 
 import javax.swing.JTable;
 
 public class Vehiculos extends JFrame{
 
-	
+
 	/**
 	 * 
 	 */
@@ -41,18 +38,18 @@ public class Vehiculos extends JFrame{
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Clientes window = new Clientes();
-//					window.clientes.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	//	public static void main(String[] args) {
+	//		EventQueue.invokeLater(new Runnable() {
+	//			public void run() {
+	//				try {
+	//					Clientes window = new Clientes();
+	//					window.clientes.setVisible(true);
+	//				} catch (Exception e) {
+	//					e.printStackTrace();
+	//				}
+	//			}
+	//		});
+	//	}
 
 	public static Vehiculos getInstance() {
 		return instance;
@@ -83,17 +80,17 @@ public class Vehiculos extends JFrame{
 		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
 		lblMatricula.setBounds(15, 31, 171, 19);
 		frame.getContentPane().add(lblMatricula);
-		
+
 		textField = new JTextField();
 		textField.setBounds(183, 29, 213, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
-				
+
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.setBounds(449, 27, 115, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				borrarTabla();
@@ -102,20 +99,20 @@ public class Vehiculos extends JFrame{
 				cargarTabla(v);
 			}
 		});
-			
-		
-		
+
+
+
 		table = new JTable();
 		table.setBounds(39, 78, 357, 260);
 		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
-		
+
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(449, 265, 115, 31);
 		frame.getContentPane().add(btnEliminar);
 		btnEliminar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -125,10 +122,10 @@ public class Vehiculos extends JFrame{
 					controller.borrarVehiculo(m);
 					JOptionPane.showMessageDialog(new Frame(), "Vehiculo eliminado");
 				}
-				
+
 			}
 		});
-		
+
 		JButton btnAnadir = new JButton("Anadir");
 		btnAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -136,7 +133,7 @@ public class Vehiculos extends JFrame{
 				acoche.setVisible(true);
 			}
 		});
-			
+
 		JButton btnActu = new JButton("Actualizar");
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -145,9 +142,9 @@ public class Vehiculos extends JFrame{
 				vehi.setVisible(true);
 			}
 		});
-		
+
 		JButton btnAtras = new JButton("Atras");
-		
+
 		btnAtras.setBounds(449, 300, 115, 31);
 		frame.getContentPane().add(btnAtras);
 		btnAtras.addActionListener(new ActionListener() {
@@ -155,29 +152,29 @@ public class Vehiculos extends JFrame{
 				frame.dispose();
 			}
 		});
-		
-			
+
+
 		btnAnadir.setBounds(449, 64, 115, 31);
 		frame.getContentPane().add(btnAnadir);
-		
+
 		btnActu.setBounds(449, 104, 115, 31);
 		frame.getContentPane().add(btnActu);
-		
+
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}
-	
+
 	private void cargarTabla(Vehiculo v) {
 		modelo = (DefaultTableModel) table.getModel();
 		Object[] fila = {v.getMatricula(), v.getMarca(), v.getModelo(), v.getCombustible(), v.getPrecio_dia()};
 		modelo.addRow(fila);
 	}
-	
+
 	private void cargarTablaPorDefecto() {
-		
+
 		borrarTabla();
 		List<Vehiculo> vehiculos = new ArrayList<>();
 		vehiculos = (List<Vehiculo>)controller.verVehiculos();	
@@ -186,10 +183,10 @@ public class Vehiculos extends JFrame{
 				cargarTabla(vehiculos.get(i));
 			}
 		}
-	
-	
-}
-	
+
+
+	}
+
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {
 			modelo.removeRow(i);

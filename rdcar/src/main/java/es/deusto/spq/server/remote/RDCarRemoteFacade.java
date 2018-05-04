@@ -22,7 +22,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 */
 	private static final long serialVersionUID = 6391398296630384889L;
 	private static RDCarRemoteFacade instance;
-	
+
 	private ASCliente ASCliente;
 	private ASEmpleado ASEmpleado;
 	private ASVehiculo ASVehiculo;
@@ -32,7 +32,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	}
 
 	public RDCarRemoteFacade(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
-		
+
 		this.ASCliente = ascliente;
 		this.ASEmpleado = asempleado;
 		this.ASVehiculo = asvehiculo;
@@ -51,7 +51,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return instance;
 	}
 	public void setAllAS(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
-		
+
 		this.ASCliente = ascliente;
 		this.ASEmpleado = asempleado;
 		this.ASVehiculo = asvehiculo;
@@ -72,7 +72,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	public List<Empleado> verEmpleados() throws RemoteException {
 		return this.ASEmpleado.verEmpleados();
 	} 
-	
+
 	@Override
 	public void crearEmpleado(String user, String password) throws RemoteException {
 		this.ASEmpleado.CrearEmpleado(user, password);
@@ -88,44 +88,44 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	@Override
 	public void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
 			throws RemoteException {
-			this.ASCliente.CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
+		this.ASCliente.CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
 	}
 
 	@Override
 	public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
 			throws RemoteException {
 		this.ASCliente.ModificarCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
-		
+
 	} 
 	@Override
 	public List<Cliente> verClientes() throws RemoteException {
 		return this.ASCliente.verClientes();
 	} 
-	
+
 	public void borrarCliente(String dni) throws RemoteException{
 		this.ASCliente.BorrarCliente(dni);
 	}
-	
+
 	/*
 	 * VEHICULOS
 	 */
-	
+
 	public  Vehiculo buscarVehiculo(String matricula) throws RemoteException{	
 		return this.ASVehiculo.obtenerVehiculo(matricula);
 	}
-	
+
 	public void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
-		
+
 		this.ASVehiculo.CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
-		
+
 	}
-	
+
 	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
-		
+
 		this.ASVehiculo.ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
 
 	}
-	
+
 	public void borrarVehiculo(String matricula) throws RemoteException{
 		this.ASVehiculo.BorrarVehiculo(matricula);
 	}
@@ -135,6 +135,6 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASVehiculo.verVehiculos();
 	}
 
-	
-	
+
+
 }

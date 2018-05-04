@@ -33,11 +33,11 @@ import javax.jdo.Transaction;
 //@Ignore
 public class RMITest {
 	// Properties are hard-coded because we want the test to be executed without external interaction
-	
+
 	private static String cwd = RMITest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
-	
+
 	private IRDCarRemoteFacade rdcarfacade;
 
 	public static junit.framework.Test suite() {
@@ -59,7 +59,7 @@ public class RMITest {
 				}	
 			}
 		}
-		
+
 		rmiRegistryThread = new Thread(new RMIRegistryRunnable());
 		rmiRegistryThread.start();
 		try {
@@ -67,7 +67,7 @@ public class RMITest {
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}
-		
+
 		class RMIServerRunnable implements Runnable {
 
 			public void run() {
@@ -84,7 +84,7 @@ public class RMITest {
 				System.out.println("BeforeClass - Setting the server ready TestServer name: " + name);
 
 				try {
-					
+
 					IRDCarRemoteFacade rdcar = new RDCarRemoteFacade();
 					Naming.rebind(name, rdcar);
 				} catch (RemoteException re) {
@@ -105,30 +105,30 @@ public class RMITest {
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}
-	
+
 	}
-	
+
 
 	@Before public void setUpClient() {
 		try {
-		System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
+			System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
-		if (System.getSecurityManager() == null) {
-			System.setSecurityManager(new SecurityManager());
-		}
+			if (System.getSecurityManager() == null) {
+				System.setSecurityManager(new SecurityManager());
+			}
 
-		String name = "//127.0.0.1:1099/RDCar";
-		System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
-		rdcarfacade = (IRDCarRemoteFacade) java.rmi.Naming.lookup(name);
+			String name = "//127.0.0.1:1099/RDCar";
+			System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
+			rdcarfacade = (IRDCarRemoteFacade) java.rmi.Naming.lookup(name);
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
-	//		re.printStackTrace();
+			//		re.printStackTrace();
 			System.exit(-1);
 		} 
-		
+
 	}
-	
+
 	@Test public void registerNewUserTest() {
 		try{
 			System.out.println("Test 1 - Register new client");
@@ -142,14 +142,14 @@ public class RMITest {
 		 */
 		assertTrue( true );
 	}
-	
+
 	@Test public void registerExistingUserTest() {
 		try{
 			System.out.println("Test 2 - Register existing client. Change birth year");
 			rdcarfacade.CrearCliente("9999999", "Zinedine", "Zidane", 1000, "Paris");
-			
+
 			rdcarfacade.CrearCliente("9999999", "Zinedine", "Zidane", 1976, "Paris");
-			
+
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
@@ -159,34 +159,34 @@ public class RMITest {
 		 */
 		assertTrue( true );
 	}
-	
-	
+
+
 	@After public  void deleteDatabase() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx = pm.currentTransaction();
-        try
-        {
-            tx.begin();
-	
-            System.out.println("Deleting test users from persistence. Cleaning up.");
-            Query<Cliente> q1 = pm.newQuery(Cliente.class);
-            long numberInstancesDeleted = q1.deletePersistentAll();
-            System.out.println("Deleted " + numberInstancesDeleted + " user");
-			
-            tx.commit();
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-            pm.close();
-        }
-		
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+			tx.begin();
+
+			System.out.println("Deleting test users from persistence. Cleaning up.");
+			Query<Cliente> q1 = pm.newQuery(Cliente.class);
+			long numberInstancesDeleted = q1.deletePersistentAll();
+			System.out.println("Deleted " + numberInstancesDeleted + " user");
+
+			tx.commit();
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+
 	}
-	
+
 
 	@AfterClass static public void tearDown() {
 		try	{
@@ -195,7 +195,7 @@ public class RMITest {
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}
-		
+
 
 	} 
 }
