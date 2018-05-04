@@ -20,10 +20,9 @@ public class RDCarController {
 	public RDCarController(String[] args) throws RemoteException {
 		rsl = new RDCarRMIServiceLocator();
 		rsl.setService(args); 
-		//new MainWindow(this, "ron"); //volver a cambiar
 		new LoginWindow(this);
 	}
-	
+
 	/*
 	 * EMPLEADO
 	 */
@@ -38,7 +37,7 @@ public class RDCarController {
 		}
 		return false;
 	}
-	
+
 	public void crearEmpleado(String user, String password) {
 		try {
 			rsl.getService().crearEmpleado(user, password);
@@ -47,56 +46,56 @@ public class RDCarController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public  Empleado buscarEmpleado(String user){
 		try {
-			
+
 			return rsl.getService().buscarEmpleado(user);
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public  List<Empleado> verEmpleados(){
 		try {
-			
+
 			return rsl.getService().verEmpleados();
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	/*
 	 * CLIENTE
 	 */
-	
+
 	public  Cliente buscarCliente(String dni){
 		try {
-			
+
 			return rsl.getService().buscarCliente(dni);
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	
+
+
 	public  List<Cliente> verClientes(){
 		try {
-			
+
 			return rsl.getService().verClientes();
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public void crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		try {
 			rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
@@ -105,7 +104,7 @@ public class RDCarController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void borrarCliente(String c) {
 		try {
 			rsl.getService().borrarCliente(c);
@@ -114,33 +113,33 @@ public class RDCarController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * VEHICULOS
 	 */
-	
+
 	public  Vehiculo buscarVehiculo(String matricula){ //busca matrícula exacta
 		try {
-			
+
 			return rsl.getService().buscarVehiculo(matricula);
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public  List<Vehiculo> verVehiculos(){
 		try {
-			
+
 			return rsl.getService().verVehiculos();
-			
+
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public void crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
 		try {
 			rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
@@ -149,7 +148,7 @@ public class RDCarController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void borrarVehiculo(String m) {
 		try {
 			rsl.getService().borrarVehiculo(m);
@@ -158,10 +157,10 @@ public class RDCarController {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public void exit() {
-		System.exit(0); //Esto creo que es una mala practica hay otra forma
+		System.exit(0); 
 	}
 
 	public static void main(String[] args) throws RemoteException {

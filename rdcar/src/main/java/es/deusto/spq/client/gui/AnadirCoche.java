@@ -65,57 +65,57 @@ public class AnadirCoche {
 		frame.setTitle("Añadir Coches");
 		frame.setResizable(false);
 		frame.setSize(600, 400);
-		
+
 		textMatricula = new JTextField();
 		textMatricula.setBounds(198, 59, 168, 20);
 		frame.getContentPane().add(textMatricula);
 		textMatricula.setColumns(10);
-		
+
 		textMarca = new JTextField();
 		textMarca.setBounds(198, 105, 168, 20);
 		frame.getContentPane().add(textMarca);
 		textMarca.setColumns(10);
-		
+
 		textModelo = new JTextField();
 		textModelo.setBounds(198, 155, 168, 20);
 		frame.getContentPane().add(textModelo);
 		textModelo.setColumns(10);
-		
+
 		textCombus = new JComboBox(Combustibles);
 		textCombus.setBounds(198, 205, 168, 20);
 		frame.getContentPane().add(textCombus);
 		//textCombus.setColumns(10);
-		
+
 		textPrecioDia = new JTextField();
 		textPrecioDia.setBounds(198, 257, 168, 20);
 		frame.getContentPane().add(textPrecioDia);
 		textPrecioDia.setColumns(10);
-		
+
 		JLabel lblMatrcula = new JLabel("Matrícula:");
 		lblMatrcula.setBounds(28, 62, 101, 14);
 		frame.getContentPane().add(lblMatrcula);
-		
+
 		JLabel lblMarca = new JLabel("Marca:");
 		lblMarca.setBounds(30, 111, 80, 14);
 		frame.getContentPane().add(lblMarca);
-		
+
 		JLabel lblModelo = new JLabel("Modelo:");
 		lblModelo.setBounds(28, 158, 82, 14);
 		frame.getContentPane().add(lblModelo);
-		
+
 		JLabel lblCombustible = new JLabel("Combustible:");
 		lblCombustible.setBounds(28, 208, 116, 14);
 		frame.getContentPane().add(lblCombustible);
-		
+
 		JLabel lblPrecioda = new JLabel("Precio/día");
 		lblPrecioda.setBounds(28, 260, 101, 14);
 		frame.getContentPane().add(lblPrecioda);
-		
+
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(461, 279, 108, 67);
 		frame.getContentPane().add(btnAceptar);
 		btnAceptar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -124,7 +124,7 @@ public class AnadirCoche {
 				frame.dispose();
 			}
 		});
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(AnadirCoche.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
 		lblNewLabel.setBounds(-330, 0, 924, 371);
@@ -133,6 +133,6 @@ public class AnadirCoche {
 
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

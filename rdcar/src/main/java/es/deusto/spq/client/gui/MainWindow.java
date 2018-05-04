@@ -1,9 +1,5 @@
 package es.deusto.spq.client.gui;
 
-import java.awt.EventQueue;
-import java.awt.Graphics;
-import java.awt.Image;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,12 +8,8 @@ import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 
 public class MainWindow extends JFrame {
 
@@ -29,35 +21,35 @@ public class MainWindow extends JFrame {
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
-	
+
 	public static MainWindow getInstance() {
 		return instance;
 	}
-	
+
 	public MainWindow(RDCarController controller, String user) {
 		this.controller=controller;
 		this.user = user;
 		initialize();
 		frame.setVisible(true);
-	
+
 	}
 
 
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					MainWindow window = new MainWindow();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	//	public static void main(String[] args) {
+	//		EventQueue.invokeLater(new Runnable() {
+	//			public void run() {
+	//				try {
+	//					MainWindow window = new MainWindow();
+	//					window.frame.setVisible(true);
+	//				} catch (Exception e) {
+	//					e.printStackTrace();
+	//				}
+	//			}
+	//		});
+	//	}
 
 
 	/**
@@ -73,7 +65,7 @@ public class MainWindow extends JFrame {
 		frame.setResizable(false);
 		frame.setSize(600, 400);
 
-		
+
 
 		//abrir ventana vehiculo
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
