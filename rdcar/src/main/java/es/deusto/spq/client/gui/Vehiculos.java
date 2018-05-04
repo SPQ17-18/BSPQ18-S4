@@ -145,6 +145,17 @@ public class Vehiculos extends JFrame{
 				vehi.setVisible(true);
 			}
 		});
+		
+		JButton btnAtras = new JButton("Atras");
+		
+		btnAtras.setBounds(449, 300, 115, 31);
+		frame.getContentPane().add(btnAtras);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+			}
+		});
+		
 			
 		btnAnadir.setBounds(449, 64, 115, 31);
 		frame.getContentPane().add(btnAnadir);
