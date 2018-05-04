@@ -17,6 +17,10 @@ public class ASEmpleado {
 		dao = new EmpleadoDAO();
 	}
 	
+	public ASEmpleado(EmpleadoDAO dao) {
+		this.dao = dao;
+	}
+	
 	public static ASEmpleado getInstance() {
 		if (instance == null) {
 			instance = new ASEmpleado();
