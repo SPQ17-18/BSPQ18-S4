@@ -189,7 +189,7 @@ public class LoginWindow extends JFrame{
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 				if(textUsuario.getText().length() !=0) {//Comprueba que no sea cadena vacía
-					if(textUsuario.getText() == controller.buscarEmpleado(textUsuario.getText()).getUsuario()){//Comprueba que el user de empleado no sea igual que uno ya creado (no funciona)
+					if(textUsuario.getText().equals(controller.buscarEmpleado(textUsuario.getText()).getUsuario())){//Comprueba que el user de empleado no sea igual que uno ya creado (no funciona)
 						JOptionPane.showMessageDialog(new Frame(), "Empleado previamente registrado");
 					}else {
 						controller.crearEmpleado(textUsuario.getText(), textPassword.getText());

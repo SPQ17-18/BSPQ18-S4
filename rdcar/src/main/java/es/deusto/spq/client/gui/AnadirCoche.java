@@ -119,7 +119,7 @@ public class AnadirCoche {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getName(), Integer.parseInt(textPrecioDia.getText()));
+				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getSelectedItem().toString(), Integer.parseInt(textPrecioDia.getText()));
 				JOptionPane.showMessageDialog(new Frame(), "Creado");
 				frame.dispose();
 			}
