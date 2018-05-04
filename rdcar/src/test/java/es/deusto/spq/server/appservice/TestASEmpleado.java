@@ -72,6 +72,8 @@ public class TestASEmpleado {
 	
 	@Test
 	public void loginEmpleado() throws Exception {
+		
+		Empleado emplado = new Empleado("Empleado", "empleado");
 	
 	}
 	
