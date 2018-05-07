@@ -1,8 +1,12 @@
 package es.deusto.spq.server.jdo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
@@ -19,6 +23,9 @@ public class Cliente implements Serializable{
 	int Anyo_Nacimiento;
 	String Lugar;
 
+	@Persistent(mappedBy = "c", dependentElement = "true")
+	@Join
+	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
 
 	public Cliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		super();
@@ -27,6 +34,10 @@ public class Cliente implements Serializable{
 		Apellido = apellido;
 		Anyo_Nacimiento = anyo_Nacimiento;
 		Lugar = lugar;
+	}
+	
+	public Cliente() {
+		
 	}
 
 

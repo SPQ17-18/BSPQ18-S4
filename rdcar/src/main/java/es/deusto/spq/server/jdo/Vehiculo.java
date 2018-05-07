@@ -2,6 +2,8 @@ package es.deusto.spq.server.jdo;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
@@ -21,6 +23,9 @@ public class Vehiculo implements Serializable{
 	String Combustible;
 	double Precio_dia;
 	
+	@Persistent(mappedBy = "v")
+	@Join
+	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
 	
 	public Vehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
 		super();
@@ -31,6 +36,9 @@ public class Vehiculo implements Serializable{
 		Precio_dia = precio_dia;
 	}
 
+	public Vehiculo() {
+		
+	}
 
 	public String getMatricula() {
 		return Matricula;
