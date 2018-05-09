@@ -3,12 +3,14 @@ package es.deusto.spq.client.gui;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Frame;
 import java.awt.Toolkit;
 
 public class MainWindow extends JFrame {
@@ -77,6 +79,20 @@ public class MainWindow extends JFrame {
 		});
 		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
 		frame.getContentPane().add(btnAlquilarVehculo);
+		
+		JButton btnAlquilar = new JButton("Alquilar");
+		btnAlquilar.setBounds(177, 16, 115, 29);
+		frame.getContentPane().add(btnAlquilar);
+		btnAlquilar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				controller.CrearAlquiler("1", "12345678A", "1", "1", "1");
+				JOptionPane.showMessageDialog(new Frame(), "Creado");
+			}
+		});
+		
 
 		JButton btnClientes = new JButton("Clientes");
 		btnClientes.addActionListener(new ActionListener() {

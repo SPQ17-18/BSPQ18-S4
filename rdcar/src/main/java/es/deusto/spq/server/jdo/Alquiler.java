@@ -1,7 +1,10 @@
 package es.deusto.spq.server.jdo;
 
 
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
@@ -9,8 +12,12 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class Alquiler {
+public class Alquiler implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@PrimaryKey
 	String codigo;
 	String nombre;
@@ -18,23 +25,31 @@ public class Alquiler {
 	String fechaInicio;
 	String fechaFinal;
 	
-	Vehiculo vehiculo;
-	Cliente cliente;
+	Vehiculo v;
+	Cliente c;
 	
-	public Alquiler(String codigo, String nombre, String matricula, String fechaInicio, String fechaFinal) {
+//	@Persistent(mappedBy = "v", dependentElement = "true")
+//	@Join
+//	private List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
+//
+//	@Persistent(mappedBy = "c", dependentElement = "true")
+//	@Join
+//	private List<Cliente> clientes = new ArrayList<Cliente>();
+	
+	
+	public Alquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
 		super();
 		this.codigo = codigo;
-		this.nombre = nombre;
+		this.nombre = dni;
 		this.matricula = matricula;
 		this.fechaInicio = fechaInicio;
 		this.fechaFinal = fechaFinal;
 	}
 	
 	
-	public Alquiler(Vehiculo vehiculo, Cliente cliente) {
-		super();
-		this.vehiculo = vehiculo;
-		this.cliente = cliente;
+	public Alquiler(Vehiculo v, Cliente c) {
+		this.v = v;
+		this.c = c;
 	}
 
 
@@ -68,18 +83,27 @@ public class Alquiler {
 	public void setFechaFinal(String fechaFinal) {
 		this.fechaFinal = fechaFinal;
 	}
-	public Vehiculo getVehiculo() {
-		return vehiculo;
+
+
+	public Vehiculo getV() {
+		return v;
 	}
-	public void setVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
+
+
+	public void setV(Vehiculo v) {
+		this.v = v;
 	}
-	public Cliente getCliente() {
-		return cliente;
+
+
+	public Cliente getC() {
+		return c;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+
+
+	public void setC(Cliente c) {
+		this.c = c;
 	}
+
 	
 	
 }

@@ -9,6 +9,7 @@ import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Alquiler;
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
@@ -156,6 +157,60 @@ public class RDCarController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	/*
+	 * ALQUILER
+	 */
+	
+	public  void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+		try {
+			rsl.getService().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+	public  void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+		try {
+			rsl.getService().ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public  void BorrarAlquiler(String codigo) {
+		try {
+			rsl.getService().BorrarAlquiler(codigo);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public  Alquiler obtenerAlquiler(String codigo) {
+		try {
+			rsl.getService().obtenerAlquiler(codigo);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public  List<Alquiler> verAlquilers(){
+		try {
+			rsl.getService().verAlquilers();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 

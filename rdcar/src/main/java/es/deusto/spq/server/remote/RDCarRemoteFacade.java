@@ -7,9 +7,11 @@ import java.util.List;
 import es.deusto.spq.server.appservice.ASEmpleado;
 import es.deusto.spq.server.appservice.ASCliente;
 import es.deusto.spq.server.appservice.ASVehiculo;
+import es.deusto.spq.server.appservice.ASAlquiler;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Alquiler;
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
@@ -26,16 +28,18 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	private ASCliente ASCliente;
 	private ASEmpleado ASEmpleado;
 	private ASVehiculo ASVehiculo;
+	private ASAlquiler ASAlquiler;
 
 	protected RDCarRemoteFacade() throws RemoteException {
 		super();
 	}
 
-	public RDCarRemoteFacade(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
+	public RDCarRemoteFacade(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo, ASAlquiler asalquiler) throws RemoteException {
 
 		this.ASCliente = ascliente;
 		this.ASEmpleado = asempleado;
 		this.ASVehiculo = asvehiculo;
+		this.ASAlquiler = asalquiler;
 
 	}
 
@@ -50,11 +54,12 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		}
 		return instance;
 	}
-	public void setAllAS(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo) throws RemoteException {
+	public void setAllAS(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo, ASAlquiler asalquiler) throws RemoteException {
 
 		this.ASCliente = ascliente;
 		this.ASEmpleado = asempleado;
 		this.ASVehiculo = asvehiculo;
+		this.ASAlquiler = asalquiler;
 
 	}
 
@@ -133,6 +138,42 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	@Override
 	public List<Vehiculo> verVehiculos() throws RemoteException {
 		return this.ASVehiculo.verVehiculos();
+	}
+	
+	/*
+	 * ALQUILER 
+	 */
+
+	@Override
+	public void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
+			throws RemoteException {
+		// TODO Auto-generated method stub
+		this.ASAlquiler.CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+	}
+
+	@Override
+	public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
+			throws RemoteException {
+		// TODO Auto-generated method stub
+		this.ASAlquiler.ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+	}
+
+	@Override
+	public void BorrarAlquiler(String codigo) throws RemoteException {
+		// TODO Auto-generated method stub
+		this.ASAlquiler.BorrarAlquiler(codigo);
+	}
+
+	@Override
+	public Alquiler obtenerAlquiler(String codigo) throws RemoteException {
+		// TODO Auto-generated method stub
+		return this.ASAlquiler.obtenerAlquiler(codigo);
+	}
+
+	@Override
+	public List<Alquiler> verAlquilers() throws RemoteException {
+		// TODO Auto-generated method stub
+		return this.ASAlquiler.verAlquilers();
 	}
 
 

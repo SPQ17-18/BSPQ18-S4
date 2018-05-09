@@ -122,6 +122,9 @@ public class LoginWindow extends JFrame{
 				frame.dispose();
 			}
 		});
+		
+		
+		
 		BotonCancelar.setBounds(44, 200, 117, 29);
 		frame.getContentPane().add(BotonCancelar);
 
@@ -207,8 +210,4 @@ public class LoginWindow extends JFrame{
 	public void setController(RDCarController controller) {
 		this.controller = controller;
 	}
-
-	//aceptar al enter
-
-
 }

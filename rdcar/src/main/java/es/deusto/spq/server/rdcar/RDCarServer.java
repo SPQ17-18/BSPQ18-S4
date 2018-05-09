@@ -2,6 +2,7 @@ package es.deusto.spq.server.rdcar;
 
 import java.rmi.Naming;
 
+import es.deusto.spq.server.appservice.ASAlquiler;
 import es.deusto.spq.server.appservice.ASCliente;
 import es.deusto.spq.server.appservice.ASEmpleado;
 import es.deusto.spq.server.appservice.ASVehiculo;
@@ -25,7 +26,7 @@ public class RDCarServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			RDCarRemoteFacade.getInstance().setAllAS(new ASCliente(), new ASEmpleado(), new ASVehiculo());
+			RDCarRemoteFacade.getInstance().setAllAS(new ASCliente(), new ASEmpleado(), new ASVehiculo(), new ASAlquiler());
 
 			Naming.rebind(name, RDCarRemoteFacade.getInstance());
 

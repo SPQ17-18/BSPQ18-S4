@@ -23,7 +23,7 @@ public class Vehiculo implements Serializable{
 	String Combustible;
 	double Precio_dia;
 	
-	@Persistent(mappedBy = "v")
+	@Persistent(mappedBy = "v", dependentElement = "true")
 	@Join
 	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
 	

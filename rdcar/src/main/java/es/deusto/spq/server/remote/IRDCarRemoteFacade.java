@@ -7,6 +7,7 @@ import java.util.List;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
 import es.deusto.spq.server.dto.VehiculoDTO;
+import es.deusto.spq.server.jdo.Alquiler;
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
@@ -31,5 +32,10 @@ public interface IRDCarRemoteFacade extends Remote{
 	public Empleado buscarEmpleado(String user) throws RemoteException;
 	public List<Empleado> verEmpleados() throws RemoteException;
 	
-	
+	public void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
+	public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
+	public void BorrarAlquiler(String codigo) throws RemoteException;
+	public Alquiler obtenerAlquiler(String codigo) throws RemoteException;
+	public List<Alquiler> verAlquilers() throws RemoteException;
+
 }
