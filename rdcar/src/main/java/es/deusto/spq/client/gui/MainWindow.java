@@ -81,15 +81,17 @@ public class MainWindow extends JFrame {
 		frame.getContentPane().add(btnAlquilarVehculo);
 		
 		JButton btnAlquilar = new JButton("Alquilar");
-		btnAlquilar.setBounds(177, 16, 115, 29);
+		btnAlquilar.setBounds(244, 26, 115, 29);
 		frame.getContentPane().add(btnAlquilar);
 		btnAlquilar.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				AlquilarVehiculo abrirV = new AlquilarVehiculo(controller);
+				abrirV.setVisible(true);
 				// TODO Auto-generated method stub
-				controller.CrearAlquiler("1", "12345678A", "1", "1", "1");
-				JOptionPane.showMessageDialog(new Frame(), "Creado");
+				//controller.CrearAlquiler("1", "12345678A", "1", "1", "1");
+				//JOptionPane.showMessageDialog(new Frame(), "Creado");
 			}
 		});
 		
