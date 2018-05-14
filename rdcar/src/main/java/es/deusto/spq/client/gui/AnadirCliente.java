@@ -23,7 +23,7 @@ public class AnadirCliente {
 	private JTextField textDNI;
 	private JTextField textNombre;
 	private JTextField textApellidos;
-	private JTextField textAñoNacim;
+	private JTextField textAnoNacim;
 	private JTextField textLugarNacim;
 	private RDCarController controller = null;
 	private JLabel lblNewLabel;
@@ -86,10 +86,10 @@ public class AnadirCliente {
 		frame.getContentPane().add(textApellidos);
 		textApellidos.setColumns(10);
 
-		textAñoNacim = new JTextField();
-		textAñoNacim.setBounds(135, 191, 220, 20);
-		frame.getContentPane().add(textAñoNacim);
-		textAñoNacim.setColumns(10);
+		textAnoNacim = new JTextField();
+		textAnoNacim.setBounds(135, 191, 220, 20);
+		frame.getContentPane().add(textAnoNacim);
+		textAnoNacim.setColumns(10);
 
 		textLugarNacim = new JTextField();
 		textLugarNacim.setBounds(135, 241, 220, 20);
@@ -127,10 +127,10 @@ public class AnadirCliente {
 				boolean palante=true;
 				if(textDNI.getText().toUpperCase().length() == 9 && Character.isLetter(textDNI.getText().toUpperCase().charAt(8))) {
 					if(textNombre.getText().length() != 0 && textApellidos.getText().length() != 0) {
-						for(int i=0;i<textAñoNacim.getText().length();i++) {
-							if(!(Character.isDigit(textAñoNacim.getText().charAt(i)))) {
+						for(int i=0;i<textAnoNacim.getText().length();i++) {
+							if(!(Character.isDigit(textAnoNacim.getText().charAt(i)))) {
 								JOptionPane.showMessageDialog(new Frame(), "Error en el año de nacimiento");
-								textAñoNacim.requestFocus();
+								textAnoNacim.requestFocus();
 								palante=false;
 							}
 						}
@@ -142,7 +142,7 @@ public class AnadirCliente {
 							}
 						}
 						if(palante) {
-							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAñoNacim.getText()), textLugarNacim.getText());
+							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAnoNacim.getText()), textLugarNacim.getText());
 							JOptionPane.showMessageDialog(new Frame(), "Creado");
 							frame.dispose();
 						}

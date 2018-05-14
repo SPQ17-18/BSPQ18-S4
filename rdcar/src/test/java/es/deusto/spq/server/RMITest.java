@@ -1,4 +1,4 @@
-package es.deusto.spq.server.remote;
+package es.deusto.spq.server;
 
 
 import static org.junit.Assert.*;
@@ -8,7 +8,10 @@ import org.junit.BeforeClass;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.deusto.spq.server.appservice.ASCliente;
 import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.remote.IRDCarRemoteFacade;
+import es.deusto.spq.server.remote.RDCarRemoteFacade;
 
 import org.junit.AfterClass;
 import org.junit.After;
@@ -132,7 +135,7 @@ public class RMITest {
 	@Test public void registerNewUserTest() {
 		try{
 			System.out.println("Test 1 - Register new client");
-			rdcarfacade.CrearCliente("1111111", "JosuKa", "Diaz", 1725, "Su casa");
+			ASCliente.getInstance().CrearCliente("1111111", "JosuKa", "Diaz", 1725, "Su casa");
 		}
 		catch (Exception re) {
 			System.err.println(" # Messenger RemoteException: " + re.getMessage());
@@ -146,9 +149,8 @@ public class RMITest {
 	@Test public void registerExistingUserTest() {
 		try{
 			System.out.println("Test 2 - Register existing client. Change birth year");
-			rdcarfacade.CrearCliente("9999999", "Zinedine", "Zidane", 1000, "Paris");
-
-			rdcarfacade.CrearCliente("9999999", "Zinedine", "Zidane", 1976, "Paris");
+			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1000, "Paris");
+			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1950, "Paris");
 
 		}
 		catch (Exception re) {
