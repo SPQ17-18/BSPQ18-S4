@@ -14,6 +14,8 @@ import es.deusto.spq.server.remote.IRDCarRemoteFacade;
 import es.deusto.spq.server.remote.RDCarRemoteFacade;
 
 import org.junit.AfterClass;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerFactory;
 import org.junit.After;
 //import org.junit.Ignore;
 
@@ -42,6 +44,8 @@ public class RMITest {
 	private static Thread rmiServerThread = null;
 
 	private IRDCarRemoteFacade rdcarfacade;
+	
+	static Logger logger = Logger.getLogger(RMITest.class.getName());
 
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(RMITest.class);
@@ -55,9 +59,9 @@ public class RMITest {
 			public void run() {
 				try {
 					java.rmi.registry.LocateRegistry.createRegistry(1099);
-					System.out.println("BeforeClass: RMI registry ready.");
+					logger.info("BeforeClass: RMI registry ready.");
 				} catch (Exception e) {
-					System.out.println("Exception starting RMI registry:");
+					logger.info("Exception starting RMI registry:");
 					e.printStackTrace();
 				}	
 			}
@@ -74,8 +78,8 @@ public class RMITest {
 		class RMIServerRunnable implements Runnable {
 
 			public void run() {
-				System.out.println("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-				System.out.println("**************: " + cwd);
+				logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+				logger.info("**************: " + cwd);
 				System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 				System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
@@ -84,18 +88,18 @@ public class RMITest {
 				}
 
 				String name = "//127.0.0.1:1099/RDCar";
-				System.out.println("BeforeClass - Setting the server ready TestServer name: " + name);
+				logger.info("BeforeClass - Setting the server ready TestServer name: " + name);
 
 				try {
 
 					IRDCarRemoteFacade rdcar = new RDCarRemoteFacade();
 					Naming.rebind(name, rdcar);
 				} catch (RemoteException re) {
-					System.err.println(" # Messenger RemoteException: " + re.getMessage());
+					logger.error(" # RDCar RemoteException: " + re.getMessage());
 					re.printStackTrace();
 					System.exit(-1);
 				} catch (MalformedURLException murle) {
-					System.err.println(" # Messenger MalformedURLException: " + murle.getMessage());
+					logger.error(" # RDCar MalformedURLException: " + murle.getMessage());
 					murle.printStackTrace();
 					System.exit(-1);
 				}
@@ -121,40 +125,54 @@ public class RMITest {
 			}
 
 			String name = "//127.0.0.1:1099/RDCar";
-			System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
+			logger.info("BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			rdcarfacade = (IRDCarRemoteFacade) java.rmi.Naming.lookup(name);
 		}
 		catch (Exception re) {
-			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
 			//		re.printStackTrace();
 			System.exit(-1);
 		} 
 
 	}
+	@Before public void setClientes() {
+		ASCliente.getInstance().CrearCliente("2", "JoddsasduKa", "asd", 1725, "Su dqewd");
+	}
 
-	@Test public void registerNewUserTest() {
+	@Test public void registrarClienteTest() {
 		try{
-			System.out.println("Test 1 - Register new client");
+			logger.info("Test - Registrar cliente");
 			ASCliente.getInstance().CrearCliente("1111111", "JosuKa", "Diaz", 1725, "Su casa");
 		}
 		catch (Exception re) {
-			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
 		} 
 		/*
 		 * Very simple test, inserting a valid new user
 		 */
 		assertTrue( true );
 	}
+	
+	@Test public void borrarClienteTest() {
+		try {
+			logger.info("Test - Borrar cliente");
+			
+			ASCliente.getInstance().BorrarCliente("2");
+		}
+		catch (Exception re) {
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
+		} 
+	}
 
 	@Test public void registerExistingUserTest() {
 		try{
-			System.out.println("Test 2 - Register existing client. Change birth year");
+			logger.info("Test - Register existing client. Change birth year");
 			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1000, "Paris");
 			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1950, "Paris");
 
 		}
 		catch (Exception re) {
-			System.err.println(" # Messenger RemoteException: " + re.getMessage());
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
 		} 
 		/*
 		 * Very simple test 
@@ -171,10 +189,10 @@ public class RMITest {
 		{
 			tx.begin();
 
-			System.out.println("Deleting test users from persistence. Cleaning up.");
+			logger.info("Deleting test users from persistence. Cleaning up.");
 			Query<Cliente> q1 = pm.newQuery(Cliente.class);
 			long numberInstancesDeleted = q1.deletePersistentAll();
-			System.out.println("Deleted " + numberInstancesDeleted + " user");
+			logger.info("Deleted " + numberInstancesDeleted + " user");
 
 			tx.commit();
 		}
