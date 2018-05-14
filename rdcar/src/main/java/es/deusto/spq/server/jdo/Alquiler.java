@@ -28,14 +28,6 @@ public class Alquiler implements Serializable {
 	Vehiculo v;
 	Cliente c;
 	
-//	@Persistent(mappedBy = "v", dependentElement = "true")
-//	@Join
-//	private List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
-//
-//	@Persistent(mappedBy = "c", dependentElement = "true")
-//	@Join
-//	private List<Cliente> clientes = new ArrayList<Cliente>();
-	
 	
 	public Alquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
 		super();

@@ -2,7 +2,7 @@ package es.deusto.spq.server.dto;
 
 import java.io.Serializable;
 
-public class VehiculoDTO implements Serializable {
+public class VehiculoDTO  {
 
 
 	/**

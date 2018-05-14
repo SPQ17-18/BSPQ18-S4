@@ -3,7 +3,7 @@ package es.deusto.spq.server.dto;
 import java.io.Serializable;
 
 
-public class EmpleadoDTO implements Serializable{
+public class EmpleadoDTO {
 
 	private static final long serialVersionUID = 199654L;
 

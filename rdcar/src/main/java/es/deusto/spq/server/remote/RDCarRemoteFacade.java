@@ -30,7 +30,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	private ASVehiculo ASVehiculo;
 	private ASAlquiler ASAlquiler;
 
-	protected RDCarRemoteFacade() throws RemoteException {
+	public RDCarRemoteFacade() throws RemoteException {
 		super();
 	}
 
@@ -43,17 +43,17 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	}
 
-	public static RDCarRemoteFacade getInstance() {
-		if (instance == null) {
-			try {
-				instance = new RDCarRemoteFacade();
-
-			} catch (Exception ex) {
-				System.out.println(" - RDCar Server: Error creating Remote Façade: " + ex);
-			}
-		}
-		return instance;
-	}
+//	public static RDCarRemoteFacade getInstance() {
+//		if (instance == null) {
+//			try {
+//				instance = new RDCarRemoteFacade();
+//
+//			} catch (Exception ex) {
+//				System.out.println(" - RDCar Server: Error creating Remote Façade: " + ex);
+//			}
+//		}
+//		return instance;
+//	}
 	public void setAllAS(ASCliente ascliente, ASEmpleado asempleado, ASVehiculo asvehiculo, ASAlquiler asalquiler) throws RemoteException {
 
 		this.ASCliente = ascliente;

@@ -2,7 +2,8 @@ package es.deusto.spq.server.dto;
 
 import java.io.Serializable;
 
-public class ClienteDTO implements Serializable{
+public class ClienteDTO
+{
 
 
 	/**
