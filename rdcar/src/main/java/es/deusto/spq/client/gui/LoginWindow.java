@@ -21,6 +21,8 @@ import java.awt.Color;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class LoginWindow extends JFrame{
 
@@ -33,14 +35,18 @@ public class LoginWindow extends JFrame{
 	private JTextField textUsuario;
 	private RDCarController controller =null;
 	private static LoginWindow instance;
-
+	//protected ResourceBundle resourceBundle;
+	protected ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag("en"));
+	//resourceBundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("es"));
 
 	public LoginWindow(RDCarController controller) {
 		this.controller=controller;
+		//this.resourceBundle = resourceBundle;
 		initialize();
 		frame.setVisible(true);
 		setFocusable(true);
-
+		//ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
+		resourceBundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("es"));
 	}
 
 	public static LoginWindow getInstance() {
@@ -84,15 +90,15 @@ public class LoginWindow extends JFrame{
 		frame.setBounds(100, 100, 450, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setTitle("Log In");
+		frame.setTitle(resourceBundle.getString("login_msg"));
 
 
-		JLabel LabelPassword = new JLabel("Contraseña");
+		JLabel LabelPassword = new JLabel(resourceBundle.getString("pass_msg"));
 		LabelPassword.setForeground(Color.BLACK);
 		LabelPassword.setBounds(32, 145, 102, 21);
 		frame.getContentPane().add(LabelPassword);
 
-		JLabel LabelUsuario = new JLabel("Usuario");
+		JLabel LabelUsuario = new JLabel(resourceBundle.getString("user_msg"));
 		LabelUsuario.setForeground(Color.BLACK);
 		LabelUsuario.setBounds(32, 75, 102, 21);
 		frame.getContentPane().add(LabelUsuario);
@@ -115,7 +121,7 @@ public class LoginWindow extends JFrame{
 		textUsuario.setBounds(140, 72, 202, 26);
 		frame.getContentPane().add(textUsuario);
 
-		JButton BotonCancelar = new JButton("Cancelar");
+		JButton BotonCancelar = new JButton(resourceBundle.getString("cancel_msg"));
 		BotonCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.setVisible(false);
@@ -128,7 +134,7 @@ public class LoginWindow extends JFrame{
 		BotonCancelar.setBounds(44, 200, 117, 29);
 		frame.getContentPane().add(BotonCancelar);
 
-		JButton BotonAceptar = new JButton("Aceptar");
+		JButton BotonAceptar = new JButton(resourceBundle.getString("accept_msg"));
 		BotonAceptar.setBounds(285, 200, 117, 29);
 		frame.getContentPane().add(BotonAceptar);
 		BotonAceptar.addActionListener(new ActionListener() { //Aqui esta el actionlistener
@@ -143,7 +149,7 @@ public class LoginWindow extends JFrame{
 					view.setVisible(true);
 
 				} else {
-					JOptionPane.showMessageDialog(new Frame(), "Error");
+					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
 
 				}
 			}
@@ -177,7 +183,7 @@ public class LoginWindow extends JFrame{
 			}
 		});
 
-		JButton btnRegistrar = new JButton("Registrar");
+		JButton btnRegistrar = new JButton(resourceBundle.getString("regist_msg"));
 		btnRegistrar.setBounds(165, 252, 115, 29);
 		frame.getContentPane().add(btnRegistrar);
 		btnRegistrar.addActionListener(new ActionListener() {
@@ -188,11 +194,11 @@ public class LoginWindow extends JFrame{
 						//JOptionPane.showMessageDialog(new Frame(), "Empleado previamente registrado");
 					//}else {
 						controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
-						JOptionPane.showMessageDialog(new Frame(), "Registrado");
+						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_ok_msg"));
 					//}
 				}
 				else {
-					JOptionPane.showMessageDialog(new Frame(), "Introduzca un usuario");
+					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_user_msg"));
 				}
 			}
 		});
