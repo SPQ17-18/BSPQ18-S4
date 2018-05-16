@@ -66,6 +66,7 @@ public class MainWindow extends JFrame {
 		frame.setTitle("Ventana Principal");
 		frame.setResizable(false);
 		frame.setSize(600, 400);
+		
 
 
 
