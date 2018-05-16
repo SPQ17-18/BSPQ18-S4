@@ -4,6 +4,7 @@ import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 import es.deusto.spq.client.controller.RDCarController;
@@ -33,10 +34,13 @@ public class LoginWindow extends JFrame{
 	private JFrame frame;
 	private JTextField textPassword;
 	private JTextField textUsuario;
+	private JComboBox idioma;
+	private String[] ListIdiomas = {"Español", "English"};
 	private RDCarController controller =null;
 	private static LoginWindow instance;
+	public String idiomaApp="en";
 	//protected ResourceBundle resourceBundle;
-	protected ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag("en"));
+	protected ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idiomaApp));
 	//resourceBundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("es"));
 
 	public LoginWindow(RDCarController controller) {
@@ -45,8 +49,6 @@ public class LoginWindow extends JFrame{
 		initialize();
 		frame.setVisible(true);
 		setFocusable(true);
-		//ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
-		resourceBundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("es"));
 	}
 
 	public static LoginWindow getInstance() {
@@ -102,13 +104,12 @@ public class LoginWindow extends JFrame{
 		LabelUsuario.setForeground(Color.BLACK);
 		LabelUsuario.setBounds(32, 75, 102, 21);
 		frame.getContentPane().add(LabelUsuario);
-
-		/*textPassword = new JTextField();
-		textPassword.setBounds(140, 142, 202, 26);
-		frame.getContentPane().add(textPassword);
-		textPassword.setColumns(10);
-		//textPassword.getText().replace("/w/", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
-		 */
+		
+		
+		idioma = new JComboBox(ListIdiomas);
+		idioma.setBounds(165, 20, 150, 20);
+		frame.getContentPane().add(idioma);
+		
 
 		textPassword = new JPasswordField();
 		textPassword.setBounds(140, 142, 202, 26);
@@ -140,13 +141,19 @@ public class LoginWindow extends JFrame{
 		BotonAceptar.addActionListener(new ActionListener() { //Aqui esta el actionlistener
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
+				
+				if(idioma.getSelectedItem().toString().equals("Español"))
+					idiomaApp="es";
+				else if(idioma.getSelectedItem().toString().equals("English"))
+					idiomaApp="en";
 
 				boolean exists = true;
 				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
 
 				if (exists) {
-					MainWindow view = new MainWindow(controller, textUsuario.getText());
+					MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 					view.setVisible(true);
+					view.setIdioma(idiomaApp);
 
 				} else {
 					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
@@ -171,8 +178,9 @@ public class LoginWindow extends JFrame{
 					exists = controller.logIn(textUsuario.getText(), textPassword.getText());
 
 					if (exists) {
-						MainWindow view = new MainWindow(controller, textUsuario.getText());
+						MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 						view.setVisible(true);
+						view.setIdioma(idiomaApp);
 
 					} else {
 						JOptionPane.showMessageDialog(new Frame(), "Error");

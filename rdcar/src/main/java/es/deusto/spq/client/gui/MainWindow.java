@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Frame;
 import java.awt.Toolkit;
 
-public class MainWindow extends JFrame {
+public class MainWindow extends JFrame{
 
 	/**
 	 * 
@@ -23,14 +23,16 @@ public class MainWindow extends JFrame {
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
+	public String idioma;
 
 	public static MainWindow getInstance() {
 		return instance;
 	}
 
-	public MainWindow(RDCarController controller, String user) {
+	public MainWindow(RDCarController controller, String user, String idioma) {
 		this.controller=controller;
 		this.user = user;
+		this.idioma=idioma;
 		initialize();
 		frame.setVisible(true);
 
@@ -73,14 +75,15 @@ public class MainWindow extends JFrame {
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vehiculos abrirCoches = new Vehiculos(controller);
+				Vehiculos abrirCoches = new Vehiculos(controller, idioma);
 				abrirCoches.setVisible(true);
+				abrirCoches.setIdioma(idioma);
 			}
 		});
 		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
 		frame.getContentPane().add(btnAlquilarVehculo);
 		
-		JButton btnAlquilar = new JButton("Alquilar");
+		JButton btnAlquilar = new JButton("rent_msg");
 		btnAlquilar.setBounds(244, 26, 115, 29);
 		frame.getContentPane().add(btnAlquilar);
 		btnAlquilar.addActionListener(new ActionListener() {
@@ -126,6 +129,9 @@ public class MainWindow extends JFrame {
 
 	}
 
+	public void setIdioma(String idioma) {
+		this.idioma=idioma;
+	}
 
 }
 
