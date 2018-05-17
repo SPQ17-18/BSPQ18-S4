@@ -23,7 +23,7 @@ public class MainWindow extends JFrame{
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
-	public String idioma;
+	//public String idioma;
 
 	public static MainWindow getInstance() {
 		return instance;
@@ -32,7 +32,7 @@ public class MainWindow extends JFrame{
 	public MainWindow(RDCarController controller, String user, String idioma) {
 		this.controller=controller;
 		this.user = user;
-		this.idioma=idioma;
+		//this.idioma=idioma;
 		initialize();
 		frame.setVisible(true);
 
@@ -76,9 +76,9 @@ public class MainWindow extends JFrame{
 		JButton btnAlquilarVehculo = new JButton("Vehículos");
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vehiculos abrirCoches = new Vehiculos(controller, idioma);
+				Vehiculos abrirCoches = new Vehiculos(controller);//, idioma);
 				abrirCoches.setVisible(true);
-				abrirCoches.setIdioma(idioma);
+				//abrirCoches.setIdioma(idioma);
 			}
 		});
 		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
@@ -130,9 +130,9 @@ public class MainWindow extends JFrame{
 
 	}
 
-	public void setIdioma(String idioma) {
-		this.idioma=idioma;
-	}
+	//public void setIdioma(String idioma) {
+		//this.idioma=idioma;
+	//}
 
 }
 

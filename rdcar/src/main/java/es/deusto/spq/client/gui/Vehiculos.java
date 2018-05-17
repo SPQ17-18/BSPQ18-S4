@@ -34,7 +34,7 @@ public class Vehiculos extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Vehiculos instance;
-	public String idioma;
+//	public String idioma;
 
 	/**
 	 * Launch the application.
@@ -59,9 +59,9 @@ public class Vehiculos extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Vehiculos(RDCarController controller, String idioma) {
+	public Vehiculos(RDCarController controller) {//, String idioma) {
 		this.controller = controller;
-		this.idioma=idioma;
+	//	this.idioma=idioma;
 		initialize();
 		frame.setVisible(true);
 	}
@@ -140,7 +140,7 @@ public class Vehiculos extends JFrame{
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
-				Vehiculos vehi = new Vehiculos(controller, idioma); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
+				Vehiculos vehi = new Vehiculos(controller);//, idioma); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
 				vehi.setVisible(true);
 			}
 		});
@@ -196,7 +196,7 @@ public class Vehiculos extends JFrame{
 		}
 	}
 	
-	public void setIdioma(String idioma) {
-		this.idioma=idioma;
-	}
+//	public void setIdioma(String idioma) {
+	//	this.idioma=idioma;
+	//}
 }

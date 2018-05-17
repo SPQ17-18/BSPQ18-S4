@@ -147,13 +147,12 @@ public class LoginWindow extends JFrame{
 				else if(idioma.getSelectedItem().toString().equals("English"))
 					idiomaApp="en";
 
-				boolean exists = true;
-				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+				boolean exists = controller.logIn(textUsuario.getText(), textPassword.getText());
 
 				if (exists) {
 					MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 					view.setVisible(true);
-					view.setIdioma(idiomaApp);
+				//	view.setIdioma(idiomaApp);
 
 				} else {
 					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
@@ -180,7 +179,7 @@ public class LoginWindow extends JFrame{
 					if (exists) {
 						MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 						view.setVisible(true);
-						view.setIdioma(idiomaApp);
+					//	view.setIdioma(idiomaApp);
 
 					} else {
 						JOptionPane.showMessageDialog(new Frame(), "Error");
