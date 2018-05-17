@@ -23,7 +23,7 @@ public class ClienteDAO implements IClienteDAO{
 	}
 
 
-	public void storeCliente(Cliente cliente) {
+	public boolean storeCliente(Cliente cliente) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -32,10 +32,12 @@ public class ClienteDAO implements IClienteDAO{
 			System.out.println("   * Storing a Cliente: " + cliente.getDni());
 			pm.makePersistent(cliente);
 			tx.commit();
+			return true;
 
 		} catch (Exception ex) {
 
 			System.out.println("   $ Error storing a Cliente: " + ex.getMessage());
+			return false;
 
 		} finally {
 
@@ -100,7 +102,7 @@ public class ClienteDAO implements IClienteDAO{
 
 	}
 
-	public void borrarCliente(String dni) {
+	public boolean borrarCliente(String dni) {
 
 		Cliente cliente = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -114,10 +116,14 @@ public class ClienteDAO implements IClienteDAO{
 			cliente = (Cliente) query.execute();
 			pm.deletePersistent(cliente);
 			System.out.println("   ***Cliente con DNI "+dni+" eliminado***");
-
 			tx.commit();
+			return true; //comprueba si el dni metido existe?
+
+			
 		} catch (Exception ex) {
 			System.out.println("Error deleting a Cliente: " + ex.getMessage());
+			return false;
+
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

@@ -10,7 +10,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Vehiculo;
 
-public class VehiculoDAO {
+public class VehiculoDAO implements IVehiculoDAO {
 
 
 	private PersistenceManagerFactory pmf;

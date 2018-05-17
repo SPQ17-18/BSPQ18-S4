@@ -34,11 +34,12 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @param apellido
 	 * @param anyo_Nacimiento
 	 * @param lugar
+	 * @return 
 	 * @throws RemoteException
 	 * Tras introducir todos los parametros se crea un nuevo cliente y se guarda
 	 * en la BD. Si ya existía, se muetra un mensaje de error
 	 */
-	public void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
 	/**
 	 * 
 	 * @param dni
@@ -73,7 +74,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Busca al cliente al que corresponde el dni y lo elimina de la BD.
 	 * Si el dni no existe, muestra un ensaje de error
 	 */
-	public void borrarCliente(String dni) throws RemoteException;
+	public boolean borrarCliente(String dni) throws RemoteException;
 	/**
 	 * 
 	 * @param matricula

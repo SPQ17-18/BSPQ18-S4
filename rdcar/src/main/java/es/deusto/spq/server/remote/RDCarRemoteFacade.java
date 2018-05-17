@@ -68,19 +68,19 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 */
 	public boolean logIn(String user, String password) throws RemoteException {
 		System.out.println(" - RDCar Server: user: " + user + " trying to connect...");
-		return this.ASEmpleado.LoginEmpleado(user, password);	
+		return this.ASEmpleado.getInstance().LoginEmpleado(user, password);	
 	}
 	public Empleado buscarEmpleado(String user) throws RemoteException {
-		return this.ASEmpleado.obtenerEmpleado(user);
+		return this.ASEmpleado.getInstance().obtenerEmpleado(user);
 	}
 	@Override
 	public List<Empleado> verEmpleados() throws RemoteException {
-		return this.ASEmpleado.verEmpleados();
+		return this.ASEmpleado.getInstance().verEmpleados();
 	} 
 
 	@Override
 	public void crearEmpleado(String user, String password) throws RemoteException {
-		this.ASEmpleado.CrearEmpleado(user, password);
+		this.ASEmpleado.getInstance().CrearEmpleado(user, password);
 	}
 
 	/*
@@ -88,27 +88,27 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 */
 
 	public Cliente buscarCliente(String dni) throws RemoteException{
-		return this.ASCliente.obtenerCliente(dni);
+		return this.ASCliente.getInstance().obtenerCliente(dni);
 	}
 	@Override
-	public void CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
 			throws RemoteException {
-		this.ASCliente.CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
+		 return this.ASCliente.getInstance().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
 	}
 
 	@Override
 	public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
 			throws RemoteException {
-		this.ASCliente.ModificarCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+		this.ASCliente.getInstance().ModificarCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
 
 	} 
 	@Override
 	public List<Cliente> verClientes() throws RemoteException {
-		return this.ASCliente.verClientes();
+		return this.ASCliente.getInstance().verClientes();
 	} 
 
-	public void borrarCliente(String dni) throws RemoteException{
-		this.ASCliente.BorrarCliente(dni);
+	public boolean borrarCliente(String dni) throws RemoteException{
+		return this.ASCliente.getInstance().BorrarCliente(dni);
 	}
 
 	/*
@@ -116,28 +116,28 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 */
 
 	public  Vehiculo buscarVehiculo(String matricula) throws RemoteException{	
-		return this.ASVehiculo.obtenerVehiculo(matricula);
+		return this.ASVehiculo.getInstance().obtenerVehiculo(matricula);
 	}
 
 	public void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
 
-		this.ASVehiculo.CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+		this.ASVehiculo.getInstance().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
 
 	}
 
 	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
 
-		this.ASVehiculo.ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
+		this.ASVehiculo.getInstance().ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
 
 	}
 
 	public void borrarVehiculo(String matricula) throws RemoteException{
-		this.ASVehiculo.BorrarVehiculo(matricula);
+		this.ASVehiculo.getInstance().BorrarVehiculo(matricula);
 	}
 
 	@Override
 	public List<Vehiculo> verVehiculos() throws RemoteException {
-		return this.ASVehiculo.verVehiculos();
+		return this.ASVehiculo.getInstance().verVehiculos();
 	}
 	
 	/*
@@ -148,32 +148,32 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	public void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
 			throws RemoteException {
 		// TODO Auto-generated method stub
-		this.ASAlquiler.CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 	}
 
 	@Override
 	public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
 			throws RemoteException {
 		// TODO Auto-generated method stub
-		this.ASAlquiler.ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		this.ASAlquiler.getInstance().ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 	}
 
 	@Override
 	public void BorrarAlquiler(String codigo) throws RemoteException {
 		// TODO Auto-generated method stub
-		this.ASAlquiler.BorrarAlquiler(codigo);
+		this.ASAlquiler.getInstance().BorrarAlquiler(codigo);
 	}
 
 	@Override
 	public Alquiler obtenerAlquiler(String codigo) throws RemoteException {
 		// TODO Auto-generated method stub
-		return this.ASAlquiler.obtenerAlquiler(codigo);
+		return this.ASAlquiler.getInstance().obtenerAlquiler(codigo);
 	}
 
 	@Override
 	public List<Alquiler> verAlquilers() throws RemoteException {
 		// TODO Auto-generated method stub
-		return this.ASAlquiler.verAlquilers();
+		return this.ASAlquiler.getInstance().verAlquilers();
 	}
 
 

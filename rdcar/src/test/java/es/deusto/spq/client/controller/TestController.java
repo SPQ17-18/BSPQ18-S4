@@ -1,4 +1,4 @@
-package es.deusto.spq.server;
+package es.deusto.spq.client.controller;
 
 
 import static org.junit.Assert.*;
@@ -8,8 +8,20 @@ import org.junit.BeforeClass;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.appservice.ASCliente;
+import es.deusto.spq.server.dao.AlquilerDAO;
+import es.deusto.spq.server.dao.ClienteDAO;
+import es.deusto.spq.server.dao.EmpleadoDAO;
+import es.deusto.spq.server.dao.IAlquilerDAO;
+import es.deusto.spq.server.dao.IClienteDAO;
+import es.deusto.spq.server.dao.IEmpleadoDAO;
+import es.deusto.spq.server.dao.IVehiculoDAO;
+import es.deusto.spq.server.dao.VehiculoDAO;
+import es.deusto.spq.server.jdo.Alquiler;
 import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Empleado;
+import es.deusto.spq.server.jdo.Vehiculo;
 import es.deusto.spq.server.remote.IRDCarRemoteFacade;
 import es.deusto.spq.server.remote.RDCarRemoteFacade;
 
@@ -36,23 +48,30 @@ import javax.jdo.Transaction;
  * Testing the only the Remoteness
  */
 //@Ignore
-public class RMITest {
+public class TestController {
 	// Properties are hard-coded because we want the test to be executed without external interaction
 
-	private static String cwd = RMITest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+	private static String cwd = TestController.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 	private static Thread rmiRegistryThread = null;
 	private static Thread rmiServerThread = null;
 
 	private IRDCarRemoteFacade rdcarfacade;
+	private RDCarController controller;
 	
-	static Logger logger = Logger.getLogger(RMITest.class.getName());
+	private IAlquilerDAO alquilerdao;
+	private IClienteDAO clientedao;
+	private IEmpleadoDAO empleadodao;
+	private IVehiculoDAO vehiculodao;
+
+	public static final Logger logger = Logger.getLogger(TestController.class);
 
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(RMITest.class);
+		return new JUnit4TestAdapter(TestController.class);
 	}
 
 
 	@BeforeClass static public void setUp() {
+
 		// Launch the RMI registry
 		class RMIRegistryRunnable implements Runnable {
 
@@ -75,11 +94,11 @@ public class RMITest {
 			ie.printStackTrace();
 		}
 
+		//Launch the server
 		class RMIServerRunnable implements Runnable {
 
 			public void run() {
-				logger.info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-				logger.info("**************: " + cwd);
+				
 				System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 				System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
@@ -116,15 +135,22 @@ public class RMITest {
 	}
 
 
-	@Before public void setUpClient() {
+	//Launch the client
+	@Before 
+	public void setUpClient() {
 		try {
 			System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
 			if (System.getSecurityManager() == null) {
 				System.setSecurityManager(new SecurityManager());
 			}
+			String args[] = new String[3];
+			args[0] = "127.0.0.1";
+			args[1] = "1099";
+			args[2] = "RDCar";
+			controller = new RDCarController(args);
 
-			String name = "//127.0.0.1:1099/RDCar";
+			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 			logger.info("BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			rdcarfacade = (IRDCarRemoteFacade) java.rmi.Naming.lookup(name);
 		}
@@ -135,65 +161,91 @@ public class RMITest {
 		} 
 
 	}
-	@Before public void setClientes() {
-		ASCliente.getInstance().CrearCliente("2", "JoddsasduKa", "asd", 1725, "Su dqewd");
-	}
-
-	@Test public void registrarClienteTest() {
-		try{
-			logger.info("Test - Registrar cliente");
-			ASCliente.getInstance().CrearCliente("1111111", "JosuKa", "Diaz", 1725, "Su casa");
-		}
-		catch (Exception re) {
-			logger.error(" # RDCar RemoteException: " + re.getMessage());
-		} 
-		/*
-		 * Very simple test, inserting a valid new user
-		 */
-		assertTrue( true );
+	
+	
+	@Before
+	public void setUpBD(){
+		
+		deleteDatabase();
+		
+		alquilerdao = new AlquilerDAO();
+		clientedao = new ClienteDAO();
+		empleadodao = new EmpleadoDAO();
+		vehiculodao = new VehiculoDAO();
+		
+		//metemos datos
+		
+		Empleado e1 = new Empleado("ron", "123");
+		Empleado e2 = new Empleado("gon", "123");
+		Empleado e3 = new Empleado("josu", "123");
+		Empleado e4 = new Empleado("david", "123");
+		
+		Cliente c1 = new Cliente("12345678A", "Munir", "El Haddadi", 1997, "Murcia");
+		Cliente c2 = new Cliente("12345678B", "Anuel", "AA", 1993, "Murcia");
+		Cliente c3 = new Cliente("12345678C", "Cecilio", "G", 1992, "Murcia");
+		Cliente c4 = new Cliente("12345678D", "Ash", "Ketchup", 1970, "Murcia");
+		
+		Vehiculo v1 = new Vehiculo("1111", "Ferrari", "Enzo", "Gasolina", 20.0);
+		Vehiculo v2 = new Vehiculo("2222", "Lamborghini", "Murcielago", "Gasolina", 20.0);
+		Vehiculo v3 = new Vehiculo("3333", "Aston Martin", "Vanquish", "Gasolina", 20.0);
+		Vehiculo v4 = new Vehiculo("4444", "Tesla", "E", "Gasolina", 20.0);
+		
+		Alquiler a1 = new Alquiler("1A", "12345678A", "1111", "1", "10");
+		Alquiler a2 = new Alquiler("2B", "12345678B", "2222", "2", "11");
+		Alquiler a3 = new Alquiler("3C", "12345678C", "3333", "3", "12");
+		Alquiler a4 = new Alquiler("4D", "12345678D", "4444", "4", "13");
+		
+		empleadodao.storeEmpleado(e1);
+		clientedao.storeCliente(c1);
+		vehiculodao.storeVehiculo(v1);
+		alquilerdao.storeAlquiler(a1);
 	}
 	
-	@Test public void borrarClienteTest() {
+
+	@Test 
+	public void registrarClienteTest() {
+		try{
+			logger.info("Test - Registrar cliente");
+			assertEquals(true, controller.crearCliente("12345234W", "JosuKa", "Diaz", 1725, "Su casa"));
+			
+		}
+		catch (Exception re) {
+			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+				
+	}
+
+	@Test 
+	public void borrarClienteTest() {
 		try {
 			logger.info("Test - Borrar cliente");
+			assertEquals(true, controller.borrarCliente("12395678A")); //no debería pasar
+
 			
-			ASCliente.getInstance().BorrarCliente("2");
 		}
 		catch (Exception re) {
 			logger.error(" # RDCar RemoteException: " + re.getMessage());
 		} 
+
 	}
-
-	@Test public void registerExistingUserTest() {
-		try{
-			logger.info("Test - Register existing client. Change birth year");
-			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1000, "Paris");
-			ASCliente.getInstance().CrearCliente("9999999", "Zinedine", "Zidane", 1950, "Paris");
-
-		}
-		catch (Exception re) {
-			logger.error(" # RDCar RemoteException: " + re.getMessage());
-		} 
-		/*
-		 * Very simple test 
-		 */
-		assertTrue( true );
-	}
-
-
-	@After public  void deleteDatabase() {
+	@After
+	public void deleteDatabase() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try
 		{
 			tx.begin();
-
+	
 			logger.info("Deleting test users from persistence. Cleaning up.");
 			Query<Cliente> q1 = pm.newQuery(Cliente.class);
-			long numberInstancesDeleted = q1.deletePersistentAll();
+			Query<Empleado> q2 = pm.newQuery(Empleado.class);
+			Query<Vehiculo> q3 = pm.newQuery(Vehiculo.class);
+			Query<Alquiler> q4 = pm.newQuery(Alquiler.class);
+			long numberInstancesDeleted = q1.deletePersistentAll() + q2.deletePersistentAll() + q3.deletePersistentAll() + q4.deletePersistentAll();
 			logger.info("Deleted " + numberInstancesDeleted + " user");
-
+	
 			tx.commit();
 		}
 		finally
@@ -204,11 +256,12 @@ public class RMITest {
 			}
 			pm.close();
 		}
-
+	
 	}
 
 
-	@AfterClass static public void tearDown() {
+	@AfterClass 
+	static public void tearDown() {
 		try	{
 			rmiServerThread.join();
 			rmiRegistryThread.join();
@@ -218,4 +271,7 @@ public class RMITest {
 
 
 	} 
+
+
+	
 }

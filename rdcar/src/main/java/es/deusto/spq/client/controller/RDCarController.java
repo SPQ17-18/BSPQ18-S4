@@ -36,7 +36,7 @@ public class RDCarController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 
 	public void crearEmpleado(String user, String password) {
@@ -97,22 +97,26 @@ public class RDCarController {
 		return null;
 	}
 
-	public void crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+	public boolean crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		try {
 			rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+			return true;
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 
-	public void borrarCliente(String c) {
+	public boolean borrarCliente(String c) {
 		try {
 			rsl.getService().borrarCliente(c);
+			return true;
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	/*

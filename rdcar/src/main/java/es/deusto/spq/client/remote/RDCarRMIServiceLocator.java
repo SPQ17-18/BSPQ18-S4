@@ -12,13 +12,7 @@ public class RDCarRMIServiceLocator {
 
 	}
 
-	public static RDCarRMIServiceLocator getInstance() {
-		return instance;
-	}
-
-	public IRDCarRemoteFacade getService() {
-		return rdcarServer;
-	}
+	
 
 	public void setService(String[] args) {
 		if (args.length != 3) {
@@ -41,6 +35,10 @@ public class RDCarRMIServiceLocator {
 			System.err.println(" - RDCar Client: Exception running the server: " + e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	public IRDCarRemoteFacade getService() {
+		return rdcarServer;
 	}
 
 }
