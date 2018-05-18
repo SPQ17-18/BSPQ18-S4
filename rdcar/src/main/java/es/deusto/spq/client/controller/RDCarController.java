@@ -24,6 +24,16 @@ public class RDCarController {
 		new LoginWindow(this);
 	}
 
+
+	public RDCarController(String[] args, String t) throws RemoteException {
+		rsl = new RDCarRMIServiceLocator();
+		rsl.setService(args); 
+		System.out.println("Constructor de prueba");
+		System.out.println("Debería devolver true: " + logIn("josu", "123"));
+		System.out.println("Debería devolver false: " + logIn("rebeca", "rebeca"));
+		
+	}
+	
 	/*
 	 * EMPLEADO
 	 */
@@ -220,7 +230,8 @@ public class RDCarController {
 
 	public static void main(String[] args) throws RemoteException {
 
-		new RDCarController(args); 
+		new RDCarController(args);
+		//new RDCarController(args, "test");
 	}
 
 

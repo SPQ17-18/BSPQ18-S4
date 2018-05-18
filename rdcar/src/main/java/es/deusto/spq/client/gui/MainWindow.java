@@ -23,7 +23,7 @@ public class MainWindow extends JFrame{
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
-	//public String idioma;
+	public String idioma;
 
 	public static MainWindow getInstance() {
 		return instance;
@@ -130,9 +130,9 @@ public class MainWindow extends JFrame{
 
 	}
 
-	//public void setIdioma(String idioma) {
-		//this.idioma=idioma;
-	//}
+	public void setIdioma(String idioma) {
+		this.idioma=idioma;
+	}
 
 }
 

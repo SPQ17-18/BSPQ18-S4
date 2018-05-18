@@ -35,9 +35,9 @@ public class LoginWindow extends JFrame{
 	private JTextField textPassword;
 	private JTextField textUsuario;
 	private JComboBox idioma;
-	private String[] ListIdiomas = {"Español", "English"};
+	private String[] ListIdiomas = {"Espanol", "English"};
 	private RDCarController controller =null;
-	private static LoginWindow instance;
+	private static LoginWindow instance;//se usa?
 	public String idiomaApp="en";
 	//protected ResourceBundle resourceBundle;
 	protected ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idiomaApp));
@@ -49,6 +49,7 @@ public class LoginWindow extends JFrame{
 		initialize();
 		frame.setVisible(true);
 		setFocusable(true);
+		System.out.println("WARNING: Instance a null");
 	}
 
 	public static LoginWindow getInstance() {
@@ -56,7 +57,9 @@ public class LoginWindow extends JFrame{
 	}
 
 	public void dispose() {
+		System.out.println("WARNING: Instance a null");
 		instance.setVisible(false);
+		
 	}
 
 	/**
@@ -84,7 +87,7 @@ public class LoginWindow extends JFrame{
 	 */
 	public void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("RD-Logo.png")));
 
 		frame.setResizable(false);
 
@@ -142,19 +145,21 @@ public class LoginWindow extends JFrame{
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(idioma.getSelectedItem().toString().equals("Español"))
+				if(idioma.getSelectedItem().toString().equals("Espanol"))
 					idiomaApp="es";
 				else if(idioma.getSelectedItem().toString().equals("English"))
 					idiomaApp="en";
 
-				boolean exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+				boolean exists = controller.logIn("josu", "123");//textUsuario.getText(), textPassword.getText());
 
 				if (exists) {
+					System.out.println("Existe");
 					MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 					view.setVisible(true);
-				//	view.setIdioma(idiomaApp);
+					view.setIdioma(idiomaApp);
 
 				} else {
+					System.out.println("No existe");
 					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
 
 				}
