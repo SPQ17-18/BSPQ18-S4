@@ -79,8 +79,8 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	} 
 
 	@Override
-	public void crearEmpleado(String user, String password) throws RemoteException {
-		this.ASEmpleado.getInstance().CrearEmpleado(user, password);
+	public boolean crearEmpleado(String user, String password) throws RemoteException {
+		return this.ASEmpleado.getInstance().CrearEmpleado(user, password);
 	}
 
 	/*
@@ -119,9 +119,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASVehiculo.getInstance().obtenerVehiculo(matricula);
 	}
 
-	public void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
+	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
 
-		this.ASVehiculo.getInstance().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+		return this.ASVehiculo.getInstance().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
 
 	}
 
@@ -131,8 +131,8 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	}
 
-	public void borrarVehiculo(String matricula) throws RemoteException{
-		this.ASVehiculo.getInstance().BorrarVehiculo(matricula);
+	public boolean borrarVehiculo(String matricula) throws RemoteException{
+		return this.ASVehiculo.getInstance().BorrarVehiculo(matricula);
 	}
 
 	@Override
@@ -145,10 +145,10 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	 */
 
 	@Override
-	public void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
+	public boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
 			throws RemoteException {
 		// TODO Auto-generated method stub
-		this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		return this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 	}
 
 	@Override
@@ -159,9 +159,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	}
 
 	@Override
-	public void BorrarAlquiler(String codigo) throws RemoteException {
+	public boolean BorrarAlquiler(String codigo) throws RemoteException {
 		// TODO Auto-generated method stub
-		this.ASAlquiler.getInstance().BorrarAlquiler(codigo);
+		return this.ASAlquiler.getInstance().BorrarAlquiler(codigo);
 	}
 
 	@Override

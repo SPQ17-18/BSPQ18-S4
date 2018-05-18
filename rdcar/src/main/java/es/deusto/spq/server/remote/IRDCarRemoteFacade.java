@@ -102,7 +102,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Tras introducir todos los parametros se crea un nuevo vehiculo y se guarda
 	 * en la BD. Si ya existía, se muetra un mensaje de error
 	 */
-	public void CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
+	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
 	/**
 	 * 
 	 * @param matricula
@@ -121,7 +121,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Busca el vehiculo al que corresponde la matricula y lo elimina de la BD.
 	 * Si la matricula no existe, muestra un ensaje de error
 	 */
-	public void borrarVehiculo(String matricula) throws RemoteException;
+	public boolean borrarVehiculo(String matricula) throws RemoteException;
 	/**
 	 * 
 	 * @param user
@@ -130,7 +130,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Tras introducir todos los parametros se crea un nuevo empleado y se guarda
 	 * en la BD. Si ya existía, se muetra un mensaje de error
 	 */
-	public void crearEmpleado(String user, String password) throws RemoteException;
+	public boolean crearEmpleado(String user, String password) throws RemoteException;
 	/**
 	 * 
 	 * @param user
@@ -158,7 +158,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Tras introducir todos los parametros se crea un nuevo alquiler y se guarda
 	 * en la BD.
 	 */
-	public void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
+	public boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
 	/**
 	 * 
 	 * @param codigo
@@ -177,7 +177,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * Busca el alquiler al que corresponde el codigo y lo elimina de la BD.
 	 * Si el codigo no existe, muestra un ensaje de error
 	 */
-	public void BorrarAlquiler(String codigo) throws RemoteException;
+	public boolean BorrarAlquiler(String codigo) throws RemoteException;
 	/**
 	 * 
 	 * @param codigo

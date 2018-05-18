@@ -197,6 +197,7 @@ public class TestController {
 		
 		empleadodao.storeEmpleado(e1);
 		clientedao.storeCliente(c1);
+		clientedao.storeCliente(c2);
 		vehiculodao.storeVehiculo(v1);
 		alquilerdao.storeAlquiler(a1);
 	}
@@ -215,6 +216,22 @@ public class TestController {
 		} 
 				
 	}
+	
+	@Test 
+	public void buscarClienteTest() {
+		try{
+			logger.info("Test - Buscar cliente");
+			String c = "12395678B";
+			controller.buscarCliente("12395678B");
+			
+		}
+		catch (Exception re) {
+			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+		assertTrue(true);
+				
+	}
 
 	@Test 
 	public void borrarClienteTest() {
@@ -226,9 +243,86 @@ public class TestController {
 		}
 		catch (Exception re) {
 			logger.error(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
 		} 
 
 	}
+	
+	@Test 
+	public void registrarEmpleadoTest() {
+		try{
+			logger.info("Test - Registrar empleado");
+			assertEquals(true, controller.crearEmpleado("rebeca", "123"));
+			
+		}
+		catch (Exception re) {
+			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+				
+	}
+
+	
+	
+	@Test 
+	public void registrarVehiculoTest() {
+		try{
+			logger.info("Test - Registrar vehiculo");
+			assertEquals(true, controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0));
+			
+		}
+		catch (Exception re) {
+			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+				
+	}
+
+	@Test 
+	public void borrarVehiculoTest() {
+		try {
+			logger.info("Test - Borrar vehiculo");
+			assertEquals(true, controller.borrarVehiculo("2525"));
+
+			
+		}
+		catch (Exception re) {
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+
+	}@Test 
+	public void registrarAlquilerTest() {
+		try{
+			logger.info("Test - Registrar alquiler");
+			controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0);
+			controller.crearCliente("11111111E", "JosuKa", "Diaz", 1725, "Su casa");
+			assertEquals(true, controller.CrearAlquiler("2E", "11111111E", "2525", "1", "10"));
+			
+		}
+		catch (Exception re) {
+			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+				
+	}
+
+	@Test 
+	public void borrarAlquilerTest() {
+		try {
+			logger.info("Test - Borrar alquiler");
+			assertEquals(true, controller.borrarCliente("2E")); //no debería pasar
+
+			
+		}
+		catch (Exception re) {
+			logger.error(" # RDCar RemoteException: " + re.getMessage());
+			re.printStackTrace();
+		} 
+
+	}
+	
+	
 	@After
 	public void deleteDatabase() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
