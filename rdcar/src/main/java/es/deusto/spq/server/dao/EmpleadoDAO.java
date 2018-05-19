@@ -118,56 +118,6 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 		return empleado;
 	} 
 
-	public void updateEmpleado(Empleado empleado) {
-
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-			pm.makePersistent(empleado);
-			tx.commit();
-		} catch (Exception ex) {
-			System.out.println("Error updating an Empleado: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-	}
-
-	public boolean LoginEmpleado(String user, String password) {
-
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-
-			Query<?> query = pm.newQuery("SELECT FROM EMPLEADO WHERE User = '" + user + "'");
-			List<?> ListaEmpleados = (List<?>) query.execute(); 
-
-
-		} catch (Exception ex) {
-
-			System.out.print("Error Selecting: " + ex.getMessage());
-
-		} finally {
-
-
-
-
-		}
-
-
-		return false;
-	}
-
-
-
 	public List<Empleado> getAllEmpleados() { 
 
 		PersistenceManager pm = pmf.getPersistenceManager();

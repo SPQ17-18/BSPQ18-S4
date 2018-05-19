@@ -78,27 +78,6 @@ public class VehiculoDAO {
 	}
 
 
-	public void updateVehiculo(Vehiculo vehiculo) {
-
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-			pm.makePersistent(vehiculo);
-			tx.commit();
-		} catch (Exception ex) {
-			System.out.println("Error updating a Vehiculo: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-	}
-
 	public void borrarVehiculo(String matricula) {
 
 		Vehiculo vehiculo = null;

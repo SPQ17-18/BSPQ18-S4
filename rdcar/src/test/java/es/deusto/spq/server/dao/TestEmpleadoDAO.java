@@ -49,29 +49,15 @@ public class TestEmpleadoDAO {
 
 		dao.storeEmpleado(Caparros);
 		
-		Empleado empleado;
-		empleado = dao.retrieveEmpleado("Caparros");
+		
+		Caparros = dao.retrieveEmpleado("Caparros");
 
 		
-		assertEquals(empleado.getUsuario(), "Caparros");
-		assertEquals(empleado.getPassword(), "sevilla");
+		assertEquals(Caparros.getUsuario(), "Caparros");
+		assertEquals(Caparros.getPassword(), "sevilla");
 	}
 
-	@Ignore
-	public void testModificar() {
-		
-		Empleado CecilioG = new Empleado("CecilioG", "1234");
-		dao.storeEmpleado(CecilioG);
-		
-		CecilioG.setPassword("333");
-		dao.updateEmpleado(CecilioG);
-		
-		CecilioG = dao.retrieveEmpleado("CecilioG");
-		
-		
-		assertEquals("333", CecilioG.getPassword());
-	}
-	
+
 	
 	
 	@Test(expected = NullPointerException.class)
@@ -104,7 +90,7 @@ public class TestEmpleadoDAO {
 		
 		ListaRecibida.contains(empleado1);
 		
-		assertTrue(e1 && e2);
+
 		
 	}
 	

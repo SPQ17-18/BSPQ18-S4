@@ -79,27 +79,6 @@ public class ClienteDAO implements IClienteDAO{
 		return cliente;
 	}
 
-	public void updateCliente(Cliente cliente) {
-
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-			pm.makePersistent(cliente);
-			tx.commit();
-		} catch (Exception ex) {
-			System.out.println("Error updating a Cliente: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-	}
-
 	public void borrarCliente(String dni) {
 
 		Cliente cliente = null;

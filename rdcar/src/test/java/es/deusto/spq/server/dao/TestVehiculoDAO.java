@@ -47,6 +47,8 @@ public class TestVehiculoDAO {
 		
 		vehiculo = dao.retrieveVehiculo("2");
 
+		System.out.println(vehiculo.getMatricula());
+		
 		
 		assertEquals(vehiculo.getMatricula(), "2");
 		assertEquals(vehiculo.getMarca(), "ford");
