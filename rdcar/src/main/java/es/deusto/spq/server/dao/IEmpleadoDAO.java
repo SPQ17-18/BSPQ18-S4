@@ -8,6 +8,5 @@ public interface IEmpleadoDAO {
 
 	Empleado retrieveEmpleado(String Num_Empleado);
 
-	void updateEmpleado(Empleado empleado);
 	
 }

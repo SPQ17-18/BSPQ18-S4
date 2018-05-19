@@ -39,14 +39,6 @@ public class ASEmpleado {
 
 	}
 
-	public synchronized void ModificarEmpleado(String user, String password) {
-		Refresh();
-		Empleado empleado = new Empleado(user,password);
-
-		dao.updateEmpleado(empleado);
-
-	}
-
 	public synchronized void BorrarEmpleado(String user) {
 
 

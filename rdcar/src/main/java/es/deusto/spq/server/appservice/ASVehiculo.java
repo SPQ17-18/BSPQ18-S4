@@ -35,13 +35,6 @@ public class ASVehiculo {
 
 	}
 
-	public synchronized void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
-		Refresh();
-		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
-
-		dao.updateVehiculo(vehiculo);
-
-	}
 
 	public synchronized boolean BorrarVehiculo(String matricula) {
 		Refresh();
