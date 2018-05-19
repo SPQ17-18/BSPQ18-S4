@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -34,7 +36,9 @@ public class Vehiculos extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Vehiculos instance;
-//	public String idioma;
+	public String idioma;
+
+	
 
 	/**
 	 * Launch the application.
@@ -59,11 +63,13 @@ public class Vehiculos extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Vehiculos(RDCarController controller) {//, String idioma) {
+	public Vehiculos(RDCarController controller, String idioma) {
 		this.controller = controller;
-	//	this.idioma=idioma;
+		this.idioma=idioma;
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
+		
 	}
 
 	/**
@@ -71,7 +77,7 @@ public class Vehiculos extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("RD-Logo.png")));
 		frame.setBounds(100, 100, 538, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(600, 400);
@@ -140,7 +146,7 @@ public class Vehiculos extends JFrame{
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
-				Vehiculos vehi = new Vehiculos(controller);//, idioma); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
+				Vehiculos vehi = new Vehiculos(controller, idioma); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
 				vehi.setVisible(true);
 			}
 		});
@@ -163,10 +169,10 @@ public class Vehiculos extends JFrame{
 		frame.getContentPane().add(btnActu);
 
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
+	/*	JLabel lblNewLabel = new JLabel("New label");
+		//lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("85.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
-		frame.getContentPane().add(lblNewLabel);
+		frame.getContentPane().add(lblNewLabel);*/
 	}
 
 	private void cargarTabla(Vehiculo v) {
@@ -196,7 +202,7 @@ public class Vehiculos extends JFrame{
 		}
 	}
 	
-//	public void setIdioma(String idioma) {
-	//	this.idioma=idioma;
-	//}
+	public void setIdioma(String idioma) {
+		this.idioma=idioma;
+	}
 }

@@ -40,13 +40,14 @@ public class RDCarController {
 
 	public boolean logIn(String email, String password) {
 		try {
-
 			return rsl.getService().logIn(email, password);
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
-		return false;
+		
 	}
 
 	public void crearEmpleado(String user, String password) {

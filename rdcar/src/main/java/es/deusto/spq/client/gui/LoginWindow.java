@@ -87,7 +87,7 @@ public class LoginWindow extends JFrame{
 	 */
 	public void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("RD-Logo.png")));
 
 		frame.setResizable(false);
 
@@ -153,13 +153,12 @@ public class LoginWindow extends JFrame{
 				boolean exists = controller.logIn("josu", "123");//textUsuario.getText(), textPassword.getText());
 
 				if (exists) {
-					System.out.println("Existe");
 					MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 					view.setVisible(true);
 					view.setIdioma(idiomaApp);
+					System.out.println(idiomaApp);
 
 				} else {
-					System.out.println("No existe");
 					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
 
 				}
@@ -184,7 +183,7 @@ public class LoginWindow extends JFrame{
 					if (exists) {
 						MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 						view.setVisible(true);
-					//	view.setIdioma(idiomaApp);
+						view.setIdioma(idiomaApp);
 
 					} else {
 						JOptionPane.showMessageDialog(new Frame(), "Error");
@@ -206,7 +205,7 @@ public class LoginWindow extends JFrame{
 						//JOptionPane.showMessageDialog(new Frame(), "Empleado previamente registrado");
 					//}else {
 						controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
-						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_ok_msg"));
+						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_ok"));
 					//}
 				}
 				else {
@@ -215,10 +214,10 @@ public class LoginWindow extends JFrame{
 			}
 		});
 
-		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
+		/*JLabel label = new JLabel("New label");
+	//	label.setIcon(new ImageIcon(LoginWindow.class.getResource("box_faqs.jpg")));
 		label.setBounds(0, 0, 434, 311); //altura y anchura
-		frame.getContentPane().add(label);
+		frame.getContentPane().add(label);*/
 
 	}
 

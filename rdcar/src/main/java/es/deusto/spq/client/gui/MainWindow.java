@@ -9,6 +9,8 @@ import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -24,6 +26,7 @@ public class MainWindow extends JFrame{
 	private RDCarController controller = null;
 	private String user;
 	public String idioma;
+	ResourceBundle resourceBundle;
 
 	public static MainWindow getInstance() {
 		return instance;
@@ -32,10 +35,11 @@ public class MainWindow extends JFrame{
 	public MainWindow(RDCarController controller, String user, String idioma) {
 		this.controller=controller;
 		this.user = user;
-		//this.idioma=idioma;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
-
+		
 	}
 
 
@@ -61,7 +65,7 @@ public class MainWindow extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -73,18 +77,18 @@ public class MainWindow extends JFrame{
 
 
 		//abrir ventana vehiculo
-		JButton btnAlquilarVehculo = new JButton("Vehículos");
+		JButton btnAlquilarVehculo = new JButton(resourceBundle.getString("cars_msg"));
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vehiculos abrirCoches = new Vehiculos(controller);//, idioma);
+				Vehiculos abrirCoches = new Vehiculos(controller, idioma);
 				abrirCoches.setVisible(true);
-				//abrirCoches.setIdioma(idioma);
+				abrirCoches.setIdioma(idioma);
 			}
 		});
 		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
 		frame.getContentPane().add(btnAlquilarVehculo);
 		
-		JButton btnAlquilar = new JButton("rent_msg");
+		JButton btnAlquilar = new JButton(resourceBundle.getString("rent_msg"));
 		btnAlquilar.setBounds(244, 26, 115, 29);
 		frame.getContentPane().add(btnAlquilar);
 		btnAlquilar.addActionListener(new ActionListener() {
@@ -100,7 +104,7 @@ public class MainWindow extends JFrame{
 		});
 		
 
-		JButton btnClientes = new JButton("Clientes");
+		JButton btnClientes = new JButton(resourceBundle.getString("clients_msg"));
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes abrirClientes = new Clientes(controller);
@@ -110,7 +114,7 @@ public class MainWindow extends JFrame{
 		btnClientes.setBounds(95, 233, 116, 45);
 		frame.getContentPane().add(btnClientes);
 
-		JButton btnEmpleados = new JButton("Empleados");
+		JButton btnEmpleados = new JButton(resourceBundle.getString("emplo_msg"));
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Empleados abrirEmpleados = new Empleados(controller);
@@ -120,10 +124,10 @@ public class MainWindow extends JFrame{
 		btnEmpleados.setBounds(416, 233, 116, 45);
 		frame.getContentPane().add(btnEmpleados);
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
+		/*JLabel lblNewLabel = new JLabel("New label");
+	//	lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("box_faqs.jpg")));
 		lblNewLabel.setBounds(0, -3, 594, 374);
-		frame.getContentPane().add(lblNewLabel);
+		frame.getContentPane().add(lblNewLabel);*/
 
 
 
