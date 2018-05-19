@@ -36,15 +36,16 @@ public class RDCarController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 
-	public void crearEmpleado(String user, String password) {
+	public boolean crearEmpleado(String user, String password) {
 		try {
-			rsl.getService().crearEmpleado(user, password);
+			return rsl.getService().crearEmpleado(user, password);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 
@@ -97,22 +98,24 @@ public class RDCarController {
 		return null;
 	}
 
-	public void crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+	public boolean crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
 		try {
-			rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+			return rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 
-	public void borrarCliente(String c) {
+	public boolean borrarCliente(String c) {
 		try {
-			rsl.getService().borrarCliente(c);
+			return rsl.getService().borrarCliente(c);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	/*
@@ -141,21 +144,23 @@ public class RDCarController {
 		return null;
 	}
 
-	public void crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+	public boolean crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
 		try {
-			rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+			return rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 
-	public void borrarVehiculo(String m) {
+	public boolean borrarVehiculo(String m) {
 		try {
-			rsl.getService().borrarVehiculo(m);
+			return rsl.getService().borrarVehiculo(m);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 	
@@ -163,12 +168,13 @@ public class RDCarController {
 	 * ALQUILER
 	 */
 	
-	public  void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+	public  boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
 		try {
-			rsl.getService().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+			return rsl.getService().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 		
 
@@ -184,12 +190,13 @@ public class RDCarController {
 
 	}
 
-	public  void BorrarAlquiler(String codigo) {
+	public  boolean BorrarAlquiler(String codigo) {
 		try {
-			rsl.getService().BorrarAlquiler(codigo);
+			return rsl.getService().BorrarAlquiler(codigo);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 

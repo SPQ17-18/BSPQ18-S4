@@ -10,7 +10,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.server.jdo.Vehiculo;
 
-public class VehiculoDAO {
+public class VehiculoDAO implements IVehiculoDAO {
 
 
 	private PersistenceManagerFactory pmf;
@@ -21,7 +21,7 @@ public class VehiculoDAO {
 	}
 
 
-	public void storeVehiculo(Vehiculo vehiculo) {
+	public boolean storeVehiculo(Vehiculo vehiculo) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -30,10 +30,12 @@ public class VehiculoDAO {
 			System.out.println("   * Storing a Vehiculo: " + vehiculo.getMatricula());
 			pm.makePersistent(vehiculo);
 			tx.commit();
+			return true;
 
 		} catch (Exception ex) {
 
 			System.out.println("   $ Error storing a Vehiculo: " + ex.getMessage());
+			return false;
 
 		} finally {
 
@@ -78,7 +80,9 @@ public class VehiculoDAO {
 	}
 
 
-	public void borrarVehiculo(String matricula) {
+
+	public boolean borrarVehiculo(String matricula) {
+
 
 		Vehiculo vehiculo = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -94,8 +98,10 @@ public class VehiculoDAO {
 			System.out.println("   ***Vehiculo con matricula "+matricula+" eliminado***");
 
 			tx.commit();
+			return true;
 		} catch (Exception ex) {
 			System.out.println("Error deleting a Vehiculo: " + ex.getMessage());
+			return false;
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

@@ -27,11 +27,11 @@ public class ASAlquiler {
 			dao = new AlquilerDAO();
 		}
 
-		public synchronized void CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+		public synchronized boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
 			Refresh();
 			Alquiler alquiler = new Alquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 
-			dao.storeAlquiler(alquiler);
+			return dao.storeAlquiler(alquiler);
 
 
 		}
@@ -44,9 +44,9 @@ public class ASAlquiler {
 
 		}
 
-		public synchronized void BorrarAlquiler(String codigo) {
+		public synchronized boolean BorrarAlquiler(String codigo) {
 			Refresh();
-			dao.borrarAlquiler(codigo);
+			return dao.borrarAlquiler(codigo);
 		}
 
 		public synchronized Alquiler obtenerAlquiler(String codigo) {

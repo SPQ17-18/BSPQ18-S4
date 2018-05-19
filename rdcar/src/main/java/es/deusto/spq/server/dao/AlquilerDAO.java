@@ -21,7 +21,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 	}
 
 	@Override
-	public void storeAlquiler(Alquiler alquiler) {
+	public boolean storeAlquiler(Alquiler alquiler) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -30,10 +30,12 @@ public class AlquilerDAO implements IAlquilerDAO {
 			System.out.println("   * Storing a Alquiler: " + alquiler.getCodigo());
 			pm.makePersistent(alquiler);
 			tx.commit();
+			return true;
 
 		} catch (Exception ex) {
 
 			System.out.println("   $ Error storing a Alquiler: " + ex.getMessage());
+			return false;
 
 		} finally {
 
@@ -98,7 +100,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 
 	}
 	
-	public void borrarAlquiler(String codigo) {
+	public boolean borrarAlquiler(String codigo) {
 
 		Alquiler Alquiler = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -114,8 +116,10 @@ public class AlquilerDAO implements IAlquilerDAO {
 			System.out.println("   ***Alquiler con DNI "+codigo+" eliminado***");
 
 			tx.commit();
+			return true;
 		} catch (Exception ex) {
 			System.out.println("Error deleting a Alquiler: " + ex.getMessage());
+			return false;
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();

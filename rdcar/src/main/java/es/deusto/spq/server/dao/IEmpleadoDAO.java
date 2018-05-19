@@ -4,7 +4,7 @@ import es.deusto.spq.server.jdo.Empleado;
 
 public interface IEmpleadoDAO {
 
-	void storeEmpleado(Empleado e);
+	boolean storeEmpleado(Empleado e);
 
 	Empleado retrieveEmpleado(String Num_Empleado);
 

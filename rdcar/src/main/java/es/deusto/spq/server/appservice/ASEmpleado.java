@@ -31,11 +31,11 @@ public class ASEmpleado {
 		dao = new EmpleadoDAO();
 	}
 
-	public synchronized void CrearEmpleado(String user, String password) {
+	public synchronized boolean CrearEmpleado(String user, String password) {
 		Refresh();
 		Empleado empleado = new Empleado(user,password);
 
-		dao.storeEmpleado(empleado);
+		return dao.storeEmpleado(empleado);
 
 	}
 

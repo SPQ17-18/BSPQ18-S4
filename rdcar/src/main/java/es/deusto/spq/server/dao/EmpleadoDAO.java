@@ -23,7 +23,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 
 
-	public void storeEmpleado(Empleado e) {
+	public boolean storeEmpleado(Empleado e) {
 
 
 
@@ -34,10 +34,13 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 			System.out.println("   * Storing an Empleado: " + e.getUsuario());
 			pm.makePersistent(e);
 			tx.commit();
+			return true;
 
 		} catch (Exception ex) {
 
 			System.out.println("   $ Error storing an Empleado: " + ex.getMessage());
+			ex.printStackTrace();
+			return false;
 
 		} finally {
 

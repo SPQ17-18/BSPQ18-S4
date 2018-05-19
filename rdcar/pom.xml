@@ -114,9 +114,10 @@
 					 <!-- This line is for skipping set/get and constructor trivial methods. The coverage is higher-->
 					  <ignoreTrivial>true</ignoreTrivial>  
 						<excludes>
-							<exclude>es/deusto/spq/client/*.class</exclude>
-							<exclude>es/deusto/spq/server/RDCarServer.class</exclude>
-							<exclude>es/deusto/spq/server/**/I*.*</exclude>
+							<exclude>**/client/gui/**/*.class</exclude>
+							<exclude>**/server/RDCarServer.class</exclude>
+							<exclude>**/server/**/I*.*</exclude>
+							<exclude>**/server/jdo/*.class</exclude>
 							
 							<!-- This lines is for excluding from the instrumentation and the coverage calculations all the classes from server down							
 							<exclude>es/deusto/spq/server/**/*</exclude> 

@@ -4,10 +4,10 @@ import es.deusto.spq.server.jdo.Vehiculo;
 
 public interface IVehiculoDAO {
 
-	void storeVehiculo(Vehiculo vehiculo);
+	boolean storeVehiculo(Vehiculo vehiculo);
 
 	Vehiculo retrieveVehiculo(String Matricula);
-
-	void updateVehiculo(Vehiculo vehiculo);
+	
+	boolean borrarVehiculo(String matricula);
 	
 }

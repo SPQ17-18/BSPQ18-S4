@@ -4,10 +4,10 @@ import es.deusto.spq.server.jdo.Cliente;
 
 public interface IClienteDAO {
 
-	void storeCliente(Cliente cliente);
+	boolean storeCliente(Cliente cliente);
+	boolean borrarCliente(String dni);
 
 	Cliente retrieveCliente(String Dni);
 
-	void updateCliente(Cliente cliente);
 	
 }

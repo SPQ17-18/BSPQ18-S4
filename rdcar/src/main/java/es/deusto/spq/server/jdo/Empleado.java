@@ -19,6 +19,7 @@ public class Empleado implements Serializable {
 	
 	@PrimaryKey
 	String user;
+	
 	String Password;
 	
 	public Empleado(String usuario, String password) {
