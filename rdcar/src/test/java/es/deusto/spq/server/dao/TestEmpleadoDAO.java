@@ -6,6 +6,8 @@ import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,6 +38,8 @@ public class TestEmpleadoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testStore() {
 		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
 		dao.storeEmpleado(Mourinho);
@@ -43,6 +47,8 @@ public class TestEmpleadoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
 		Empleado Caparros = new Empleado("Caparros", "sevilla");
@@ -61,6 +67,8 @@ public class TestEmpleadoDAO {
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testDelete() throws Exception {
 		Empleado empleado;
 		dao.deleteEmpleado("Mourinho");
@@ -69,6 +77,8 @@ public class TestEmpleadoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testGetAllEmpleados() throws Exception{
 		
 		Empleado empleado1 = new Empleado("empleado1", "contrasenya1");

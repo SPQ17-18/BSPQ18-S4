@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -29,6 +31,8 @@ public class TestVehiculoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testStore() {
 		
 		Vehiculo vehiculo = new Vehiculo("1", "fiat", "fiesta", "diesel", 4);
@@ -38,6 +42,8 @@ public class TestVehiculoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
 		Vehiculo vehiculo = new Vehiculo("2", "ford", "valencia", "gasolina", 5);
@@ -55,28 +61,11 @@ public class TestVehiculoDAO {
 		assertEquals(vehiculo.getModelo(), "valencia");
 		assertEquals(vehiculo.getCombustible(), "gasolina");
 		
-	}
-
-	@Ignore
-	public void testModificar() {
-		
-		Vehiculo vehiculo = new Vehiculo("3", "bmw", "a3", "electrico", 25);
-
-		dao.storeVehiculo(vehiculo);
-		
-		vehiculo.setMarca("mercedes");
-		
-		dao.updateVehiculo(vehiculo);
-		
-		vehiculo = dao.retrieveVehiculo("3");
-		
-		
-		assertEquals("mercedes", vehiculo.getMarca());
-	}
-	
-	
+	}	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testDelete() throws Exception {
 		Vehiculo vehiculo;
 		
@@ -87,6 +76,8 @@ public class TestVehiculoDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testGetAllEmpleados() throws Exception{
 		
 		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1);

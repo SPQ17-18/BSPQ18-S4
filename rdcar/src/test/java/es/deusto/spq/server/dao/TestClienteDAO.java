@@ -4,6 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.databene.contiperf.Required;
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.junit.ContiPerfRule;
+import org.databene.contiperf.report.EmptyReportModule;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -29,6 +34,8 @@ public class TestClienteDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testStore() {
 		
 		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
@@ -38,6 +45,8 @@ public class TestClienteDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
 		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona");
@@ -53,26 +62,11 @@ public class TestClienteDAO {
 		assertEquals(cliente.getAnyo_Nacimiento(), 1996);
 		assertEquals(cliente.getLugar(), "Pamplona");
 	}
-
-	@Ignore
-	public void testModificar() {
-		
-		Cliente cliente = new Cliente("333333", "Yago", "Ezcurra", 1996, "Madrid");
-		dao.storeCliente(cliente);
-		
-		cliente.setNombre("llago");
-		
-		dao.updateCliente(cliente);
-		
-		cliente = dao.retrieveCliente("333333");
-		
-		
-		assertEquals("llago", cliente.getNombre());
-	}
-	
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testDelete() throws Exception {
 		Cliente cliente;
 		
@@ -83,6 +77,8 @@ public class TestClienteDAO {
 	}
 	
 	@Test
+	@PerfTest(duration = 3000)
+    @Required(max = 120, average = 30)
 	public void testGetAllEmpleados() throws Exception{
 		
 		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1");
