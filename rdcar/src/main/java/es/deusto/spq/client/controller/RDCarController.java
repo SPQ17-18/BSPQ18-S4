@@ -3,6 +3,8 @@ package es.deusto.spq.client.controller;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.client.gui.LoginWindow;
 import es.deusto.spq.client.gui.MainWindow;
 import es.deusto.spq.client.remote.RDCarRMIServiceLocator;
@@ -180,15 +182,15 @@ public class RDCarController {
 
 	}
 
-	public  void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
-		try {
-			rsl.getService().ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
+//	public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+//		try {
+//			rsl.getService().ModificarAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+//		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//
+//	}
 
 	public  boolean BorrarAlquiler(String codigo) {
 		try {

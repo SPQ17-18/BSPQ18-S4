@@ -36,13 +36,13 @@ public class ASAlquiler {
 
 		}
 
-		public synchronized void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
-			Refresh();
-			Alquiler alquiler = new Alquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
-
-			dao.storeAlquiler(alquiler);
-
-		}
+//		public synchronized void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
+//			Refresh();
+//			Alquiler alquiler = new Alquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+//
+//			dao.storeAlquiler(alquiler);
+//
+//		}
 
 		public synchronized boolean BorrarAlquiler(String codigo) {
 			Refresh();

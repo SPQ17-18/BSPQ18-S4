@@ -8,12 +8,16 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.server.jdo.Vehiculo;
 
 public class VehiculoDAO implements IVehiculoDAO {
 
 
 	private PersistenceManagerFactory pmf;
+	
+	public static final Logger logger = Logger.getLogger(VehiculoDAO.class);
 
 	public VehiculoDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -27,14 +31,14 @@ public class VehiculoDAO implements IVehiculoDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Storing a Vehiculo: " + vehiculo.getMatricula());
+			logger.info("   * Storing a Vehiculo: " + vehiculo.getMatricula());
 			pm.makePersistent(vehiculo);
 			tx.commit();
 			return true;
 
 		} catch (Exception ex) {
 
-			System.out.println("   $ Error storing a Vehiculo: " + ex.getMessage());
+			logger.error("   $ Error storing a Vehiculo: " + ex.getMessage());
 			return false;
 
 		} finally {
@@ -65,7 +69,7 @@ public class VehiculoDAO implements IVehiculoDAO {
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
-			System.out.println("Vehiculo does not exist: " + jonfe.getMessage());
+			logger.error("Vehiculo does not exist: " + jonfe.getMessage());
 		}
 
 		finally {
@@ -95,12 +99,12 @@ public class VehiculoDAO implements IVehiculoDAO {
 			query.setUnique(true);
 			vehiculo = (Vehiculo) query.execute();
 			pm.deletePersistent(vehiculo);
-			System.out.println("   ***Vehiculo con matricula "+matricula+" eliminado***");
+			logger.info("   ***Vehiculo con matricula "+matricula+" eliminado***");
 
 			tx.commit();
 			return true;
 		} catch (Exception ex) {
-			System.out.println("Error deleting a Vehiculo: " + ex.getMessage());
+			logger.error("Error deleting a Vehiculo: " + ex.getMessage());
 			return false;
 		} finally {
 			if (tx != null && tx.isActive()) {
@@ -132,7 +136,7 @@ public class VehiculoDAO implements IVehiculoDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error: " + ex.getMessage());
+			logger.error("   $ Error: " + ex.getMessage());
 		} finally {
 
 			if (tx != null && tx.isActive()) {

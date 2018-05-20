@@ -9,6 +9,6 @@ public interface IAlquilerDAO {
 	
 	boolean borrarAlquiler(String codigo);
 
-	void updateAlquiler(Alquiler alquiler);
+	//void updateAlquiler(Alquiler alquiler);
 	
 }

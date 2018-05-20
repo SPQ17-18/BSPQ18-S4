@@ -8,12 +8,16 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.server.jdo.Alquiler;
 
 
 public class AlquilerDAO implements IAlquilerDAO {
 	
 	private PersistenceManagerFactory pmf;
+	
+	public static final Logger logger = Logger.getLogger(AlquilerDAO.class);
 
 	public AlquilerDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -27,14 +31,14 @@ public class AlquilerDAO implements IAlquilerDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Storing a Alquiler: " + alquiler.getCodigo());
+			logger.info("   * Storing a Alquiler: " + alquiler.getCodigo());
 			pm.makePersistent(alquiler);
 			tx.commit();
 			return true;
 
 		} catch (Exception ex) {
 
-			System.out.println("   $ Error storing a Alquiler: " + ex.getMessage());
+			logger.error("   $ Error storing a Alquiler: " + ex.getMessage());
 			return false;
 
 		} finally {
@@ -65,7 +69,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
-			System.out.println("Alquiler does not exist: " + jonfe.getMessage());
+			logger.error("Alquiler does not exist: " + jonfe.getMessage());
 		}
 
 		finally {
@@ -79,26 +83,26 @@ public class AlquilerDAO implements IAlquilerDAO {
 		return alquiler;
 	}
 
-	@Override
-	public void updateAlquiler(Alquiler alquiler) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-			pm.makePersistent(alquiler);
-			tx.commit();
-		} catch (Exception ex) {
-			System.out.println("Error updating a Alquiler: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-	}
+//	@Override
+//	public void updateAlquiler(Alquiler alquiler) {
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		Transaction tx = pm.currentTransaction();
+//
+//		try {
+//			tx.begin();
+//			pm.makePersistent(alquiler);
+//			tx.commit();
+//		} catch (Exception ex) {
+//			logger.error("Error updating a Alquiler: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//
+//	}
 	
 	public boolean borrarAlquiler(String codigo) {
 
@@ -113,12 +117,12 @@ public class AlquilerDAO implements IAlquilerDAO {
 			query.setUnique(true);
 			Alquiler = (Alquiler) query.execute();
 			pm.deletePersistent(Alquiler);
-			System.out.println("   ***Alquiler con DNI "+codigo+" eliminado***");
+			logger.info("   ***Alquiler con DNI "+codigo+" eliminado***");
 
 			tx.commit();
 			return true;
 		} catch (Exception ex) {
-			System.out.println("Error deleting a Alquiler: " + ex.getMessage());
+			logger.error("Error deleting a Alquiler: " + ex.getMessage());
 			return false;
 		} finally {
 			if (tx != null && tx.isActive()) {
@@ -152,7 +156,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error: " + ex.getMessage());
+			logger.error("   $ Error: " + ex.getMessage());
 		} finally {
 
 			if (tx != null && tx.isActive()) {

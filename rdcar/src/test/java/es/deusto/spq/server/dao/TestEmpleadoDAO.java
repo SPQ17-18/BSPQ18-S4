@@ -6,6 +6,7 @@ import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.junit.After;
@@ -22,7 +23,8 @@ import es.deusto.spq.server.jdo.Empleado;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestEmpleadoDAO {
-
+	
+	public static final Logger logger = Logger.getLogger(TestEmpleadoDAO.class);
 	
 	@Mock
 	EmpleadoDAO dao;
