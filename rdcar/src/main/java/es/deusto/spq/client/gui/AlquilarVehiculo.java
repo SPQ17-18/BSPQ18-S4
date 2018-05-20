@@ -11,6 +11,7 @@ import es.deusto.spq.server.jdo.Vehiculo;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.swing.JTable;
 import javax.swing.JLabel;
@@ -32,6 +33,8 @@ public class AlquilarVehiculo {
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private JTextField dni;
 	private JLabel lblNewLabel;
+	public String idioma;
+	ResourceBundle resourceBundle;
 
 	/**
 	 * Launch the application.
@@ -56,7 +59,7 @@ public class AlquilarVehiculo {
 		initialize();
 	}
 
-	public AlquilarVehiculo(RDCarController controller) {
+	public AlquilarVehiculo(RDCarController controller, String idioma) {
 		this.controller = controller;
 		initialize();
 		frame.setVisible(true);
@@ -78,11 +81,11 @@ public class AlquilarVehiculo {
 		table = new JTable();
 		table.setBounds(51, 111, 232, 206);
 		//frame.getContentPane().add(table);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent") }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
-		JLabel lblListaDeVehculos = new JLabel("Lista de vehículos:");
+		JLabel lblListaDeVehculos = new JLabel(resourceBundle.getString("list_cars_msg"));
 		lblListaDeVehculos.setBounds(56, 86, 113, 14);
 		frame.getContentPane().add(lblListaDeVehculos);
 		
@@ -100,17 +103,17 @@ public class AlquilarVehiculo {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.CrearAlquiler("1", dni.getText(), table.getColumnName(1), fechaIni.getText(), fechaFin.getText());
-				JOptionPane.showMessageDialog(new Frame(), "Creado");
+				JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("car_cre"));
 			}
 		});
 		btnAceptar.setBounds(389, 294, 89, 23);
 		frame.getContentPane().add(btnAceptar);
 		
-		JLabel lblFechaInicio = new JLabel("Fecha inicio");
+		JLabel lblFechaInicio = new JLabel(resourceBundle.getString("ini_date"));
 		lblFechaInicio.setBounds(312, 111, 67, 14);
 		frame.getContentPane().add(lblFechaInicio);
 		
-		JLabel lblFechaFin = new JLabel("Fecha fin");
+		JLabel lblFechaFin = new JLabel(resourceBundle.getString("end_date"));
 		lblFechaFin.setBounds(312, 185, 67, 14);
 		frame.getContentPane().add(lblFechaFin);
 		
@@ -119,7 +122,7 @@ public class AlquilarVehiculo {
 		frame.getContentPane().add(dni);
 		dni.setColumns(10);
 		
-		JLabel lblDni = new JLabel("DNI");
+		JLabel lblDni = new JLabel(resourceBundle.getString("dni_msg"));
 		lblDni.setBounds(312, 247, 46, 14);
 		frame.getContentPane().add(lblDni);
 		

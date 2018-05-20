@@ -6,6 +6,8 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -27,6 +29,8 @@ public class AnadirCliente {
 	private JTextField textLugarNacim;
 	private RDCarController controller = null;
 	private JLabel lblNewLabel;
+	public String idioma;
+	ResourceBundle resourceBundle;
 
 	/**
 	 * Launch the application.
@@ -45,10 +49,13 @@ public class AnadirCliente {
 	}
 
 
-	public AnadirCliente(RDCarController controller) {
+	public AnadirCliente(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
+		
 	}
 	/**
 	 * Create the application.
@@ -96,27 +103,27 @@ public class AnadirCliente {
 		frame.getContentPane().add(textLugarNacim);
 		textLugarNacim.setColumns(10);
 
-		JLabel lblDni = new JLabel("DNI:");
+		JLabel lblDni = new JLabel(resourceBundle.getString("dni_msg"));
 		lblDni.setBounds(11, 56, 90, 14);
 		frame.getContentPane().add(lblDni);
 
-		JLabel lblNombre = new JLabel("Nombre:");
+		JLabel lblNombre = new JLabel(resourceBundle.getString("name"));
 		lblNombre.setBounds(11, 101, 97, 14);
 		frame.getContentPane().add(lblNombre);
 
-		JLabel lblApellidos = new JLabel("Apellidos:");
+		JLabel lblApellidos = new JLabel(resourceBundle.getString("surname"));
 		lblApellidos.setBounds(11, 149, 90, 14);
 		frame.getContentPane().add(lblApellidos);
 
-		JLabel lblAoNacimiento = new JLabel("Año de nacimiento:");
+		JLabel lblAoNacimiento = new JLabel(resourceBundle.getString("year")+":");
 		lblAoNacimiento.setBounds(11, 194, 111, 14);
 		frame.getContentPane().add(lblAoNacimiento);
 
-		JLabel lblLugarNacimiento = new JLabel("Lugar nacimiento:");
+		JLabel lblLugarNacimiento = new JLabel(resourceBundle.getString("place")+":");
 		lblLugarNacimiento.setBounds(10, 244, 111, 14);
 		frame.getContentPane().add(lblLugarNacimiento);
 
-		JButton btnAceptar = new JButton("Aceptar");
+		JButton btnAceptar = new JButton(resourceBundle.getString("accept_msg"));
 		btnAceptar.setBounds(436, 279, 111, 54);
 		frame.getContentPane().add(btnAceptar);
 		btnAceptar.addActionListener(new ActionListener() {
@@ -129,28 +136,28 @@ public class AnadirCliente {
 					if(textNombre.getText().length() != 0 && textApellidos.getText().length() != 0) {
 						for(int i=0;i<textAnoNacim.getText().length();i++) {
 							if(!(Character.isDigit(textAnoNacim.getText().charAt(i)))) {
-								JOptionPane.showMessageDialog(new Frame(), "Error en el año de nacimiento");
+								JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("year_error"));
 								textAnoNacim.requestFocus();
 								palante=false;
 							}
 						}
 						for(int i=0;i<textLugarNacim.getText().length();i++) {
 							if(!(Character.isLetter(textLugarNacim.getText().charAt(i)))) {
-								JOptionPane.showMessageDialog(new Frame(), "Error en el lugar de nacimiento (solo letras)");
+								JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("place error"));
 								textLugarNacim.requestFocus();
 								palante=false;
 							}
 						}
 						if(palante) {
 							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAnoNacim.getText()), textLugarNacim.getText());
-							JOptionPane.showMessageDialog(new Frame(), "Creado");
+							JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("car_cre"));
 							frame.dispose();
 						}
 					}else {
-						JOptionPane.showMessageDialog(new Frame(), "Error en las credenciales");
+						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("cred_error"));
 					}
 				}else {
-					JOptionPane.showMessageDialog(new Frame(), "Error en el DNI");
+					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("dni_error"));
 					textDNI.requestFocus();
 				}
 			}

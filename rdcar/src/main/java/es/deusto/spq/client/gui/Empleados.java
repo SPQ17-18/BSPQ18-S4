@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -33,7 +35,9 @@ public class Empleados extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Empleados instance;
-	
+	public String idioma;
+	ResourceBundle resourceBundle;
+
 	public static final Logger logger = Logger.getLogger(Empleado.class);
 
 	/**
@@ -59,8 +63,10 @@ public class Empleados extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Empleados(RDCarController controller) {
+	public Empleados(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
 	}
@@ -76,7 +82,7 @@ public class Empleados extends JFrame{
 		frame.setTitle("Empleados");
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblDniDelCliente = new JLabel("Nombre de usuario:");
+		JLabel lblDniDelCliente = new JLabel(resourceBundle.getString("nickname"));
 		lblDniDelCliente.setBounds(15, 31, 142, 16);
 		frame.getContentPane().add(lblDniDelCliente);
 
@@ -85,7 +91,7 @@ public class Empleados extends JFrame{
 		frame.getContentPane().add(textUsuario);
 		textUsuario.setColumns(10);
 
-		JButton btnBuscar = new JButton("Buscar");
+		JButton btnBuscar = new JButton(resourceBundle.getString("car_search"));
 		btnBuscar.setBounds(316, 27, 97, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
@@ -104,7 +110,7 @@ public class Empleados extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 145);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Usuario"}));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("user_msg")}));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 

@@ -94,7 +94,7 @@ public class MainWindow extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				AlquilarVehiculo abrirV = new AlquilarVehiculo(controller);
+				AlquilarVehiculo abrirV = new AlquilarVehiculo(controller, idioma);
 				abrirV.setVisible(true);
 				// TODO Auto-generated method stub
 				//controller.CrearAlquiler("1", "12345678A", "1", "1", "1");
@@ -106,7 +106,7 @@ public class MainWindow extends JFrame {
 		JButton btnClientes = new JButton(resourceBundle.getString("clients_msg"));
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clientes abrirClientes = new Clientes(controller);
+				Clientes abrirClientes = new Clientes(controller, idioma);
 				abrirClientes.setVisible(true);
 			}
 		});
@@ -116,7 +116,7 @@ public class MainWindow extends JFrame {
 		JButton btnEmpleados = new JButton(resourceBundle.getString("emplo_msg"));
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Empleados abrirEmpleados = new Empleados(controller);
+				Empleados abrirEmpleados = new Empleados(controller, idioma);
 				abrirEmpleados.setVisible(true);
 			}
 		});

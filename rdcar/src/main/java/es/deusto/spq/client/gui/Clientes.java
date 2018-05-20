@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -36,6 +38,8 @@ public class Clientes extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Clientes instance;
+	public String idioma;
+	ResourceBundle resourceBundle;
 	
 	public static final Logger logger = Logger.getLogger(Clientes.class);
 
@@ -62,8 +66,10 @@ public class Clientes extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Clientes(RDCarController controller) {
+	public Clientes(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
 	}
@@ -82,7 +88,7 @@ public class Clientes extends JFrame{
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 
-		JLabel lblDniDelCliente = new JLabel("DNI del cliente:");
+		JLabel lblDniDelCliente = new JLabel(resourceBundle.getString("dni_msg")+":");
 		lblDniDelCliente.setBounds(23, 31, 97, 16);
 		frame.getContentPane().add(lblDniDelCliente);
 
@@ -91,7 +97,7 @@ public class Clientes extends JFrame{
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
-		JButton btnBuscar = new JButton("Buscar");
+		JButton btnBuscar = new JButton(resourceBundle.getString("car_search"));
 		btnBuscar.setBounds(455, 27, 100, 37);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
@@ -110,21 +116,21 @@ public class Clientes extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 267);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"DNI", "Nombre", "Apellido", "Año de nacimiento", "Lugar" }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("dni_msg"), resourceBundle.getString("name"), resourceBundle.getString("surname"), resourceBundle.getString("year"), resourceBundle.getString("place") }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
-		JButton btnAadir = new JButton("Añadir");
+		JButton btnAadir = new JButton(resourceBundle.getString("add"));
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AnadirCliente acliente = new AnadirCliente(controller);
+				AnadirCliente acliente = new AnadirCliente(controller, idioma);
 				acliente.setVisible(true);
 			}
 		});
 		btnAadir.setBounds(455, 83, 100, 37);
 		frame.getContentPane().add(btnAadir);
 
-		JButton btnEliminar = new JButton("Eliminar");
+		JButton btnEliminar = new JButton(resourceBundle.getString("car_del"));
 		btnEliminar.setBounds(455, 240, 100, 37);
 		frame.getContentPane().add(btnEliminar);
 		btnEliminar.addActionListener(new ActionListener() {
@@ -133,28 +139,28 @@ public class Clientes extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String c = (String) table.getValueAt(table.getSelectedRow(), 0);
-				int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres eliminar este cliente?", "", JOptionPane.YES_NO_OPTION);
+				int opcion = JOptionPane.showConfirmDialog(null, resourceBundle.getString("cli_del_sure"), "", JOptionPane.YES_NO_OPTION);
 				if(opcion ==JOptionPane.YES_OPTION) {
 					controller.borrarCliente(c);
-					JOptionPane.showMessageDialog(new Frame(), "Cliente eliminado");
+					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("cli_del_conf"));
 				}
 
 			}
 		});
 
-		JButton btnActu = new JButton("Actualizar");
+		JButton btnActu = new JButton(resourceBundle.getString("car_act"));
 
 		btnActu.setBounds(455, 134, 100, 37);
 		frame.getContentPane().add(btnActu);
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
-				Clientes cli = new Clientes(controller);
+				Clientes cli = new Clientes(controller, idioma);
 				cli.setVisible(true);
 			}
 		});
 
-		JButton btnAtras = new JButton("Atras");
+		JButton btnAtras = new JButton(resourceBundle.getString("back"));
 
 		btnAtras.setBounds(455, 300, 100, 37);
 		frame.getContentPane().add(btnAtras);
