@@ -57,7 +57,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * 
 	 */
 	public List<Cliente> verClientes() throws RemoteException;
-	/**
+	/*
 	 * Permite modificar todos los parametros del cliente seleccionado. Después, se actualiza en la BD
 	 * @param dni
 	 * @param nombre
@@ -67,7 +67,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 * 
 	 */
-	public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
+	//public void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
 	/**
 	 * Busca al cliente al que corresponde el dni y lo elimina de la BD.
 	 * Si el dni no existe, muestra un ensaje de error
@@ -161,7 +161,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * 
 	 */
 	public boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
-	/**
+	/*
 	 *  Permite modificar todos los parametros del alquiler seleccionado. Después, se actualiza en la BD
 	 * @param codigo
 	 * @param dni
@@ -171,7 +171,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 * 
 	 */
-	public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
+	//public void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) throws RemoteException;
 	/**
 	 * Busca el alquiler al que corresponde el codigo y lo elimina de la BD.
 	 * Si el codigo no existe, muestra un ensaje de error

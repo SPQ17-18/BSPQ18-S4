@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
 import org.junit.AfterClass;
@@ -19,6 +20,7 @@ import es.deusto.spq.server.jdo.Vehiculo;
 
 public class TestVehiculoDAO {
 
+	public static final Logger logger = Logger.getLogger(TestVehiculoDAO.class);
 
 	@Mock
 	static

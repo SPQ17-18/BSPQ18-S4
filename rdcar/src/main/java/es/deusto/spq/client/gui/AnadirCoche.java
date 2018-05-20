@@ -5,6 +5,8 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JFrame;
 
@@ -25,8 +27,13 @@ public class AnadirCoche {
 	private JTextField textModelo;
 	private JComboBox textCombus;
 	private JTextField textPrecioDia;
-	private String[] Combustibles = {"Diesel", "Gasolina", "Electrico", "Hibrido"};
-
+	public String idioma;
+	ResourceBundle resourceBundle;
+	private String gas;
+	private String elec;
+	private String hyb;
+	private String[] Combustibles= {"Diesel", gas, elec, hyb};
+	
 	/**
 	 * Launch the application.
 	 */
@@ -47,8 +54,13 @@ public class AnadirCoche {
 	 * Create the application.
 	 * @param controller 
 	 */
-	public AnadirCoche(RDCarController controller) {
+	public AnadirCoche(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
+		gas=resourceBundle.getString("car_gas");
+		elec=resourceBundle.getString("car_elec");
+		hyb=resourceBundle.getString("car_hyb");
 		initialize();
 		frame.setVisible(true);
 	}
@@ -91,27 +103,27 @@ public class AnadirCoche {
 		frame.getContentPane().add(textPrecioDia);
 		textPrecioDia.setColumns(10);
 
-		JLabel lblMatrcula = new JLabel("Matrícula:");
+		JLabel lblMatrcula = new JLabel(resourceBundle.getString("car_plate"));
 		lblMatrcula.setBounds(28, 62, 101, 14);
 		frame.getContentPane().add(lblMatrcula);
 
-		JLabel lblMarca = new JLabel("Marca:");
+		JLabel lblMarca = new JLabel(resourceBundle.getString("car_brand"));
 		lblMarca.setBounds(30, 111, 80, 14);
 		frame.getContentPane().add(lblMarca);
 
-		JLabel lblModelo = new JLabel("Modelo:");
+		JLabel lblModelo = new JLabel(resourceBundle.getString("car_model"));
 		lblModelo.setBounds(28, 158, 82, 14);
 		frame.getContentPane().add(lblModelo);
 
-		JLabel lblCombustible = new JLabel("Combustible:");
+		JLabel lblCombustible = new JLabel(resourceBundle.getString("car_fuel"));
 		lblCombustible.setBounds(28, 208, 116, 14);
 		frame.getContentPane().add(lblCombustible);
 
-		JLabel lblPrecioda = new JLabel("Precio/día");
+		JLabel lblPrecioda = new JLabel( resourceBundle.getString("car_rent"));
 		lblPrecioda.setBounds(28, 260, 101, 14);
 		frame.getContentPane().add(lblPrecioda);
 
-		JButton btnAceptar = new JButton("Aceptar");
+		JButton btnAceptar = new JButton( resourceBundle.getString("accept_msg"));
 		btnAceptar.setBounds(461, 279, 108, 67);
 		frame.getContentPane().add(btnAceptar);
 		btnAceptar.addActionListener(new ActionListener() {
@@ -120,7 +132,7 @@ public class AnadirCoche {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getSelectedItem().toString(), Integer.parseInt(textPrecioDia.getText()));
-				JOptionPane.showMessageDialog(new Frame(), "Creado");
+				JOptionPane.showMessageDialog(new Frame(),  resourceBundle.getString("car_cre"));
 				frame.dispose();
 			}
 		});

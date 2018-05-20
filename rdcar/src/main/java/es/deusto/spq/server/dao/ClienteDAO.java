@@ -8,6 +8,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.server.jdo.Cliente;
 import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
@@ -16,6 +18,7 @@ public class ClienteDAO implements IClienteDAO{
 
 
 	private PersistenceManagerFactory pmf;
+	public static final Logger logger = Logger.getLogger(ClienteDAO.class);
 
 	public ClienteDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -29,14 +32,14 @@ public class ClienteDAO implements IClienteDAO{
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Storing a Cliente: " + cliente.getDni());
+			logger.info("   * Storing a Cliente: " + cliente.getDni());
 			pm.makePersistent(cliente);
 			tx.commit();
 			return true;
 
 		} catch (Exception ex) {
 
-			System.out.println("   $ Error storing a Cliente: " + ex.getMessage());
+			logger.error("   $ Error storing a Cliente: " + ex.getMessage());
 			return false;
 
 		} finally {
@@ -67,7 +70,7 @@ public class ClienteDAO implements IClienteDAO{
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
-			System.out.println("Cliente does not exist: " + jonfe.getMessage());
+			logger.error("Cliente does not exist: " + jonfe.getMessage());
 		}
 
 		finally {
@@ -96,13 +99,13 @@ public class ClienteDAO implements IClienteDAO{
 			query.setUnique(true);
 			cliente = (Cliente) query.execute();
 			pm.deletePersistent(cliente);
-			System.out.println("   ***Cliente con DNI "+dni+" eliminado***");
+			logger.info("   ***Cliente con DNI "+dni+" eliminado***");
 			tx.commit();
 			return true; //comprueba si el dni metido existe?
 
 			
 		} catch (Exception ex) {
-			System.out.println("Error deleting a Cliente: " + ex.getMessage());
+			logger.error("Error deleting a Cliente: " + ex.getMessage());
 			return false;
 
 		} finally {
@@ -137,7 +140,7 @@ public class ClienteDAO implements IClienteDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error: " + ex.getMessage());
+			logger.error("   $ Error: " + ex.getMessage());
 		} finally {
 
 			if (tx != null && tx.isActive()) {

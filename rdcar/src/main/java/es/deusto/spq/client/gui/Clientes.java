@@ -16,6 +16,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.jdo.Cliente;
@@ -34,6 +36,8 @@ public class Clientes extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Clientes instance;
+	
+	public static final Logger logger = Logger.getLogger(Clientes.class);
 
 	/**
 	 * Launch the application.
@@ -97,7 +101,7 @@ public class Clientes extends JFrame{
 				borrarTabla();
 				Cliente c = null;
 				c = controller.buscarCliente(textField.getText());
-				System.out.println(c.getDni() + c.getNombre() + c.getApellido() + c.getAnyo_Nacimiento() + c.getLugar());
+				logger.info(c.getDni() + c.getNombre() + c.getApellido() + c.getAnyo_Nacimiento() + c.getLugar());
 				cargarTabla(c);	
 			}
 		});

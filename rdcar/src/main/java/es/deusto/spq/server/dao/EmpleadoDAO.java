@@ -8,13 +8,15 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.server.jdo.Empleado;
 
 public class EmpleadoDAO implements IEmpleadoDAO {
 
-
-
 	private static PersistenceManagerFactory pmf;
+	
+	public static final Logger logger = Logger.getLogger(EmpleadoDAO.class);
 
 	public EmpleadoDAO(){
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -31,14 +33,14 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-			System.out.println("   * Storing an Empleado: " + e.getUsuario());
+			logger.info("   * Storing an Empleado: " + e.getUsuario());
 			pm.makePersistent(e);
 			tx.commit();
 			return true;
 
 		} catch (Exception ex) {
 
-			System.out.println("   $ Error storing an Empleado: " + ex.getMessage());
+			logger.error("   $ Error storing an Empleado: " + ex.getMessage());
 			ex.printStackTrace();
 			return false;
 
@@ -73,7 +75,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
-			System.out.println("Empleado does not exist: " + jonfe.getMessage());
+			logger.error("Empleado does not exist: " + jonfe.getMessage());
 		}
 
 		finally {
@@ -109,7 +111,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
 		{
-			System.out.println("Empleado does not exist: " + jonfe.getMessage());
+			logger.error("Empleado does not exist: " + jonfe.getMessage());
 		}
 
 		finally {
@@ -143,7 +145,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("   $ Error: " + ex.getMessage());
+			logger.error("   $ Error: " + ex.getMessage());
 		} finally {
 
 			if (tx != null && tx.isActive()) {

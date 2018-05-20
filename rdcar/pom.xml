@@ -121,7 +121,7 @@
 					  <ignoreTrivial>true</ignoreTrivial>  
 						<excludes>
 							<exclude>**/client/gui/**/*.class</exclude>
-							<exclude>**/server/RDCarServer.class</exclude>
+							<exclude>**/server/rdcar/RDCarServer.class</exclude>
 							<exclude>**/server/**/I*.*</exclude>
 							<exclude>**/server/jdo/*.class</exclude>
 							

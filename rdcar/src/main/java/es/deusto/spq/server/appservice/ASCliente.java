@@ -36,13 +36,13 @@ public class ASCliente {
 
 	}
 
-	public synchronized void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
-		Refresh();
-		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
-
-		dao.storeCliente(cliente);
-
-	}
+//	public synchronized void ModificarCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+//		Refresh();
+//		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+//
+//		dao.storeCliente(cliente);
+//
+//	}
 
 	public synchronized boolean BorrarCliente(String dni) {
 		Refresh();

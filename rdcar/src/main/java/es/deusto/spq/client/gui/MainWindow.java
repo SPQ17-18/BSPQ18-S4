@@ -9,6 +9,8 @@ import es.deusto.spq.client.controller.RDCarController;
 
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -23,14 +25,18 @@ public class MainWindow extends JFrame {
 	private static MainWindow instance;
 	private RDCarController controller = null;
 	private String user;
+	public String idioma;
+	ResourceBundle resourceBundle;
 
 	public static MainWindow getInstance() {
 		return instance;
 	}
 
-	public MainWindow(RDCarController controller, String user) {
+	public MainWindow(RDCarController controller, String user, String idioma) {
 		this.controller=controller;
 		this.user = user;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
 
@@ -71,17 +77,17 @@ public class MainWindow extends JFrame {
 
 
 		//abrir ventana vehiculo
-		JButton btnAlquilarVehculo = new JButton("Vehículos");
+		JButton btnAlquilarVehculo = new JButton(resourceBundle.getString("cars_msg"));
 		btnAlquilarVehculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vehiculos abrirCoches = new Vehiculos(controller);
+				Vehiculos abrirCoches = new Vehiculos(controller, idioma);
 				abrirCoches.setVisible(true);
 			}
 		});
 		btnAlquilarVehculo.setBounds(244, 120, 115, 45);
 		frame.getContentPane().add(btnAlquilarVehculo);
 		
-		JButton btnAlquilar = new JButton("Alquilar");
+		JButton btnAlquilar = new JButton(resourceBundle.getString("rent_msg"));
 		btnAlquilar.setBounds(244, 26, 115, 29);
 		frame.getContentPane().add(btnAlquilar);
 		btnAlquilar.addActionListener(new ActionListener() {
@@ -97,7 +103,7 @@ public class MainWindow extends JFrame {
 		});
 		
 
-		JButton btnClientes = new JButton("Clientes");
+		JButton btnClientes = new JButton(resourceBundle.getString("clients_msg"));
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes abrirClientes = new Clientes(controller);
@@ -107,7 +113,7 @@ public class MainWindow extends JFrame {
 		btnClientes.setBounds(95, 233, 116, 45);
 		frame.getContentPane().add(btnClientes);
 
-		JButton btnEmpleados = new JButton("Empleados");
+		JButton btnEmpleados = new JButton(resourceBundle.getString("emplo_msg"));
 		btnEmpleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Empleados abrirEmpleados = new Empleados(controller);
@@ -127,6 +133,9 @@ public class MainWindow extends JFrame {
 
 	}
 
-
+	public void setIdioma(String idioma) {
+		this.idioma=idioma;
+	}
+	
 }
 

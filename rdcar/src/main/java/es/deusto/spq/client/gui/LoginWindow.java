@@ -4,6 +4,7 @@ import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 import es.deusto.spq.client.controller.RDCarController;
@@ -33,8 +34,11 @@ public class LoginWindow extends JFrame{
 	private JFrame frame;
 	private JTextField textPassword;
 	private JTextField textUsuario;
+	private JComboBox idioma;
+	private String[] ListIdiomas = {"Espanol", "English"};
 	private RDCarController controller =null;
 	private static LoginWindow instance;
+	public String idiomaApp="en";
 	//protected ResourceBundle resourceBundle;
 	protected ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag("en"));
 	//resourceBundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("es"));
@@ -110,6 +114,10 @@ public class LoginWindow extends JFrame{
 		//textPassword.getText().replace("/w/", "*"); //no reemplaza nada, por lo cual me imagino que este metodo (replace) esta bien pero no es aqui 
 		 */
 
+		idioma = new JComboBox(ListIdiomas);
+		idioma.setBounds(165, 20, 150, 20);
+		frame.getContentPane().add(idioma);
+		
 		textPassword = new JPasswordField();
 		textPassword.setBounds(140, 142, 202, 26);
 		frame.getContentPane().add(textPassword);
@@ -141,12 +149,18 @@ public class LoginWindow extends JFrame{
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 
-				boolean exists = true;
-				exists = controller.logIn(textUsuario.getText(), textPassword.getText());
+				if(idioma.getSelectedItem().toString().equals("Espanol"))
+					idiomaApp="es";
+				else if(idioma.getSelectedItem().toString().equals("English"))
+					idiomaApp="en";
+
+				boolean exists = controller.logIn(textUsuario.getText(), textPassword.getText());
 
 				if (exists) {
-					MainWindow view = new MainWindow(controller, textUsuario.getText());
+					MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 					view.setVisible(true);
+					view.setIdioma(idiomaApp);
+					System.out.println(idiomaApp);
 
 				} else {
 					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("error_msg"));
@@ -171,7 +185,7 @@ public class LoginWindow extends JFrame{
 					exists = controller.logIn(textUsuario.getText(), textPassword.getText());
 
 					if (exists) {
-						MainWindow view = new MainWindow(controller, textUsuario.getText());
+						MainWindow view = new MainWindow(controller, textUsuario.getText(), idiomaApp);
 						view.setVisible(true);
 
 					} else {

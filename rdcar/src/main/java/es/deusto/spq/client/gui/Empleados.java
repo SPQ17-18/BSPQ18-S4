@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.jdo.Empleado;
 
@@ -31,6 +33,8 @@ public class Empleados extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Empleados instance;
+	
+	public static final Logger logger = Logger.getLogger(Empleado.class);
 
 	/**
 	 * Launch the application.
@@ -91,7 +95,7 @@ public class Empleados extends JFrame{
 				borrarTabla();
 				Empleado emp = null;
 				emp = controller.buscarEmpleado(textUsuario.getText());
-				System.out.println(emp.getUsuario());
+				logger.info(emp.getUsuario());
 				cargarTabla(emp);	
 			}
 		});

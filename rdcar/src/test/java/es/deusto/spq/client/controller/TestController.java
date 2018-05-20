@@ -634,7 +634,7 @@ public class TestController {
 //			
 //		}
 //		catch (Exception re) {
-//			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+//			logger.error(" # RDCar RemoteException: " + re.getMessage());
 //			re.printStackTrace();
 //		} 
 //				
@@ -649,7 +649,7 @@ public class TestController {
 //			
 //		}
 //		catch (Exception re) {
-//			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+//			logger.error(" # RDCar RemoteException: " + re.getMessage());
 //			re.printStackTrace();
 //		} 
 //		assertTrue(true);
@@ -679,7 +679,7 @@ public class TestController {
 //			
 //		}
 //		catch (Exception re) {
-//			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+//			logger.error(" # RDCar RemoteException: " + re.getMessage());
 //			re.printStackTrace();
 //		} 
 //				
@@ -695,7 +695,7 @@ public class TestController {
 //			
 //		}
 //		catch (Exception re) {
-//			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+//			logger.error(" # RDCar RemoteException: " + re.getMessage());
 //			re.printStackTrace();
 //		} 
 //				
@@ -724,7 +724,7 @@ public class TestController {
 //			
 //		}
 //		catch (Exception re) {
-//			System.out.println(" # RDCar RemoteException: " + re.getMessage());
+//			logger.error(" # RDCar RemoteException: " + re.getMessage());
 //			re.printStackTrace();
 //		} 
 //				

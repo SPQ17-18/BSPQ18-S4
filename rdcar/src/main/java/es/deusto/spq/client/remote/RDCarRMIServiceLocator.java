@@ -1,10 +1,14 @@
 package es.deusto.spq.client.remote;
 
+import org.apache.log4j.Logger;
+
 import es.deusto.spq.server.remote.IRDCarRemoteFacade;
 
 public class RDCarRMIServiceLocator {
 
 	private IRDCarRemoteFacade rdcarServer;
+	
+	public static final Logger logger = Logger.getLogger(RDCarRMIServiceLocator.class);
 
 	public static RDCarRMIServiceLocator instance = null;
 
@@ -16,7 +20,7 @@ public class RDCarRMIServiceLocator {
 
 	public void setService(String[] args) {
 		if (args.length != 3) {
-			System.out.println("Use: java [policy] [codebase] Client.Client [host] [port] [server]");
+			logger.info("Use: java [policy] [codebase] Client.Client [host] [port] [server]");
 			//System.exit(0);
 		}
 		if (System.getSecurityManager() == null) {
@@ -28,11 +32,11 @@ public class RDCarRMIServiceLocator {
 
 			this.rdcarServer=(IRDCarRemoteFacade) java.rmi.Naming.lookup(name); 
 
-			System.out.println(" - RDCar Client: Server '" + name + "' active and waiting...");
+			logger.info(" - RDCar Client: Server '" + name + "' active and waiting...");
 
 
 		} catch (Exception e) {
-			System.err.println(" - RDCar Client: Exception running the server: " + e.getMessage());
+			logger.error(" - RDCar Client: Exception running the server: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
