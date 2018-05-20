@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -34,6 +36,8 @@ public class Vehiculos extends JFrame{
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Vehiculos instance;
+	public String idioma;
+	ResourceBundle resourceBundle;
 
 	/**
 	 * Launch the application.
@@ -58,8 +62,10 @@ public class Vehiculos extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Vehiculos(RDCarController controller) {
+	public Vehiculos(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
 	}
@@ -77,7 +83,7 @@ public class Vehiculos extends JFrame{
 		frame.setResizable(false);
 		frame.setTitle("Coches");
 
-		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
+		JLabel lblMatricula = new JLabel(resourceBundle.getString("car_plate")+":");
 		lblMatricula.setBounds(15, 31, 171, 19);
 		frame.getContentPane().add(lblMatricula);
 
@@ -86,7 +92,7 @@ public class Vehiculos extends JFrame{
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
-		JButton btnBuscar = new JButton("Buscar");
+		JButton btnBuscar = new JButton(resourceBundle.getString("car_search"));
 		btnBuscar.setBounds(449, 27, 115, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
@@ -104,11 +110,11 @@ public class Vehiculos extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 260);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent") }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
-		JButton btnEliminar = new JButton("Eliminar");
+		JButton btnEliminar = new JButton(resourceBundle.getString("car_del"));
 		btnEliminar.setBounds(449, 265, 115, 31);
 		frame.getContentPane().add(btnEliminar);
 		btnEliminar.addActionListener(new ActionListener() {
@@ -126,24 +132,24 @@ public class Vehiculos extends JFrame{
 			}
 		});
 
-		JButton btnAnadir = new JButton("Anadir");
+		JButton btnAnadir = new JButton(resourceBundle.getString("add_car_msg"));
 		btnAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AnadirCoche acoche = new AnadirCoche(controller);
+				AnadirCoche acoche = new AnadirCoche(controller, idioma);
 				acoche.setVisible(true);
 			}
 		});
 
-		JButton btnActu = new JButton("Actualizar");
+		JButton btnActu = new JButton(resourceBundle.getString("car_act"));
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
-				Vehiculos vehi = new Vehiculos(controller); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
+				Vehiculos vehi = new Vehiculos(controller, idioma); //crea instancias nuevas, habria que cerrar la ventana en la que estamos trabajando
 				vehi.setVisible(true);
 			}
 		});
 
-		JButton btnAtras = new JButton("Atras");
+		JButton btnAtras = new JButton(resourceBundle.getString("back"));
 
 		btnAtras.setBounds(449, 300, 115, 31);
 		frame.getContentPane().add(btnAtras);
@@ -192,5 +198,9 @@ public class Vehiculos extends JFrame{
 			modelo.removeRow(i);
 			i -=1;
 		}
+	}
+	
+	public void setIdioma(String idioma) {
+		this.idioma=idioma;
 	}
 }
