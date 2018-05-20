@@ -60,10 +60,10 @@ public class TestEmpleadoDAO {
 		Empleado Caparros2 = dao.retrieveEmpleado("Caparros");
 
 		
-		
 		System.out.println(Caparros2.getUsuario());
 		
 		assertEquals(Caparros2.getUsuario(), "Caparros");
+
 	}
 
 

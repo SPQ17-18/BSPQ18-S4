@@ -57,7 +57,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 		try {
 			tx.begin();
 
-			Query<?> query = pm.newQuery("SELECT FROM " + Alquiler.class.getName() + " WHERE Codigo == '" + codigo + "'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Alquiler.class.getName() + " WHERE codigo == '" + codigo + "'");
 			query.setUnique(true);
 			alquiler = (Alquiler) query.execute();
 
@@ -109,7 +109,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 
 		try {
 			tx.begin();
-			Query<?> query = pm.newQuery("SELECT FROM " + Alquiler.class.getName() + " WHERE Codigo == '" + codigo + "'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Alquiler.class.getName() + " WHERE codigo == '" + codigo + "'");
 			query.setUnique(true);
 			Alquiler = (Alquiler) query.execute();
 			pm.deletePersistent(Alquiler);
