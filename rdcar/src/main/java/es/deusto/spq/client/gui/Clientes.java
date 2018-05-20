@@ -123,7 +123,7 @@ public class Clientes extends JFrame{
 		JButton btnAadir = new JButton(resourceBundle.getString("add"));
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AnadirCliente acliente = new AnadirCliente(controller);
+				AnadirCliente acliente = new AnadirCliente(controller, idioma);
 				acliente.setVisible(true);
 			}
 		});

@@ -94,7 +94,7 @@ public class MainWindow extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				AlquilarVehiculo abrirV = new AlquilarVehiculo(controller);
+				AlquilarVehiculo abrirV = new AlquilarVehiculo(controller, idioma);
 				abrirV.setVisible(true);
 				// TODO Auto-generated method stub
 				//controller.CrearAlquiler("1", "12345678A", "1", "1", "1");
