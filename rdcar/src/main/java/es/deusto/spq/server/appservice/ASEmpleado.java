@@ -41,7 +41,9 @@ public class ASEmpleado {
 
 	public synchronized void BorrarEmpleado(String user) {
 
-
+		Refresh();
+		
+		dao.deleteEmpleado(user);
 
 	}
 

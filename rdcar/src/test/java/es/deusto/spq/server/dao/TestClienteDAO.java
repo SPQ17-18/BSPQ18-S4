@@ -8,8 +8,9 @@ import org.databene.contiperf.Required;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.databene.contiperf.report.EmptyReportModule;
-
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -22,8 +23,21 @@ public class TestClienteDAO {
 
 	
 	@Mock
+	static
 	ClienteDAO dao;
+	
+	Cliente cliente1;
+	Cliente cliente2;
+	
+	Cliente cliente;
 
+
+	@BeforeClass
+	public static void start() throws Exception {
+		
+		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
+
+	}
 	
 	@Before
 	public void setUp() throws Exception {
@@ -38,7 +52,7 @@ public class TestClienteDAO {
     @Required(max = 120, average = 30)
 	public void testStore() {
 		
-		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
+		
 		
 		dao.storeCliente(cliente);
 		
@@ -66,7 +80,7 @@ public class TestClienteDAO {
 	
 	@Test(expected = NullPointerException.class)
 	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@Required(totalTime = 5000)
 	public void testDelete() throws Exception {
 		Cliente cliente;
 		
@@ -79,11 +93,13 @@ public class TestClienteDAO {
 	@Test
 	@PerfTest(duration = 3000)
     @Required(max = 120, average = 30)
-	public void testGetAllEmpleados() throws Exception{
+	public void testGetAllClientes() throws Exception{
+		
 		
 		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1");
 		Cliente cliente2 = new Cliente("2", "cliente2", "cliente2", 2, "2");
 				
+		
 		dao.storeCliente(cliente1);
 		dao.storeCliente(cliente2);
 		
@@ -102,5 +118,14 @@ public class TestClienteDAO {
 		assertTrue(c1 && c2);
 		
 	}
+
+	@AfterClass
+	public static void end() throws Exception {
+		
+		dao.borrarCliente("11301239");
+		dao.borrarCliente("1");
+		dao.borrarCliente("2");
+	}
+	
 	
 }

@@ -11,6 +11,7 @@ import org.databene.contiperf.Required;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;  
 import org.junit.runner.RunWith;  
@@ -25,10 +26,19 @@ public class TestEmpleadoDAO {
 
 	
 	@Mock
+	static 
 	EmpleadoDAO dao;
 	
+	Empleado Mourinho;
+	Empleado empleado1;
+	Empleado empleado2;
 
-	
+	@BeforeClass
+	public static void start() throws Exception {
+		
+		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
+
+	}
 	@Before
 	public void setUp() throws Exception {
 		
@@ -36,12 +46,14 @@ public class TestEmpleadoDAO {
 		
 		
 	}
-	@Ignore
+	
+
+	
 	@Test
-	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@PerfTest(invocations = 300)
+	@Required(percentiles = "60:200,90:500")
 	public void testStore() {
-		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
+		
 		dao.storeEmpleado(Mourinho);
 		
 	}
@@ -68,18 +80,19 @@ public class TestEmpleadoDAO {
 
 
 	
-	@Ignore
+
 	@Test(expected = NullPointerException.class)
 	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@Required(totalTime = 5000)
 	public void testDelete() throws Exception {
 		Empleado empleado;
 		dao.deleteEmpleado("Mourinho");
 		empleado = dao.retrieveEmpleado("Mourinho");
 		assertEquals(empleado.getUsuario(), "Mourinho");
 	}
+
+
 	
-	@Ignore
 	@Test
 	@PerfTest(duration = 3000)
     @Required(max = 120, average = 30)
@@ -102,16 +115,16 @@ public class TestEmpleadoDAO {
 			if( x.getUsuario().equals("empleado2")) e2 = true;
 		}
 		
-		ListaRecibida.contains(empleado1);
+		assertTrue(e1 && e2);
 		
 
 		
 	}
 	
-	@Ignore
+	@AfterClass
 	public void tearDown() throws Exception {
-		dao.deleteEmpleado("Caparros");
 		dao.deleteEmpleado("Mourinho");
-		dao.deleteEmpleado("CecilioG");
+		dao.deleteEmpleado("empleado1");
+		dao.deleteEmpleado("empleado2");
 	}
 }
