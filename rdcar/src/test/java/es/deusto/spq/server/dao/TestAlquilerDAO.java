@@ -56,13 +56,10 @@ public class TestAlquilerDAO {
 		dao.storeAlquiler(alquiler);
 		
 		alquiler = dao.retrieveAlquiler("B");
-
+		
+		System.out.println(alquiler.getCodigo());
 		
 		assertEquals(alquiler.getCodigo(), "B");
-		assertEquals(alquiler.getNombre(), "53132412K");
-		assertEquals(alquiler.getMatricula(), "werq");
-		assertEquals(alquiler.getFechaInicio(), "ayer");
-		assertEquals(alquiler.getFechaFinal(), "Manana");
 	}
 	
 	
