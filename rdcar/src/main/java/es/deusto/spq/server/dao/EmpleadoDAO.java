@@ -69,6 +69,8 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 			query.setUnique(true);
 			empleado = (Empleado) query.execute();
 
+			System.out.println(empleado.getUsuario()); //******************************
+			
 			tx.commit();
 
 		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
