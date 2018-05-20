@@ -7,7 +7,9 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -21,9 +23,21 @@ public class TestVehiculoDAO {
 	public static final Logger logger = Logger.getLogger(TestVehiculoDAO.class);
 
 	@Mock
+	static
 	VehiculoDAO dao;
 
+	Vehiculo vehiculo;
+	Vehiculo vehiculo1;
+	Vehiculo vehiculo2;
 	
+	
+	@BeforeClass
+	public static void start() throws Exception {
+		
+		Vehiculo vehiculo = new Vehiculo("1", "fiat", "fiesta", "diesel", 4);
+	
+		
+	}
 	@Before
 	public void setUp() throws Exception {
 		
@@ -37,7 +51,6 @@ public class TestVehiculoDAO {
     @Required(max = 120, average = 30)
 	public void testStore() {
 		
-		Vehiculo vehiculo = new Vehiculo("1", "fiat", "fiesta", "diesel", 4);
 		
 		dao.storeVehiculo(vehiculo);
 		
@@ -59,15 +72,13 @@ public class TestVehiculoDAO {
 		
 		
 		assertEquals(vehiculo.getMatricula(), "2");
-//		assertEquals(vehiculo.getMarca(), "ford");
-//		assertEquals(vehiculo.getModelo(), "valencia");
-//		assertEquals(vehiculo.getCombustible(), "gasolina");
+
 		
 	}	
 	
 	@Test(expected = NullPointerException.class)
 	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@Required(totalTime = 5000)
 	public void testDelete() throws Exception {
 		Vehiculo vehiculo;
 		
@@ -102,6 +113,15 @@ public class TestVehiculoDAO {
 		
 		
 		assertTrue(v1 && v2);
+		
+	}
+	
+	@AfterClass
+	public static void end() throws Exception {
+		
+		dao.borrarVehiculo("1");
+		dao.borrarVehiculo("vehiculo1");
+		dao.borrarVehiculo("vehiculo2");
 		
 	}
 }

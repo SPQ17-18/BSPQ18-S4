@@ -9,8 +9,9 @@ import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.databene.contiperf.report.EmptyReportModule;
-
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -26,8 +27,21 @@ public class TestAlquilerDAO {
 	public static final Logger logger = Logger.getLogger(TestAlquilerDAO.class);
 	
 	@Mock
+	static
 	AlquilerDAO dao;
 
+	Alquiler alquiler1;
+	Alquiler alquiler2;
+	
+	Alquiler alquiler;
+	
+	
+	@BeforeClass
+	public static void start() throws Exception {
+		
+		Alquiler alquiler = new Alquiler("A", "89313245S", "asdf", "ayer", "Manana");
+
+	}
 	
 	@Before
 	public void setUp() throws Exception {
@@ -38,14 +52,12 @@ public class TestAlquilerDAO {
 	}
 	
 	@Test
-	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@PerfTest(invocations = 300)
+	@Required(percentiles = "60:200,90:500")
 	public void testStore() {
 		
-		Alquiler alquiler = new Alquiler("A", "89313245S", "asdf", "ayer", "Manana");
-		
 		dao.storeAlquiler(alquiler);
-		
+	
 	}
 	
 	@Test
@@ -67,7 +79,7 @@ public class TestAlquilerDAO {
 	
 	@Test(expected = NullPointerException.class)
 	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
+	@Required(totalTime = 5000)
 	public void testDelete() throws Exception {
 		Alquiler alquiler;
 		
@@ -80,7 +92,7 @@ public class TestAlquilerDAO {
 	@Test
 	@PerfTest(duration = 3000)
     @Required(max = 120, average = 30)
-	public void testGetAllEmpleados() throws Exception{
+	public void testGetAllAlquileres() throws Exception{
 		
 		Alquiler alquiler1 = new Alquiler("x1", "12341234Z", "alkiler1", "1", "1");
 		Alquiler alquiler2 = new Alquiler("x2", "43214321Z", "alkiler2", "2", "2");
@@ -101,6 +113,15 @@ public class TestAlquilerDAO {
 		
 		
 		assertTrue(c1 && c2);
+		
+	}
+	
+	@AfterClass
+	public static void end() throws Exception {
+		
+		dao.borrarAlquiler("A");
+		dao.borrarAlquiler("x1");
+		dao.borrarAlquiler("x2");
 		
 	}
 	

@@ -1,80 +1,122 @@
-//package es.deusto.spq.server.appservice;
-//
-//import static org.junit.Assert.*;
-//import static org.mockito.Mockito.*;
-//
-//import org.junit.Before;
-//import org.junit.Ignore;
-//import org.junit.Test;
-//import org.mockito.Mock;
-//
-//import org.mockito.ArgumentCaptor;
-//import org.mockito.Mock;  
-//import org.mockito.junit.MockitoJUnitRunner;
-//
-//import es.deusto.spq.server.dao.EmpleadoDAO;
-//import es.deusto.spq.server.jdo.Empleado; 
-//
-//
-//
-//public class TestASEmpleado {
-//
-//
-//	ASEmpleado ase;
-//
-//	@Mock
-//	EmpleadoDAO dao;
-//
-//
-//	public void setUp() throws Exception {	
-//
-//		ase = new ASEmpleado();
-//
-//		ase.CrearEmpleado("Juan", "kolmena");
-//
-//	}
-//
-//	@Ignore
-//	public void mockitosetUp() throws Exception {	
-//		Empleado juan = new Empleado("Juan", "kolmena");
-//		dao = mock(EmpleadoDAO.class);
-//
-//		when(dao.retrieveEmpleado("Juan")).thenReturn(juan);
-//
-//		ase = new ASEmpleado(dao);
-//
-//
-//	}
-//
-//	@Ignore
-//	public void mockitologinEmpleadoTrue() throws Exception{
-//
-//		Empleado juan = new Empleado("Juan", "kolmena");
-//
-//		when(dao.retrieveEmpleado("Juan")).thenReturn(juan);
-//
-//		Empleado empleado = dao.retrieveEmpleado("Juan");
-//
-//
-//		assertTrue(ase.LoginEmpleado("Juan", "kolmena"));
-//	}
-//
-//	@Ignore
-//	public void mockitogetEmpleado() throws Exception{
-//
-//
-//		Empleado juan = new Empleado("Juan", "kolmena");
-//
-//
-//
-//		assertEquals(ase.obtenerEmpleado("Juan").getUsuario(), juan.getUsuario());
-//	}
-//
-//	@Test
-//	public void loginEmpleado() throws Exception {
-//
-//		Empleado emplado = new Empleado("Empleado", "empleado");
-//
-//	}
-//
-//}
+package es.deusto.spq.server.appservice;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
+import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.mockito.Mock;
+
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;  
+import org.mockito.junit.MockitoJUnitRunner;
+
+import es.deusto.spq.server.dao.EmpleadoDAO;
+import es.deusto.spq.server.jdo.Empleado; 
+
+
+
+public class TestASEmpleado {
+
+
+	static ASEmpleado ase;
+
+
+
+	@BeforeClass
+	public static void setUp() throws Exception {	
+
+		ase = new ASEmpleado();
+
+	}
+
+	@Test
+	public void TestCrearEmpleado() {
+		
+		ase.CrearEmpleado("Juan", "guapo");
+		
+	}
+	
+	@Test
+	public void TestObtenerEmpleado() {
+		
+		ase.CrearEmpleado("Pablo", "Pablo");
+		
+		Empleado empleado = ase.obtenerEmpleado("Pablo");
+		
+		assertEquals("Pablo", empleado.getUsuario());
+		
+		
+	}
+	
+	
+	
+	@Test(expected = NullPointerException.class)
+	public void TestBorrarEmpleado() {
+		
+		ase.CrearEmpleado("yago", "baloncesto");
+		ase.BorrarEmpleado("yago");
+		
+		
+		ase.obtenerEmpleado("yago");
+		
+	}
+	
+	@Test
+	public void TestGetAllEmpleados() {
+		
+		
+		ase.CrearEmpleado("empleado1","contra1");
+		ase.CrearEmpleado("empleado2", "contra2");
+		
+		List<Empleado> ListaRecibida = ase.verEmpleados();
+		
+		boolean e1 = false;
+		boolean e2 = false;
+		
+		for (Empleado x : ListaRecibida) {
+			if( x.getUsuario().equals("empleado1")) e1 = true;
+			if( x.getUsuario().equals("empleado2")) e2 = true;
+		}
+		
+		assertTrue(e1 && e2);
+		
+	}
+	
+	@Test
+	public void TestLoginEmpleado() {
+		
+		
+		ase.CrearEmpleado("javi", "piso");
+		
+		assertTrue(ase.LoginEmpleado("javi", "piso"));
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void TestLoginEmpleadoFalse() {
+		
+		
+		assertFalse(ase.LoginEmpleado("yo", "yo"));
+	}
+	
+	
+	
+	@AfterClass
+	public static void end() {
+		
+		ase.BorrarEmpleado("Pablo");
+		
+		ase.BorrarEmpleado("Juan");
+		
+		ase.BorrarEmpleado("empleado1");
+		ase.BorrarEmpleado("empleado2");
+		
+	}
+	
+
+}
