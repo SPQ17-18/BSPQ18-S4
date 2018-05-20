@@ -60,20 +60,21 @@ public class TestASCliente {
 	
 	
 	@Test(expected = NullPointerException.class)
-	public void TestBorrarEmpleado() {
+	public void TestBorrarCliente() {
 		
 		
-		asc.CrearCliente("33333333S", "Koldo", "Pellicer", 1234, "Barakaldo");
+		asc.CrearCliente("3", "Koldo", "Pellicer", 1234, "Barakaldo");
+		asc.BorrarCliente("3");
 		
-		asc.BorrarCliente("33333333S");
+		Cliente cliente = asc.obtenerCliente("3");
 		
-		asc.obtenerCliente("33333333S");
+		cliente.getApellido();
 		
 	}
 	
 
 	@Test
-	public void TestGetAllEmpleados() {
+	public void TestGetAllClientes() {
 		
 		
 		
@@ -87,8 +88,8 @@ public class TestASCliente {
 		boolean c2 = false;
 		
 		for (Cliente x : ListaRecibida) {
-			if( x.getDni().equals("cliente1")) c1 = true;
-			if( x.getDni().equals("cliente2")) c2 = true;
+			if( x.getDni().equals("1")) c1 = true;
+			if( x.getDni().equals("2")) c2 = true;
 		}
 		
 		assertTrue(c1 && c2);

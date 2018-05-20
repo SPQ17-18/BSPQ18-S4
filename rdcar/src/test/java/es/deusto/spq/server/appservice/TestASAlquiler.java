@@ -1,0 +1,105 @@
+package es.deusto.spq.server.appservice;
+
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;  
+import org.junit.runner.RunWith;  
+import org.mockito.Mock;  
+import org.mockito.junit.MockitoJUnitRunner;
+
+import es.deusto.spq.server.jdo.Alquiler;
+
+public class TestASAlquiler {
+
+	static ASAlquiler asa;
+
+
+
+	@BeforeClass
+	public static void setUp() throws Exception {	
+
+		asa = new ASAlquiler();
+
+	}
+
+	@Test
+	public void TestCrearAlquiler() {
+		
+		asa.CrearAlquiler("A", "A", "A", "A", "A");
+		asa.CrearAlquiler("C", "C", "C", "C", "C");
+		
+	}
+	
+	@Test
+	public void TestObtenerAlquiler() {
+
+		asa.CrearAlquiler("K", "K", "K", "K", "K");
+		
+		Alquiler alquiler = asa.obtenerAlquiler("K");
+		
+		assertEquals("K", alquiler.getCodigo());
+		
+		
+	}
+	
+	
+	
+	@Test(expected = NullPointerException.class)
+	public void TestBorrarAlquiler() {
+		
+		asa.CrearAlquiler("C", "C", "C", "C", "C");
+		asa.BorrarAlquiler("C");
+		
+		Alquiler a = asa.obtenerAlquiler("C");
+		
+		a.getCodigo();
+		
+	}
+	
+	@Test
+	public void TestGetAllAlquileres() {
+		
+		
+		asa.CrearAlquiler("1", "1", "1", "1", "1");
+		asa.CrearAlquiler("2", "2", "2", "2", "2");
+		
+		
+		
+		List<Alquiler> ListaRecibida = asa.verAlquilers();
+		
+		boolean a1 = false;
+		boolean a2 = false;
+		
+		for (Alquiler a: ListaRecibida) {
+			if( a.getCodigo().equals("1")) a1 = true;
+			if( a.getCodigo().equals("2")) a2 = true;
+		}
+		
+		assertTrue(a1 && a2);
+		
+	}
+
+
+	
+	
+	
+	@AfterClass
+	public static void end() {
+	}
+	
+	
+	}
+	
