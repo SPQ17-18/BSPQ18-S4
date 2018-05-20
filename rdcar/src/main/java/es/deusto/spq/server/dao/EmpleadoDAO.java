@@ -54,7 +54,7 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 	public Empleado retrieveEmpleado(String user) {
 
-		Empleado empleado2;
+		Empleado empleado = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(2);
 		Transaction tx = pm.currentTransaction();
@@ -65,9 +65,9 @@ public class EmpleadoDAO implements IEmpleadoDAO {
 
 			Query<?> query = pm.newQuery("SELECT FROM " + Empleado.class.getName() + " WHERE user == '" + user + "'");
 			query.setUnique(true);
-			Empleado empleado = (Empleado) query.execute();
+			empleado = (Empleado) query.execute();
 
-			System.out.println(empleado.getUsuario());
+			System.out.println(empleado.getUsuario()); //******************************
 			
 			tx.commit();
 
