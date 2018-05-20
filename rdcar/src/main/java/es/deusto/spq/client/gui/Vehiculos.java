@@ -37,7 +37,7 @@ public class Vehiculos extends JFrame{
 	private DefaultTableModel modelo = new DefaultTableModel();
 	private static Vehiculos instance;
 	public String idioma;
-
+	ResourceBundle resourceBundle;
 	
 
 	/**
@@ -66,7 +66,7 @@ public class Vehiculos extends JFrame{
 	public Vehiculos(RDCarController controller, String idioma) {
 		this.controller = controller;
 		this.idioma=idioma;
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
 		initialize();
 		frame.setVisible(true);
 		
@@ -85,7 +85,7 @@ public class Vehiculos extends JFrame{
 		frame.setResizable(false);
 		frame.setTitle("Coches");
 
-		JLabel lblMatricula = new JLabel("Matrícula del vehiculo:");
+		JLabel lblMatricula = new JLabel(resourceBundle.getString("car_plate")+":");
 		lblMatricula.setBounds(15, 31, 171, 19);
 		frame.getContentPane().add(lblMatricula);
 
@@ -94,7 +94,7 @@ public class Vehiculos extends JFrame{
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
-		JButton btnBuscar = new JButton("Buscar");
+		JButton btnBuscar = new JButton(resourceBundle.getString("car_search"));
 		btnBuscar.setBounds(449, 27, 115, 25);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
@@ -112,11 +112,11 @@ public class Vehiculos extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 260);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {"Matrícula", "Marca", "Modelo", "Combustible", "Precio/Día" }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent") }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
-		JButton btnEliminar = new JButton("Eliminar");
+		JButton btnEliminar = new JButton(resourceBundle.getString("car_del"));
 		btnEliminar.setBounds(449, 265, 115, 31);
 		frame.getContentPane().add(btnEliminar);
 		btnEliminar.addActionListener(new ActionListener() {
@@ -125,24 +125,24 @@ public class Vehiculos extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String m = (String) table.getValueAt(table.getSelectedRow(), 0);
-				int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres eliminar este vehiculo?", "", JOptionPane.YES_NO_OPTION);
+				int opcion = JOptionPane.showConfirmDialog(null, resourceBundle.getString("car_del_sure"), "", JOptionPane.YES_NO_OPTION);
 				if(opcion ==JOptionPane.YES_OPTION) {
 					controller.borrarVehiculo(m);
-					JOptionPane.showMessageDialog(new Frame(), "Vehiculo eliminado");
+					JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("car_del_conf"));
 				}
 
 			}
 		});
 
-		JButton btnAnadir = new JButton("Anadir");
+		JButton btnAnadir = new JButton(resourceBundle.getString("add_car_msg"));
 		btnAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AnadirCoche acoche = new AnadirCoche(controller);
+				AnadirCoche acoche = new AnadirCoche(controller, idioma);
 				acoche.setVisible(true);
 			}
 		});
 
-		JButton btnActu = new JButton("Actualizar");
+		JButton btnActu = new JButton(resourceBundle.getString("car_act"));
 		btnActu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
@@ -151,7 +151,7 @@ public class Vehiculos extends JFrame{
 			}
 		});
 
-		JButton btnAtras = new JButton("Atras");
+		JButton btnAtras = new JButton(resourceBundle.getString("back"));
 
 		btnAtras.setBounds(449, 300, 115, 31);
 		frame.getContentPane().add(btnAtras);
