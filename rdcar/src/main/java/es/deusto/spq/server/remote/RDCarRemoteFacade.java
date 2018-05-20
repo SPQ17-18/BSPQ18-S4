@@ -125,11 +125,11 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 
 	}
 
-	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
-
-		this.ASVehiculo.getInstance().ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
-
-	}
+//	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
+//
+//		this.ASVehiculo.getInstance().ModificarVehiculo(matricula, marca, modelo, combustible, precio_dia);
+//
+//	}
 
 	public boolean borrarVehiculo(String matricula) throws RemoteException{
 		return this.ASVehiculo.getInstance().BorrarVehiculo(matricula);

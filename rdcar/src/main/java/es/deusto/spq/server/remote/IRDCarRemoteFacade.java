@@ -105,7 +105,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * 
 	 */
 	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
-	/**
+	/*
 	 * Permite modificar todos los parametros del vehiculo seleccionado. Después, se actualiza en la BD
 	 * @param matricula
 	 * @param marca
@@ -115,7 +115,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 *  
 	 */
-	public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
+	//public void ModificarVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
 	/**
 	 *  Busca el vehiculo al que corresponde la matricula y lo elimina de la BD.
 	 * Si la matricula no existe, muestra un ensaje de error
