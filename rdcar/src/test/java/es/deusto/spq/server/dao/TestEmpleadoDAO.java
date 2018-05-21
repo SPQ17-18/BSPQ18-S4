@@ -124,7 +124,7 @@ public class TestEmpleadoDAO {
 	}
 	
 	@AfterClass
-	public void tearDown() throws Exception {
+	public static void tearDown() throws Exception {
 		dao.deleteEmpleado("Mourinho");
 		dao.deleteEmpleado("empleado1");
 		dao.deleteEmpleado("empleado2");

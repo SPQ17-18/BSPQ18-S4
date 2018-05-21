@@ -1,0 +1,10 @@
+<map id="es.deusto.spq.server.appservice.ASVehiculo.Refresh" name="es.deusto.spq.server.appservice.ASVehiculo.Refresh">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#afa5ac1c946636d08f4d5482df4a922de" title="es.deusto.spq.server.appservice.\lASVehiculo.CrearVehiculo" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#aff7dd33f8568d7c2ad1d15fbdaf8f9e8" title="es.deusto.spq.server.appservice.\lASVehiculo.BorrarVehiculo" alt="" coords="264,71,475,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#aff432bdfedd9eb495e03991e8e774cb2" title="es.deusto.spq.server.appservice.\lASVehiculo.obtenerVehiculo" alt="" coords="264,136,475,177"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#aca668d35d695994b74c7cacc7eb97c91" title="es.deusto.spq.server.appservice.\lASVehiculo.verVehiculos" alt="" coords="264,201,475,243"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a9136a94da24a1849a52d5505dd7301dd" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearVehiculo" alt="" coords="527,5,760,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a5ee1ea5ecf4a3420f64c90dbcbd2e1e7" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.borrarVehiculo" alt="" coords="526,71,761,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a5ac7723f6976d4492b6151a00e63c807" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarVehiculo" alt="" coords="523,136,764,177"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa06b344663d875a1c54fc7ce3f42eeed" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verVehiculos" alt="" coords="531,201,756,243"/>
+</map>

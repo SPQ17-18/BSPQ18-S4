@@ -1,0 +1,10 @@
+<map id="es.deusto.spq.server.appservice.ASAlquiler.Refresh" name="es.deusto.spq.server.appservice.ASAlquiler.Refresh">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#ade4c29dd8e0f9a75382ad0d6282d39e2" title="es.deusto.spq.server.appservice.\lASAlquiler.CrearAlquiler" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#aa38cd1c725bfc2d5a797f2b8b3491fc6" title="es.deusto.spq.server.appservice.\lASAlquiler.BorrarAlquiler" alt="" coords="264,71,475,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#a9883b89c39302925d4fe0d5abf124354" title="es.deusto.spq.server.appservice.\lASAlquiler.obtenerAlquiler" alt="" coords="264,136,475,177"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#ae3fbff8bf971f20d6f09dc550babe4b4" title="es.deusto.spq.server.appservice.\lASAlquiler.verAlquilers" alt="" coords="264,201,475,243"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a4d64ae560377e9803bbf6b0fbbef3e4b" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearAlquiler" alt="" coords="529,5,755,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a4c017c3926d996de541abb3ebeac003e" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.BorrarAlquiler" alt="" coords="527,71,757,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa33ea9777041a781252cc237457b578f" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.obtenerAlquiler" alt="" coords="523,136,761,177"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a391852d068b1252380a22f91b215bdc0" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verAlquilers" alt="" coords="533,201,751,243"/>
+</map>

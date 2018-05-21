@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.server.dao.AlquilerDAO.retrieveAlquiler" name="es.deusto.spq.server.dao.AlquilerDAO.retrieveAlquiler">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#a9883b89c39302925d4fe0d5abf124354" title="es.deusto.spq.server.appservice.\lASAlquiler.obtenerAlquiler" alt="" coords="235,5,445,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa33ea9777041a781252cc237457b578f" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.obtenerAlquiler" alt="" coords="493,5,732,47"/>
+</map>

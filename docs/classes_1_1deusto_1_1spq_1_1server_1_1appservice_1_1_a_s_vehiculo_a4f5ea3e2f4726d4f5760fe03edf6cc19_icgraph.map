@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.server.appservice.ASVehiculo.getInstance" name="es.deusto.spq.server.appservice.ASVehiculo.getInstance">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a5ac7723f6976d4492b6151a00e63c807" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarVehiculo" alt="" coords="264,5,505,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a9136a94da24a1849a52d5505dd7301dd" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearVehiculo" alt="" coords="268,71,501,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a5ee1ea5ecf4a3420f64c90dbcbd2e1e7" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.borrarVehiculo" alt="" coords="267,136,502,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa06b344663d875a1c54fc7ce3f42eeed" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verVehiculos" alt="" coords="272,201,497,243"/>
+</map>

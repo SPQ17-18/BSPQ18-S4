@@ -1,0 +1,7 @@
+<map id="es.deusto.spq.server.remote.RDCarRemoteFacade.buscarVehiculo" name="es.deusto.spq.server.remote.RDCarRemoteFacade.buscarVehiculo">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#a4f5ea3e2f4726d4f5760fe03edf6cc19" title="es.deusto.spq.server.appservice.\lASVehiculo.getInstance" alt="" coords="295,5,505,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#aff432bdfedd9eb495e03991e8e774cb2" title="es.deusto.spq.server.appservice.\lASVehiculo.obtenerVehiculo" alt="" coords="295,71,505,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#ac9f0563ea9bc7872af00dbcc71018990" title="es.deusto.spq.server.appservice.\lASVehiculo.ASVehiculo" alt="" coords="553,5,764,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#a5097e43626b169221dec439a3d5231d8" title="es.deusto.spq.server.appservice.\lASVehiculo.Refresh" alt="" coords="553,71,764,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1dao_1_1_vehiculo_d_a_o.html#a31c6ddc2365b41ff624e318946c55f1c" title="es.deusto.spq.server.dao.\lVehiculoDAO.retrieveVehiculo" alt="" coords="561,136,756,177"/>
+</map>

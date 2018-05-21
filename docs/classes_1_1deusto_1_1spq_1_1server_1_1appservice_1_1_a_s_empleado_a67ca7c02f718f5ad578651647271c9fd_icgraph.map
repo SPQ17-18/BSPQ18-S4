@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.server.appservice.ASEmpleado.getInstance" name="es.deusto.spq.server.appservice.ASEmpleado.getInstance">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#ac322b52f0ce4ecb997fa5710023679e0" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.logIn" alt="" coords="293,5,484,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa6852c6b68d8655ea95b0df3d870efd9" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarEmpleado" alt="" coords="264,71,513,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a0d952d3243d2c09b2b41d9c9e06d7a51" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verEmpleados" alt="" coords="272,136,505,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a062415d38318aacc0cb7382eeb94e049" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.crearEmpleado" alt="" coords="269,201,508,243"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.server.appservice.ASCliente.getInstance" name="es.deusto.spq.server.appservice.ASCliente.getInstance">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aee9bdad3aa790929d7da1fd59f2b0a4b" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarCliente" alt="" coords="264,5,495,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aca0f8f2f5e904d74264aa00b5e2878a7" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearCliente" alt="" coords="268,71,491,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#ab95ce3b3d76699ac4f3db1d294982884" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verClientes" alt="" coords="272,136,487,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a1aa5c6a27bfc98938d084191ad5cb004" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.borrarCliente" alt="" coords="267,201,492,243"/>
+</map>

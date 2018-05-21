@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.server.appservice.ASVehiculo.CrearVehiculo" name="es.deusto.spq.server.appservice.ASVehiculo.CrearVehiculo">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_vehiculo.html#a5097e43626b169221dec439a3d5231d8" title="es.deusto.spq.server.appservice.\lASVehiculo.Refresh" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1dao_1_1_vehiculo_d_a_o.html#a93f43190535ed48d57ad906e373e7bce" title="es.deusto.spq.server.dao.\lVehiculoDAO.storeVehiculo" alt="" coords="278,71,461,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1jdo_1_1_vehiculo.html#ad8edf0d9f8c3813d1f4ea6e2da2da4c1" title="es.deusto.spq.server.jdo.\lVehiculo.getMatricula" alt="" coords="523,71,689,112"/>
+</map>

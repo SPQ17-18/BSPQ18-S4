@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.server.appservice.ASAlquiler.BorrarAlquiler" name="es.deusto.spq.server.appservice.ASAlquiler.BorrarAlquiler">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#a5bb241b1caf8a825a8f4f4fcd199dee2" title="es.deusto.spq.server.appservice.\lASAlquiler.Refresh" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1dao_1_1_alquiler_d_a_o.html#a181121eb4ae6922046ce53896190ef24" title="es.deusto.spq.server.dao.\lAlquilerDAO.borrarAlquiler" alt="" coords="283,71,456,112"/>
+</map>

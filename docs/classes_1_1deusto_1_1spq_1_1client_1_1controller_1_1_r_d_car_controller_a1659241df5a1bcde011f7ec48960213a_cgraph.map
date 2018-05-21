@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.client.controller.RDCarController.verEmpleados" name="es.deusto.spq.client.controller.RDCarController.verEmpleados">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1client_1_1remote_1_1_r_d_car_r_m_i_service_locator.html#a4ea1e66afd97fc75fe3898730260a686" title="es.deusto.spq.client.remote.\lRDCarRMIServiceLocator.getService" alt="" coords="255,5,487,47"/>
+<area shape="rect" id="node3" href="$interfacees_1_1deusto_1_1spq_1_1server_1_1remote_1_1_i_r_d_car_remote_facade.html#a79f51d0029abb0c04542abae38c00a46" title="es.deusto.spq.server.remote.\lIRDCarRemoteFacade.verEmpleados" alt="" coords="253,71,489,112"/>
+</map>
