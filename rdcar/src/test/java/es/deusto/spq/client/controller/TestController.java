@@ -144,10 +144,11 @@ public class TestController {
 			if (System.getSecurityManager() == null) {
 				System.setSecurityManager(new SecurityManager());
 			}
-			String args[] = new String[3];
+			String args[] = new String[4];
 			args[0] = "127.0.0.1";
 			args[1] = "1099";
 			args[2] = "RDCar";
+			args[3] = "Test";
 			controller = new RDCarController(args);
 
 			String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
