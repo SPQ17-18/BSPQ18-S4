@@ -113,7 +113,7 @@ public class AlquilarVehiculo {
 		frame.getContentPane().add(fechaFin);
 		fechaFin.setColumns(10);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		JButton btnAceptar = new JButton(resourceBundle.getString("accept_msg"));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.CrearAlquiler("1", dni.getText(), table.getColumnName(1), fechaIni.getText(), fechaFin.getText());

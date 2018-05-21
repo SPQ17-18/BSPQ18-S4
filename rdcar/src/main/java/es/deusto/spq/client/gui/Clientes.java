@@ -130,7 +130,7 @@ public class Clientes extends JFrame{
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
-		JButton btnAadir = new JButton(resourceBundle.getString("add"));
+		JButton btnAadir = new JButton(resourceBundle.getString("add_msg"));
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				AnadirCliente acliente = new AnadirCliente(controller, idioma);
