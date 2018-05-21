@@ -11,6 +11,7 @@ import es.deusto.spq.server.jdo.Vehiculo;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JTable;
@@ -35,7 +36,12 @@ public class AlquilarVehiculo {
 	private JLabel lblNewLabel;
 	public String idioma;
 	ResourceBundle resourceBundle;
-
+	String matricula;
+	String marca;
+	String modelocoche;
+	String combus;
+	String alquiler;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -61,8 +67,16 @@ public class AlquilarVehiculo {
 
 	public AlquilarVehiculo(RDCarController controller, String idioma) {
 		this.controller = controller;
+		this.idioma=idioma;
+		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
+		matricula=resourceBundle.getString("car_plate");
+		marca=resourceBundle.getString("car_brand");
+		modelocoche=resourceBundle.getString("car_model");
+		combus=resourceBundle.getString("car_fuel");
+		alquiler=resourceBundle.getString("car_rent");
 		initialize();
 		frame.setVisible(true);
+		
 	}
 
 	/**
@@ -81,7 +95,7 @@ public class AlquilarVehiculo {
 		table = new JTable();
 		table.setBounds(51, 111, 232, 206);
 		//frame.getContentPane().add(table);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent") }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {matricula, marca, modelocoche, combus, alquiler }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 		
@@ -99,7 +113,7 @@ public class AlquilarVehiculo {
 		frame.getContentPane().add(fechaFin);
 		fechaFin.setColumns(10);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		JButton btnAceptar = new JButton(resourceBundle.getString("accept_msg"));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.CrearAlquiler("1", dni.getText(), table.getColumnName(1), fechaIni.getText(), fechaFin.getText());

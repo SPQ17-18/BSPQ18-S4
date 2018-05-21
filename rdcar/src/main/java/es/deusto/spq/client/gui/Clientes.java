@@ -40,6 +40,11 @@ public class Clientes extends JFrame{
 	private static Clientes instance;
 	public String idioma;
 	ResourceBundle resourceBundle;
+	String dni;
+	String nombre;
+	String apellido;
+	String ano;
+	String lugar;
 	
 	public static final Logger logger = Logger.getLogger(Clientes.class);
 
@@ -70,6 +75,11 @@ public class Clientes extends JFrame{
 		this.controller = controller;
 		this.idioma=idioma;
 		resourceBundle = ResourceBundle.getBundle("SystemMessages", Locale.forLanguageTag(idioma));
+		dni=resourceBundle.getString("dni_msg");
+		nombre=resourceBundle.getString("name");
+		apellido=resourceBundle.getString("surname");
+		ano=resourceBundle.getString("year");
+		lugar=resourceBundle.getString("place");
 		initialize();
 		frame.setVisible(true);
 	}
@@ -116,11 +126,11 @@ public class Clientes extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 267);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("dni_msg"), resourceBundle.getString("name"), resourceBundle.getString("surname"), resourceBundle.getString("year"), resourceBundle.getString("place") }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {dni, nombre, apellido, ano, lugar }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
-		JButton btnAadir = new JButton(resourceBundle.getString("add"));
+		JButton btnAadir = new JButton(resourceBundle.getString("add_msg"));
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				AnadirCliente acliente = new AnadirCliente(controller, idioma);
