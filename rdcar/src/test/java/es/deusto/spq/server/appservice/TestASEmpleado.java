@@ -5,6 +5,8 @@ import static org.mockito.Mockito.*;
 
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -36,6 +38,8 @@ public class TestASEmpleado {
 	}
 
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestCrearEmpleado() {
 		
 		ase.CrearEmpleado("Juan", "guapo");
@@ -43,6 +47,8 @@ public class TestASEmpleado {
 	}
 	
 	@Test
+	@PerfTest(threads=30)
+	@Required(max = 1000)
 	public void TestObtenerEmpleado() {
 		
 		ase.CrearEmpleado("Pablo", "Pablo");
@@ -57,6 +63,8 @@ public class TestASEmpleado {
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 5000)
+	@Required(median = 150)
 	public void TestBorrarEmpleado() {
 		
 		ase.CrearEmpleado("yago", "baloncesto");
@@ -68,6 +76,8 @@ public class TestASEmpleado {
 	}
 	
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestGetAllEmpleados() {
 		
 		
@@ -89,6 +99,8 @@ public class TestASEmpleado {
 	}
 	
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestLoginEmpleado() {
 		
 		
@@ -98,6 +110,8 @@ public class TestASEmpleado {
 	}
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestLoginEmpleadoFalse() {
 		
 		

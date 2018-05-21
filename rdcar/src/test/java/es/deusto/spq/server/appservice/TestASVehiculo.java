@@ -5,6 +5,8 @@ import static org.mockito.Mockito.*;
 
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -35,6 +37,8 @@ public class TestASVehiculo {
 	}
 
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestCrearVehiculo() {
 		
 		asv.CrearVehiculo("A", "A", "A", "A", 1);
@@ -42,6 +46,8 @@ public class TestASVehiculo {
 	}
 	
 	@Test
+	@PerfTest(threads=30)
+	@Required(max = 1000)
 	public void TestObtenerVehiculo() {
 
 		asv.CrearVehiculo("K", "K", "K", "K", 1);
@@ -56,6 +62,8 @@ public class TestASVehiculo {
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 5000)
+	@Required(median = 150)
 	public void TestBorrarVehiculo() {
 		
 		asv.CrearVehiculo("B", "B", "B", "B", 1);
@@ -68,6 +76,8 @@ public class TestASVehiculo {
 	}
 	
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestGetAllVehiculos() {
 		
 		

@@ -5,6 +5,8 @@ import static org.mockito.Mockito.*;
 
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -37,6 +39,8 @@ public class TestASCliente {
 	}
 	
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestCrearCliente() {
 		
 		asc.CrearCliente("12341242F", "gon", "zalo", 1996, "vitoria");
@@ -45,6 +49,8 @@ public class TestASCliente {
 	}
 	
 	@Test
+	@PerfTest(threads=30)
+	@Required(max = 1000)
 	public void TestObtenerCliente() {
 		
 		asc.CrearCliente("22222222B", "Juan", "Tramas", 1996, "Sevilla");
@@ -60,6 +66,8 @@ public class TestASCliente {
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 5000)
+	@Required(median = 150)
 	public void TestBorrarCliente() {
 		
 		
@@ -74,6 +82,8 @@ public class TestASCliente {
 	
 
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestGetAllClientes() {
 		
 		

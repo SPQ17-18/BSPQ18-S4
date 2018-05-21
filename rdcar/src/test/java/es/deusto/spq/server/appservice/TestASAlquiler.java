@@ -36,14 +36,17 @@ public class TestASAlquiler {
 	}
 
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestCrearAlquiler() {
 		
 		asa.CrearAlquiler("A", "A", "A", "A", "A");
-		asa.CrearAlquiler("C", "C", "C", "C", "C");
 		
 	}
 	
 	@Test
+	@PerfTest(threads=30)
+	@Required(max = 1000)
 	public void TestObtenerAlquiler() {
 
 		asa.CrearAlquiler("K", "K", "K", "K", "K");
@@ -58,6 +61,8 @@ public class TestASAlquiler {
 	
 	
 	@Test(expected = NullPointerException.class)
+	@PerfTest(duration = 5000)
+	@Required(median = 150)
 	public void TestBorrarAlquiler() {
 		
 		asa.CrearAlquiler("C", "C", "C", "C", "C");
@@ -70,6 +75,8 @@ public class TestASAlquiler {
 	}
 	
 	@Test
+	@PerfTest(invocations = 100)
+	@Required(percentiles = "60:200,95:500")
 	public void TestGetAllAlquileres() {
 		
 		
