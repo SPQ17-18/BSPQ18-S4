@@ -1,0 +1,6 @@
+<map id="es.deusto.spq.server.appservice.ASAlquiler.getInstance" name="es.deusto.spq.server.appservice.ASAlquiler.getInstance">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a4d64ae560377e9803bbf6b0fbbef3e4b" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearAlquiler" alt="" coords="270,5,497,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a4c017c3926d996de541abb3ebeac003e" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.BorrarAlquiler" alt="" coords="268,71,499,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aa33ea9777041a781252cc237457b578f" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.obtenerAlquiler" alt="" coords="264,136,503,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a391852d068b1252380a22f91b215bdc0" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verAlquilers" alt="" coords="274,201,493,243"/>
+</map>

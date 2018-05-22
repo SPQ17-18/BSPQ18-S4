@@ -1,0 +1,8 @@
+<map id="es.deusto.spq.client.gui.LoginWindow.initialize" name="es.deusto.spq.client.gui.LoginWindow.initialize">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1client_1_1controller_1_1_r_d_car_controller.html#a9a333234196d1d9c6ca1dd3eb952cde4" title="es.deusto.spq.client.controller.\lRDCarController.logIn" alt="" coords="221,5,421,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_main_window.html#afb24b74de51e3c34fed36629c748c782" title="es.deusto.spq.client.gui.\lMainWindow.setIdioma" alt="" coords="239,71,403,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1client_1_1controller_1_1_r_d_car_controller.html#ab7191cbd8bc5e7bf1dbe5dca86dd3187" title="es.deusto.spq.client.controller.\lRDCarController.crearEmpleado" alt="" coords="217,136,424,177"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1client_1_1remote_1_1_r_d_car_r_m_i_service_locator.html#a4ea1e66afd97fc75fe3898730260a686" title="es.deusto.spq.client.remote.\lRDCarRMIServiceLocator.getService" alt="" coords="477,71,709,112"/>
+<area shape="rect" id="node4" href="$interfacees_1_1deusto_1_1spq_1_1server_1_1remote_1_1_i_r_d_car_remote_facade.html#a32279880f4b6823337ac513cfed9cecc" title="es.deusto.spq.server.remote.\lIRDCarRemoteFacade.logIn" alt="" coords="498,5,689,47"/>
+<area shape="rect" id="node7" href="$interfacees_1_1deusto_1_1spq_1_1server_1_1remote_1_1_i_r_d_car_remote_facade.html#a472b90299c2dd3743224feae523b92ab" title="es.deusto.spq.server.remote.\lIRDCarRemoteFacade.crearEmpleado" alt="" coords="472,136,715,177"/>
+</map>

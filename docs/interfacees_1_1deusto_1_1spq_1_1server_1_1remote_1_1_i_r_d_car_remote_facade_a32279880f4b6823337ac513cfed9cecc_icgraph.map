@@ -1,0 +1,5 @@
+<map id="es.deusto.spq.server.remote.IRDCarRemoteFacade.logIn" name="es.deusto.spq.server.remote.IRDCarRemoteFacade.logIn">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1client_1_1controller_1_1_r_d_car_controller.html#a9a333234196d1d9c6ca1dd3eb952cde4" title="es.deusto.spq.client.controller.\lRDCarController.logIn" alt="" coords="244,5,444,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_login_window.html#a752f24b81ea95dff6380f04110d02e3c" title="es.deusto.spq.client.gui.\lLoginWindow.initialize" alt="" coords="492,5,656,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1client_1_1gui_1_1_login_window.html#a34ec74f8d7d3f919a53b026dd82ca6bd" title="es.deusto.spq.client.gui.\lLoginWindow.LoginWindow" alt="" coords="704,5,884,47"/>
+</map>

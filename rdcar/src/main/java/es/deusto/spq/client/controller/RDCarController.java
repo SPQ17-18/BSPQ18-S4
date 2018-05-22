@@ -21,9 +21,14 @@ public class RDCarController {
 	private RDCarRMIServiceLocator rsl;
 
 	public RDCarController(String[] args) throws RemoteException {
+		if(args.length==4) {
 		rsl = new RDCarRMIServiceLocator();
 		rsl.setService(args); 
-		new LoginWindow(this);
+		}else {
+			rsl = new RDCarRMIServiceLocator();
+			rsl.setService(args); 
+			new LoginWindow(this);
+		}
 	}
 
 	/*

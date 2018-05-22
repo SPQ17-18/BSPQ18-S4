@@ -1,0 +1,7 @@
+<map id="es.deusto.spq.server.remote.RDCarRemoteFacade.obtenerAlquiler" name="es.deusto.spq.server.remote.RDCarRemoteFacade.obtenerAlquiler">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#adffc2ab6dbcd7f8bee504b49f7d2aa1f" title="es.deusto.spq.server.appservice.\lASAlquiler.getInstance" alt="" coords="292,5,503,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#a9883b89c39302925d4fe0d5abf124354" title="es.deusto.spq.server.appservice.\lASAlquiler.obtenerAlquiler" alt="" coords="292,71,503,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#aad5b10dd6c4f67a2f2bb7d52b781197d" title="es.deusto.spq.server.appservice.\lASAlquiler.ASAlquiler" alt="" coords="551,5,761,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_alquiler.html#a5bb241b1caf8a825a8f4f4fcd199dee2" title="es.deusto.spq.server.appservice.\lASAlquiler.Refresh" alt="" coords="551,71,761,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1dao_1_1_alquiler_d_a_o.html#ac4de12e6c72afe0dfb5b2fe1bfc2055e" title="es.deusto.spq.server.dao.\lAlquilerDAO.retrieveAlquiler" alt="" coords="565,136,747,177"/>
+</map>

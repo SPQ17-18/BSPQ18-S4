@@ -1,0 +1,10 @@
+<map id="es.deusto.spq.server.appservice.ASCliente.Refresh" name="es.deusto.spq.server.appservice.ASCliente.Refresh">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a4fbdcfae85ba170c9c865ab6a40f1fc9" title="es.deusto.spq.server.appservice.\lASCliente.CrearCliente" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a5c62910e93823816c1987e482d707cf7" title="es.deusto.spq.server.appservice.\lASCliente.BorrarCliente" alt="" coords="264,71,475,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#aaef9b0f8b297e1e30761fb5b02c655cf" title="es.deusto.spq.server.appservice.\lASCliente.obtenerCliente" alt="" coords="264,136,475,177"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a7ac12cf3757af52d4e25082b88c2bae2" title="es.deusto.spq.server.appservice.\lASCliente.verClientes" alt="" coords="264,201,475,243"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aca0f8f2f5e904d74264aa00b5e2878a7" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.CrearCliente" alt="" coords="527,5,749,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#a1aa5c6a27bfc98938d084191ad5cb004" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.borrarCliente" alt="" coords="525,71,751,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aee9bdad3aa790929d7da1fd59f2b0a4b" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarCliente" alt="" coords="523,136,753,177"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#ab95ce3b3d76699ac4f3db1d294982884" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.verClientes" alt="" coords="531,201,745,243"/>
+</map>

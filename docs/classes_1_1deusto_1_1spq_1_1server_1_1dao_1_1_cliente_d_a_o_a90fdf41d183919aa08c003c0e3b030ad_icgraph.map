@@ -1,0 +1,4 @@
+<map id="es.deusto.spq.server.dao.ClienteDAO.retrieveCliente" name="es.deusto.spq.server.dao.ClienteDAO.retrieveCliente">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#aaef9b0f8b297e1e30761fb5b02c655cf" title="es.deusto.spq.server.appservice.\lASCliente.obtenerCliente" alt="" coords="228,5,439,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1remote_1_1_r_d_car_remote_facade.html#aee9bdad3aa790929d7da1fd59f2b0a4b" title="es.deusto.spq.server.remote.\lRDCarRemoteFacade.buscarCliente" alt="" coords="487,5,717,47"/>
+</map>

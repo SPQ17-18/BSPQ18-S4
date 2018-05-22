@@ -1,0 +1,8 @@
+<map id="es.deusto.spq.server.remote.RDCarRemoteFacade.CrearCliente" name="es.deusto.spq.server.remote.RDCarRemoteFacade.CrearCliente">
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a21e358b86c5637481b7d981d1b09f022" title="es.deusto.spq.server.appservice.\lASCliente.getInstance" alt="" coords="276,5,487,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a4fbdcfae85ba170c9c865ab6a40f1fc9" title="es.deusto.spq.server.appservice.\lASCliente.CrearCliente" alt="" coords="276,71,487,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#af89bce44b28acbc6c6acb49d4ae9d1a4" title="es.deusto.spq.server.appservice.\lASCliente.ASCliente" alt="" coords="535,5,745,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1server_1_1appservice_1_1_a_s_cliente.html#a518412e8ea50ac64ada5af1e7a9b8b49" title="es.deusto.spq.server.appservice.\lASCliente.Refresh" alt="" coords="535,71,745,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1server_1_1dao_1_1_cliente_d_a_o.html#a4201fc50f33403d24ce69bf1b8441e06" title="es.deusto.spq.server.dao.\lClienteDAO.storeCliente" alt="" coords="555,136,725,177"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1server_1_1jdo_1_1_cliente.html#a76a16d585f38f806a8ea493b9a0c670a" title="es.deusto.spq.server.jdo.\lCliente.getDni" alt="" coords="793,136,960,177"/>
+</map>
