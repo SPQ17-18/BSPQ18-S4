@@ -31,14 +31,14 @@ public class TestEmpleadoDAO {
 	static 
 	EmpleadoDAO dao;
 	
-	Empleado Mourinho;
+	
 	Empleado empleado1;
 	Empleado empleado2;
 
 	@BeforeClass
 	public static void start() throws Exception {
 		
-		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
+		
 
 	}
 	@Before
@@ -56,6 +56,7 @@ public class TestEmpleadoDAO {
 	@Required(percentiles = "60:200,90:500")
 	public void testStore() {
 		
+		Empleado Mourinho = new Empleado("Mourinho", "TheSpecialOne");
 		dao.storeEmpleado(Mourinho);
 		
 	}
@@ -124,8 +125,11 @@ public class TestEmpleadoDAO {
 	}
 	
 	@AfterClass
-	public void tearDown() throws Exception {
+	public static void tearDown() throws Exception {
 		dao.deleteEmpleado("Mourinho");
+		
+		dao.deleteEmpleado("Caparros");
+		
 		dao.deleteEmpleado("empleado1");
 		dao.deleteEmpleado("empleado2");
 	}
