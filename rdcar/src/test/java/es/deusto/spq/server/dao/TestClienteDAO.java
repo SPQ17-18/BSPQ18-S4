@@ -125,9 +125,19 @@ public class TestClienteDAO {
 	
 	@Test
 	public void testPuntos() throws Exception{
-		dao.aumentarPuntos(cliente1.getDni());
-		assertEquals(cliente1.getPuntos(),1);
-	}
+//		dao.aumentarPuntos(cliente1.getDni());
+//		assertEquals(cliente1.getPuntos(),1);
+	
+	       
+	        Cliente david = new Cliente("77777777", "David", "Minguez", 1997, "Vitoria");
+	       
+	        dao.aumentarPuntos(david.getDni());
+	       
+	        assertEquals(david.getPuntos(),1);
+	       
+	       
+	    }
+	
 
 	@AfterClass
 	public static void end() throws Exception {
