@@ -153,7 +153,7 @@ public class ClienteDAO implements IClienteDAO{
 		return ListClientes;
 	}
 
-
+////////////////////PARA TEST
 	@Override
 	public void aumentarPuntos(String dni) {
 		// TODO Auto-generated method stub

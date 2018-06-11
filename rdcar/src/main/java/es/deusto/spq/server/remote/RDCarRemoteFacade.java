@@ -150,6 +150,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 			throws RemoteException {
 		// TODO Auto-generated method stub
 		if(this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal)==true) {
+			////PARA AUMENTO DE PUNTOS
 			ClienteDAO cliente = new ClienteDAO();
 			cliente.aumentarPuntos(dni);
 			return true;
