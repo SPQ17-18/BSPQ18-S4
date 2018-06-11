@@ -119,6 +119,7 @@ public class ClienteDAO implements IClienteDAO{
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public List<Cliente> getAllClientes() {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -156,37 +157,19 @@ public class ClienteDAO implements IClienteDAO{
 ////////////////////PARA TEST
 	@Override
 	public void aumentarPuntos(String Dni) {
-		// TODO Auto-generated method stub
+
+	
 		
-		Cliente cliente = null;
-		PersistenceManager pm = pmf.getPersistenceManager();
-		pm.getFetchPlan().setMaxFetchDepth(2);
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-
-			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE Dni == '" + Dni + "'");
-			query.setUnique(true);
-			cliente = (Cliente) query.execute();
-			//clientes.get(i).setPuntos(clientes.get(i).getPuntos() + 1);
-			cliente.setPuntos(cliente.getPuntos()+1);
-			tx.commit();
-
-		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
-		{
-			logger.error("Cliente does not exist: " + jonfe.getMessage());
-		}
-
-		finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-
-		//return cliente;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 //				PersistenceManager pm = pmf.getPersistenceManager();

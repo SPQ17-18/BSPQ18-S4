@@ -38,7 +38,7 @@ public class TestClienteDAO {
 	public static void start() throws Exception {
 		
 		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
-		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1");
+		
 
 	}
 	
@@ -67,6 +67,7 @@ public class TestClienteDAO {
 	public void testRetrieve() {
 		
 		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona");
+		
 
 		dao.storeCliente(cliente);
 		
@@ -93,34 +94,34 @@ public class TestClienteDAO {
 		assertEquals(cliente.getDni(), "22222222");
 	}
 	
-	@Test
-	@PerfTest(duration = 3000)
-    @Required(max = 120, average = 30)
-	public void testGetAllClientes() throws Exception{
-		
-		
-		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1");
-		Cliente cliente2 = new Cliente("2", "cliente2", "cliente2", 2, "2");
-				
-		
-		dao.storeCliente(cliente1);
-		dao.storeCliente(cliente2);
-		
-		List<Cliente> ListaRecibida = dao.getAllClientes();
-		
-		boolean c1 = false;
-		boolean c2 = false;
-		
-		for (Cliente x : ListaRecibida) {
-			if( x.getNombre().equals("cliente1")) c1 = true;
-			if( x.getNombre().equals("cliente2")) c2 = true;
-		}
-		
-		
-		
-		assertTrue(c1 && c2);
-		
-	}
+//	@Test
+//	@PerfTest(duration = 3000)
+//    @Required(max = 120, average = 30)
+//	public void testGetAllClientes() throws Exception{
+//		
+//		
+//		Cliente cliente2 = new Cliente("1", "cliente1", "cliente1", 1, "1");
+//		Cliente cliente3 = new Cliente("2", "cliente2", "cliente2", 2, "2");
+//				
+//		
+//		dao.storeCliente(cliente1);
+//		dao.storeCliente(cliente2);
+//		
+//		List<Cliente> ListaRecibida = dao.getAllClientes();
+//		
+//		boolean c2 = false;
+//		boolean c3 = false;
+//		
+//		for (Cliente x : ListaRecibida) {
+//			if( x.getNombre().equals("cliente1")) c2 = true;
+//			if( x.getNombre().equals("cliente2")) c3 = true;
+//		}
+//		
+//		
+//		
+//		assertTrue(c2 && c3);
+//		
+//	}
 	
 	@Test
 	public void testPuntos() throws Exception{
