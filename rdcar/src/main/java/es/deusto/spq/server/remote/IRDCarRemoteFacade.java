@@ -40,7 +40,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 * 
 	 */
-	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, int puntos) throws RemoteException;
 	/**
 	 * Se introduce el dni y se muestra el usuario al que corresponde. Si no existe en la BD ese usuario,
 	 * muestra un mensaje de error

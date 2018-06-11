@@ -22,20 +22,20 @@ public class Cliente implements Serializable{
 	String Apellido;
 	int Anyo_Nacimiento;
 	String Lugar;
-	int Puntos =0;
+	int Puntos;
 
 	@Persistent(mappedBy = "c", dependentElement = "true")
 	@Join
 	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
 
-	public Cliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+	public Cliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, int puntos) {
 		super();
 		Dni = dni;
 		Nombre = nombre;
 		Apellido = apellido;
 		Anyo_Nacimiento = anyo_Nacimiento;
 		Lugar = lugar;
-		
+		Puntos = puntos;
 	}
 	
 	public Cliente() {

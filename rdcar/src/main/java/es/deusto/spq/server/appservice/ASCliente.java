@@ -27,9 +27,9 @@ public class ASCliente {
 		dao = new ClienteDAO();
 	}
 
-	public synchronized boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+	public synchronized boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, int puntos) {
 		Refresh();
-		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+		Cliente cliente = new Cliente(dni, nombre, apellido, anyo_Nacimiento, lugar, puntos);
 
 		return dao.storeCliente(cliente);
 

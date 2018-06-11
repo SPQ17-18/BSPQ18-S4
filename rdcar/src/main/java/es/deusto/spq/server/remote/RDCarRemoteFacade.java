@@ -92,9 +92,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASCliente.getInstance().obtenerCliente(dni);
 	}
 	@Override
-	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, int puntos)
 			throws RemoteException {
-		 return this.ASCliente.getInstance().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
+		 return this.ASCliente.getInstance().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar, puntos);		
 	}
 
 //	@Override

@@ -37,7 +37,7 @@ public class TestClienteDAO {
 	@BeforeClass
 	public static void start() throws Exception {
 		
-		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
+		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja", 0);
 		
 
 	}
@@ -66,7 +66,7 @@ public class TestClienteDAO {
     @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
-		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona");
+		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona", 0);
 		
 
 		dao.storeCliente(cliente);
@@ -129,7 +129,7 @@ public class TestClienteDAO {
 //		assertEquals(cliente1.getPuntos(),1);
 	
 	       
-	        Cliente david = new Cliente("77777777", "David", "Minguez", 1997, "Vitoria");
+	        Cliente david = new Cliente("77777777", "David", "Minguez", 1997, "Vitoria", 0);
 	       
 	        dao.aumentarPuntos(david.getDni());
 	       
