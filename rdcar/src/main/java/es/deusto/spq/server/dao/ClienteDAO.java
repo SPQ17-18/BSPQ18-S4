@@ -155,51 +155,82 @@ public class ClienteDAO implements IClienteDAO{
 
 ////////////////////PARA TEST
 	@Override
-	public void aumentarPuntos(String dni) {
+	public void aumentarPuntos(String Dni) {
 		// TODO Auto-generated method stub
 		
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx =  pm.currentTransaction();
-				
-				try {				
-					logger.info(" -- AUMENTAR PUNTOS -- ");
-					logger.info(" -- Aumentanto 1 punto del cliente: " + dni);
-					
-					//Start the transaction
-					tx.begin();
+		Cliente cliente = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(2);
+		Transaction tx = pm.currentTransaction();
 
-					Query<Cliente> query = pm.newQuery(Cliente.class);
-					
-					@SuppressWarnings("unchecked")
-					List<Cliente> clientes = (List<Cliente>) query.execute();
+		try {
+			tx.begin();
 
-					for (int i = 0; i<clientes.size();i++) {
-						if (dni.equals(clientes.get(i).getDni())){
-							
-							//Increment account money
-							clientes.get(i).setPuntos(clientes.get(i).getPuntos()+1);
-							
-							//End the transaction
-							tx.commit();
-							
-						}
-					}
+			Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName() + " WHERE Dni == '" + Dni + "'");
+			query.setUnique(true);
+			cliente = (Cliente) query.execute();
+			//clientes.get(i).setPuntos(clientes.get(i).getPuntos() + 1);
+			cliente.setPuntos(cliente.getPuntos()+1);
+			tx.commit();
 
-					//End the transaction
-					tx.commit();
-				} catch (Exception e) {
-					logger.error(" -- Añadiendo punto --  $ Error insertando punto : " + e.getMessage());
-				} finally {
-					if (tx != null && tx.isActive()) {
-						tx.rollback();
-					}
-					
-					if (pm != null && !pm.isClosed()) {
-						pm.close();
-					}
-				}
-			
+		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
+		{
+			logger.error("Cliente does not exist: " + jonfe.getMessage());
+		}
+
+		finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		//return cliente;
 		
+		
+//				PersistenceManager pm = pmf.getPersistenceManager();
+//				Transaction tx =  pm.currentTransaction();
+//				
+//				try {				
+//					logger.info(" -- AUMENTAR PUNTOS -- ");
+//					logger.info(" -- Aumentanto 1 punto del cliente: " + dni);
+//					
+//					//Start the transaction
+//					tx.begin();
+//
+//					Query<Cliente> query = pm.newQuery(Cliente.class);
+//					
+//					@SuppressWarnings("unchecked")
+//					List<Cliente> clientes = (List<Cliente>) query.execute();
+//
+//					for (int i = 0; i<clientes.size();i++) {
+//						if (dni.equals(clientes.get(i).getDni())){
+//							
+//							//Incremento
+//							clientes.get(i).setPuntos(clientes.get(i).getPuntos() + 1);
+//							
+//							//Fin
+//							tx.commit();
+//							
+//						}
+//					}
+//
+//					//Fin
+//					tx.commit();
+//				} catch (Exception e) {
+//					logger.error(" -- Añadiendo punto --  $ Error insertando punto : " + e.getMessage());
+//				} finally {
+//					if (tx != null && tx.isActive()) {
+//						tx.rollback();
+//					}
+//					
+//					if (pm != null && !pm.isClosed()) {
+//						pm.close();
+//					}
+//				}
+//			
+//		
 	}
 
 }

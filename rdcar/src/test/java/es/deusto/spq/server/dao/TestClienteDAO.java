@@ -105,20 +105,20 @@ public class TestClienteDAO {
 		
 		dao.storeCliente(cliente1);
 		dao.storeCliente(cliente2);
-//		
-//		List<Cliente> ListaRecibida = dao.getAllClientes();
-//		
-//		boolean c1 = false;
-//		boolean c2 = false;
-//		
-//		for (Cliente x : ListaRecibida) {
-//			if( x.getNombre().equals("cliente1")) c1 = true;
-//			if( x.getNombre().equals("cliente2")) c2 = true;
-//		}
-//		
-//		
-//		
-//		assertTrue(c1 && c2);
+		
+		List<Cliente> ListaRecibida = dao.getAllClientes();
+		
+		boolean c1 = false;
+		boolean c2 = false;
+		
+		for (Cliente x : ListaRecibida) {
+			if( x.getNombre().equals("cliente1")) c1 = true;
+			if( x.getNombre().equals("cliente2")) c2 = true;
+		}
+		
+		
+		
+		assertTrue(c1 && c2);
 		
 	}
 	
