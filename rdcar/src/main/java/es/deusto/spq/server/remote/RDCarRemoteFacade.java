@@ -7,6 +7,7 @@ import java.util.List;
 import es.deusto.spq.server.appservice.ASEmpleado;
 import es.deusto.spq.server.appservice.ASCliente;
 import es.deusto.spq.server.appservice.ASVehiculo;
+import es.deusto.spq.server.dao.ClienteDAO;
 import es.deusto.spq.server.appservice.ASAlquiler;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.dto.EmpleadoDTO;
@@ -148,7 +149,13 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	public boolean CrearAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal)
 			throws RemoteException {
 		// TODO Auto-generated method stub
-		return this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
+		if(this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal)==true) {
+			ClienteDAO cliente = new ClienteDAO();
+			cliente.aumentarPuntos(dni);
+			return true;
+		}else {return false;
+				}
+		//return this.ASAlquiler.getInstance().CrearAlquiler(codigo, dni, matricula, fechaInicio, fechaFinal);
 	}
 
 //	@Override

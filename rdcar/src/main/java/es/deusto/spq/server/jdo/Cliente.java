@@ -22,6 +22,7 @@ public class Cliente implements Serializable{
 	String Apellido;
 	int Anyo_Nacimiento;
 	String Lugar;
+	int Puntos =0;
 
 	@Persistent(mappedBy = "c", dependentElement = "true")
 	@Join
@@ -34,6 +35,7 @@ public class Cliente implements Serializable{
 		Apellido = apellido;
 		Anyo_Nacimiento = anyo_Nacimiento;
 		Lugar = lugar;
+		
 	}
 	
 	public Cliente() {
@@ -75,7 +77,13 @@ public class Cliente implements Serializable{
 		return Anyo_Nacimiento;
 	}
 
-
+	public int getPuntos() {
+		return Puntos;
+	}
+	
+	public void setPuntos(int puntos) {
+		Puntos = puntos;
+	}
 	public void setAnyo_Nacimiento(int anyo_Nacimiento) {
 		Anyo_Nacimiento = anyo_Nacimiento;
 	}

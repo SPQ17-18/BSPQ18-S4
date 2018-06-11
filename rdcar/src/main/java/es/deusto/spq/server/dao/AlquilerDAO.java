@@ -34,6 +34,7 @@ public class AlquilerDAO implements IAlquilerDAO {
 			logger.info("   * Storing a Alquiler: " + alquiler.getCodigo());
 			pm.makePersistent(alquiler);
 			tx.commit();
+			
 			return true;
 
 		} catch (Exception ex) {

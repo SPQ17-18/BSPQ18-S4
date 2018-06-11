@@ -86,7 +86,7 @@ public class LoginWindow extends JFrame{
 	 */
 	public void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+//		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
 		frame.setResizable(false);
 
@@ -208,7 +208,7 @@ public class LoginWindow extends JFrame{
 						//JOptionPane.showMessageDialog(new Frame(), "Empleado previamente registrado");
 					//}else {
 						controller.crearEmpleado(textUsuario.getText(), textPassword.getText());
-						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_ok_msg"));
+						JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("regist_ok"));
 					//}
 				}
 				else {

@@ -182,9 +182,9 @@ public class TestController {
 		Empleado e4 = new Empleado("david", "123");
 		
 		Cliente c1 = new Cliente("12345678A", "Munir", "El Haddadi", 1997, "Murcia");
-		Cliente c2 = new Cliente("12345678B", "Anuel", "AA", 1993, "Murcia");
-		Cliente c3 = new Cliente("12345678C", "Cecilio", "G", 1992, "Murcia");
-		Cliente c4 = new Cliente("12345678D", "Ash", "Ketchup", 1970, "Murcia");
+		//Cliente c2 = new Cliente("12345678B", "Anuel", "AA", 1993, "Murcia");
+		//Cliente c3 = new Cliente("12345678C", "Cecilio", "G", 1992, "Murcia");
+		//Cliente c4 = new Cliente("12345678D", "Ash", "Ketchup", 1970, "Murcia");
 		
 		Vehiculo v1 = new Vehiculo("1111", "Ferrari", "Enzo", "Gasolina", 20.0);
 		Vehiculo v2 = new Vehiculo("2222", "Lamborghini", "Murcielago", "Gasolina", 20.0);
@@ -198,7 +198,7 @@ public class TestController {
 		
 		empleadodao.storeEmpleado(e1);
 		clientedao.storeCliente(c1);
-		clientedao.storeCliente(c2);
+		//clientedao.storeCliente(c2);
 		vehiculodao.storeVehiculo(v1);
 		alquilerdao.storeAlquiler(a1);
 	}
