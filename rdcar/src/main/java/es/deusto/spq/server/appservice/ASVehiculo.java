@@ -3,7 +3,9 @@ package es.deusto.spq.server.appservice;
 
 import java.util.List;
 
+import es.deusto.spq.client.gui.Vehiculos;
 import es.deusto.spq.server.dao.VehiculoDAO;
+import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
 
 public class ASVehiculo {
@@ -56,14 +58,17 @@ public class ASVehiculo {
 //		return vehiculo;
 //	}
 	
-	public synchronized List<Vehiculo> verVehiculosTipo(String tipo){
-		Refresh();
-		return dao.getAllVehiculosTipo(tipo);
-	}
+//	public synchronized List<Vehiculo> verVehiculosTipo(String tipo){
+//		Refresh();
+//		return dao.getAllVehiculosTipo(tipo);
+//	}
 
 	public synchronized List<Vehiculo> verVehiculos(){
 		Refresh();
 		return dao.getAllVehiculos();
 	}
-
+	public synchronized List<Vehiculo> verVehiculosTipo(String tipo){
+		Refresh();
+		return dao.getAllVehiculosTipo(tipo);
+	}
 }

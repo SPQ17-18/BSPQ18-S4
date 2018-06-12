@@ -140,14 +140,25 @@ public class RDCarController {
 		return null;
 	}
 	
-	public  List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException{ //busca tipos
-		return rsl.getService().buscarVehiculoTipo(tipo);
-	}
-
+//	public  List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException{ //busca tipos
+//		return rsl.getService().buscarVehiculoTipo(tipo);
+//	}
+	
 	public  List<Vehiculo> verVehiculos(){
 		try {
 
 			return rsl.getService().verVehiculos();
+
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public  List<Vehiculo> buscarVehiculoTipo(String tipo){
+		try {
+
+			return rsl.getService().buscarVehiculoTipo(tipo);
 
 		} catch (RemoteException e) {
 			e.printStackTrace();
@@ -230,6 +241,8 @@ public class RDCarController {
 		}
 		return null;
 	}
+	
+	
 
 
 	public void exit() {

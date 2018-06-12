@@ -31,6 +31,7 @@ public class AnadirCliente {
 	private JLabel lblNewLabel;
 	public String idioma;
 	ResourceBundle resourceBundle;
+	private JTextField textTipo;
 
 	/**
 	 * Launch the application.
@@ -150,7 +151,7 @@ public class AnadirCliente {
 						}
 						if(palante) {
 							//AÑADIR PARA PONER TIPO CARNET
-							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAnoNacim.getText()), textLugarNacim.getText());
+							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAnoNacim.getText()), textLugarNacim.getText(), textTipo.getText());
 							JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("car_cre"));
 							frame.dispose();
 						}
@@ -168,6 +169,11 @@ public class AnadirCliente {
 		lblNewLabel.setIcon(new ImageIcon(AnadirCliente.class.getResource("/es/deusto/spq/client/gui/bmw-i3-nuevos-coches-electricos-españa-2018-16.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
+		
+		textTipo = new JTextField();
+		textTipo.setBounds(133, 276, 86, 20);
+		frame.getContentPane().add(textTipo);
+		textTipo.setColumns(10);
 	}
 
 

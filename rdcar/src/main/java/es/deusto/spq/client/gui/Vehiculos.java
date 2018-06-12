@@ -171,8 +171,17 @@ public class Vehiculos extends JFrame{
 
 		
 		JButton btnB = new JButton("B");
-		btnB.setBounds(459, 174, 89, 23);
+		btnB.setBounds(459, 209, 89, 23);
 		frame.getContentPane().add(btnB);
+		
+		JButton btnA = new JButton("A");
+		btnA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cargarTablaTipo("A");
+			}
+		});
+		btnA.setBounds(459, 140, 89, 23);
+		frame.getContentPane().add(btnA);
 
 
 		JLabel lblNewLabel = new JLabel("New label");
@@ -183,7 +192,7 @@ public class Vehiculos extends JFrame{
 
 	private void cargarTabla(Vehiculo v) {
 		modelo = (DefaultTableModel) table.getModel();
-		Object[] fila = {v.getMatricula(), v.getMarca(), v.getModelo(), v.getCombustible(), v.getPrecio_dia()};
+		Object[] fila = {v.getMatricula(), v.getMarca(), v.getModelo(), v.getCombustible(), v.getPrecio_dia(), v.getTipo()};
 		modelo.addRow(fila);
 	}
 
@@ -200,7 +209,19 @@ public class Vehiculos extends JFrame{
 
 
 	}
+	private void cargarTablaTipo(String tipo) {
 
+		borrarTabla();
+		List<Vehiculo> vehiculos = new ArrayList<>();
+		vehiculos = (List<Vehiculo>)controller.buscarVehiculoTipo("A");	
+		if (vehiculos.size() !=0) {
+			for (int i = 0; i < vehiculos.size(); i++) {
+				cargarTabla(vehiculos.get(i));
+			}
+		}
+
+
+	}
 	private void borrarTabla() {
 		for (int i = 0; i < table.getRowCount(); i++) {
 			modelo.removeRow(i);

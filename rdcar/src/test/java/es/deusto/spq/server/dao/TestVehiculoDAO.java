@@ -14,6 +14,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 
+import es.deusto.spq.server.jdo.Empleado;
 import es.deusto.spq.server.jdo.Vehiculo;
 
 
@@ -114,6 +115,28 @@ public class TestVehiculoDAO {
 		
 		assertTrue(v1 && v2);
 		
+	}
+	////Test DAVID
+	@Test 
+	public void getAllVehiculosTipo() {
+//		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1,"B");
+//		Vehiculo vehiculo2 = new Vehiculo("vehiculo2", "vehiculo2", "vehiculo2", "vehiculo2", 2,"B");
+//		dao.storeVehiculo(vehiculo1);
+//		dao.storeVehiculo(vehiculo2);
+		List<Vehiculo> ListaRecibida = dao.getAllVehiculosTipo("B");
+		
+		//dao.getAllVehiculosTipo("B");
+		
+		boolean v1 = false;
+		boolean v2 = false;
+		for (Vehiculo x : ListaRecibida) {
+			System.out.println("probando " +x);
+			if( x.getTipo().equals("B")) v1 = true;
+			if( x.getTipo().equals("B")) v2 = true;
+		}
+		
+
+		assertTrue(v1 && v2);
 	}
 	
 	@AfterClass
