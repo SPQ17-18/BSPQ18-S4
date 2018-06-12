@@ -40,7 +40,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 * 
 	 */
-	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) throws RemoteException;
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, String carnet) throws RemoteException;
 	/**
 	 * Se introduce el dni y se muestra el usuario al que corresponde. Si no existe en la BD ese usuario,
 	 * muestra un mensaje de error
@@ -104,7 +104,7 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 * 
 	 */
-	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException;
+	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo) throws RemoteException;
 	/*
 	 * Permite modificar todos los parametros del vehiculo seleccionado. Después, se actualiza en la BD
 	 * @param matricula
@@ -194,5 +194,18 @@ public interface IRDCarRemoteFacade extends Remote{
 	 * @throws RemoteException
 	 */
 	public List<Alquiler> verAlquilers() throws RemoteException;
+	
+	/**
+	 * Se introduce el tipo y se muestran los tipos existentes. Si no existe en la BD ese vehiculo,
+	 * muestra un mensaje de error
+	 * @param matricula
+	 * @return
+	 * @throws RemoteException
+	 * 
+	 */
+
+	public List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException;
+	
+	//public Vehiculo verVehiculosTipo(String tipo);
 
 }

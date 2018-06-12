@@ -91,9 +91,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASCliente.getInstance().obtenerCliente(dni);
 	}
 	@Override
-	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar)
+	public boolean CrearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, String carnet)
 			throws RemoteException {
-		 return this.ASCliente.getInstance().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);		
+		 return this.ASCliente.getInstance().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar, carnet);		
 	}
 
 //	@Override
@@ -119,9 +119,9 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		return this.ASVehiculo.getInstance().obtenerVehiculo(matricula);
 	}
 
-	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) throws RemoteException{
+	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo) throws RemoteException{
 
-		return this.ASVehiculo.getInstance().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+		return this.ASVehiculo.getInstance().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia, tipo);
 
 	}
 
@@ -175,6 +175,31 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 		// TODO Auto-generated method stub
 		return this.ASAlquiler.getInstance().verAlquilers();
 	}
+
+	@Override
+	public List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+//	public boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo)
+//			throws RemoteException {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+
+//	@Override
+//	public List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException {
+//		// TODO Auto-generated method stub
+//		return this.ASVehiculo.getInstance().verVehiculosTipo(tipo);
+//	}
+
+//	@Override
+//	public Vehiculo verVehiculosTipo(String tipo) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 
 

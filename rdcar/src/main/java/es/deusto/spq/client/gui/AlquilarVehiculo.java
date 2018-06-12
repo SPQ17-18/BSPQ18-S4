@@ -84,7 +84,7 @@ public class AlquilarVehiculo {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setTitle("Alquilar Coches");
@@ -141,7 +141,7 @@ public class AlquilarVehiculo {
 		frame.getContentPane().add(lblDni);
 		
 		lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(AlquilarVehiculo.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
+		//lblNewLabel.setIcon(new ImageIcon(AlquilarVehiculo.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}

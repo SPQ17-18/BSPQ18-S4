@@ -37,7 +37,7 @@ public class TestClienteDAO {
 	@BeforeClass
 	public static void start() throws Exception {
 		
-		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja");
+		Cliente cliente = new Cliente("11301239", "Gonzalo", "Martínez", 1996, "Noja","A");
 
 	}
 	
@@ -65,7 +65,7 @@ public class TestClienteDAO {
     @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
-		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona");
+		Cliente cliente = new Cliente("22222222", "Juan", "Gomez", 1996, "Pamplona","A");
 
 		dao.storeCliente(cliente);
 		
@@ -98,8 +98,8 @@ public class TestClienteDAO {
 	public void testGetAllClientes() throws Exception{
 		
 		
-		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1");
-		Cliente cliente2 = new Cliente("2", "cliente2", "cliente2", 2, "2");
+		Cliente cliente1 = new Cliente("1", "cliente1", "cliente1", 1, "1","B");
+		Cliente cliente2 = new Cliente("2", "cliente2", "cliente2", 2, "2","A");
 				
 		
 		dao.storeCliente(cliente1);

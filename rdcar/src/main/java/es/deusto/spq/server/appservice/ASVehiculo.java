@@ -27,9 +27,9 @@ public class ASVehiculo {
 		dao = new VehiculoDAO();
 	}
 
-	public synchronized boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+	public synchronized boolean CrearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo) {
 		Refresh();
-		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia);
+		Vehiculo vehiculo = new Vehiculo(matricula, marca, modelo, combustible, precio_dia, tipo);
 
 		return dao.storeVehiculo(vehiculo);
 
@@ -47,6 +47,18 @@ public class ASVehiculo {
 		Vehiculo vehiculo = dao.retrieveVehiculo(matricula);
 
 		return vehiculo;
+	}
+	
+//	public synchronized Vehiculo obtenerVehiculoTipo(String tipo) {
+//		Refresh();
+//		Vehiculo vehiculo = dao.retrieveVehiculoTipo(tipo);
+//
+//		return vehiculo;
+//	}
+	
+	public synchronized List<Vehiculo> verVehiculosTipo(String tipo){
+		Refresh();
+		return dao.getAllVehiculosTipo(tipo);
 	}
 
 	public synchronized List<Vehiculo> verVehiculos(){

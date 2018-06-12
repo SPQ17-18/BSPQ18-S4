@@ -33,6 +33,7 @@ public class AnadirCoche {
 	private String elec;
 	private String hyb;
 	private String[] Combustibles= {"Diesel", gas, elec, hyb};
+	private JTextField textTipo;
 	
 	/**
 	 * Launch the application.
@@ -70,7 +71,7 @@ public class AnadirCoche {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -131,16 +132,21 @@ public class AnadirCoche {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getSelectedItem().toString(), Integer.parseInt(textPrecioDia.getText()));
+				controller.crearVehiculo(textMatricula.getText(), textMarca.getText(), textModelo.getText(), textCombus.getSelectedItem().toString(), Integer.parseInt(textPrecioDia.getText()),textTipo.getText());
 				JOptionPane.showMessageDialog(new Frame(),  resourceBundle.getString("car_cre"));
 				frame.dispose();
 			}
 		});
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(AnadirCoche.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
+		//lblNewLabel.setIcon(new ImageIcon(AnadirCoche.class.getResource("/es/deusto/spq/client/gui/mejores-coches-periodistas-4_g.jpg")));
 		lblNewLabel.setBounds(-330, 0, 924, 371);
 		frame.getContentPane().add(lblNewLabel);
+		
+		textTipo = new JTextField();
+		textTipo.setBounds(203, 302, 86, 20);
+		frame.getContentPane().add(textTipo);
+		textTipo.setColumns(10);
 	}
 
 	public void setVisible(boolean b) {

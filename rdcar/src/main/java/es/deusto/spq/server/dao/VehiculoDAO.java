@@ -148,4 +148,66 @@ public class VehiculoDAO implements IVehiculoDAO {
 
 		return ListVehiculos;
 	}
+
+	public List<Vehiculo> getAllVehiculosTipo(String tipo) { //Pruebas
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		List<Vehiculo> ListVehiculosTipo = null;
+
+		try {
+
+			tx.begin();
+			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName()+ " WHERE Tipo == '" + tipo + "'");
+			query.setUnique(false);
+
+			ListVehiculosTipo = (List<Vehiculo>) query.execute();
+
+			tx.commit();
+
+		} catch (Exception ex) {
+			logger.error("   $ Error: " + ex.getMessage());
+		} finally {
+
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return ListVehiculosTipo;
+	}
+//	public Vehiculo retrieveVehiculoTipo(String tipo) {
+//		Vehiculo vehiculo = null;
+//		PersistenceManager pm = pmf.getPersistenceManager();
+//		pm.getFetchPlan().setMaxFetchDepth(2);
+//		Transaction tx = pm.currentTransaction();
+//
+//		try {
+//			tx.begin();
+//
+//			Query<?> query = pm.newQuery("SELECT FROM " + Vehiculo.class.getName() + " WHERE Tipo == '" + tipo + "'");
+//			query.setUnique(true);
+//			vehiculo = (Vehiculo) query.execute();
+//
+//			tx.commit();
+//
+//		} catch (javax.jdo.JDOObjectNotFoundException jonfe)
+//		{
+//			logger.error("No tenemos vehículos de ese tipo: " + jonfe.getMessage());
+//		}
+//
+//		finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//
+//			pm.close();
+//		}
+//
+//		return vehiculo;
+//	}
 }

@@ -149,6 +149,7 @@ public class AnadirCliente {
 							}
 						}
 						if(palante) {
+							//AÑADIR PARA PONER TIPO CARNET
 							controller.crearCliente(textDNI.getText().toUpperCase(), textNombre.getText(), textApellidos.getText(), Integer.parseInt(textAnoNacim.getText()), textLugarNacim.getText());
 							JOptionPane.showMessageDialog(new Frame(), resourceBundle.getString("car_cre"));
 							frame.dispose();

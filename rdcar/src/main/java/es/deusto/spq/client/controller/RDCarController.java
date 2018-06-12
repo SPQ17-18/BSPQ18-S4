@@ -105,9 +105,9 @@ public class RDCarController {
 		return null;
 	}
 
-	public boolean crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar) {
+	public boolean crearCliente(String dni, String nombre, String apellido, int anyo_Nacimiento, String lugar, String carnet) {
 		try {
-			return rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar);
+			return rsl.getService().CrearCliente(dni, nombre, apellido, anyo_Nacimiento, lugar, carnet);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -139,6 +139,10 @@ public class RDCarController {
 		}
 		return null;
 	}
+	
+	public  List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException{ //busca tipos
+		return rsl.getService().buscarVehiculoTipo(tipo);
+	}
 
 	public  List<Vehiculo> verVehiculos(){
 		try {
@@ -151,9 +155,9 @@ public class RDCarController {
 		return null;
 	}
 
-	public boolean crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+	public boolean crearVehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo) {
 		try {
-			return rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia);
+			return rsl.getService().CrearVehiculo(matricula, marca, modelo, combustible, precio_dia, tipo);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

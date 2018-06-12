@@ -65,7 +65,7 @@ public class MainWindow extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -124,7 +124,7 @@ public class MainWindow extends JFrame {
 		frame.getContentPane().add(btnEmpleados);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
+		//lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		lblNewLabel.setBounds(0, -3, 594, 374);
 		frame.getContentPane().add(lblNewLabel);
 

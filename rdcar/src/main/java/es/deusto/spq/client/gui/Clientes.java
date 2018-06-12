@@ -90,7 +90,7 @@ public class Clientes extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 540, 358);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setTitle("Clientes");
@@ -182,7 +182,7 @@ public class Clientes extends JFrame{
 
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Clientes.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
+		//lblNewLabel.setIcon(new ImageIcon(Clientes.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}

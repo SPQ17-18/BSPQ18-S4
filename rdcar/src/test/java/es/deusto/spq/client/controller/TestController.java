@@ -181,15 +181,15 @@ public class TestController {
 		Empleado e3 = new Empleado("josu", "123");
 		Empleado e4 = new Empleado("david", "123");
 		
-		Cliente c1 = new Cliente("12345678A", "Munir", "El Haddadi", 1997, "Murcia");
-		Cliente c2 = new Cliente("12345678B", "Anuel", "AA", 1993, "Murcia");
-		Cliente c3 = new Cliente("12345678C", "Cecilio", "G", 1992, "Murcia");
-		Cliente c4 = new Cliente("12345678D", "Ash", "Ketchup", 1970, "Murcia");
+		Cliente c1 = new Cliente("12345678A", "Munir", "El Haddadi", 1997, "Murcia", "A");
+		Cliente c2 = new Cliente("12345678B", "Anuel", "AA", 1993, "Murcia", "B");
+		Cliente c3 = new Cliente("12345678C", "Cecilio", "G", 1992, "Murcia", "A");
+		Cliente c4 = new Cliente("12345678D", "Ash", "Ketchup", 1970, "Murcia", "A");
 		
-		Vehiculo v1 = new Vehiculo("1111", "Ferrari", "Enzo", "Gasolina", 20.0);
-		Vehiculo v2 = new Vehiculo("2222", "Lamborghini", "Murcielago", "Gasolina", 20.0);
-		Vehiculo v3 = new Vehiculo("3333", "Aston Martin", "Vanquish", "Gasolina", 20.0);
-		Vehiculo v4 = new Vehiculo("4444", "Tesla", "E", "Gasolina", 20.0);
+		Vehiculo v1 = new Vehiculo("1111", "Ferrari", "Enzo", "Gasolina", 20.0,"A");
+		Vehiculo v2 = new Vehiculo("2222", "Lamborghini", "Murcielago", "Gasolina", 20.0,"B");
+		Vehiculo v3 = new Vehiculo("3333", "Aston Martin", "Vanquish", "Gasolina", 20.0,"A");
+		Vehiculo v4 = new Vehiculo("4444", "Tesla", "E", "Gasolina", 20.0,"B");
 		
 		Alquiler a1 = new Alquiler("1A", "12345678A", "1111", "1", "10");
 		Alquiler a2 = new Alquiler("2B", "12345678B", "2222", "2", "11");
@@ -208,7 +208,7 @@ public class TestController {
 	public void registrarClienteTest() {
 		try{
 			logger.info("Test - Registrar cliente");
-			assertEquals(true, controller.crearCliente("12345234W", "JosuKa", "Diaz", 1725, "Su casa"));
+			assertEquals(true, controller.crearCliente("12345234W", "JosuKa", "Diaz", 1725, "Su casa","A"));
 			
 		}
 		catch (Exception re) {
@@ -283,7 +283,7 @@ public class TestController {
 	public void registrarVehiculoTest() {
 		try{
 			logger.info("Test - Registrar vehiculo");
-			assertEquals(true, controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0));
+			assertEquals(true, controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0,"A"));
 			
 		}
 		catch (Exception re) {
@@ -326,8 +326,8 @@ public class TestController {
 	public void registrarAlquilerTest() {
 		try{
 			logger.info("Test - Registrar alquiler");
-			controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0);
-			controller.crearCliente("11111111E", "JosuKa", "Diaz", 1725, "Su casa");
+			controller.crearVehiculo("2525", "Ferrari", "Enzo", "Gasolina", 20.0,"A");
+			controller.crearCliente("11111111E", "JosuKa", "Diaz", 1725, "Su casa","B");
 			assertEquals(true, controller.CrearAlquiler("2E", "11111111E", "2525", "1", "10"));
 			
 		}

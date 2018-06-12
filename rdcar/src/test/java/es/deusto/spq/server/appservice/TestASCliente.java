@@ -43,7 +43,7 @@ public class TestASCliente {
 	@Required(percentiles = "60:200,95:500")
 	public void TestCrearCliente() {
 		
-		asc.CrearCliente("12341242F", "gon", "zalo", 1996, "vitoria");
+		asc.CrearCliente("12341242F", "gon", "zalo", 1996, "vitoria","A");
 		
 		
 	}
@@ -53,7 +53,7 @@ public class TestASCliente {
 	@Required(max = 1000)
 	public void TestObtenerCliente() {
 		
-		asc.CrearCliente("22222222B", "Juan", "Tramas", 1996, "Sevilla");
+		asc.CrearCliente("22222222B", "Juan", "Tramas", 1996, "Sevilla", "A");
 		
 		Cliente cliente = asc.obtenerCliente("22222222B");
 	
@@ -71,7 +71,7 @@ public class TestASCliente {
 	public void TestBorrarCliente() {
 		
 		
-		asc.CrearCliente("3", "Koldo", "Pellicer", 1234, "Barakaldo");
+		asc.CrearCliente("3", "Koldo", "Pellicer", 1234, "Barakaldo","B");
 		asc.BorrarCliente("3");
 		
 		Cliente cliente = asc.obtenerCliente("3");
@@ -88,8 +88,8 @@ public class TestASCliente {
 		
 		
 		
-		asc.CrearCliente("1", "cliente1", "cliente1", 1, "cliente1");
-		asc.CrearCliente("2", "cliente2", "cliente2", 2, "cliente2");
+		asc.CrearCliente("1", "cliente1", "cliente1", 1, "cliente1","A");
+		asc.CrearCliente("2", "cliente2", "cliente2", 2, "cliente2","B");
 		
 		
 		List<Cliente> ListaRecibida = asc.verClientes();

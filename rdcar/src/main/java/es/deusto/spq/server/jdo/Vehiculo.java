@@ -22,24 +22,36 @@ public class Vehiculo implements Serializable{
 	String Modelo;
 	String Combustible;
 	double Precio_dia;
+	String Tipo;
 	
 	@Persistent(mappedBy = "v", dependentElement = "true")
 	@Join
 	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
 	
-	public Vehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia) {
+	public Vehiculo(String matricula, String marca, String modelo, String combustible, double precio_dia, String tipo) {
 		super();
 		Matricula = matricula;
 		Marca = marca;
 		Modelo = modelo;
 		Combustible = combustible;
 		Precio_dia = precio_dia;
+		Tipo = tipo;
 	}
 
 	public Vehiculo() {
 		
 	}
 
+	public String getTipo() {
+		return Tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		Tipo = tipo;
+	}
+
+	
 	public String getMatricula() {
 		return Matricula;
 	}

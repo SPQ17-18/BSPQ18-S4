@@ -28,8 +28,8 @@ public class AssemblerTest {
 	@Test
 	public void testCliente() {
 
-		List<Cliente>  cliente = Arrays.asList(new Cliente ("111", "Juan", "Ruiz", 1992, "Vitoria"), 
-				new Cliente ("222", "pedro", "avel", 1952, "Bilbao")) ;
+		List<Cliente>  cliente = Arrays.asList(new Cliente ("111", "Juan", "Ruiz", 1992, "Vitoria","A"), 
+				new Cliente ("222", "pedro", "avel", 1952, "Bilbao","B")) ;
 
 
 		//Test equals
@@ -41,8 +41,8 @@ public class AssemblerTest {
 	@Test
 	public void testVehiculo() {
 
-		List<Vehiculo>  cliente = Arrays.asList(new Vehiculo ("1111AAA", "Ford", "Fiesta", "Gasoil", 45), 
-				new Vehiculo ("2222BBB", "Peugeot", "207", "Gasolina", 25)) ;
+		List<Vehiculo>  cliente = Arrays.asList(new Vehiculo ("1111AAA", "Ford", "Fiesta", "Gasoil", 45,"A"), 
+				new Vehiculo ("2222BBB", "Peugeot", "207", "Gasolina", 25,"B")) ;
 
 
 		//Test equals

@@ -22,6 +22,8 @@ import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.jdo.Vehiculo;
 
 import javax.swing.JTable;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Vehiculos extends JFrame{
 
@@ -75,7 +77,7 @@ public class Vehiculos extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Vehiculos.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 		frame.setBounds(100, 100, 538, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(600, 400);
@@ -165,10 +167,16 @@ public class Vehiculos extends JFrame{
 
 		btnActu.setBounds(449, 104, 115, 31);
 		frame.getContentPane().add(btnActu);
+		
+
+		
+		JButton btnB = new JButton("B");
+		btnB.setBounds(459, 174, 89, 23);
+		frame.getContentPane().add(btnB);
 
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
+		//lblNewLabel.setIcon(new ImageIcon(Vehiculos.class.getResource("/es/deusto/spq/client/gui/85.jpg")));
 		lblNewLabel.setBounds(0, 0, 594, 371);
 		frame.getContentPane().add(lblNewLabel);
 	}

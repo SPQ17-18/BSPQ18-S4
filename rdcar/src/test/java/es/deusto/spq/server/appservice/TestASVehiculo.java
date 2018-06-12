@@ -41,7 +41,7 @@ public class TestASVehiculo {
 	@Required(percentiles = "60:200,95:500")
 	public void TestCrearVehiculo() {
 		
-		asv.CrearVehiculo("A", "A", "A", "A", 1);
+		asv.CrearVehiculo("A", "A", "A", "A", 1, "A");
 		
 	}
 	
@@ -50,7 +50,7 @@ public class TestASVehiculo {
 	@Required(max = 1000)
 	public void TestObtenerVehiculo() {
 
-		asv.CrearVehiculo("K", "K", "K", "K", 1);
+		asv.CrearVehiculo("K", "K", "K", "K", 1, "B");
 		
 		Vehiculo vehiculo = asv.obtenerVehiculo("K");
 		
@@ -66,7 +66,7 @@ public class TestASVehiculo {
 	@Required(median = 150)
 	public void TestBorrarVehiculo() {
 		
-		asv.CrearVehiculo("B", "B", "B", "B", 1);
+		asv.CrearVehiculo("B", "B", "B", "B", 1, "B");
 		asv.BorrarVehiculo("B");
 		
 		Vehiculo v = asv.obtenerVehiculo("B");
@@ -81,9 +81,9 @@ public class TestASVehiculo {
 	public void TestGetAllVehiculos() {
 		
 		
-		asv.CrearVehiculo("1", "1", "1", "1", 1);
+		asv.CrearVehiculo("1", "1", "1", "1", 1,"A");
 		
-		asv.CrearVehiculo("2", "2", "2", "2", 2);
+		asv.CrearVehiculo("2", "2", "2", "2", 2,"B");
 		
 		List<Vehiculo> ListaRecibida = asv.verVehiculos();
 		

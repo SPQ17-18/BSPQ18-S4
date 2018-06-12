@@ -34,7 +34,7 @@ public class TestVehiculoDAO {
 	@BeforeClass
 	public static void start() throws Exception {
 		
-		Vehiculo vehiculo = new Vehiculo("1", "fiat", "fiesta", "diesel", 4);
+		Vehiculo vehiculo = new Vehiculo("1", "fiat", "fiesta", "diesel", 4,"B");
 	
 		
 	}
@@ -61,7 +61,7 @@ public class TestVehiculoDAO {
     @Required(max = 120, average = 30)
 	public void testRetrieve() {
 		
-		Vehiculo vehiculo = new Vehiculo("2", "ford", "valencia", "gasolina", 5);
+		Vehiculo vehiculo = new Vehiculo("2", "ford", "valencia", "gasolina", 5,"B");
 		
 
 		dao.storeVehiculo(vehiculo);
@@ -93,8 +93,8 @@ public class TestVehiculoDAO {
     @Required(max = 120, average = 30)
 	public void testGetAllEmpleados() throws Exception{
 		
-		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1);
-		Vehiculo vehiculo2 = new Vehiculo("vehiculo2", "vehiculo2", "vehiculo2", "vehiculo2", 2);
+		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1,"B");
+		Vehiculo vehiculo2 = new Vehiculo("vehiculo2", "vehiculo2", "vehiculo2", "vehiculo2", 2,"B");
 
 				
 		dao.storeVehiculo(vehiculo1);

@@ -86,7 +86,7 @@ public class LoginWindow extends JFrame{
 	 */
 	public void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/es/deusto/spq/client/gui/RD-Logo.png")));
 
 		frame.setResizable(false);
 
@@ -218,7 +218,7 @@ public class LoginWindow extends JFrame{
 		});
 
 		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
+		//label.setIcon(new ImageIcon(LoginWindow.class.getResource("/es/deusto/spq/client/gui/box_faqs.jpg")));
 		label.setBounds(0, 0, 434, 311); //altura y anchura
 		frame.getContentPane().add(label);
 
