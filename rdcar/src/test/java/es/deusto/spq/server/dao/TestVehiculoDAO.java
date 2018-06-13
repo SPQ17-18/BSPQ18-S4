@@ -92,7 +92,7 @@ public class TestVehiculoDAO {
 	@Test
 	@PerfTest(duration = 3000)
     @Required(max = 120, average = 30)
-	public void testGetAllEmpleados() throws Exception{
+	public void testGetAllVehiculos() throws Exception{
 		
 		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1,"B");
 		Vehiculo vehiculo2 = new Vehiculo("vehiculo2", "vehiculo2", "vehiculo2", "vehiculo2", 2,"B");
