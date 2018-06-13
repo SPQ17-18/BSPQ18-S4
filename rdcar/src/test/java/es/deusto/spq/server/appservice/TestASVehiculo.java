@@ -41,7 +41,7 @@ public class TestASVehiculo {
 	@Required(percentiles = "60:200,95:500")
 	public void TestCrearVehiculo() {
 		
-		asv.CrearVehiculo("A", "A", "A", "A", 1, "A");
+		asv.CrearVehiculo("A", "A", "A", "A", 1, "B");
 		
 	}
 	
@@ -81,7 +81,7 @@ public class TestASVehiculo {
 	public void TestGetAllVehiculos() {
 		
 		
-		asv.CrearVehiculo("1", "1", "1", "1", 1,"A");
+		asv.CrearVehiculo("1", "1", "1", "1", 1,"B");
 		
 		asv.CrearVehiculo("2", "2", "2", "2", 2,"B");
 		
@@ -99,7 +99,30 @@ public class TestASVehiculo {
 		
 	}
 
-
+	@Test
+	@PerfTest(threads=2)
+	@Required(max = 500)
+	public void testTipos() {
+//		asv.BorrarVehiculo("12345");
+//		asv.BorrarVehiculo("5546");
+//		asv.CrearVehiculo("12345", "ford", "focus", "diesel", 7, "A");
+//		asv.CrearVehiculo("5546", "fofgfrd", "fochgjfus", "diesel", 7, "A");
+//		asv.BorrarVehiculo("A");
+//		asv.BorrarVehiculo("K");
+//		asv.BorrarVehiculo("B");
+//		asv.BorrarVehiculo("1");
+//		asv.BorrarVehiculo("2");
+		List<Vehiculo> ListaTipos = asv.verVehiculosTipo("B");
+		boolean v1 = false;
+		boolean v2 = false;
+		
+		for (Vehiculo v: ListaTipos) {
+			if( v.getTipo().equals("B")) v1 = true;
+			if( v.getTipo().equals("B")) v2 = true;
+		}
+		
+		assertTrue(v1 && v2);
+	}
 	
 	
 	

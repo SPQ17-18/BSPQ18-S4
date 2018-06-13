@@ -154,7 +154,9 @@ public class RDCarController {
 		}
 		return null;
 	}
-
+	
+///////////////////////////	
+///////////////////////////DAVID
 	public  List<Vehiculo> buscarVehiculoTipo(String tipo){
 		try {
 

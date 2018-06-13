@@ -67,6 +67,11 @@ public class ASVehiculo {
 		Refresh();
 		return dao.getAllVehiculos();
 	}
+	
+	
+	
+	///////////////////////
+	////////DAVID
 	public synchronized List<Vehiculo> verVehiculosTipo(String tipo){
 		Refresh();
 		return dao.getAllVehiculosTipo(tipo);

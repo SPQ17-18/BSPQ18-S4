@@ -112,7 +112,7 @@ public class Vehiculos extends JFrame{
 
 		table = new JTable();
 		table.setBounds(39, 78, 357, 260);
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent") }));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {resourceBundle.getString("car_plate"), resourceBundle.getString("car_brand"), resourceBundle.getString("car_model"), resourceBundle.getString("car_fuel"), resourceBundle.getString("car_rent"), "tipo" }));
 		cargarTablaPorDefecto();
 		frame.getContentPane().add(table);
 
@@ -171,6 +171,11 @@ public class Vehiculos extends JFrame{
 
 		
 		JButton btnB = new JButton("B");
+		btnB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cargarTablaTipo("B");
+			}
+		});
 		btnB.setBounds(459, 209, 89, 23);
 		frame.getContentPane().add(btnB);
 		
@@ -209,6 +214,7 @@ public class Vehiculos extends JFrame{
 
 
 	}
+	
 	private void cargarTablaTipo(String tipo) {
 
 		borrarTabla();

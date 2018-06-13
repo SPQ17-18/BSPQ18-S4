@@ -149,7 +149,11 @@ public class VehiculoDAO implements IVehiculoDAO {
 		return ListVehiculos;
 	}
 
-	public List<Vehiculo> getAllVehiculosTipo(String tipo) { //Pruebas
+	
+	///////////////////////////////
+	///////////////DAVID
+	
+	public List<Vehiculo> getAllVehiculosTipo(String tipo) { 
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 
@@ -180,6 +184,10 @@ public class VehiculoDAO implements IVehiculoDAO {
 
 		return ListVehiculosTipo;
 	}
+	
+	
+	
+	
 //	public Vehiculo retrieveVehiculoTipo(String tipo) {
 //		Vehiculo vehiculo = null;
 //		PersistenceManager pm = pmf.getPersistenceManager();

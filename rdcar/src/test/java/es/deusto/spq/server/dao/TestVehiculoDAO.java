@@ -119,14 +119,13 @@ public class TestVehiculoDAO {
 	////Test DAVID
 	@Test 
 	public void getAllVehiculosTipo() {
+//		dao.borrarVehiculo("vehiculo1");
+//		dao.borrarVehiculo("vehiculo2");
 //		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1,"B");
 //		Vehiculo vehiculo2 = new Vehiculo("vehiculo2", "vehiculo2", "vehiculo2", "vehiculo2", 2,"B");
 //		dao.storeVehiculo(vehiculo1);
 //		dao.storeVehiculo(vehiculo2);
 		List<Vehiculo> ListaRecibida = dao.getAllVehiculosTipo("B");
-		
-		//dao.getAllVehiculosTipo("B");
-		
 		boolean v1 = false;
 		boolean v2 = false;
 		for (Vehiculo x : ListaRecibida) {
@@ -137,14 +136,19 @@ public class TestVehiculoDAO {
 		
 
 		assertTrue(v1 && v2);
+
 	}
+	
+	
+	
+	
 	
 	@AfterClass
 	public static void end() throws Exception {
 		
 		dao.borrarVehiculo("1");
-		dao.borrarVehiculo("vehiculo1");
-		dao.borrarVehiculo("vehiculo2");
+//		dao.borrarVehiculo("vehiculo1");
+//		dao.borrarVehiculo("vehiculo2");
 		
 	}
 }
