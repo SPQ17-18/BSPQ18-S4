@@ -118,7 +118,7 @@ public class TestVehiculoDAO {
 	}
 	////Test DAVID
 	@Test 
-	public void getAllVehiculosTipo() {
+	public void TestgetAllVehiculosTipo() {
 //		dao.borrarVehiculo("vehiculo1");
 //		dao.borrarVehiculo("vehiculo2");
 //		Vehiculo vehiculo1 = new Vehiculo("vehiculo1", "vehiculo1", "vehiculo1", "vehiculo1", 1,"B");
