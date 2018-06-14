@@ -152,5 +152,38 @@ public class ClienteDAO implements IClienteDAO{
 
 		return ListClientes;
 	}
+	
+	 public List<Cliente> getAllClientesLugar(String lugar) { 
+
+		 PersistenceManager pm = pmf.getPersistenceManager();
+
+		 Transaction tx = pm.currentTransaction();
+
+		 List<Cliente> ListClientesTipo = null;
+
+		 try {
+
+		 tx.begin();
+		 Query<?> query = pm.newQuery("SELECT FROM " + Cliente.class.getName()+ " WHERE Lugar == '" + lugar + "'");
+		 query.setUnique(false);
+
+		 ListClientesTipo = (List<Cliente>) query.execute();
+
+		 tx.commit();
+
+		 } catch (Exception ex) {
+		 logger.error("   $ Error: " + ex.getMessage());
+		 } finally {
+
+		 if (tx != null && tx.isActive()) {
+		 tx.rollback();
+		 }
+
+		 pm.close();
+		 }
+
+		 return ListClientesTipo;
+		 }
+
 
 }

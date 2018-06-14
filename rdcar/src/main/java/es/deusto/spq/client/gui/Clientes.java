@@ -23,6 +23,7 @@ import org.apache.log4j.Logger;
 import es.deusto.spq.client.controller.RDCarController;
 import es.deusto.spq.server.dto.ClienteDTO;
 import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 import javax.swing.JTable;
 
@@ -34,6 +35,7 @@ public class Clientes extends JFrame{
 	private static final long serialVersionUID = -6100238350683668662L;
 	private JFrame frame;
 	private JTextField textField;
+	private JTextField textFieldLugar;
 	private JTable table;
 	private RDCarController controller = null;
 	private DefaultTableModel modelo = new DefaultTableModel();
@@ -106,9 +108,14 @@ public class Clientes extends JFrame{
 		textField.setBounds(120, 28, 276, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		
+		textFieldLugar = new JTextField();
+		textFieldLugar.setBounds(120, 43, 276, 22);
+		frame.getContentPane().add(textFieldLugar);
+		textFieldLugar.setColumns(10);
 
 		JButton btnBuscar = new JButton(resourceBundle.getString("car_search"));
-		btnBuscar.setBounds(455, 27, 100, 37);
+		btnBuscar.setBounds(452, 9, 100, 24);
 		frame.getContentPane().add(btnBuscar);
 		btnBuscar.addActionListener(new ActionListener() {
 
@@ -119,6 +126,19 @@ public class Clientes extends JFrame{
 				c = controller.buscarCliente(textField.getText());
 				logger.info(c.getDni() + c.getNombre() + c.getApellido() + c.getAnyo_Nacimiento() + c.getLugar());
 				cargarTabla(c);	
+			}
+		});
+		
+		JButton btnBuscarLugar = new JButton(resourceBundle.getString("car_search"));
+		btnBuscarLugar.setBounds(455, 43, 100, 29);
+		frame.getContentPane().add(btnBuscarLugar);
+		btnBuscarLugar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				borrarTabla();
+				Cliente c = (Cliente) controller.buscarCliente(textField.getText());
+				cargarTablaLugar(c);	
 			}
 		});
 
@@ -204,6 +224,22 @@ public class Clientes extends JFrame{
 			}
 		}
 
+
+	}
+	
+	private void cargarTablaLugar(Cliente cliente) {
+
+	borrarTabla();
+List<Cliente> clientes = new ArrayList<>();
+		clientes = (List<Cliente>)controller.buscarClienteLugar(lugar);	
+		if (clientes.size() !=0) {
+			for (int i = 0; i < clientes.size(); i++) {
+				cargarTabla(clientes.get(i));
+			}
+		}
+//		modelo = (DefaultTableModel) table.getModel();
+//		Object[] fila = {cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getAnyo_Nacimiento(), cliente.getLugar(), cliente.getCarnet()};
+//		modelo.addRow(fila);
 
 	}
 

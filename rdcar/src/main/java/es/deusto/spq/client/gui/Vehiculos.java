@@ -182,6 +182,7 @@ public class Vehiculos extends JFrame{
 		JButton btnA = new JButton("A");
 		btnA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//cargarTablaTipo("A");
 				cargarTablaTipo("A");
 			}
 		});
@@ -216,10 +217,11 @@ public class Vehiculos extends JFrame{
 	}
 	
 	private void cargarTablaTipo(String tipo) {
+		//private void cargarTablaTipo() {
 
 		borrarTabla();
 		List<Vehiculo> vehiculos = new ArrayList<>();
-		vehiculos = (List<Vehiculo>)controller.buscarVehiculoTipo("A");	
+		vehiculos = (List<Vehiculo>)controller.buscarVehiculoTipo(tipo);	
 		if (vehiculos.size() !=0) {
 			for (int i = 0; i < vehiculos.size(); i++) {
 				cargarTabla(vehiculos.get(i));

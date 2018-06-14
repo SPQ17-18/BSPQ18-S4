@@ -250,6 +250,17 @@ public class RDCarController {
 	public void exit() {
 		System.exit(0); 
 	}
+	
+
+public  List<Cliente> buscarClienteLugar(String lugar){
+try {
+return rsl.getService().buscarClienteLugar(lugar);
+} catch (RemoteException e) {
+// TODO Auto-generated catch block
+e.printStackTrace();
+}
+return null;
+}
 
 	public static void main(String[] args) throws RemoteException {
 

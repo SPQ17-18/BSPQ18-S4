@@ -179,7 +179,7 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 	@Override
 	public List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return this.ASVehiculo.getInstance().verVehiculosTipo(tipo);
 	}
 
 //	@Override
@@ -201,6 +201,10 @@ public class RDCarRemoteFacade extends UnicastRemoteObject implements IRDCarRemo
 //		return null;
 //	}
 
-
+	@Override
+	public List<Cliente> buscarClienteLugar(String lugar) throws RemoteException {
+	// TODO Auto-generated method stub
+	return this.ASCliente.getInstance().verClientesTipo(lugar);
+	}
 
 }

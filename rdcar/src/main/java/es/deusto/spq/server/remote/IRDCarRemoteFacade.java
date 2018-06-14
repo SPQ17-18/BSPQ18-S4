@@ -207,5 +207,5 @@ public interface IRDCarRemoteFacade extends Remote{
 	public List<Vehiculo> buscarVehiculoTipo(String tipo) throws RemoteException;
 	
 	//public Vehiculo verVehiculosTipo(String tipo);
-
+	public List<Cliente> buscarClienteLugar(String lugar) throws RemoteException;
 }

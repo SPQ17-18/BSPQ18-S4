@@ -123,6 +123,8 @@ public class AnadirCliente {
 		JLabel lblLugarNacimiento = new JLabel(resourceBundle.getString("place")+":");
 		lblLugarNacimiento.setBounds(10, 244, 111, 14);
 		frame.getContentPane().add(lblLugarNacimiento);
+		
+
 
 		JButton btnAceptar = new JButton(resourceBundle.getString("accept_msg"));
 		btnAceptar.setBounds(436, 279, 111, 54);
@@ -181,5 +183,4 @@ public class AnadirCliente {
 		// TODO Auto-generated method stub
 
 	}
-
 }

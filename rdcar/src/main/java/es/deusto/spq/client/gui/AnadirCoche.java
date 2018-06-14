@@ -147,6 +147,10 @@ public class AnadirCoche {
 		textTipo.setBounds(203, 302, 86, 20);
 		frame.getContentPane().add(textTipo);
 		textTipo.setColumns(10);
+		
+		JLabel lblTipoab = new JLabel("Tipo(A/B)");
+		lblTipoab.setBounds(28, 305, 82, 14);
+		frame.getContentPane().add(lblTipoab);
 	}
 
 	public void setVisible(boolean b) {

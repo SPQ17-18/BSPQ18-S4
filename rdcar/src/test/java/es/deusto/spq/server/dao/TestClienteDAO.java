@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import es.deusto.spq.server.jdo.Cliente;
+import es.deusto.spq.server.jdo.Vehiculo;
 
 
 
@@ -124,10 +125,42 @@ public class TestClienteDAO {
 	@AfterClass
 	public static void end() throws Exception {
 		
-		dao.borrarCliente("11301239");
-		dao.borrarCliente("1");
-		dao.borrarCliente("2");
+//		dao.borrarCliente("11301239");
+//		dao.borrarCliente("1");
+//		dao.borrarCliente("2");
 	}
 	
 	
+//	@Test 
+//	public void TestgetAllClientesLugar() {
+//		List<Cliente> ListaRecibida = dao.getAllClientesLugar("Vitoria".toLowerCase());
+//		boolean c1 = false;
+//		boolean c2 = false;
+//		for (Cliente x : ListaRecibida) {
+//			if( x.getLugar().equals("Vitoria".toLowerCase())) c1 = true;
+//			if( x.getLugar().equals("Vitoria".toLowerCase())) c2 = true;
+//		}
+//		
+//
+//		assertTrue(c1 && c2);
+//
+//	}
+	
+	@Test 
+	public void TestgetAllClientesLugar() {
+		List<Cliente> ListaRecibida = dao.getAllClientesLugar("vitoria");
+		boolean c1 = false;
+	//	Cliente x = new Cliente("1", "cliente1", "cliente1", 1, "vitoria","B");
+	//	dao.storeCliente(x);
+		boolean c2 = false;
+		for (Cliente x : ListaRecibida) {
+			if( x.getLugar().equals("vitoria")) c1 = true;
+			if( x.getLugar().equals("vitoria")) c2 = true;
+		}
+		
+
+		assertTrue(c1 && c2);
+		//assertTrue(c1);
+
+	}
 }

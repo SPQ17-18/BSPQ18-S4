@@ -129,7 +129,7 @@ public class TestVehiculoDAO {
 		boolean v1 = false;
 		boolean v2 = false;
 		for (Vehiculo x : ListaRecibida) {
-			System.out.println("probando " +x);
+			
 			if( x.getTipo().equals("B")) v1 = true;
 			if( x.getTipo().equals("B")) v2 = true;
 		}

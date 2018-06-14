@@ -35,14 +35,24 @@ public class TestASAlquiler {
 
 	}
 
-	@Test
-	@PerfTest(invocations = 100)
-	@Required(percentiles = "60:200,95:500")
-	public void TestCrearAlquiler() {
-		
-		asa.CrearAlquiler("A", "A", "A", "A", "A");
-		
-	}
+//	@Test
+//	@PerfTest(invocations = 100)
+//	@Required(percentiles = "60:200,95:500")
+//	public void TestCrearAlquiler() {
+//		if(asa.CompararAlquiler(codigo))
+//		asa.CrearAlquiler("A", "A", "A", "A", "A");
+//		
+//	}
+//	@Test
+//	@PerfTest(invocations = 100)
+//	@Required(percentiles = "60:200,95:500")
+//	public void TestCrearAlquiler() {
+//	asa.CrearAlquiler("A", "A", "A", "A", "A");
+//
+//	if(!asa.CompararAlquiler("A"))
+//	asa.BorrarAlquiler("A");
+//
+//	}
 	
 	@Test
 	@PerfTest(threads=30)
@@ -58,8 +68,16 @@ public class TestASAlquiler {
 		
 	}
 	
-	
-	
+//	@Test
+//	public void TestCompararAlquiler() {
+//
+//	asa.CrearAlquiler("a", "A", "A", "A", "A");
+//	asa.obtenerAlquiler("a").getC().setCarnet("B");
+//	asa.obtenerAlquiler("a").getV().setTipo("B");
+//
+//	assertTrue(asa.CompararAlquiler("a"));
+//	}
+//	
 	@Test(expected = NullPointerException.class)
 	@PerfTest(duration = 5000)
 	@Required(median = 150)

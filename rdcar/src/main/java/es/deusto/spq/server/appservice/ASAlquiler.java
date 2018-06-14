@@ -35,6 +35,17 @@ public class ASAlquiler {
 
 
 		}
+		
+		public synchronized boolean CompararAlquiler(String codigo) {
+			Refresh();
+			Alquiler alquiler = dao.retrieveAlquiler(codigo);
+
+			if(alquiler.getC().getCarnet().equals(alquiler.getV().getTipo())) {
+			return true;
+			}else {
+			return false;
+			}
+			}
 
 //		public synchronized void ModificarAlquiler(String codigo, String dni, String matricula, String fechaInicio, String fechaFinal) {
 //			Refresh();
